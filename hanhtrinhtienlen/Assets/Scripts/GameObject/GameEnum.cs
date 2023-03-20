@@ -13,4 +13,10 @@ public class GameEnum
     STARTPOINT,
     REVIVEPOINT,
   }
+  public enum MapLevel {
+    Level1,
+    Level2,
+    Level3,
+    Level4
+  }
 }

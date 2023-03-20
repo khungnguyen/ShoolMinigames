@@ -297,5 +297,8 @@ namespace MiniGames {
         }
 
         #endregion
+        public void SetPosition(Vector2 v) {
+            transform.position = v;
+        }
     }
 }
