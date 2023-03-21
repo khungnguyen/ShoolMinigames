@@ -1,6 +1,7 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
-using Unity.VisualScripting;
+using Cinemachine;
 using UnityEngine;
 
 namespace MiniGames {
@@ -12,13 +13,17 @@ namespace MiniGames {
     /// If you hve any questions or would like to brag about your score, come to discord: https://discord.gg/GqeHHnhHpz
     /// </summary>
     public class PlayerController : MonoBehaviour, IPlayerController {
+
         // Public for external hooks
+        public CinemachineConfiner _cinmemachineConfiner;
         public Vector3 Velocity { get; private set; }
         public FrameInput Input { get; private set; }
         public bool JumpingThisFrame { get; private set; }
         public bool LandingThisFrame { get; private set; }
         public Vector3 RawMovement { get; private set; }
         public bool Grounded => _colDown;
+
+        private System.Action<GameEnum.LevelType> _onLevelFinish;
 
         private Vector3 _lastPosition;
         private float _currentHorizontalSpeed, _currentVerticalSpeed;
@@ -307,8 +312,15 @@ namespace MiniGames {
         private void OnTriggerEnter2D(Collider2D other) {
             Debug.LogError("OnTriggerEnter2D" + other.tag);
             if(other.CompareTag("EndPoint")) {
-                SetPosition(other.GetComponent<MarkedPoint>().nextSpawnPoint.getPosition());
+                if(_onLevelFinish != null) {
+                    var next = other.GetComponent<MarkedPoint>().nextLevel;
+                    _onLevelFinish.Invoke(next);
+                }
+
             }
+        }
+        public void SetOnPlayerFinishMap(Action<GameEnum.LevelType> callback) {
+            _onLevelFinish = callback;
         }
     }
 }

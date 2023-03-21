@@ -6,6 +6,7 @@ public class LevelInfo : MonoBehaviour
 {
     // Start is called before the first frame update
     [SerializeField] PolygonCollider2D _cinemachineConfiger;
+    [SerializeField] GameEnum.LevelType _levelType;
     List<MarkedPoint> _markedPoints;
     void Start()
     {
@@ -19,8 +20,10 @@ public class LevelInfo : MonoBehaviour
         return _markedPoints.Find(e => e.type == GameEnum.PointType.ENDPOINT);
     }
     // Update is called once per frame
-    void Update()
-    {
-        
-    }
+   public GameEnum.LevelType getLevelType() {
+    return _levelType;
+   }
+   public PolygonCollider2D GetCinemachinConfinerData() {
+    return _cinemachineConfiger;
+   }
 }

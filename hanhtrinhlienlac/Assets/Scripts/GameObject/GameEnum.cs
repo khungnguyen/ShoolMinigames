@@ -14,7 +14,7 @@ public class GameEnum
     ENDPOINT,
     REVIVEPOINT,
   }
-  public enum MapLevel {
+  public enum LevelType {
     Level1,
     Level2,
     Level3,
