@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Linq;
+using Unity.VisualScripting;
 using UnityEngine;
 
 namespace MiniGames {
@@ -299,6 +300,15 @@ namespace MiniGames {
         #endregion
         public void SetPosition(Vector2 v) {
             transform.position = v;
+        }
+        void OnCollisionEnter2D(Collision2D other) {
+            Debug.LogError("OnCollisionEnter" + other);
+        }
+        private void OnTriggerEnter2D(Collider2D other) {
+            Debug.LogError("OnTriggerEnter2D" + other.tag);
+            if(other.CompareTag("EndPoint")) {
+                SetPosition(other.GetComponent<MarkedPoint>().nextSpawnPoint.getPosition());
+            }
         }
     }
 }

@@ -27,12 +27,12 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-       _levelManager.LoadMap(GameEnum.MapLevel.Level1);
-       _levelManager.SetCameraForParallax(_camera.transform);
-       GameObject ob = Instantiate(_charPrefab,_charLayer);
-       _charController = ob.GetComponent<PlayerController>();
-       _charController.SetPosition(_levelManager.GetStartPoint().getPosition());
-       _followCamera.SetTarget(_charController.transform);
+    //    _levelManager.LoadMap(GameEnum.MapLevel.Level1);
+    //    _levelManager.SetCameraForParallax(_camera.transform);
+    //    GameObject ob = Instantiate(_charPrefab,_charLayer);
+    //    _charController = ob.GetComponent<PlayerController>();
+    //    _charController.SetPosition(_levelManager.GetStartPoint().getPosition());
+    //    _followCamera.SetTarget(_charController.transform);
     }
 
     // Update is called once per frame

@@ -11,6 +11,7 @@ public class GameEnum
   }
    public enum PointType {
     STARTPOINT,
+    ENDPOINT,
     REVIVEPOINT,
   }
   public enum MapLevel {

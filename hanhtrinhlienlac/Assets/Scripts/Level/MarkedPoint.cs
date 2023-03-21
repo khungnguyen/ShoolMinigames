@@ -6,7 +6,8 @@ using UnityEngine.U2D.IK;
 public class MarkedPoint : ObjectBase
 {
     private void Awake() {
-        GetComponent<SpriteRenderer>().enabled = false;
+     //   GetComponent<SpriteRenderer>().enabled = false;
     }
  public GameEnum.PointType type;
+  public MarkedPoint nextSpawnPoint;
 }
