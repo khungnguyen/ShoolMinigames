@@ -12,7 +12,7 @@ namespace MiniGames {
 
     public interface IPlayerController {
         public Vector3 Velocity { get; }
-        public FrameInput Input { get; }
+        public FrameInput Input { get; set;}
         public bool JumpingThisFrame { get; }
         public bool LandingThisFrame { get; }
         public Vector3 RawMovement { get; }

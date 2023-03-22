@@ -1,20 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
+using Cinemachine;
 using MiniGames;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
     [SerializeField] LevelManager _levelManager;
-    [SerializeField] Transform _charLayer;
-    [SerializeField] GameObject _charPrefab;
-    [SerializeField] Camera _camera;
-
-
-
-    private PlayerController _charController;
-
-    private FollowCamera _followCamera;
+    [SerializeField] CinemachineVirtualCamera _cinemachineCamera;
+    [SerializeField] CinemachineConfiner _cinemachineConfiner;
+    [SerializeField] PlayerController _playerController;
 
     public static GameManager inst;
 
@@ -22,22 +17,18 @@ public class GameManager : MonoBehaviour
 
     void Awake() {
         inst = this;
-        _followCamera = _camera.GetComponent<FollowCamera>();
+    }
+    void Start() {
+        _playerController.SetOnPlayerFinishMap(OnPlayerFinishMap);
+    }
+    private void OnPlayerFinishMap(GameEnum.LevelType nextLevel) {
+        LevelInfo next = _levelManager.FindLevel(nextLevel);
+        if(next != null) {
+            var spawnPoint = next.GetStartPoint().getPosition();
+            _playerController.SetPosition(spawnPoint);
+            _cinemachineConfiner.m_BoundingShape2D = next.GetCinemachinConfinerData();
+        }
     }
     // Start is called before the first frame update
-    void Start()
-    {
-       _levelManager.LoadMap(GameEnum.MapLevel.Level1);
-       _levelManager.SetCameraForParallax(_camera.transform);
-       GameObject ob = Instantiate(_charPrefab,_charLayer);
-       _charController = ob.GetComponent<PlayerController>();
-       _charController.SetPosition(_levelManager.GetStartPoint().getPosition());
-       _followCamera.SetTarget(_charController.transform);
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+   
 }
