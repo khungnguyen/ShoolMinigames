@@ -1,3 +1,6 @@
+using UnityEngine;
+
+[System.Serializable]
 public class QuestionBank {
     private static QuestionBank _inst;
     public static QuestionBank Inst {
@@ -11,5 +14,10 @@ public class QuestionBank {
 
     QuestionBank() {
         _inst = this;
+    }
+
+    public void DebugInfo() {
+        Debug.Log("version: " + version);
+        Debug.Log("questions count: " + questions.Length);
     }
 }

@@ -1,5 +1,7 @@
+[System.Serializable]
 public class Question
 {
+    [System.Serializable]
     public class Answer {
         public bool value;
         public string text;
@@ -7,5 +9,5 @@ public class Question
 
     public bool allowShuffle;
     public string text;
-    public Answer[] answers;
+    public Question.Answer[] answers;
 }
