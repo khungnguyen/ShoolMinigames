@@ -1,0 +1,2407 @@
+
+Anim_AC_Selected.png
+size: 1841,1841
+format: RGBA4444
+filter: Linear,Linear
+repeat: none
+Adewale/BELT
+  rotate: true
+  xy: 520, 2
+  size: 111, 56
+  orig: 127, 76
+  offset: 16, 8
+  index: -1
+Adewale/BODY
+  rotate: true
+  xy: 1406, 996
+  size: 109, 123
+  orig: 109, 127
+  offset: 0, 4
+  index: -1
+Adewale/B_COAT
+  rotate: false
+  xy: 523, 115
+  size: 101, 116
+  orig: 101, 116
+  offset: 0, 0
+  index: -1
+Adewale/B_COLLAR
+  rotate: false
+  xy: 652, 1052
+  size: 50, 38
+  orig: 149, 65
+  offset: 61, 27
+  index: -1
+Bayek/B_COLLAR
+  rotate: false
+  xy: 652, 1052
+  size: 50, 38
+  orig: 149, 65
+  offset: 61, 27
+  index: -1
+Adewale/B_HAND
+  rotate: true
+  xy: 1105, 634
+  size: 39, 49
+  orig: 39, 49
+  offset: 0, 0
+  index: -1
+Adewale/B_HOOD
+  rotate: false
+  xy: 789, 915
+  size: 78, 135
+  orig: 84, 155
+  offset: 1, 10
+  index: -1
+Adewale/B_L_ARM
+  rotate: false
+  xy: 1286, 767
+  size: 52, 81
+  orig: 56, 87
+  offset: 3, 6
+  index: -1
+Adewale/B_L_LEG
+  rotate: true
+  xy: 1036, 1148
+  size: 60, 124
+  orig: 60, 124
+  offset: 0, 0
+  index: -1
+Adewale/B_U_ARM
+  rotate: true
+  xy: 1087, 2
+  size: 37, 71
+  orig: 38, 71
+  offset: 0, 0
+  index: -1
+Bayek/B_U_ARM
+  rotate: true
+  xy: 1087, 2
+  size: 37, 71
+  orig: 38, 71
+  offset: 0, 0
+  index: -1
+Adewale/B_U_LEG
+  rotate: true
+  xy: 1063, 155
+  size: 56, 103
+  orig: 56, 103
+  offset: 0, 0
+  index: -1
+Adewale/F_COLLAR
+  rotate: true
+  xy: 218, 1211
+  size: 50, 26
+  orig: 64, 33
+  offset: 14, 4
+  index: -1
+Adewale/F_DRESS
+  rotate: false
+  xy: 233, 216
+  size: 116, 140
+  orig: 136, 170
+  offset: 8, 14
+  index: -1
+Adewale/F_HAND
+  rotate: true
+  xy: 1776, 1046
+  size: 48, 60
+  orig: 48, 60
+  offset: 0, 0
+  index: -1
+Adewale/F_HOOD
+  rotate: true
+  xy: 1346, 1678
+  size: 161, 183
+  orig: 163, 187
+  offset: 1, 2
+  index: -1
+Adewale/F_L_ARM
+  rotate: false
+  xy: 1239, 767
+  size: 45, 91
+  orig: 45, 91
+  offset: 0, 0
+  index: -1
+Adewale/F_L_LEG
+  rotate: true
+  xy: 1579, 1346
+  size: 60, 123
+  orig: 60, 123
+  offset: 0, 0
+  index: -1
+Adewale/F_U_ARM
+  rotate: false
+  xy: 471, 150
+  size: 50, 80
+  orig: 53, 82
+  offset: 0, 2
+  index: -1
+Adewale/F_U_LEG
+  rotate: false
+  xy: 1088, 338
+  size: 53, 104
+  orig: 53, 104
+  offset: 0, 0
+  index: -1
+Adewale/HEAD
+  rotate: false
+  xy: 351, 232
+  size: 121, 132
+  orig: 123, 133
+  offset: 0, 0
+  index: -1
+Aguilar/BELT
+  rotate: true
+  xy: 1168, 767
+  size: 91, 69
+  orig: 131, 78
+  offset: 24, 0
+  index: -1
+Aguilar/BODY
+  rotate: true
+  xy: 1531, 992
+  size: 106, 122
+  orig: 110, 128
+  offset: 4, 3
+  index: -1
+Aguilar/B_COAT
+  rotate: true
+  xy: 971, 1675
+  size: 164, 187
+  orig: 164, 188
+  offset: 0, 0
+  index: -1
+Aguilar/B_COLLAR
+  rotate: true
+  xy: 1534, 346
+  size: 50, 38
+  orig: 149, 65
+  offset: 61, 27
+  index: -1
+Jariya/B_COLLAR
+  rotate: true
+  xy: 1534, 346
+  size: 50, 38
+  orig: 149, 65
+  offset: 61, 27
+  index: -1
+Aguilar/B_HAND
+  rotate: false
+  xy: 1493, 346
+  size: 39, 49
+  orig: 39, 49
+  offset: 0, 0
+  index: -1
+Aguilar/B_HOOD
+  rotate: false
+  xy: 1498, 1541
+  size: 76, 135
+  orig: 79, 147
+  offset: 0, 6
+  index: -1
+Aguilar/B_L_ARM
+  rotate: false
+  xy: 1600, 675
+  size: 54, 85
+  orig: 56, 87
+  offset: 1, 1
+  index: -1
+Aguilar/B_L_LEG
+  rotate: false
+  xy: 1760, 920
+  size: 60, 124
+  orig: 60, 124
+  offset: 0, 0
+  index: -1
+Aguilar/B_U_ARM
+  rotate: true
+  xy: 626, 115
+  size: 36, 70
+  orig: 38, 71
+  offset: 0, 0
+  index: -1
+Aguilar/B_U_LEG
+  rotate: true
+  xy: 1262, 509
+  size: 56, 103
+  orig: 56, 103
+  offset: 0, 0
+  index: -1
+Aguilar/F_COLLAR
+  rotate: true
+  xy: 928, 295
+  size: 50, 26
+  orig: 64, 33
+  offset: 14, 4
+  index: -1
+EdwardKenway/F_COLLAR
+  rotate: true
+  xy: 928, 295
+  size: 50, 26
+  orig: 64, 33
+  offset: 14, 4
+  index: -1
+Aguilar/F_DRESS
+  rotate: false
+  xy: 1112, 1520
+  size: 125, 153
+  orig: 136, 170
+  offset: 9, 0
+  index: -1
+Aguilar/F_HAND
+  rotate: false
+  xy: 1096, 444
+  size: 48, 60
+  orig: 48, 60
+  offset: 0, 0
+  index: -1
+Aguilar/F_HOOD
+  rotate: true
+  xy: 1160, 1677
+  size: 162, 184
+  orig: 166, 190
+  offset: 1, 3
+  index: -1
+Aguilar/F_L_ARM
+  rotate: false
+  xy: 1356, 255
+  size: 45, 88
+  orig: 45, 91
+  offset: 0, 3
+  index: -1
+Aguilar/F_L_LEG
+  rotate: true
+  xy: 987, 692
+  size: 60, 123
+  orig: 60, 123
+  offset: 0, 0
+  index: -1
+Aguilar/F_U_ARM
+  rotate: true
+  xy: 1473, 487
+  size: 52, 82
+  orig: 53, 82
+  offset: 0, 0
+  index: -1
+Aguilar/F_U_LEG
+  rotate: true
+  xy: 938, 100
+  size: 53, 104
+  orig: 53, 104
+  offset: 0, 0
+  index: -1
+Alexios/BELT
+  rotate: false
+  xy: 368, 150
+  size: 101, 80
+  orig: 245, 147
+  offset: 82, 22
+  index: -1
+Alexios/BODY
+  rotate: false
+  xy: 1119, 1366
+  size: 127, 152
+  orig: 184, 159
+  offset: 28, 7
+  index: -1
+Alexios/B_COLLAR
+  rotate: true
+  xy: 1362, 143
+  size: 72, 33
+  orig: 186, 81
+  offset: 82, 48
+  index: -1
+Alexios/B_HOOD
+  rotate: false
+  xy: 897, 1520
+  size: 1, 1
+  orig: 1, 1
+  offset: 0, 0
+  index: -1
+Alexios/B_L_ARM
+  rotate: false
+  xy: 1340, 766
+  size: 58, 80
+  orig: 67, 104
+  offset: 2, 13
+  index: -1
+Alexios/B_L_LEG
+  rotate: true
+  xy: 241, 146
+  size: 68, 125
+  orig: 75, 154
+  offset: 0, 14
+  index: -1
+Alexios/B_U_ARM
+  rotate: false
+  xy: 1169, 673
+  size: 61, 92
+  orig: 106, 113
+  offset: 23, 21
+  index: -1
+Alexios/B_U_LEG
+  rotate: false
+  xy: 1214, 567
+  size: 55, 104
+  orig: 56, 104
+  offset: 1, 0
+  index: -1
+Alexios/F_DRESS
+  rotate: false
+  xy: 1145, 992
+  size: 129, 122
+  orig: 136, 170
+  offset: 0, 31
+  index: -1
+Alexios/F_HAND
+  rotate: false
+  xy: 1743, 296
+  size: 56, 65
+  orig: 109, 88
+  offset: 26, 10
+  index: -1
+Alexios/F_HOOD
+  rotate: true
+  xy: 780, 392
+  size: 113, 56
+  orig: 159, 182
+  offset: 41, 3
+  index: -1
+Alexios/F_L_ARM
+  rotate: true
+  xy: 1254, 183
+  size: 55, 99
+  orig: 95, 194
+  offset: 21, 42
+  index: -1
+Alexios/F_L_LEG
+  rotate: true
+  xy: 1530, 924
+  size: 66, 124
+  orig: 104, 214
+  offset: 14, 45
+  index: -1
+Alexios/F_U_ARM
+  rotate: false
+  xy: 561, 794
+  size: 76, 108
+  orig: 121, 188
+  offset: 16, 52
+  index: -1
+Alexios/F_U_LEG
+  rotate: true
+  xy: 1400, 871
+  size: 53, 104
+  orig: 53, 104
+  offset: 0, 0
+  index: -1
+Alexios/HEAD
+  rotate: false
+  xy: 2, 1263
+  size: 253, 281
+  orig: 386, 356
+  offset: 59, 75
+  index: -1
+Alexios/SHAWLS
+  rotate: false
+  xy: 2, 142
+  size: 111, 213
+  orig: 137, 495
+  offset: 20, 158
+  index: -1
+Bayek/BELT
+  rotate: false
+  xy: 639, 759
+  size: 102, 46
+  orig: 113, 68
+  offset: 11, 13
+  index: -1
+Bayek/BODY
+  rotate: true
+  xy: 1421, 1107
+  size: 128, 124
+  orig: 134, 156
+  offset: 0, 18
+  index: -1
+Bayek/B_COAT
+  rotate: true
+  xy: 1276, 1002
+  size: 106, 128
+  orig: 120, 137
+  offset: 9, 0
+  index: -1
+Bayek/B_HAND
+  rotate: true
+  xy: 1676, 82
+  size: 39, 49
+  orig: 39, 49
+  offset: 0, 0
+  index: -1
+Bayek/B_HOOD
+  rotate: false
+  xy: 569, 934
+  size: 81, 137
+  orig: 90, 167
+  offset: 0, 14
+  index: -1
+Bayek/B_L_ARM
+  rotate: true
+  xy: 1541, 206
+  size: 54, 81
+  orig: 56, 87
+  offset: 0, 6
+  index: -1
+Bayek/B_L_LEG
+  rotate: true
+  xy: 1704, 1329
+  size: 68, 125
+  orig: 83, 168
+  offset: 1, 22
+  index: -1
+Bayek/B_U_LEG
+  rotate: false
+  xy: 1240, 240
+  size: 56, 103
+  orig: 56, 104
+  offset: 0, 1
+  index: -1
+Bayek/F_DRESS
+  rotate: false
+  xy: 1547, 1221
+  size: 110, 123
+  orig: 136, 170
+  offset: 2, 29
+  index: -1
+Bayek/F_HAND
+  rotate: false
+  xy: 1626, 98
+  size: 48, 60
+  orig: 48, 60
+  offset: 0, 0
+  index: -1
+Bayek/F_HOOD
+  rotate: true
+  xy: 746, 1523
+  size: 155, 187
+  orig: 202, 232
+  offset: 16, 22
+  index: -1
+Bayek/F_L_ARM
+  rotate: false
+  xy: 1363, 382
+  size: 47, 103
+  orig: 57, 115
+  offset: 5, 0
+  index: -1
+Bayek/F_L_LEG
+  rotate: true
+  xy: 743, 845
+  size: 68, 124
+  orig: 80, 166
+  offset: 0, 21
+  index: -1
+Bayek/F_U_ARM
+  rotate: true
+  xy: 1714, 499
+  size: 50, 80
+  orig: 53, 82
+  offset: 0, 2
+  index: -1
+Bayek/F_U_LEG
+  rotate: true
+  xy: 1400, 816
+  size: 53, 104
+  orig: 53, 104
+  offset: 0, 0
+  index: -1
+Bayek/HEAD
+  rotate: false
+  xy: 1579, 1408
+  size: 123, 133
+  orig: 126, 136
+  offset: 0, 1
+  index: -1
+Bayek/SHAWLS
+  rotate: false
+  xy: 108, 501
+  size: 64, 166
+  orig: 77, 278
+  offset: 13, 71
+  index: -1
+EdwardKenway/BELT
+  rotate: true
+  xy: 1319, 26
+  size: 99, 43
+  orig: 131, 78
+  offset: 20, 20
+  index: -1
+EdwardKenway/BODY
+  rotate: true
+  xy: 1162, 1116
+  size: 106, 124
+  orig: 110, 128
+  offset: 4, 3
+  index: -1
+EdwardKenway/B_COAT
+  rotate: false
+  xy: 1004, 919
+  size: 119, 128
+  orig: 164, 188
+  offset: 30, 35
+  index: -1
+EdwardKenway/B_COLLAR
+  rotate: true
+  xy: 1112, 675
+  size: 78, 55
+  orig: 149, 65
+  offset: 46, 10
+  index: -1
+EdwardKenway/B_HAND
+  rotate: false
+  xy: 1760, 171
+  size: 39, 49
+  orig: 39, 49
+  offset: 0, 0
+  index: -1
+EdwardKenway/B_HOOD
+  rotate: false
+  xy: 1501, 1404
+  size: 76, 135
+  orig: 79, 147
+  offset: 0, 6
+  index: -1
+EdwardKenway/B_L_ARM
+  rotate: false
+  xy: 684, 2
+  size: 56, 87
+  orig: 60, 94
+  offset: 0, 3
+  index: -1
+EdwardKenway/B_L_LEG
+  rotate: true
+  xy: 869, 859
+  size: 60, 124
+  orig: 60, 124
+  offset: 0, 0
+  index: -1
+EdwardKenway/B_U_ARM
+  rotate: false
+  xy: 1605, 492
+  size: 38, 70
+  orig: 38, 71
+  offset: 0, 0
+  index: -1
+EdwardKenway/B_U_LEG
+  rotate: true
+  xy: 832, 102
+  size: 56, 104
+  orig: 56, 104
+  offset: 0, 0
+  index: -1
+EdwardKenway/F_DRESS
+  rotate: false
+  xy: 1248, 1374
+  size: 124, 149
+  orig: 136, 170
+  offset: 2, 18
+  index: -1
+EdwardKenway/F_HAND
+  rotate: false
+  xy: 1574, 346
+  size: 48, 60
+  orig: 48, 60
+  offset: 0, 0
+  index: -1
+EdwardKenway/F_HOOD
+  rotate: true
+  xy: 1531, 1679
+  size: 160, 184
+  orig: 166, 190
+  offset: 3, 3
+  index: -1
+EdwardKenway/F_L_ARM
+  rotate: false
+  xy: 915, 2
+  size: 46, 96
+  orig: 51, 104
+  offset: 2, 2
+  index: -1
+EdwardKenway/F_L_LEG
+  rotate: true
+  xy: 980, 630
+  size: 60, 123
+  orig: 60, 123
+  offset: 0, 0
+  index: -1
+EdwardKenway/F_U_ARM
+  rotate: false
+  xy: 1286, 850
+  size: 54, 82
+  orig: 61, 94
+  offset: 0, 6
+  index: -1
+EdwardKenway/F_U_LEG
+  rotate: true
+  xy: 1044, 100
+  size: 53, 104
+  orig: 53, 104
+  offset: 0, 0
+  index: -1
+EdwardKenway/HEAD
+  rotate: true
+  xy: 652, 926
+  size: 124, 135
+  orig: 240, 221
+  offset: 58, 43
+  index: -1
+Jariya/BELT
+  rotate: true
+  xy: 1232, 673
+  size: 92, 47
+  orig: 95, 57
+  offset: 0, 10
+  index: -1
+Jariya/BODY
+  rotate: false
+  xy: 1547, 1100
+  size: 107, 119
+  orig: 122, 141
+  offset: 6, 11
+  index: -1
+Jariya/B_COAT
+  rotate: true
+  xy: 988, 754
+  size: 101, 116
+  orig: 101, 116
+  offset: 0, 0
+  index: -1
+Jariya/B_HAND
+  rotate: true
+  xy: 1564, 62
+  size: 36, 44
+  orig: 39, 49
+  offset: 3, 4
+  index: -1
+Jariya/B_HOOD
+  rotate: true
+  xy: 1704, 1473
+  size: 72, 135
+  orig: 72, 135
+  offset: 0, 0
+  index: -1
+Jariya/B_L_ARM
+  rotate: false
+  xy: 1342, 848
+  size: 56, 84
+  orig: 56, 87
+  offset: 0, 1
+  index: -1
+Jariya/B_L_LEG
+  rotate: true
+  xy: 995, 857
+  size: 60, 124
+  orig: 60, 124
+  offset: 0, 0
+  index: -1
+Jariya/B_U_ARM
+  rotate: true
+  xy: 1160, 2
+  size: 37, 71
+  orig: 38, 71
+  offset: 0, 0
+  index: -1
+Jariya/B_U_LEG
+  rotate: false
+  xy: 1098, 524
+  size: 56, 104
+  orig: 56, 104
+  offset: 0, 0
+  index: -1
+Jariya/F_COLLAR
+  rotate: false
+  xy: 569, 906
+  size: 50, 26
+  orig: 64, 33
+  offset: 14, 4
+  index: -1
+ShaoJun/F_COLLAR
+  rotate: false
+  xy: 569, 906
+  size: 50, 26
+  orig: 64, 33
+  offset: 14, 4
+  index: -1
+Jariya/F_DRESS
+  rotate: false
+  xy: 164, 4
+  size: 117, 138
+  orig: 136, 170
+  offset: 7, 16
+  index: -1
+Jariya/F_HAND
+  rotate: false
+  xy: 1624, 200
+  size: 45, 60
+  orig: 48, 60
+  offset: 2, 0
+  index: -1
+Jariya/F_HOOD
+  rotate: true
+  xy: 767, 1680
+  size: 159, 202
+  orig: 189, 215
+  offset: 10, 0
+  index: -1
+Jariya/F_L_ARM
+  rotate: false
+  xy: 1625, 584
+  size: 45, 89
+  orig: 45, 91
+  offset: 0, 1
+  index: -1
+Jariya/F_L_LEG
+  rotate: true
+  xy: 973, 568
+  size: 60, 123
+  orig: 60, 123
+  offset: 0, 0
+  index: -1
+Jariya/F_U_ARM
+  rotate: true
+  xy: 1648, 762
+  size: 56, 84
+  orig: 56, 86
+  offset: 0, 2
+  index: -1
+Jariya/F_U_LEG
+  rotate: true
+  xy: 1150, 100
+  size: 53, 104
+  orig: 53, 104
+  offset: 0, 0
+  index: -1
+Jariya/HEAD
+  rotate: false
+  xy: 1288, 1233
+  size: 124, 139
+  orig: 136, 148
+  offset: 3, 0
+  index: -1
+Mateo/BELT
+  rotate: false
+  xy: 1114, 41
+  size: 88, 57
+  orig: 88, 57
+  offset: 0, 0
+  index: -1
+Mateo/BODY
+  rotate: false
+  xy: 603, 1092
+  size: 102, 118
+  orig: 102, 118
+  offset: 0, 0
+  index: -1
+Mateo/B_COAT
+  rotate: false
+  xy: 626, 153
+  size: 100, 116
+  orig: 100, 116
+  offset: 0, 0
+  index: -1
+Mateo/B_HOOD
+  rotate: true
+  xy: 1592, 762
+  size: 62, 54
+  orig: 72, 135
+  offset: 9, 0
+  index: -1
+Mateo/B_L_ARM
+  rotate: false
+  xy: 742, 2
+  size: 55, 87
+  orig: 55, 87
+  offset: 0, 0
+  index: -1
+Mateo/B_L_LEG
+  rotate: false
+  xy: 542, 594
+  size: 60, 124
+  orig: 60, 124
+  offset: 0, 0
+  index: -1
+Mateo/B_U_LEG
+  rotate: false
+  xy: 1127, 232
+  size: 56, 104
+  orig: 56, 104
+  offset: 0, 0
+  index: -1
+Mateo/F_COLLAR
+  rotate: true
+  xy: 1813, 440
+  size: 50, 26
+  orig: 64, 33
+  offset: 14, 4
+  index: -1
+Mateo/F_DRESS
+  rotate: false
+  xy: 1036, 1210
+  size: 124, 140
+  orig: 136, 170
+  offset: 12, 14
+  index: -1
+Mateo/F_HOOD
+  rotate: false
+  xy: 869, 719
+  size: 116, 60
+  orig: 159, 182
+  offset: 43, 0
+  index: -1
+Mateo/F_L_ARM
+  rotate: false
+  xy: 1329, 567
+  size: 45, 91
+  orig: 45, 91
+  offset: 0, 0
+  index: -1
+Mateo/F_L_LEG
+  rotate: true
+  xy: 846, 471
+  size: 60, 123
+  orig: 60, 123
+  offset: 0, 0
+  index: -1
+Mateo/F_U_ARM
+  rotate: true
+  xy: 1757, 795
+  size: 53, 82
+  orig: 53, 82
+  offset: 0, 0
+  index: -1
+Mateo/F_U_LEG
+  rotate: true
+  xy: 1400, 761
+  size: 53, 104
+  orig: 53, 104
+  offset: 0, 0
+  index: -1
+Mateo/HEAD
+  rotate: true
+  xy: 897, 1354
+  size: 164, 172
+  orig: 240, 221
+  offset: 43, 43
+  index: -1
+ShaoJun/BELT
+  rotate: true
+  xy: 1470, 397
+  size: 88, 46
+  orig: 95, 57
+  offset: 7, 0
+  index: -1
+ShaoJun/BODY
+  rotate: true
+  xy: 454, 1211
+  size: 105, 119
+  orig: 122, 141
+  offset: 8, 11
+  index: -1
+ShaoJun/B_COAT
+  rotate: false
+  xy: 596, 271
+  size: 101, 116
+  orig: 101, 116
+  offset: 0, 0
+  index: -1
+ShaoJun/B_HAND
+  rotate: true
+  xy: 1356, 217
+  size: 36, 45
+  orig: 39, 49
+  offset: 3, 4
+  index: -1
+ShaoJun/B_HOOD
+  rotate: true
+  xy: 1704, 1399
+  size: 72, 135
+  orig: 72, 135
+  offset: 0, 0
+  index: -1
+ShaoJun/B_L_ARM
+  rotate: false
+  xy: 1614, 409
+  size: 48, 81
+  orig: 56, 87
+  offset: 6, 4
+  index: -1
+ShaoJun/B_L_LEG
+  rotate: true
+  xy: 1125, 860
+  size: 60, 124
+  orig: 60, 124
+  offset: 0, 0
+  index: -1
+ShaoJun/B_U_ARM
+  rotate: true
+  xy: 1233, 2
+  size: 37, 71
+  orig: 38, 71
+  offset: 0, 0
+  index: -1
+ShaoJun/B_U_LEG
+  rotate: false
+  xy: 1143, 338
+  size: 56, 104
+  orig: 56, 104
+  offset: 0, 0
+  index: -1
+ShaoJun/F_DRESS
+  rotate: false
+  xy: 1717, 1674
+  size: 122, 165
+  orig: 143, 179
+  offset: 7, 0
+  index: -1
+ShaoJun/F_HAND
+  rotate: false
+  xy: 1685, 347
+  size: 46, 60
+  orig: 48, 60
+  offset: 2, 0
+  index: -1
+ShaoJun/F_HOOD
+  rotate: false
+  xy: 257, 1318
+  size: 160, 183
+  orig: 167, 191
+  offset: 2, 4
+  index: -1
+ShaoJun/F_L_ARM
+  rotate: false
+  xy: 1800, 665
+  size: 39, 88
+  orig: 45, 91
+  offset: 5, 1
+  index: -1
+ShaoJun/F_L_LEG
+  rotate: true
+  xy: 973, 506
+  size: 60, 123
+  orig: 60, 123
+  offset: 0, 0
+  index: -1
+ShaoJun/F_U_ARM
+  rotate: true
+  xy: 1506, 761
+  size: 55, 84
+  orig: 56, 86
+  offset: 0, 2
+  index: -1
+ShaoJun/F_U_LEG
+  rotate: false
+  xy: 1185, 232
+  size: 53, 104
+  orig: 53, 104
+  offset: 0, 0
+  index: -1
+ShaoJun/HEAD
+  rotate: true
+  xy: 1288, 1110
+  size: 121, 131
+  orig: 123, 133
+  offset: 0, 0
+  index: -1
+V2_Skin/Altair/BELT
+  rotate: false
+  xy: 174, 501
+  size: 116, 70
+  orig: 141, 85
+  offset: 20, 0
+  index: -1
+V2_Skin/Altair/BODY
+  rotate: true
+  xy: 1659, 1119
+  size: 103, 119
+  orig: 139, 161
+  offset: 18, 21
+  index: -1
+V2_Skin/Altair/B_COAT
+  rotate: false
+  xy: 279, 893
+  size: 146, 178
+  orig: 180, 205
+  offset: 30, 10
+  index: -1
+V2_Skin/Altair/B_HAND
+  rotate: false
+  xy: 1801, 167
+  size: 38, 48
+  orig: 39, 49
+  offset: 1, 1
+  index: -1
+V2_Skin/Altair/B_HOOD
+  rotate: true
+  xy: 410, 501
+  size: 80, 95
+  orig: 84, 155
+  offset: 4, 20
+  index: -1
+V2_Skin/Altair/B_L_ARM
+  rotate: false
+  xy: 1656, 677
+  size: 56, 83
+  orig: 65, 102
+  offset: 5, 12
+  index: -1
+V2_Skin/Altair/B_L_LEG
+  rotate: false
+  xy: 604, 594
+  size: 60, 124
+  orig: 60, 124
+  offset: 0, 0
+  index: -1
+V2_Skin/Altair/B_U_ARM
+  rotate: false
+  xy: 1801, 217
+  size: 38, 71
+  orig: 38, 71
+  offset: 0, 0
+  index: -1
+V2_Skin/Altair/B_U_LEG
+  rotate: false
+  xy: 1156, 567
+  size: 56, 104
+  orig: 56, 104
+  offset: 0, 0
+  index: -1
+V2_Skin/Altair/F_DRESS
+  rotate: true
+  xy: 218, 1073
+  size: 136, 168
+  orig: 136, 170
+  offset: 0, 0
+  index: -1
+V2_Skin/Altair/F_HAND
+  rotate: true
+  xy: 1412, 2
+  size: 44, 57
+  orig: 48, 60
+  offset: 4, 1
+  index: -1
+V2_Skin/Altair/F_HOOD
+  rotate: true
+  xy: 935, 1520
+  size: 153, 175
+  orig: 184, 211
+  offset: 6, 23
+  index: -1
+V2_Skin/Altair/F_L_ARM
+  rotate: false
+  xy: 1075, 213
+  size: 50, 105
+  orig: 58, 118
+  offset: 5, 0
+  index: -1
+V2_Skin/Altair/F_L_LEG
+  rotate: true
+  xy: 971, 444
+  size: 60, 123
+  orig: 60, 123
+  offset: 0, 0
+  index: -1
+V2_Skin/Altair/F_U_ARM
+  rotate: false
+  xy: 1457, 262
+  size: 53, 82
+  orig: 53, 82
+  offset: 0, 0
+  index: -1
+V2_Skin/Altair/F_U_LEG
+  rotate: true
+  xy: 1384, 706
+  size: 53, 104
+  orig: 53, 104
+  offset: 0, 0
+  index: -1
+V2_Skin/Altair/HEAD
+  rotate: false
+  xy: 338, 366
+  size: 123, 133
+  orig: 123, 133
+  offset: 0, 0
+  index: -1
+V2_Skin/Aya/BELT
+  rotate: true
+  xy: 2, 838
+  size: 233, 140
+  orig: 233, 140
+  offset: 0, 0
+  index: -1
+V2_Skin/Aya/BODY
+  rotate: true
+  xy: 869, 921
+  size: 126, 133
+  orig: 126, 146
+  offset: 0, 0
+  index: -1
+V2_Skin/Aya/B_COAT
+  rotate: false
+  xy: 232, 358
+  size: 104, 141
+  orig: 140, 160
+  offset: 19, 0
+  index: -1
+V2_Skin/Aya/B_COLLAR
+  rotate: false
+  xy: 278, 719
+  size: 133, 98
+  orig: 239, 104
+  offset: 79, 6
+  index: -1
+V2_Skin/Aya/B_HAND
+  rotate: false
+  xy: 257, 1503
+  size: 34, 41
+  orig: 34, 44
+  offset: 0, 1
+  index: -1
+V2_Skin/Aya/B_L_ARM
+  rotate: false
+  xy: 1671, 185
+  size: 47, 76
+  orig: 54, 84
+  offset: 5, 0
+  index: -1
+V2_Skin/Aya/B_L_LEG
+  rotate: true
+  xy: 698, 91
+  size: 60, 124
+  orig: 60, 124
+  offset: 0, 0
+  index: -1
+V2_Skin/Aya/B_U_ARM
+  rotate: true
+  xy: 1008, 2
+  size: 37, 77
+  orig: 46, 86
+  offset: 4, 0
+  index: -1
+V2_Skin/Aya/B_U_LEG
+  rotate: true
+  xy: 1156, 509
+  size: 56, 104
+  orig: 56, 104
+  offset: 0, 0
+  index: -1
+V2_Skin/Aya/F_DRESS
+  rotate: false
+  xy: 427, 904
+  size: 140, 167
+  orig: 151, 188
+  offset: 0, 3
+  index: -1
+V2_Skin/Aya/F_HAND
+  rotate: false
+  xy: 1676, 123
+  size: 45, 60
+  orig: 48, 60
+  offset: 2, 0
+  index: -1
+V2_Skin/Aya/F_L_ARM
+  rotate: true
+  xy: 743, 507
+  size: 41, 101
+  orig: 56, 114
+  offset: 7, 0
+  index: -1
+V2_Skin/Aya/F_L_LEG
+  rotate: true
+  xy: 963, 382
+  size: 60, 123
+  orig: 60, 123
+  offset: 0, 0
+  index: -1
+V2_Skin/Aya/F_U_ARM
+  rotate: false
+  xy: 1512, 262
+  size: 50, 82
+  orig: 53, 83
+  offset: 2, 0
+  index: -1
+V2_Skin/Aya/F_U_LEG
+  rotate: true
+  xy: 1384, 651
+  size: 53, 104
+  orig: 53, 104
+  offset: 0, 0
+  index: -1
+V2_Skin/Aya/HEAD
+  rotate: false
+  xy: 707, 1052
+  size: 161, 144
+  orig: 191, 161
+  offset: 30, 11
+  index: -1
+V2_Skin/Aya/HIP
+  rotate: false
+  xy: 743, 550
+  size: 102, 107
+  orig: 102, 107
+  offset: 0, 0
+  index: -1
+V2_Skin/Blackbeard/BELT
+  rotate: true
+  xy: 1780, 1096
+  size: 104, 59
+  orig: 112, 67
+  offset: 8, 5
+  index: -1
+V2_Skin/Blackbeard/BODY
+  rotate: false
+  xy: 283, 9
+  size: 118, 135
+  orig: 120, 140
+  offset: 0, 5
+  index: -1
+V2_Skin/Blackbeard/B_COAT
+  rotate: true
+  xy: 870, 1049
+  size: 144, 158
+  orig: 153, 175
+  offset: 9, 9
+  index: -1
+V2_Skin/Blackbeard/B_COLLAR
+  rotate: true
+  xy: 1624, 345
+  size: 62, 59
+  orig: 239, 104
+  offset: 108, 45
+  index: -1
+V2_Skin/Blackbeard/B_L_ARM
+  rotate: false
+  xy: 507, 501
+  size: 58, 83
+  orig: 65, 102
+  offset: 3, 12
+  index: -1
+V2_Skin/Blackbeard/B_L_LEG
+  rotate: false
+  xy: 681, 507
+  size: 60, 124
+  orig: 60, 124
+  offset: 0, 0
+  index: -1
+V2_Skin/Blackbeard/B_U_ARM
+  rotate: true
+  xy: 1712, 551
+  size: 38, 82
+  orig: 38, 82
+  offset: 0, 0
+  index: -1
+V2_Skin/Blackbeard/B_U_LEG
+  rotate: true
+  xy: 1252, 451
+  size: 56, 104
+  orig: 56, 104
+  offset: 0, 0
+  index: -1
+V2_Skin/Blackbeard/F_DRESS
+  rotate: false
+  xy: 575, 1212
+  size: 130, 151
+  orig: 130, 163
+  offset: 0, 0
+  index: -1
+V2_Skin/Blackbeard/F_L_ARM
+  rotate: true
+  xy: 1656, 874
+  size: 50, 102
+  orig: 54, 111
+  offset: 0, 0
+  index: -1
+V2_Skin/Blackbeard/F_L_LEG
+  rotate: true
+  xy: 803, 285
+  size: 60, 123
+  orig: 60, 123
+  offset: 0, 0
+  index: -1
+V2_Skin/Blackbeard/F_U_ARM
+  rotate: false
+  xy: 1564, 262
+  size: 53, 82
+  orig: 53, 82
+  offset: 0, 0
+  index: -1
+V2_Skin/Blackbeard/F_U_LEG
+  rotate: false
+  xy: 1506, 818
+  size: 53, 104
+  orig: 53, 104
+  offset: 0, 0
+  index: -1
+V2_Skin/Blackbeard/HEAD
+  rotate: false
+  xy: 2, 1073
+  size: 214, 188
+  orig: 220, 238
+  offset: 0, 8
+  index: -1
+V2_Skin/DaVinci/BELT
+  rotate: false
+  xy: 1656, 1046
+  size: 118, 71
+  orig: 216, 130
+  offset: 46, 0
+  index: -1
+V2_Skin/DaVinci/BODY
+  rotate: false
+  xy: 298, 583
+  size: 119, 134
+  orig: 122, 142
+  offset: 0, 7
+  index: -1
+V2_Skin/DaVinci/B_COLLAR
+  rotate: false
+  xy: 544, 720
+  size: 82, 72
+  orig: 239, 104
+  offset: 99, 32
+  index: -1
+V2_Skin/DaVinci/B_L_ARM
+  rotate: false
+  xy: 799, 2
+  size: 54, 87
+  orig: 65, 102
+  offset: 9, 14
+  index: -1
+V2_Skin/DaVinci/B_L_LEG
+  rotate: true
+  xy: 728, 659
+  size: 60, 124
+  orig: 60, 124
+  offset: 0, 0
+  index: -1
+V2_Skin/DaVinci/B_U_ARM
+  rotate: true
+  xy: 1712, 591
+  size: 49, 85
+  orig: 53, 114
+  offset: 4, 14
+  index: -1
+V2_Skin/DaVinci/B_U_LEG
+  rotate: false
+  xy: 1253, 345
+  size: 56, 104
+  orig: 56, 104
+  offset: 0, 0
+  index: -1
+V2_Skin/DaVinci/F_DRESS
+  rotate: true
+  xy: 474, 233
+  size: 132, 120
+  orig: 146, 183
+  offset: 0, 41
+  index: -1
+V2_Skin/DaVinci/F_HAND
+  rotate: true
+  xy: 1505, 63
+  size: 44, 57
+  orig: 48, 60
+  offset: 4, 1
+  index: -1
+V2_Skin/DaVinci/F_L_ARM
+  rotate: false
+  xy: 1529, 563
+  size: 44, 90
+  orig: 45, 92
+  offset: 1, 2
+  index: -1
+V2_Skin/DaVinci/F_L_LEG
+  rotate: false
+  xy: 832, 160
+  size: 60, 123
+  orig: 60, 123
+  offset: 0, 0
+  index: -1
+V2_Skin/DaVinci/F_U_ARM
+  rotate: true
+  xy: 1168, 169
+  size: 61, 84
+  orig: 62, 96
+  offset: 0, 6
+  index: -1
+V2_Skin/DaVinci/F_U_LEG
+  rotate: true
+  xy: 1376, 541
+  size: 53, 104
+  orig: 53, 104
+  offset: 0, 0
+  index: -1
+V2_Skin/DaVinci/HEAD
+  rotate: true
+  xy: 707, 1198
+  size: 162, 163
+  orig: 176, 191
+  offset: 14, 13
+  index: -1
+V2_Skin/Eivo/BELT
+  rotate: false
+  xy: 298, 501
+  size: 110, 80
+  orig: 159, 95
+  offset: 28, 0
+  index: -1
+V2_Skin/Eivo/BODY
+  rotate: false
+  xy: 108, 358
+  size: 122, 141
+  orig: 122, 141
+  offset: 0, 0
+  index: -1
+V2_Skin/Eivo/B_COAT
+  rotate: false
+  xy: 699, 271
+  size: 102, 116
+  orig: 140, 160
+  offset: 19, 22
+  index: -1
+V2_Skin/Eivo/B_COLLAR
+  rotate: true
+  xy: 1447, 110
+  size: 49, 60
+  orig: 240, 105
+  offset: 109, 45
+  index: -1
+V2_Skin/Eivo/B_HAND
+  rotate: false
+  xy: 1549, 19
+  size: 34, 41
+  orig: 39, 49
+  offset: 3, 4
+  index: -1
+V2_Skin/Eivo/B_L_ARM
+  rotate: false
+  xy: 1619, 262
+  size: 48, 81
+  orig: 56, 87
+  offset: 5, 4
+  index: -1
+V2_Skin/Eivo/B_L_LEG
+  rotate: false
+  xy: 666, 633
+  size: 60, 124
+  orig: 60, 124
+  offset: 0, 0
+  index: -1
+V2_Skin/Eivo/B_U_ARM
+  rotate: false
+  xy: 1669, 263
+  size: 39, 80
+  orig: 47, 88
+  offset: 3, 0
+  index: -1
+V2_Skin/Eivo/B_U_LEG
+  rotate: true
+  xy: 1146, 451
+  size: 56, 104
+  orig: 56, 104
+  offset: 0, 0
+  index: -1
+V2_Skin/Eivo/F_COLLAR
+  rotate: false
+  xy: 567, 507
+  size: 112, 85
+  orig: 168, 86
+  offset: 41, 1
+  index: -1
+V2_Skin/Eivo/F_DRESS
+  rotate: false
+  xy: 463, 367
+  size: 108, 132
+  orig: 146, 182
+  offset: 19, 23
+  index: -1
+V2_Skin/Eivo/F_HAND
+  rotate: false
+  xy: 1364, 80
+  size: 46, 60
+  orig: 48, 60
+  offset: 2, 0
+  index: -1
+V2_Skin/Eivo/F_L_ARM
+  rotate: false
+  xy: 1672, 586
+  size: 38, 89
+  orig: 44, 89
+  offset: 5, 0
+  index: -1
+V2_Skin/Eivo/F_L_LEG
+  rotate: true
+  xy: 963, 320
+  size: 60, 123
+  orig: 60, 123
+  offset: 0, 0
+  index: -1
+V2_Skin/Eivo/F_U_ARM
+  rotate: true
+  xy: 1714, 698
+  size: 55, 84
+  orig: 73, 114
+  offset: 8, 16
+  index: -1
+V2_Skin/Eivo/F_U_LEG
+  rotate: true
+  xy: 1376, 596
+  size: 53, 104
+  orig: 53, 104
+  offset: 0, 0
+  index: -1
+V2_Skin/Eivo/HEAD
+  rotate: false
+  xy: 1363, 1528
+  size: 133, 148
+  orig: 248, 228
+  offset: 58, 45
+  index: -1
+V2_Skin/Eivo/SHAWLS
+  rotate: false
+  xy: 108, 669
+  size: 47, 167
+  orig: 58, 213
+  offset: 6, 23
+  index: -1
+V2_Skin/Gaspar/BELT
+  rotate: false
+  xy: 322, 1503
+  size: 206, 124
+  orig: 206, 124
+  offset: 0, 0
+  index: -1
+V2_Skin/Gaspar/BODY
+  rotate: false
+  xy: 1239, 1525
+  size: 122, 150
+  orig: 139, 161
+  offset: 8, 0
+  index: -1
+V2_Skin/Gaspar/B_COAT
+  rotate: false
+  xy: 419, 1318
+  size: 130, 183
+  orig: 216, 247
+  offset: 47, 0
+  index: -1
+V2_Skin/Gaspar/B_COLLAR
+  rotate: true
+  xy: 2, 597
+  size: 239, 104
+  orig: 239, 104
+  offset: 0, 0
+  index: -1
+V2_Skin/Gaspar/B_HAND
+  rotate: false
+  xy: 1471, 2
+  size: 38, 47
+  orig: 39, 49
+  offset: 1, 2
+  index: -1
+V2_Skin/Gaspar/B_L_ARM
+  rotate: false
+  xy: 1764, 413
+  size: 47, 77
+  orig: 65, 102
+  offset: 10, 15
+  index: -1
+V2_Skin/Gaspar/B_L_LEG
+  rotate: true
+  xy: 854, 657
+  size: 60, 124
+  orig: 60, 124
+  offset: 0, 0
+  index: -1
+V2_Skin/Gaspar/B_U_ARM
+  rotate: false
+  xy: 1720, 189
+  size: 38, 76
+  orig: 38, 82
+  offset: 0, 6
+  index: -1
+V2_Skin/Gaspar/B_U_LEG
+  rotate: false
+  xy: 1311, 345
+  size: 50, 104
+  orig: 56, 104
+  offset: 2, 0
+  index: -1
+V2_Skin/Gaspar/F_DRESS
+  rotate: true
+  xy: 544, 1550
+  size: 133, 200
+  orig: 217, 271
+  offset: 35, 0
+  index: -1
+V2_Skin/Gaspar/F_HAND
+  rotate: false
+  xy: 1645, 492
+  size: 45, 57
+  orig: 48, 60
+  offset: 3, 1
+  index: -1
+V2_Skin/Gaspar/F_L_ARM
+  rotate: true
+  xy: 1561, 884
+  size: 38, 93
+  orig: 58, 118
+  offset: 10, 13
+  index: -1
+V2_Skin/Gaspar/F_L_LEG
+  rotate: false
+  xy: 1780, 1202
+  size: 59, 125
+  orig: 60, 125
+  offset: 0, 0
+  index: -1
+V2_Skin/Gaspar/F_U_ARM
+  rotate: true
+  xy: 1457, 207
+  size: 53, 82
+  orig: 53, 82
+  offset: 0, 0
+  index: -1
+V2_Skin/Gaspar/F_U_LEG
+  rotate: true
+  xy: 1367, 487
+  size: 52, 104
+  orig: 53, 104
+  offset: 0, 0
+  index: -1
+V2_Skin/Gaspar/HEAD
+  rotate: false
+  xy: 2, 1546
+  size: 318, 293
+  orig: 318, 293
+  offset: 0, 0
+  index: -1
+V2_Skin/Kassandra/BELT
+  rotate: false
+  xy: 869, 781
+  size: 117, 76
+  orig: 233, 140
+  offset: 69, 13
+  index: -1
+V2_Skin/Kassandra/BODY
+  rotate: false
+  xy: 174, 573
+  size: 122, 144
+  orig: 126, 146
+  offset: 2, 0
+  index: -1
+V2_Skin/Kassandra/B_COAT
+  rotate: false
+  xy: 728, 153
+  size: 102, 116
+  orig: 140, 160
+  offset: 19, 22
+  index: -1
+V2_Skin/Kassandra/B_COLLAR
+  rotate: true
+  xy: 2, 357
+  size: 238, 104
+  orig: 238, 104
+  offset: 0, 0
+  index: -1
+V2_Skin/Kassandra/B_HAND
+  rotate: true
+  xy: 1610, 62
+  size: 34, 41
+  orig: 39, 49
+  offset: 3, 4
+  index: -1
+V2_Skin/Kassandra/B_L_ARM
+  rotate: true
+  xy: 1733, 363
+  size: 48, 73
+  orig: 65, 102
+  offset: 8, 12
+  index: -1
+V2_Skin/Kassandra/B_L_LEG
+  rotate: true
+  xy: 847, 595
+  size: 60, 124
+  orig: 60, 124
+  offset: 0, 0
+  index: -1
+V2_Skin/Kassandra/B_U_ARM
+  rotate: false
+  xy: 1710, 267
+  size: 31, 78
+  orig: 47, 88
+  offset: 7, 0
+  index: -1
+V2_Skin/Kassandra/B_U_LEG
+  rotate: false
+  xy: 1545, 656
+  size: 53, 103
+  orig: 56, 104
+  offset: 1, 1
+  index: -1
+V2_Skin/Kassandra/F_DRESS
+  rotate: false
+  xy: 1374, 1378
+  size: 125, 148
+  orig: 146, 182
+  offset: 8, 22
+  index: -1
+V2_Skin/Kassandra/F_HAND
+  rotate: false
+  xy: 1364, 18
+  size: 46, 60
+  orig: 48, 60
+  offset: 2, 0
+  index: -1
+V2_Skin/Kassandra/F_L_ARM
+  rotate: false
+  xy: 1575, 564
+  size: 48, 90
+  orig: 56, 114
+  offset: 5, 11
+  index: -1
+V2_Skin/Kassandra/F_L_LEG
+  rotate: false
+  xy: 894, 160
+  size: 60, 123
+  orig: 60, 123
+  offset: 0, 0
+  index: -1
+V2_Skin/Kassandra/F_U_ARM
+  rotate: false
+  xy: 1562, 408
+  size: 50, 82
+  orig: 53, 83
+  offset: 2, 0
+  index: -1
+V2_Skin/Kassandra/F_U_LEG
+  rotate: false
+  xy: 1490, 655
+  size: 53, 104
+  orig: 53, 104
+  offset: 0, 0
+  index: -1
+V2_Skin/Kassandra/HEAD
+  rotate: false
+  xy: 1414, 1237
+  size: 131, 139
+  orig: 248, 228
+  offset: 60, 46
+  index: -1
+V2_Skin/Kensa/BELT
+  rotate: false
+  xy: 1030, 1060
+  size: 113, 86
+  orig: 264, 159
+  offset: 83, 0
+  index: -1
+V2_Skin/Kensa/BODY
+  rotate: true
+  xy: 388, 1073
+  size: 136, 138
+  orig: 136, 157
+  offset: 0, 0
+  index: -1
+V2_Skin/Kensa/B_COLLAR
+  rotate: false
+  xy: 1204, 41
+  size: 51, 57
+  orig: 241, 105
+  offset: 109, 48
+  index: -1
+V2_Skin/Kensa/B_HAND
+  rotate: false
+  xy: 1723, 146
+  size: 34, 41
+  orig: 39, 49
+  offset: 3, 4
+  index: -1
+V2_Skin/Kensa/B_HOOD
+  rotate: true
+  xy: 257, 1211
+  size: 105, 195
+  orig: 105, 195
+  offset: 0, 0
+  index: -1
+V2_Skin/Kensa/B_L_ARM
+  rotate: true
+  xy: 1447, 161
+  size: 44, 73
+  orig: 65, 102
+  offset: 12, 12
+  index: -1
+V2_Skin/Kensa/B_L_LEG
+  rotate: true
+  xy: 743, 721
+  size: 60, 124
+  orig: 60, 124
+  offset: 0, 0
+  index: -1
+V2_Skin/Kensa/B_U_ARM
+  rotate: true
+  xy: 1760, 884
+  size: 34, 79
+  orig: 47, 88
+  offset: 6, 0
+  index: -1
+V2_Skin/Kensa/B_U_LEG
+  rotate: false
+  xy: 1201, 345
+  size: 50, 104
+  orig: 56, 104
+  offset: 2, 0
+  index: -1
+V2_Skin/Kensa/F_DRESS
+  rotate: true
+  xy: 2, 2
+  size: 138, 160
+  orig: 146, 182
+  offset: 0, 0
+  index: -1
+V2_Skin/Kensa/F_HAND
+  rotate: false
+  xy: 1727, 84
+  size: 45, 60
+  orig: 48, 60
+  offset: 3, 0
+  index: -1
+V2_Skin/Kensa/F_L_ARM
+  rotate: true
+  xy: 1734, 755
+  size: 38, 95
+  orig: 56, 114
+  offset: 10, 6
+  index: -1
+V2_Skin/Kensa/F_L_LEG
+  rotate: true
+  xy: 838, 347
+  size: 60, 123
+  orig: 60, 123
+  offset: 0, 0
+  index: -1
+V2_Skin/Kensa/F_U_ARM
+  rotate: false
+  xy: 1664, 409
+  size: 48, 81
+  orig: 53, 83
+  offset: 3, 0
+  index: -1
+V2_Skin/Kensa/F_U_LEG
+  rotate: true
+  xy: 1651, 820
+  size: 52, 104
+  orig: 53, 104
+  offset: 0, 0
+  index: -1
+V2_Skin/Kensa/HEAD
+  rotate: false
+  xy: 144, 870
+  size: 133, 201
+  orig: 248, 228
+  offset: 57, 15
+  index: -1
+V2_Skin/Kensa/HIP
+  rotate: false
+  xy: 578, 5
+  size: 104, 108
+  orig: 188, 179
+  offset: 42, 36
+  index: -1
+V2_Skin/MaryRead/BELT
+  rotate: true
+  xy: 1106, 755
+  size: 100, 60
+  orig: 264, 159
+  offset: 79, 36
+  index: -1
+V2_Skin/MaryRead/BODY
+  rotate: false
+  xy: 157, 719
+  size: 119, 149
+  orig: 136, 157
+  offset: 7, 0
+  index: -1
+V2_Skin/MaryRead/B_COLLAR
+  rotate: false
+  xy: 1557, 492
+  size: 46, 57
+  orig: 241, 105
+  offset: 119, 43
+  index: -1
+V2_Skin/MaryRead/B_HAND
+  rotate: false
+  xy: 1585, 19
+  size: 34, 41
+  orig: 39, 49
+  offset: 3, 4
+  index: -1
+V2_Skin/MaryRead/B_L_ARM
+  rotate: true
+  xy: 1522, 160
+  size: 44, 73
+  orig: 65, 102
+  offset: 12, 13
+  index: -1
+V2_Skin/MaryRead/B_L_LEG
+  rotate: true
+  xy: 1125, 922
+  size: 68, 127
+  orig: 71, 145
+  offset: 0, 10
+  index: -1
+V2_Skin/MaryRead/B_U_ARM
+  rotate: true
+  xy: 1760, 850
+  size: 32, 79
+  orig: 47, 88
+  offset: 6, 0
+  index: -1
+V2_Skin/MaryRead/B_U_LEG
+  rotate: false
+  xy: 1016, 213
+  size: 57, 105
+  orig: 58, 108
+  offset: 0, 2
+  index: -1
+V2_Skin/MaryRead/F_DRESS
+  rotate: false
+  xy: 1702, 1547
+  size: 131, 125
+  orig: 146, 182
+  offset: 0, 41
+  index: -1
+V2_Skin/MaryRead/F_HAND
+  rotate: false
+  xy: 1412, 48
+  size: 45, 60
+  orig: 48, 60
+  offset: 2, 0
+  index: -1
+V2_Skin/MaryRead/F_L_ARM
+  rotate: false
+  xy: 1518, 398
+  size: 42, 87
+  orig: 56, 114
+  offset: 10, 14
+  index: -1
+V2_Skin/MaryRead/F_L_LEG
+  rotate: true
+  xy: 413, 720
+  size: 72, 129
+  orig: 72, 148
+  offset: 0, 12
+  index: -1
+V2_Skin/MaryRead/F_U_ARM
+  rotate: false
+  xy: 1714, 416
+  size: 48, 81
+  orig: 53, 83
+  offset: 3, 0
+  index: -1
+V2_Skin/MaryRead/F_U_LEG
+  rotate: false
+  xy: 956, 213
+  size: 58, 105
+  orig: 62, 122
+  offset: 4, 8
+  index: -1
+V2_Skin/MaryRead/HEAD
+  rotate: true
+  xy: 872, 1195
+  size: 157, 162
+  orig: 248, 228
+  offset: 48, 32
+  index: -1
+V2_Skin/Murat/BODY
+  rotate: false
+  xy: 403, 16
+  size: 115, 132
+  orig: 139, 161
+  offset: 15, 18
+  index: -1
+V2_Skin/Murat/B_COAT
+  rotate: false
+  xy: 639, 807
+  size: 102, 117
+  orig: 180, 205
+  offset: 39, 44
+  index: -1
+V2_Skin/Murat/B_COLLAR
+  rotate: false
+  xy: 1571, 100
+  size: 53, 58
+  orig: 239, 104
+  offset: 105, 46
+  index: -1
+V2_Skin/Murat/B_HAND
+  rotate: true
+  xy: 1597, 160
+  size: 38, 48
+  orig: 39, 49
+  offset: 1, 1
+  index: -1
+V2_Skin/Blackbeard/B_HAND
+  rotate: true
+  xy: 1597, 160
+  size: 38, 48
+  orig: 39, 49
+  offset: 1, 1
+  index: -1
+V2_Skin/DaVinci/B_HAND
+  rotate: true
+  xy: 1597, 160
+  size: 38, 48
+  orig: 39, 49
+  offset: 1, 1
+  index: -1
+V2_Skin/Murat/B_L_ARM
+  rotate: false
+  xy: 1397, 142
+  size: 48, 72
+  orig: 65, 102
+  offset: 9, 17
+  index: -1
+V2_Skin/Murat/B_L_LEG
+  rotate: true
+  xy: 1276, 934
+  size: 66, 125
+  orig: 72, 146
+  offset: 0, 11
+  index: -1
+V2_Skin/Murat/B_U_ARM
+  rotate: false
+  xy: 1796, 492
+  size: 43, 77
+  orig: 72, 154
+  offset: 17, 36
+  index: -1
+V2_Skin/Murat/B_U_LEG
+  rotate: false
+  xy: 1271, 567
+  size: 56, 104
+  orig: 56, 104
+  offset: 0, 0
+  index: -1
+V2_Skin/Murat/F_DRESS
+  rotate: false
+  xy: 115, 207
+  size: 116, 149
+  orig: 140, 175
+  offset: 16, 26
+  index: -1
+V2_Skin/Murat/F_HAND
+  rotate: false
+  xy: 1459, 51
+  size: 44, 57
+  orig: 48, 60
+  offset: 4, 1
+  index: -1
+V2_Skin/Blackbeard/F_HAND
+  rotate: false
+  xy: 1459, 51
+  size: 44, 57
+  orig: 48, 60
+  offset: 4, 1
+  index: -1
+V2_Skin/Murat/F_L_ARM
+  rotate: false
+  xy: 963, 2
+  size: 43, 96
+  orig: 58, 118
+  offset: 8, 10
+  index: -1
+V2_Skin/Murat/F_L_LEG
+  rotate: true
+  xy: 1403, 926
+  size: 68, 125
+  orig: 69, 143
+  offset: 0, 10
+  index: -1
+V2_Skin/Murat/F_U_ARM
+  rotate: false
+  xy: 1257, 41
+  size: 60, 84
+  orig: 62, 96
+  offset: 2, 6
+  index: -1
+V2_Skin/Murat/F_U_LEG
+  rotate: true
+  xy: 956, 155
+  size: 56, 105
+  orig: 62, 121
+  offset: 4, 8
+  index: -1
+V2_Skin/Murat/HEAD
+  rotate: true
+  xy: 544, 1685
+  size: 154, 221
+  orig: 318, 293
+  offset: 88, 62
+  index: -1
+V2_Skin/Murat/HIP
+  rotate: false
+  xy: 322, 1629
+  size: 220, 210
+  orig: 220, 210
+  offset: 0, 0
+  index: -1
+Ysabel/BELT
+  rotate: true
+  xy: 1403, 258
+  size: 86, 52
+  orig: 95, 57
+  offset: 9, 4
+  index: -1
+Ysabel/BODY
+  rotate: false
+  xy: 1656, 926
+  size: 102, 118
+  orig: 102, 118
+  offset: 0, 0
+  index: -1
+Ysabel/B_COAT
+  rotate: false
+  xy: 677, 389
+  size: 101, 116
+  orig: 101, 116
+  offset: 0, 0
+  index: -1
+Ysabel/B_HAND
+  rotate: false
+  xy: 1511, 17
+  size: 36, 44
+  orig: 39, 49
+  offset: 2, 2
+  index: -1
+Ysabel/B_HOOD
+  rotate: true
+  xy: 279, 819
+  size: 72, 135
+  orig: 72, 135
+  offset: 0, 0
+  index: -1
+Ysabel/B_L_ARM
+  rotate: false
+  xy: 1412, 399
+  size: 56, 86
+  orig: 56, 86
+  offset: 0, 0
+  index: -1
+Ysabel/B_L_LEG
+  rotate: true
+  xy: 743, 783
+  size: 60, 124
+  orig: 60, 124
+  offset: 0, 0
+  index: -1
+Ysabel/B_U_ARM
+  rotate: false
+  xy: 1801, 290
+  size: 38, 71
+  orig: 38, 71
+  offset: 0, 0
+  index: -1
+Ysabel/B_U_LEG
+  rotate: false
+  xy: 1298, 240
+  size: 56, 103
+  orig: 56, 103
+  offset: 0, 0
+  index: -1
+Ysabel/F_DRESS
+  rotate: false
+  xy: 1162, 1224
+  size: 124, 140
+  orig: 136, 170
+  offset: 12, 14
+  index: -1
+Ysabel/F_HOOD
+  rotate: true
+  xy: 713, 1362
+  size: 159, 182
+  orig: 159, 182
+  offset: 0, 0
+  index: -1
+Ysabel/F_L_ARM
+  rotate: false
+  xy: 1482, 558
+  size: 45, 91
+  orig: 45, 91
+  offset: 0, 0
+  index: -1
+Ysabel/F_L_LEG
+  rotate: true
+  xy: 838, 409
+  size: 60, 123
+  orig: 60, 123
+  offset: 0, 0
+  index: -1
+Ysabel/F_U_LEG
+  rotate: false
+  xy: 1329, 660
+  size: 53, 104
+  orig: 53, 104
+  offset: 0, 0
+  index: -1
+Ysabel/HEAD
+  rotate: false
+  xy: 419, 586
+  size: 121, 132
+  orig: 121, 132
+  offset: 0, 0
+  index: -1
+images/BELT
+  rotate: true
+  xy: 855, 4
+  size: 96, 58
+  orig: 96, 58
+  offset: 0, 0
+  index: -1
+images/BODY
+  rotate: true
+  xy: 1659, 1224
+  size: 103, 119
+  orig: 103, 119
+  offset: 0, 0
+  index: -1
+images/B_COAT
+  rotate: false
+  xy: 573, 389
+  size: 102, 116
+  orig: 102, 116
+  offset: 0, 0
+  index: -1
+images/B_COLLAR
+  rotate: true
+  xy: 1799, 571
+  size: 92, 40
+  orig: 92, 40
+  offset: 0, 0
+  index: -1
+images/B_HAND
+  rotate: true
+  xy: 1403, 216
+  size: 40, 50
+  orig: 40, 50
+  offset: 0, 0
+  index: -1
+images/B_HOOD
+  rotate: false
+  xy: 528, 1073
+  size: 73, 136
+  orig: 73, 136
+  offset: 0, 0
+  index: -1
+images/B_L_ARM
+  rotate: true
+  xy: 1561, 826
+  size: 56, 88
+  orig: 56, 88
+  offset: 0, 0
+  index: -1
+images/B_L_LEG
+  rotate: true
+  xy: 115, 144
+  size: 61, 124
+  orig: 61, 124
+  offset: 0, 0
+  index: -1
+images/B_U_ARM
+  rotate: false
+  xy: 1760, 222
+  size: 39, 72
+  orig: 39, 72
+  offset: 0, 0
+  index: -1
+images/B_U_LEG
+  rotate: true
+  xy: 1008, 41
+  size: 57, 104
+  orig: 57, 104
+  offset: 0, 0
+  index: -1
+images/F_COLLAR
+  rotate: false
+  xy: 1363, 346
+  size: 64, 34
+  orig: 64, 34
+  offset: 0, 0
+  index: -1
+images/F_DRESS
+  rotate: true
+  xy: 427, 794
+  size: 108, 132
+  orig: 108, 135
+  offset: 0, 0
+  index: -1
+images/F_HAND
+  rotate: true
+  xy: 1509, 109
+  size: 49, 60
+  orig: 49, 60
+  offset: 0, 0
+  index: -1
+images/F_HOOD
+  rotate: false
+  xy: 551, 1365
+  size: 160, 183
+  orig: 160, 183
+  offset: 0, 0
+  index: -1
+images/F_L_ARM
+  rotate: false
+  xy: 1281, 673
+  size: 46, 92
+  orig: 46, 92
+  offset: 0, 0
+  index: -1
+images/F_L_LEG
+  rotate: true
+  xy: 847, 533
+  size: 60, 124
+  orig: 60, 124
+  offset: 0, 0
+  index: -1
+images/F_SHOULDER
+  rotate: false
+  xy: 1429, 346
+  size: 62, 49
+  orig: 62, 50
+  offset: 0, 0
+  index: -1
+images/F_U_ARM
+  rotate: true
+  xy: 1714, 642
+  size: 54, 83
+  orig: 54, 83
+  offset: 0, 0
+  index: -1
+images/F_U_LEG
+  rotate: true
+  xy: 1256, 127
+  size: 54, 104
+  orig: 54, 104
+  offset: 0, 0
+  index: -1
+images/HEAD
+  rotate: false
+  xy: 1576, 1543
+  size: 124, 134
+  orig: 124, 134
+  offset: 0, 0
+  index: -1
+images/SHAWLS
+  rotate: false
+  xy: 1071, 1352
+  size: 46, 166
+  orig: 46, 166
+  offset: 0, 0
+  index: -1

@@ -1,14 +1,20 @@
 using UnityEngine;
 using Random = UnityEngine.Random;
+using Spine.Unity;
+using System;
+using System.Data;
 
-namespace MiniGames {
+namespace MiniGames
+{
     /// <summary>
     /// This is a pretty filthy script. I was just arbitrarily adding to it as I went.
     /// You won't find any programming prowess here.
     /// This is a supplementary script to help with effects and animation. Basically a juice factory.
     /// </summary>
-    public class PlayerAnimator : MonoBehaviour {
-        [SerializeField] private Animator _anim;
+    public class PlayerAnimator : MonoBehaviour
+    {
+        // [SerializeField] private Animator _anim;
+        [SerializeField] private SkeletonAnimation _spine;
         [SerializeField] private AudioSource _source;
         [SerializeField] private LayerMask _groundMask;
         [SerializeField] private ParticleSystem _jumpParticles, _launchParticles;
@@ -19,6 +25,16 @@ namespace MiniGames {
         [SerializeField, Range(1f, 3f)] private float _maxIdleSpeed = 2;
         [SerializeField] private float _maxParticleFallSpeed = -40;
 
+        [SpineAnimation]
+        public string runAnimationName;
+        [SpineAnimation]
+        public string idleAnimationName;
+
+        [SpineAnimation]
+        public string jumpnimationName;
+
+        [SpineAnimation]
+        public string ladingAnimation;
         private IPlayerController _player;
         private bool _playerGrounded;
         private ParticleSystem.MinMaxGradient _currentGradient;
@@ -27,9 +43,11 @@ namespace MiniGames {
         void Awake()
         {
             _player = GetComponentInParent<IPlayerController>();
+            SetAniamtion(idleAnimationName,true);
         }
 
-        void Update() {
+        void Update()
+        {
             if (_player == null) return;
 
             // Flip the sprite
@@ -37,24 +55,38 @@ namespace MiniGames {
 
             // Lean while running
             var targetRotVector = new Vector3(0, 0, Mathf.Lerp(-_maxTilt, _maxTilt, Mathf.InverseLerp(-1, 1, _player.Input.X)));
-            _anim.transform.rotation = Quaternion.RotateTowards(_anim.transform.rotation, Quaternion.Euler(targetRotVector), _tiltSpeed * Time.deltaTime);
+            _spine.transform.rotation = Quaternion.RotateTowards(_spine.transform.rotation, Quaternion.Euler(targetRotVector), _tiltSpeed * Time.deltaTime);
+            if (_player.Grounded && !_player.JumpingThisFrame && !_player.LandingThisFrame)
+            {
+                if (_player.Input.X != 0){
+                    SetAniamtion(runAnimationName, true);
+                }
+                else
+                {
+                    SetAniamtion(idleAnimationName, true);
+                }
+            }
 
             // Speed up idle while running
-            _anim.SetFloat(IdleSpeedKey, Mathf.Lerp(1, _maxIdleSpeed, Mathf.Abs(_player.Input.X)));
+            // _anim.SetFloat(IdleSpeedKey, Mathf.Lerp(1, _maxIdleSpeed, Mathf.Abs(_player.Input.X)));
 
             // Splat
-            if (_player.LandingThisFrame) {
-                _anim.SetTrigger(GroundedKey);
+            if (_player.LandingThisFrame)
+            {
+                SetAniamtion(ladingAnimation, false);
                 _source.PlayOneShot(_footsteps[Random.Range(0, _footsteps.Length)]);
             }
 
             // Jump effects
-            if (_player.JumpingThisFrame) {
-                _anim.SetTrigger(JumpKey);
-                _anim.ResetTrigger(GroundedKey);
+            if (_player.JumpingThisFrame)
+            {
+                // _spine.AnimationState.SetAnimation(0,jumpnimationName,true);
+                SetAniamtion(jumpnimationName, false);
+                //_anim.ResetTrigger(GroundedKey);
 
                 // Only play particles when grounded (avoid coyote)
-                if (_player.Grounded) {
+                if (_player.Grounded)
+                {
                     SetColor(_jumpParticles);
                     SetColor(_launchParticles);
                     _jumpParticles.Play();
@@ -62,21 +94,24 @@ namespace MiniGames {
             }
 
             // Play landing effects and begin ground movement effects
-            if (!_playerGrounded && _player.Grounded) {
+            if (!_playerGrounded && _player.Grounded)
+            {
                 _playerGrounded = true;
                 _moveParticles.Play();
                 _landParticles.transform.localScale = Vector3.one * Mathf.InverseLerp(0, _maxParticleFallSpeed, _movement.y);
                 SetColor(_landParticles);
                 _landParticles.Play();
             }
-            else if (_playerGrounded && !_player.Grounded) {
+            else if (_playerGrounded && !_player.Grounded)
+            {
                 _playerGrounded = false;
                 _moveParticles.Stop();
             }
 
             // Detect ground color
             var groundHit = Physics2D.Raycast(transform.position, Vector3.down, 2, _groundMask);
-            if (groundHit && groundHit.transform.TryGetComponent(out SpriteRenderer r)) {
+            if (groundHit && groundHit.transform.TryGetComponent(out SpriteRenderer r))
+            {
                 _currentGradient = new ParticleSystem.MinMaxGradient(r.color * 0.9f, r.color * 1.2f);
                 SetColor(_moveParticles);
             }
@@ -84,15 +119,18 @@ namespace MiniGames {
             _movement = _player.RawMovement; // Previous frame movement is more valuable
         }
 
-        private void OnDisable() {
+        private void OnDisable()
+        {
             _moveParticles.Stop();
         }
 
-        private void OnEnable() {
+        private void OnEnable()
+        {
             _moveParticles.Play();
         }
 
-        void SetColor(ParticleSystem ps) {
+        void SetColor(ParticleSystem ps)
+        {
             var main = ps.main;
             main.startColor = _currentGradient;
         }
@@ -104,5 +142,21 @@ namespace MiniGames {
         private static readonly int JumpKey = Animator.StringToHash("Jump");
 
         #endregion
+        private void SetAniamtion(String s, bool loop)
+        {
+            if (lastAmination.Equals(s))
+            {
+                return;
+            }
+            lastAmination = s;
+            _spine.AnimationState.SetAnimation(0, s, loop);
+        }
+        private void AddAnimation(String s, bool loop)
+        {
+            _spine.AnimationState.AddAnimation(0, s, loop,0);
+        }
+        private String lastAmination = "";
     }
+
+
 }

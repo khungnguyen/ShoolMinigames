@@ -18,7 +18,7 @@ public class GameManager : MonoBehaviour
     void Awake() {
         inst = this;
     }
-    private void Start() {
+    void Start() {
         _playerController.SetOnPlayerFinishMap(OnPlayerFinishMap);
     }
     private void OnPlayerFinishMap(GameEnum.LevelType nextLevel) {
