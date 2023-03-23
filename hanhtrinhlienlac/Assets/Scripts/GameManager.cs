@@ -9,7 +9,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] LevelManager _levelManager;
     [SerializeField] CinemachineVirtualCamera _cinemachineCamera;
     [SerializeField] CinemachineConfiner _cinemachineConfiner;
-    [SerializeField] PlayerController _playerController;
+    [SerializeField] HeroController _playerController;
 
     public static GameManager inst;
 

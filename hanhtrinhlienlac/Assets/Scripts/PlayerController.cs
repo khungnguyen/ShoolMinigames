@@ -24,8 +24,8 @@ namespace MiniGames
         public bool LandingThisFrame { get; private set; }
         public Vector3 RawMovement { get; private set; }
         public bool Grounded => _colDown;
+        public bool isDie = false;
 
-        private System.Action<GameEnum.LevelType> _onLevelFinish;
 
         private Vector3 _lastPosition;
         private float _currentHorizontalSpeed, _currentVerticalSpeed;
@@ -37,7 +37,7 @@ namespace MiniGames
         public bool enableInput = true;
         protected void Update()
         {
-            if (!_active) return;
+            if (!_active || isDie) return;
             // Calculate velocity
             Velocity = (transform.position - _lastPosition) / Time.deltaTime;
             _lastPosition = transform.position;
@@ -56,24 +56,13 @@ namespace MiniGames
 
         #region Gather Input
 
-        private void GatherInput()
+        public virtual void GatherInput()
         {
-            if (enableInput)
-            {
-                Input = new FrameInput
-                {
-                    JumpDown = UnityEngine.Input.GetButtonDown("Jump"),
-                    JumpUp = UnityEngine.Input.GetButtonUp("Jump"),
-                    X = UnityEngine.Input.GetAxisRaw("Horizontal")
-                };
-                if (Input.JumpDown)
-                {
-                    _lastJumpPressed = Time.time;
-                }
-            }
-
         }
-
+        public virtual void death()
+        {
+            isDie = true;
+        }
         #endregion
 
         #region Collisions
@@ -123,7 +112,7 @@ namespace MiniGames
             // This is crying out for some kind of refactor. 
             var b = new Bounds(transform.position, _characterBounds.size);
 
-            _raysDown = new RayRange(b.min.x + _rayBuffer, b.min.y, b.max.x - _rayBuffer, b.min.y, Vector2.down);
+            _raysDown = new RayRange(b.min.x , b.min.y, b.max.x, b.min.y, Vector2.down);
             _raysUp = new RayRange(b.min.x + _rayBuffer, b.max.y, b.max.x - _rayBuffer, b.max.y, Vector2.up);
             _raysLeft = new RayRange(b.min.x, b.min.y + _rayBuffer + 0.2f, b.min.x, b.max.y - _rayBuffer, Vector2.left);
             _raysRight = new RayRange(b.max.x, b.min.y + _rayBuffer + 0.2f, b.max.x, b.max.y - _rayBuffer, Vector2.right);
@@ -245,9 +234,9 @@ namespace MiniGames
         private bool _coyoteUsable;
         private bool _endedJumpEarly = true;
         private float _apexPoint; // Becomes 1 at the apex of a jump
-        private float _lastJumpPressed;
+        protected float lastJumpPressed;
         private bool CanUseCoyote => _coyoteUsable && !_colDown && _timeLeftGrounded + _coyoteTimeThreshold > Time.time;
-        private bool HasBufferedJump => _colDown && _lastJumpPressed + _jumpBuffer > Time.time;
+        private bool HasBufferedJump => _colDown && lastJumpPressed + _jumpBuffer > Time.time;
 
         private void CalculateJumpApex()
         {
@@ -347,37 +336,6 @@ namespace MiniGames
         public void SetPosition(Vector2 v)
         {
             transform.position = v;
-        }
-        void OnCollisionEnter2D(Collision2D other)
-        {
-            Debug.LogError("OnCollisionEnter" + other);
-        }
-        private void OnTriggerEnter2D(Collider2D other)
-        {
-            Debug.LogError("OnTriggerEnter2D" + other.tag);
-            if (other.CompareTag("EndPoint"))
-            {
-                if (_onLevelFinish != null)
-                {
-                    var next = other.GetComponent<MarkedPoint>().nextLevel;
-                    _onLevelFinish.Invoke(next);
-                }
-
-            }
-        }
-        public void SetOnPlayerFinishMap(Action<GameEnum.LevelType> callback)
-        {
-            _onLevelFinish = callback;
-        }
-        public void EnableInput(bool e) {
-            enableInput = e;
-            if(!e) {
-                Input = new FrameInput{
-                    JumpDown = false,
-                    JumpUp = false,
-                    X = 0f
-                };
-            }
         }
     }
 }
