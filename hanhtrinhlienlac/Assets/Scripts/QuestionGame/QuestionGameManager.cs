@@ -10,6 +10,7 @@ public class QuestionGameManager : MonoBehaviour
     [SerializeField] private Transform answersContainer;
     [SerializeField] private GameObject answerPrefab;
     [SerializeField] private Button submitBtn;
+    [SerializeField] private ResultPopup resultPopup;
     private Color submitBtnColorEnabled;
 
     private Question curQuestion;
@@ -29,6 +30,7 @@ public class QuestionGameManager : MonoBehaviour
     }
 
     public void ShowNextQuestion() {
+        HideResultPopup();
         SetSubmitButtonEnable(false);
 
         curQuestion = QuestionBank.Inst.questions[0];
@@ -41,6 +43,7 @@ public class QuestionGameManager : MonoBehaviour
             var answerItemUI = answersContainer.GetChild(idx).GetComponent<AnswerItemUI>();
             answerItemUI.gameObject.SetActive(true);
             answerItemUI.SetData(idx, curQuestion.answers[idx].text, OnAnswerSelected);
+            answerItemUI.ResetSelection();
         }
         // Deactivate unused answer slots
         for (; idx < answersContainer.childCount; idx++) {
@@ -61,7 +64,9 @@ public class QuestionGameManager : MonoBehaviour
 
     public void OnSubmitBtnClicked()
     {
-        Debug.Log("Your answer is " + curQuestion.answers[selectedAnswerIndex].value);
+        bool result = curQuestion.answers[selectedAnswerIndex].value;
+        Debug.Log("Your answer is " + result);
+        ShowResultPopup(result);
     }
 
     private void SetSubmitButtonEnable(bool enable)
@@ -69,5 +74,14 @@ public class QuestionGameManager : MonoBehaviour
         submitBtn.enabled = enable;
         var bgImage = submitBtn.GetComponent<Image>();
         bgImage.color = enable ? submitBtnColorEnabled : Color.gray;
+    }
+
+    private void ShowResultPopup(bool result)
+    {
+        resultPopup.Show(result);
+    }
+
+    private void HideResultPopup() {
+        resultPopup.Hide();
     }
 }
