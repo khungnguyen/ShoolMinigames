@@ -1,0 +1,27 @@
+{
+    "version": "1.0.0",
+    "questions": [
+        {
+            "allowShuffle": true,
+            "text": "Hội Nhi Đồng Cứu quốc ra đời tại đâu vào thời gian nào?",
+            "answers": [
+                {
+                    "value": true,
+                    "text": "Tại thôn Nà Mạ, xã Trường Hà, huyện Hà Quảng, tỉnh Cao Bằng, vào ngày 15/5/1941"
+                },
+                {
+                    "value": false,
+                    "text": "Tại thôn Nà Mạ, xã Trường Hà, huyện Pắc Pó, tỉnh Cao Bằng, vào ngày 15/5/1941"
+                },
+                {
+                    "value": false,
+                    "text": "Tại thôn Trường Hà, xã Đào Quản, huyện Hà Quảng, tỉnh Cao Bằng, vào ngày 15/5/1940"
+                },
+                {
+                    "value": false,
+                    "text": "Tại thôn Nà Mạ, xã Trường Hà, huyện Hà Quảng, tỉnh Cao Bằng, vào ngày 15/5/1940"
+                }
+            ]
+        }
+    ]
+}
