@@ -234,7 +234,7 @@ MonoBehaviour:
   m_fontWeight: 400
   m_enableAutoSizing: 1
   m_fontSizeMin: 18
-  m_fontSizeMax: 72
+  m_fontSizeMax: 46
   m_fontStyle: 0
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 512
@@ -365,7 +365,6 @@ MonoBehaviour:
   idTMPro: {fileID: 8202215866353874128}
   textTMPro: {fileID: 8202215867416063197}
   bgImage: {fileID: 8202215867450220481}
-  bgColorDefault: {r: 0.08627451, g: 0.1254902, b: 0.22745098, a: 1}
   bgColorSelected: {r: 0.4509804, g: 0.8039216, b: 0.90588236, a: 1}
 --- !u!1 &8202215867640344279
 GameObject:

@@ -10,4 +10,5 @@ public class Question
     public bool allowShuffle;
     public string text;
     public Question.Answer[] answers;
+    public string note;
 }

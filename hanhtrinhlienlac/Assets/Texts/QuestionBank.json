@@ -21,7 +21,108 @@
                     "value": false,
                     "text": "Tại thôn Nà Mạ, xã Trường Hà, huyện Hà Quảng, tỉnh Cao Bằng, vào ngày 15/5/1940"
                 }
-            ]
+            ],
+            "note": null
+        },
+        {
+            "allowShuffle": true,
+            "text": "Ngoài anh Kim Đồng, bốn thành viên còn lại của Hội Nhi đồng Cứu quốc là những ai?",
+            "answers": [
+                {
+                    "value": false,
+                    "text": "Cao Sơn, Thủy Tiên, Thu Thủy, Thanh Minh"
+                },
+                {
+                    "value": false,
+                    "text": "Cao Sơn, Thùy Tiên, Thanh Thúy, Thanh Minh"
+                },
+                {
+                    "value": false,
+                    "text": "Cao Minh, Thủy Tiên, Thanh Thủy, Thanh Sơn"
+                },
+                {
+                    "value": true,
+                    "text": "Cao Minh, Thủy Tiên, Thanh Thủy, Thanh Sơn"
+                }
+            ],
+            "note": null
+        },
+        {
+            "allowShuffle": true,
+            "text": "Giải pháp của anh Kim Đồng để cất giữ tài liệu an toàn nhất",
+            "answers": [
+                {
+                    "value": false,
+                    "text": "[Hình một cái mũ]"
+                },
+                {
+                    "value": false,
+                    "text": "[Hình túi áo]"
+                },
+                {
+                    "value": false,
+                    "text": "[Hình giỏ cá]"
+                },
+                {
+                    "value": true,
+                    "text": "[Hình cái cần câu]"
+                }
+            ],
+            "note": "Cách của anh Kim Đồng: đục thủng một đốt ở gốc cần câu, cho tài liệu vào và trét đất kín lại."
+        },
+        {
+            "allowShuffle": true,
+            "text": "Các thành viên Hội Nhi đồng Cứu quốc đã từng dẫn đường cho một vị lãnh đạo cấp cao của nước ta, Người đó là ai?",
+            "answers": [
+                {
+                    "value": true,
+                    "text": "Bác Hồ Chí Minh"
+                },
+                {
+                    "value": false,
+                    "text": "Bác Tôn Đức Thắng"
+                },
+                {
+                    "value": false,
+                    "text": "Bác Võ Nguyên Giáp"
+                },
+                {
+                    "value": false,
+                    "text": "Bác Lê Duẩn"
+                }
+            ],
+            "note": null
+        },
+        {
+            "allowShuffle": true,
+            "text": "Kim Đồng chọn giải pháp nào sau đây để bảo vệ an toàn cho cán bộ cách mạng?",
+            "answers": [
+                {
+                    "value": false,
+                    "text": "Bảo Cao Sơn chạy về báo cho mọi người biết"
+                },
+                {
+                    "value": false,
+                    "text": "Kim Đồng đích thân báo cho mọi người biết"
+                },
+                {
+                    "value": false,
+                    "text": "Kim Đồng chạy đi hướng khác, đánh lạc hướng quân địch, chấp nhận hi sinh"
+                },
+                {
+                    "value": false,
+                    "text": "Bảo Cao Sơn chạy đánh lạc hướng quân địch"
+                },
+                {
+                    "value": true,
+                    "text": "A & C"
+                },
+                {
+                    "value": false,
+                    "text": "B & D"
+                }
+            ],
+            "note": null
         }
     ]
 }

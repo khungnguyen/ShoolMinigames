@@ -13,6 +13,7 @@ public class QuestionGameManager : MonoBehaviour
     [SerializeField] private ResultPopup resultPopup;
     private Color submitBtnColorEnabled;
 
+    private int curQuestionIndex = -1;
     private Question curQuestion;
     private int selectedAnswerIndex = -1;
 
@@ -33,7 +34,12 @@ public class QuestionGameManager : MonoBehaviour
         HideResultPopup();
         SetSubmitButtonEnable(false);
 
-        curQuestion = QuestionBank.Inst.questions[0];
+        curQuestionIndex++;
+        if (curQuestionIndex >= QuestionBank.Inst.questions.Length)
+        {
+            curQuestionIndex = 0; // Temporarily loop
+        }
+        curQuestion = QuestionBank.Inst.questions[curQuestionIndex];
 
         questionTMPro.text = curQuestion.text;
         
