@@ -9,6 +9,8 @@ public class QuestionGameManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI questionTMPro;
     [SerializeField] private Transform answersContainer;
     [SerializeField] private GameObject answerPrefab;
+    [SerializeField] private Button submitBtn;
+    private Color submitBtnColorEnabled;
 
     private Question curQuestion;
     private int selectedAnswerIndex = -1;
@@ -16,6 +18,7 @@ public class QuestionGameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        submitBtnColorEnabled = submitBtn.GetComponent<Image>().color;
         ShowNextQuestion();
     }
 
@@ -26,6 +29,8 @@ public class QuestionGameManager : MonoBehaviour
     }
 
     public void ShowNextQuestion() {
+        SetSubmitButtonEnable(false);
+
         curQuestion = QuestionBank.Inst.questions[0];
 
         questionTMPro.text = curQuestion.text;
@@ -51,10 +56,18 @@ public class QuestionGameManager : MonoBehaviour
                 answersContainer.GetChild(i).GetComponent<AnswerItemUI>().ResetSelection();
             }
         }
+        SetSubmitButtonEnable(true);
     }
 
     public void OnSubmitBtnClicked()
     {
         Debug.Log("Your answer is " + curQuestion.answers[selectedAnswerIndex].value);
+    }
+
+    private void SetSubmitButtonEnable(bool enable)
+    {
+        submitBtn.enabled = enable;
+        var bgImage = submitBtn.GetComponent<Image>();
+        bgImage.color = enable ? submitBtnColorEnabled : Color.gray;
     }
 }
