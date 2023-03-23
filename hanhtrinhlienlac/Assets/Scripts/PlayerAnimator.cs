@@ -35,21 +35,34 @@ namespace MiniGames
 
         [SpineAnimation]
         public string ladingAnimation;
-        private IPlayerController _player;
+
+        [SpineAnimation]
+        public string sitOnTheOxAnimation;
+        
+        [SpineAnimation]
+        public string deathAnimation;
+        private HeroController _player;
         private bool _playerGrounded;
         private ParticleSystem.MinMaxGradient _currentGradient;
         private Vector2 _movement;
 
         void Awake()
         {
-            _player = GetComponentInParent<IPlayerController>();
+            _player = GetComponentInParent<HeroController>();
             SetAniamtion(idleAnimationName,true);
         }
 
         void Update()
         {
             if (_player == null) return;
-
+            if(_player.rideTheOx) {
+                SetAniamtion(sitOnTheOxAnimation,false);
+                return;
+            }
+            if(_player.isDie) {
+                SetAniamtion(deathAnimation,false);
+                return;
+            }
             // Flip the sprite
             if (_player.Input.X != 0) transform.localScale = new Vector3(_player.Input.X > 0 ? 1 : -1, 1, 1);
 
