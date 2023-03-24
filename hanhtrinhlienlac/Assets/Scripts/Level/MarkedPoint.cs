@@ -9,5 +9,5 @@ public class MarkedPoint : ObjectBase
      //   GetComponent<SpriteRenderer>().enabled = false;
     }
  public GameEnum.PointType type;
-  public GameEnum.LevelType nextLevel;
+ public GameEnum.LevelType nextLevel;
 }

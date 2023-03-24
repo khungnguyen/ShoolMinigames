@@ -12,7 +12,10 @@ public class HeroController : PlayerController
     public bool rideTheOx = false;
     public bool godMode = false;
 
-    private System.Action<GameEnum.LevelType> _onLevelFinish;
+    private MarkedPoint _revivePoint;
+    public System.Action<GameEnum.LevelType> OnLevelFinish;
+    public System.Action<MarkedPoint> OnPlayerDeath;
+    public System.Action<MarkedPoint> OnPlayerRevive;
 
     public void RideTheOx(bool enable)
     {
@@ -24,7 +27,9 @@ public class HeroController : PlayerController
     {
         EnableInput(false);
         base.death();
+        OnPlayerDeath?.Invoke(_revivePoint);
     }
+    
     public void GodMode(bool enable) {
         godMode = enable;
     }
@@ -34,20 +39,22 @@ public class HeroController : PlayerController
        // Debug.LogError("OnTriggerEnter2D" + other.tag);
         if (other.CompareTag("EndPoint"))
         {
-            if (_onLevelFinish != null)
+            if (OnLevelFinish != null)
             {
                 var next = other.GetComponent<MarkedPoint>().nextLevel;
-                _onLevelFinish.Invoke(next);
+                OnLevelFinish.Invoke(next);
             }
 
         }
         else if(other.CompareTag("Obstacle")) {
+            _revivePoint = other.GetComponent<Obstacle>()?.revivePoint;
             death();
+
         }
     }
     public void SetOnPlayerFinishMap(Action<GameEnum.LevelType> callback)
     {
-        _onLevelFinish = callback;
+        OnLevelFinish = callback;
     }
     public void EnableInput(bool e)
     {
@@ -81,5 +88,17 @@ public class HeroController : PlayerController
     }
     void Update() {
         base.Update();
+    }
+    public void Revive(MarkedPoint point) {
+        if(point != null) {
+            SetPosition(point.getPosition());
+            isDie = false;
+             EnableInput(true);
+             point = null;
+        }
+    }
+    public void NotifyRevive() {
+        OnPlayerRevive.Invoke(_revivePoint);
+        Revive(_revivePoint);
     }
 }

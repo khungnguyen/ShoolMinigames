@@ -3,6 +3,8 @@ using Random = UnityEngine.Random;
 using Spine.Unity;
 using System;
 using System.Data;
+using System.Linq.Expressions;
+using Spine;
 
 namespace MiniGames
 {
@@ -38,7 +40,7 @@ namespace MiniGames
 
         [SpineAnimation]
         public string sitOnTheOxAnimation;
-        
+
         [SpineAnimation]
         public string deathAnimation;
         private HeroController _player;
@@ -46,21 +48,33 @@ namespace MiniGames
         private ParticleSystem.MinMaxGradient _currentGradient;
         private Vector2 _movement;
 
+        public enum AnimationState
+        {
+            IDLE,
+            JUMP,
+            LANDING,
+            RUN,
+            RIDE_OX,
+            DIE
+        }
+
         void Awake()
         {
             _player = GetComponentInParent<HeroController>();
-            SetAniamtion(idleAnimationName,true);
+            SetAnimationState(AnimationState.IDLE);
         }
 
         void Update()
         {
             if (_player == null) return;
-            if(_player.rideTheOx) {
-                SetAniamtion(sitOnTheOxAnimation,false);
+            if (_player.rideTheOx)
+            {
+                SetAnimationState(AnimationState.RIDE_OX);
                 return;
             }
-            if(_player.isDie) {
-                SetAniamtion(deathAnimation,false);
+            if (_player.isDie)
+            {
+                SetAnimationState(AnimationState.DIE, false);
                 return;
             }
             // Flip the sprite
@@ -71,12 +85,13 @@ namespace MiniGames
             _spine.transform.rotation = Quaternion.RotateTowards(_spine.transform.rotation, Quaternion.Euler(targetRotVector), _tiltSpeed * Time.deltaTime);
             if (_player.Grounded && !_player.JumpingThisFrame && !_player.LandingThisFrame)
             {
-                if (_player.Input.X != 0){
-                    SetAniamtion(runAnimationName, true);
+                if (_player.Input.X != 0)
+                {
+                    SetAnimationState(AnimationState.RUN);
                 }
                 else
                 {
-                    SetAniamtion(idleAnimationName, true);
+                    SetAnimationState(AnimationState.IDLE);
                 }
             }
 
@@ -86,7 +101,7 @@ namespace MiniGames
             // Splat
             if (_player.LandingThisFrame)
             {
-                SetAniamtion(ladingAnimation, false);
+                SetAnimationState(AnimationState.LANDING, false);
                 _source.PlayOneShot(_footsteps[Random.Range(0, _footsteps.Length)]);
             }
 
@@ -94,7 +109,7 @@ namespace MiniGames
             if (_player.JumpingThisFrame)
             {
                 // _spine.AnimationState.SetAnimation(0,jumpnimationName,true);
-                SetAniamtion(jumpnimationName, false);
+                SetAnimationState(AnimationState.JUMP, false);
                 //_anim.ResetTrigger(GroundedKey);
 
                 // Only play particles when grounded (avoid coyote)
@@ -155,20 +170,90 @@ namespace MiniGames
         private static readonly int JumpKey = Animator.StringToHash("Jump");
 
         #endregion
-        private void SetAniamtion(String s, bool loop)
+        private TrackEntry SetAniamtion(String s, bool loop)
         {
-            if (lastAmination.Equals(s))
-            {
-                return;
-            }
-            lastAmination = s;
-            _spine.AnimationState.SetAnimation(0, s, loop);
+            return _spine.AnimationState.SetAnimation(0, s, loop);
         }
         private void AddAnimation(String s, bool loop)
         {
-            _spine.AnimationState.AddAnimation(0, s, loop,0);
+            _spine.AnimationState.AddAnimation(0, s, loop, 0);
         }
-        private String lastAmination = "";
+        private AnimationState _curAState;
+
+        private void SetAnimationState(AnimationState s, bool loop = true)
+        {
+            if (_curAState == s) return;
+            switch (s)
+            {
+                case AnimationState.IDLE:
+                    {
+                        AnimateIdel(loop);
+                        break;
+                    }
+                case AnimationState.RUN:
+                    {
+                        AnimateRun(loop);
+                        break;
+                    }
+                case AnimationState.RIDE_OX:
+                    {
+                        AnimateRideOx(loop);
+                        break;
+                    }
+                case AnimationState.DIE:
+                    {
+                        AnimateDie(loop);
+                        break;
+                    }
+                case AnimationState.JUMP:
+                    {
+                        AnimateJump(loop);
+                        break;
+                    }
+                case AnimationState.LANDING:
+                    {
+                        AnimateLanding(loop);
+                        break;
+                    }
+            }
+            _curAState = s;
+        }
+        private void AnimateIdel(bool loop)
+        {
+            SetAniamtion(idleAnimationName, loop);
+        }
+        private void AnimateRun(bool loop)
+        {
+            SetAniamtion(runAnimationName, loop);
+        }
+        private void AnimateRideOx(bool loop)
+        {
+            SetAniamtion(sitOnTheOxAnimation, loop);
+        }
+        private void AnimateDie(bool loop)
+        {
+            TrackEntry track = SetAniamtion(deathAnimation, loop);
+            track.Complete += (track) =>
+            {
+                Debug.Log("Finished Die Animation " + track.Animation.Name);
+                _player.NotifyRevive();
+                SetAnimationState(AnimationState.IDLE);
+
+            };
+            // _spine.AnimationState.End+=(track)=> {
+            //     Debug.Log("Finished Die AnimationState " + track.Animation.Name);
+            // };
+
+        }
+        private void AnimateJump(bool loop)
+        {
+            SetAniamtion(jumpnimationName, false);
+        }
+        private void AnimateLanding(bool loop)
+        {
+            SetAniamtion(ladingAnimation, false);
+        }
+
     }
 
 
