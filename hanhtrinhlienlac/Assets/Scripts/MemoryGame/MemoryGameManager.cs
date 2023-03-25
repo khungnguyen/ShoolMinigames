@@ -56,7 +56,7 @@ public class MemoryGameManager : MonoBehaviour
 
         curLevelIdx++;
         Debug.Assert(curLevelIdx < levelContainers.Length);
-        
+
         curLevelContainer = levelContainers[curLevelIdx];
 
         curLevelContainer.gameObject.SetActive(true);
@@ -129,8 +129,8 @@ public class MemoryGameManager : MonoBehaviour
             else 
             {
                 Debug.Log("Not match, face down both of cards");
-                curLevelContainer.GetChild(itemIndex).GetComponent<MemoryGameItem>().SetState(false, 1);
-                curLevelContainer.GetChild(curSelectedItemIndex).GetComponent<MemoryGameItem>().SetState(false, 1);
+                curLevelContainer.GetChild(itemIndex).GetComponent<MemoryGameItem>().SetState(false, 0.5f);
+                curLevelContainer.GetChild(curSelectedItemIndex).GetComponent<MemoryGameItem>().SetState(false, 0.5f);
                 curSelectedItemIndex = -1;
             }
         }
