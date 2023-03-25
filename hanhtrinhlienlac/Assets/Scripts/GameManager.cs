@@ -19,7 +19,9 @@ public class GameManager : MonoBehaviour
         inst = this;
     }
     void Start() {
-        _playerController.SetOnPlayerFinishMap(OnPlayerFinishMap);
+        _playerController.OnLevelFinish +=OnPlayerFinishMap;
+        _playerController.OnPlayerDeath +=OnPlayerDeath;
+        _playerController.OnPlayerRevive +=OnPlayerRevie;
     }
     private void OnPlayerFinishMap(GameEnum.LevelType nextLevel) {
         LevelInfo next = _levelManager.FindLevel(nextLevel);
@@ -28,6 +30,12 @@ public class GameManager : MonoBehaviour
             _playerController.SetPosition(spawnPoint);
             _cinemachineConfiner.m_BoundingShape2D = next.GetCinemachinConfinerData();
         }
+    }
+    private void OnPlayerDeath(MarkedPoint revivePoint) {
+       
+    }
+    private void OnPlayerRevie(MarkedPoint revivePoint) {
+       
     }
     // Start is called before the first frame update
    
