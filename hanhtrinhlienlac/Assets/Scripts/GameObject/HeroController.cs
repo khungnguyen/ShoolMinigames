@@ -29,14 +29,15 @@ public class HeroController : PlayerController
         base.death();
         OnPlayerDeath?.Invoke(_revivePoint);
     }
-    
-    public void GodMode(bool enable) {
+
+    public void GodMode(bool enable)
+    {
         godMode = enable;
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if(godMode) return;
-       // Debug.LogError("OnTriggerEnter2D" + other.tag);
+        if (godMode) return;
+        // Debug.LogError("OnTriggerEnter2D" + other.tag);
         if (other.CompareTag("EndPoint"))
         {
             if (OnLevelFinish != null)
@@ -46,9 +47,18 @@ public class HeroController : PlayerController
             }
 
         }
-        else if(other.CompareTag("Obstacle")) {
+        else if (other.CompareTag("Obstacle"))
+        {
             _revivePoint = other.GetComponent<Obstacle>()?.revivePoint;
-            death();
+            // if (true)
+            // {
+            //     EnableBounce();
+            // }
+            // else
+            {
+              death();
+            }
+
 
         }
     }
@@ -71,33 +81,37 @@ public class HeroController : PlayerController
     }
     public override void GatherInput()
     {
-         if (enableInput)
+        if (enableInput)
+        {
+            Input = new FrameInput
             {
-                Input = new FrameInput
-                {
-                    JumpDown = UnityEngine.Input.GetButtonDown("Jump"),
-                    JumpUp = UnityEngine.Input.GetButtonUp("Jump"),
-                    X = UnityEngine.Input.GetAxisRaw("Horizontal")
-                };
-                if (Input.JumpDown)
-                {
-                    lastJumpPressed = Time.time;
-                }
+                JumpDown = UnityEngine.Input.GetButtonDown("Jump"),
+                JumpUp = UnityEngine.Input.GetButtonUp("Jump"),
+                X = UnityEngine.Input.GetAxisRaw("Horizontal")
+            };
+            if (Input.JumpDown)
+            {
+                lastJumpPressed = Time.time;
             }
+        }
 
     }
-    void Update() {
+    void Update()
+    {
         base.Update();
     }
-    public void Revive(MarkedPoint point) {
-        if(point != null) {
+    public void Revive(MarkedPoint point)
+    {
+        if (point != null)
+        {
             SetPosition(point.getPosition());
             isDie = false;
-             EnableInput(true);
-             point = null;
+            EnableInput(true);
+            point = null;
         }
     }
-    public void NotifyRevive() {
+    public void NotifyRevive()
+    {
         OnPlayerRevive.Invoke(_revivePoint);
     }
 }

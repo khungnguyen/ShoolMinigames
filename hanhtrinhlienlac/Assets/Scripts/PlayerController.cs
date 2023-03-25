@@ -35,6 +35,11 @@ namespace MiniGames
         void Awake() => Invoke(nameof(Activate), 0.5f);
         void Activate() => _active = true;
         public bool enableInput = true;
+
+        private bool _bounceBack = false;
+        public void EnableBounce() {
+            _bounceBack = true;
+        }
         protected void Update()
         {
             if (!_active || isDie) return;
@@ -43,6 +48,13 @@ namespace MiniGames
             _lastPosition = transform.position;
 
             GatherInput();
+            if(_bounceBack) {
+                Input = new FrameInput {
+                    JumpUp = true,
+                    X = Math.Sign(_currentHorizontalSpeed)>0?-1:1,
+                };
+                _bounceBack = false;
+            }
             RunCollisionChecks();
 
             CalculateWalk(); // Horizontal movement
@@ -305,7 +317,7 @@ namespace MiniGames
                 return;
             }
 
-            // otherwise increment away from current pos; see what closest position we can move to
+           // otherwise increment away from current pos; see what closest position we can move to
             var positionToMoveTo = transform.position;
             for (int i = 1; i < _freeColliderIterations; i++)
             {
