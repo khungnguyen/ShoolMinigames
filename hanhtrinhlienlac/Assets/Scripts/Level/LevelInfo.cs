@@ -8,22 +8,33 @@ public class LevelInfo : MonoBehaviour
     [SerializeField] PolygonCollider2D _cinemachineConfiger;
     [SerializeField] GameEnum.LevelType _levelType;
     List<MarkedPoint> _markedPoints;
-    void Start()
+    private void Awake()
     {
         _markedPoints = new List<MarkedPoint>(GetComponentsInChildren<MarkedPoint>(true));
+    }
+    void Start()
+    {
+
     }
     public MarkedPoint GetStartPoint()
     {
         return _markedPoints.Find(e => e.type == GameEnum.PointType.STARTPOINT);
     }
-    public MarkedPoint GetEndPoint() {
+    public MarkedPoint GetEndPoint()
+    {
         return _markedPoints.Find(e => e.type == GameEnum.PointType.ENDPOINT);
     }
+     public List<MarkedPoint> GetAllRevivePoints()
+    {
+        return _markedPoints.FindAll(e => e.type == GameEnum.PointType.REVIVEPOINT);
+    }
     // Update is called once per frame
-   public GameEnum.LevelType getLevelType() {
-    return _levelType;
-   }
-   public PolygonCollider2D GetCinemachinConfinerData() {
-    return _cinemachineConfiger;
-   }
+    public GameEnum.LevelType getLevelType()
+    {
+        return _levelType;
+    }
+    public PolygonCollider2D GetCinemachinConfinerData()
+    {
+        return _cinemachineConfiger;
+    }
 }
