@@ -19,11 +19,13 @@ public class AnswerItemUI : MonoBehaviour, IPointerClickHandler
     private int index;
     private Action<int> onSelectedCB;
 
+    void Awake() {
+        bgColorDefault = bgImage.color;
+        textColorDefault = textTMPro.color;
+    }
     // Start is called before the first frame update
     void Start()
     {
-        bgColorDefault = bgImage.color;
-        textColorDefault = textTMPro.color;
     }
 
     public void SetData(int index, string text, Action<int> onSelectedCB) {
