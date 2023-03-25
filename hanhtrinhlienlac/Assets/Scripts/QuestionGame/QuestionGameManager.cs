@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class QuestionGameManager : MonoBehaviour
 {
@@ -10,12 +11,14 @@ public class QuestionGameManager : MonoBehaviour
     [SerializeField] private Transform answersContainer;
     [SerializeField] private GameObject answerPrefab;
     [SerializeField] private Button submitBtn;
-    [SerializeField] private ResultPopup resultPopup;
+    [SerializeField] private QuestionGameResultPopup resultPopup;
     private Color submitBtnColorEnabled;
 
     private int curQuestionIndex = -1;
     private Question curQuestion;
     private int selectedAnswerIndex = -1;
+
+    private int finishedCount = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -30,15 +33,27 @@ public class QuestionGameManager : MonoBehaviour
         
     }
 
+    public void OnButtonBackToMapClicked()
+    {
+        SceneManager.LoadScene("Main");
+    }
+
+    public void OnButtonNextClicked()
+    {
+        if (IsFinished()) {
+            OnButtonBackToMapClicked();
+            return;
+        }
+        ShowNextQuestion();
+    }
+
     public void ShowNextQuestion() {
         HideResultPopup();
         SetSubmitButtonEnable(false);
 
         curQuestionIndex++;
-        if (curQuestionIndex >= QuestionBank.Inst.questions.Length)
-        {
-            curQuestionIndex = 0; // Temporarily loop
-        }
+        Debug.Assert(curQuestionIndex < QuestionBank.Inst.questions.Length);
+
         curQuestion = QuestionBank.Inst.questions[curQuestionIndex];
 
         questionTMPro.text = curQuestion.text;
@@ -70,6 +85,7 @@ public class QuestionGameManager : MonoBehaviour
 
     public void OnSubmitBtnClicked()
     {
+        finishedCount++;
         bool result = curQuestion.answers[selectedAnswerIndex].value;
         Debug.Log("Your answer is " + result);
         ShowResultPopup(result);
@@ -84,10 +100,15 @@ public class QuestionGameManager : MonoBehaviour
 
     private void ShowResultPopup(bool result)
     {
-        resultPopup.Show(result);
+        resultPopup.Show(result, IsFinished());
     }
 
     private void HideResultPopup() {
         resultPopup.Hide();
+    }
+
+    private bool IsFinished()
+    {
+        return finishedCount >= QuestionBank.Inst.questions.Length;
     }
 }
