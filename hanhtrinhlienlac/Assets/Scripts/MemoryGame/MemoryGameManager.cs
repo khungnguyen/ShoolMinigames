@@ -8,6 +8,7 @@ public class MemoryGameManager : MonoBehaviour
 {
     [SerializeField] private Transform[] levelContainers;
     [SerializeField] private Sprite[] sprites;
+    [SerializeField] private GameObject resutlPopup;
 
     private int curLevelIdx = -1;
     private Transform curLevelContainer;
@@ -33,8 +34,16 @@ public class MemoryGameManager : MonoBehaviour
         
     }
 
+    public void OnButtonNextClicked() 
+    {
+        curLevelContainer.gameObject.SetActive(false);
+        ShowNextLevel();
+    }
+
     public void ShowNextLevel()
     {
+        ShowHideResultPopup(false);
+
         curLevelIdx++;
         if (curLevelIdx >= levelContainers.Length) {
             curLevelIdx = 0; //Temporarily loop
@@ -97,6 +106,16 @@ public class MemoryGameManager : MonoBehaviour
                 // curLevelContainer.GetChild(itemIndex).GetComponent<MemoryGameItem>().ShowHide(false);
                 // curLevelContainer.GetChild(curSelectedItemIndex).GetComponent<MemoryGameItem>().ShowHide(false);
                 curSelectedItemIndex = -1;
+
+                indexesInPairs.Remove(curSelectedPair);
+                if (indexesInPairs.Count == 0)
+                {
+                    ShowHideResultPopup(true);
+                }
+                else if (indexesInPairs.Count == 1 && indexesInPairs[0].Defective)
+                {
+                    ShowHideResultPopup(true);
+                }
             } 
             else 
             {
@@ -130,5 +149,10 @@ public class MemoryGameManager : MonoBehaviour
         }
 
         return listPair;
+    }
+
+    private void ShowHideResultPopup(bool show)
+    {
+        resutlPopup.SetActive(show);
     }
 }
