@@ -82,7 +82,7 @@ namespace MiniGames
 
             // Lean while running
             var targetRotVector = new Vector3(0, 0, Mathf.Lerp(-_maxTilt, _maxTilt, Mathf.InverseLerp(-1, 1, _player.Input.X)));
-            _spine.transform.rotation = Quaternion.RotateTowards(_spine.transform.rotation, Quaternion.Euler(targetRotVector), _tiltSpeed * Time.deltaTime);
+           // _spine.transform.rotation = Quaternion.RotateTowards(_spine.transform.rotation, Quaternion.Euler(targetRotVector), _tiltSpeed * Time.deltaTime);
             if (_player.Grounded && !_player.JumpingThisFrame && !_player.LandingThisFrame)
             {
                 if (_player.Input.X != 0)

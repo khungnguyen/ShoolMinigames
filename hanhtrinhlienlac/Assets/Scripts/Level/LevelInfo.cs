@@ -8,9 +8,12 @@ public class LevelInfo : MonoBehaviour
     [SerializeField] PolygonCollider2D _cinemachineConfiger;
     [SerializeField] GameEnum.LevelType _levelType;
     List<MarkedPoint> _markedPoints;
+
+    private Bounds _levelBound;
     private void Awake()
     {
         _markedPoints = new List<MarkedPoint>(GetComponentsInChildren<MarkedPoint>(true));
+        _levelBound = _cinemachineConfiger.bounds;
     }
     void Start()
     {
@@ -36,5 +39,8 @@ public class LevelInfo : MonoBehaviour
     public PolygonCollider2D GetCinemachinConfinerData()
     {
         return _cinemachineConfiger;
+    }
+    public Bounds GetLevelBounds() {
+        return _levelBound;
     }
 }

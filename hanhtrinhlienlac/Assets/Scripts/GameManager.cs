@@ -35,15 +35,16 @@ public class GameManager : MonoBehaviour
         LevelInfo next = _levelManager.FindLevel(nextLevel);
         if (next != null)
         {
-            ChangeLevel(next);
-            _curLevel = nextLevel;
+            // ChangeLevel(next);
+            // _curLevel = nextLevel;
         }
     }
     private void ChangeLevel(LevelInfo next)
     {
+        _cinemachineConfiner.m_BoundingShape2D = next.GetCinemachinConfinerData();
         var spawnPoint = next.GetStartPoint().getPosition();
         _playerController.SetPosition(spawnPoint);
-        _cinemachineConfiner.m_BoundingShape2D = next.GetCinemachinConfinerData();
+        _playerController.setRestrictedArea(next.GetLevelBounds());
     }
     private void OnPlayerDeath(MarkedPoint revivePoint)
     {
@@ -58,7 +59,7 @@ public class GameManager : MonoBehaviour
             var result = allRevivePoints[0];
             foreach (MarkedPoint p in allRevivePoints)
             {
-                if (p.getPosition().x >  _playerController.GetPosition().x)
+                if (p.getPosition().x > _playerController.GetPosition().x)
                 {
                     break;
                 }
@@ -69,7 +70,8 @@ public class GameManager : MonoBehaviour
             }
             _playerController.Revive(result);
         }
-        else {
+        else
+        {
             _playerController.Revive(revivePoint);
         }
 

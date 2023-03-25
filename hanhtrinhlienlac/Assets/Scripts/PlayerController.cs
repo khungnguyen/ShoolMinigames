@@ -37,7 +37,15 @@ namespace MiniGames
         public bool enableInput = true;
 
         private bool _bounceBack = false;
-        public void EnableBounce() {
+
+        private Bounds _restrictedArea;
+
+        public void setRestrictedArea(Bounds b)
+        {
+            _restrictedArea = b;
+        }
+        public void EnableBounce()
+        {
             _bounceBack = true;
         }
         protected void Update()
@@ -48,13 +56,15 @@ namespace MiniGames
             _lastPosition = transform.position;
 
             GatherInput();
-            if(_bounceBack) {
-                Input = new FrameInput {
-                    JumpUp = true,
-                    X = Math.Sign(_currentHorizontalSpeed)>0?-1:1,
-                };
-                _bounceBack = false;
-            }
+            // if (_bounceBack)
+            // {
+            //     Input = new FrameInput
+            //     {
+            //         JumpUp = true,
+            //         X = Math.Sign(_currentHorizontalSpeed) > 0 ? -1 : 1,
+            //     };
+            //     _bounceBack = false;
+            // }
             RunCollisionChecks();
 
             CalculateWalk(); // Horizontal movement
@@ -63,8 +73,19 @@ namespace MiniGames
             CalculateJump(); // Possibly overrides vertical
 
             MoveCharacter(); // Actually perform the axis movement
+            UpdateRestrictedArea();
         }
-
+        public void UpdateRestrictedArea()
+        {
+            if (_restrictedArea != null)
+            {
+                var minX = _restrictedArea.min.x;
+                var maxX = _restrictedArea.max.x;
+                var pos = transform.position;
+                pos.x = Math.Clamp(pos.x, minX, maxX);
+                transform.position = pos;
+            }
+        }
 
         #region Gather Input
 
@@ -124,7 +145,7 @@ namespace MiniGames
             // This is crying out for some kind of refactor. 
             var b = new Bounds(transform.position, _characterBounds.size);
 
-            _raysDown = new RayRange(b.min.x , b.min.y, b.max.x, b.min.y, Vector2.down);
+            _raysDown = new RayRange(b.min.x, b.min.y, b.max.x, b.min.y, Vector2.down);
             _raysUp = new RayRange(b.min.x + _rayBuffer, b.max.y, b.max.x - _rayBuffer, b.max.y, Vector2.up);
             _raysLeft = new RayRange(b.min.x, b.min.y + _rayBuffer + 0.2f, b.min.x, b.max.y - _rayBuffer, Vector2.left);
             _raysRight = new RayRange(b.max.x, b.min.y + _rayBuffer + 0.2f, b.max.x, b.max.y - _rayBuffer, Vector2.right);
@@ -317,7 +338,7 @@ namespace MiniGames
                 return;
             }
 
-           // otherwise increment away from current pos; see what closest position we can move to
+            // otherwise increment away from current pos; see what closest position we can move to
             var positionToMoveTo = transform.position;
             for (int i = 1; i < _freeColliderIterations; i++)
             {
@@ -349,7 +370,8 @@ namespace MiniGames
         {
             transform.position = v;
         }
-        public Vector2 GetPosition() {
+        public Vector2 GetPosition()
+        {
             return transform.position;
         }
     }
