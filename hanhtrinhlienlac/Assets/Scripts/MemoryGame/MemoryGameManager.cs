@@ -3,12 +3,13 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MemoryGameManager : MonoBehaviour
 {
     [SerializeField] private Transform[] levelContainers;
     [SerializeField] private Sprite[] sprites;
-    [SerializeField] private GameObject resutlPopup;
+    [SerializeField] private MemoryGameResultPopup resutlPopup;
 
     private int curLevelIdx = -1;
     private Transform curLevelContainer;
@@ -34,20 +35,28 @@ public class MemoryGameManager : MonoBehaviour
         
     }
 
+    public void OnButtonBackToMapClicked()
+    {
+        SceneManager.LoadScene("Main");
+    }
+
     public void OnButtonNextClicked() 
     {
+        if (IsLastLevel()) {
+            OnButtonBackToMapClicked();
+            return;
+        }
         curLevelContainer.gameObject.SetActive(false);
         ShowNextLevel();
     }
 
     public void ShowNextLevel()
     {
-        ShowHideResultPopup(false);
+        resutlPopup.ShowHide(false);
 
         curLevelIdx++;
-        if (curLevelIdx >= levelContainers.Length) {
-            curLevelIdx = 0; //Temporarily loop
-        }
+        Debug.Assert(curLevelIdx < levelContainers.Length);
+        
         curLevelContainer = levelContainers[curLevelIdx];
 
         curLevelContainer.gameObject.SetActive(true);
@@ -110,11 +119,11 @@ public class MemoryGameManager : MonoBehaviour
                 indexesInPairs.Remove(curSelectedPair);
                 if (indexesInPairs.Count == 0)
                 {
-                    ShowHideResultPopup(true);
+                    resutlPopup.ShowHide(true, IsLastLevel());
                 }
                 else if (indexesInPairs.Count == 1 && indexesInPairs[0].Defective)
                 {
-                    ShowHideResultPopup(true);
+                    resutlPopup.ShowHide(true, IsLastLevel());
                 }
             } 
             else 
@@ -151,8 +160,8 @@ public class MemoryGameManager : MonoBehaviour
         return listPair;
     }
 
-    private void ShowHideResultPopup(bool show)
+    private bool IsLastLevel()
     {
-        resutlPopup.SetActive(show);
+        return curLevelContainer != null && curLevelContainer.childCount >= 25;
     }
 }
