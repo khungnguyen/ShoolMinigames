@@ -82,7 +82,7 @@ namespace MiniGames
 
             // Lean while running
             var targetRotVector = new Vector3(0, 0, Mathf.Lerp(-_maxTilt, _maxTilt, Mathf.InverseLerp(-1, 1, _player.Input.X)));
-           // _spine.transform.rotation = Quaternion.RotateTowards(_spine.transform.rotation, Quaternion.Euler(targetRotVector), _tiltSpeed * Time.deltaTime);
+            // _spine.transform.rotation = Quaternion.RotateTowards(_spine.transform.rotation, Quaternion.Euler(targetRotVector), _tiltSpeed * Time.deltaTime);
             if (_player.Grounded && !_player.JumpingThisFrame && !_player.LandingThisFrame)
             {
                 if (_player.Input.X != 0)
@@ -172,17 +172,26 @@ namespace MiniGames
         #endregion
         private TrackEntry SetAniamtion(String s, bool loop)
         {
-            return _spine.AnimationState.SetAnimation(0, s, loop);
+            if(__previousAState == AnimationState.LANDING && _curAState == AnimationState.IDLE) {
+                return AddAnimation(s, loop);
+            }
+            else {
+                return _spine.AnimationState.SetAnimation(0, s, loop);
+            }
+
         }
-        private void AddAnimation(String s, bool loop)
+        private TrackEntry AddAnimation(String s, bool loop)
         {
-            _spine.AnimationState.AddAnimation(0, s, loop, 0);
+            return _spine.AnimationState.AddAnimation(0, s, loop, 0);
         }
         private AnimationState _curAState;
+        private AnimationState __previousAState;
 
         private void SetAnimationState(AnimationState s, bool loop = true)
         {
             if (_curAState == s) return;
+            __previousAState = _curAState;
+            _curAState = s;
             switch (s)
             {
                 case AnimationState.IDLE:
@@ -216,7 +225,7 @@ namespace MiniGames
                         break;
                     }
             }
-            _curAState = s;
+
         }
         private void AnimateIdel(bool loop)
         {
@@ -247,11 +256,13 @@ namespace MiniGames
         }
         private void AnimateJump(bool loop)
         {
-            SetAniamtion(jumpnimationName, false);
+            TrackEntry track = SetAniamtion(jumpnimationName, false);
+            track.TimeScale = 0.4f;
         }
         private void AnimateLanding(bool loop)
         {
-            SetAniamtion(ladingAnimation, false);
+             TrackEntry track = SetAniamtion(ladingAnimation, false);
+            // track.TimeScale = 0.1f;
         }
 
     }
