@@ -133,11 +133,11 @@ public class MemoryGameManager : MonoBehaviour
         var listPair = new List<Pair<int>>();
 
         while (listSrc.Count > 1) {
-            var idx = UnityEngine.Random.Range(0, listSrc.Count - 1);
+            var idx = UnityEngine.Random.Range(0, listSrc.Count);
             var a = listSrc[idx];
             listSrc.RemoveAt(idx);
 
-            idx = UnityEngine.Random.Range(0, listSrc.Count - 1);
+            idx = UnityEngine.Random.Range(0, listSrc.Count);
             var b = listSrc[idx];
             listSrc.RemoveAt(idx);
 
