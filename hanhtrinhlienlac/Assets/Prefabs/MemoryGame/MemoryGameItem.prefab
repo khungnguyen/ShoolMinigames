@@ -274,4 +274,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   back: {fileID: 1958778239}
   front: {fileID: 1265692631}
-  rotateSpeed: 360
+  rotateSpeed: 540
