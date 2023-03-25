@@ -99,6 +99,5 @@ public class HeroController : PlayerController
     }
     public void NotifyRevive() {
         OnPlayerRevive.Invoke(_revivePoint);
-        Revive(_revivePoint);
     }
 }

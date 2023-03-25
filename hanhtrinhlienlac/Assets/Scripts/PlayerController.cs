@@ -337,5 +337,8 @@ namespace MiniGames
         {
             transform.position = v;
         }
+        public Vector2 GetPosition() {
+            return transform.position;
+        }
     }
 }
