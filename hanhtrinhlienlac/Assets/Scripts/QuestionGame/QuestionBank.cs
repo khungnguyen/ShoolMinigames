@@ -17,7 +17,7 @@ public class QuestionBank {
     }
 
     public void DebugInfo() {
-        Debug.Log("version: " + version);
-        Debug.Log("questions count: " + questions.Length);
+        Debug.Log("[QuestionBank] version: " + version);
+        Debug.Log("[QuestionBank] questions count: " + questions.Length);
     }
 }

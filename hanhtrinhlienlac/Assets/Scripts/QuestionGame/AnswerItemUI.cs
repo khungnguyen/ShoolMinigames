@@ -46,6 +46,16 @@ public class AnswerItemUI : MonoBehaviour, IPointerClickHandler
         textTMPro.color = textColorDefault;
     }
 
+    public void HighlightCorrect()
+    {
+        bgImage.color = Color.green;
+    }
+
+    public void HighlightWrong()
+    {
+        bgImage.color = Color.red;
+    }
+
     private void OnSelected()
     {
         bgImage.color = bgColorSelected;

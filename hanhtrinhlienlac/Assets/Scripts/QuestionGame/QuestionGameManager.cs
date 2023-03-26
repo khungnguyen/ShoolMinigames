@@ -61,7 +61,7 @@ public class QuestionGameManager : MonoBehaviour
         int idx = 0;
         // Set answers' data
         for (; idx < curQuestion.answers.Length; idx++) {
-            var answerItemUI = answersContainer.GetChild(idx).GetComponent<AnswerItemUI>();
+            var answerItemUI = GetAnswerItemUI(idx);
             answerItemUI.gameObject.SetActive(true);
             answerItemUI.SetData(idx, curQuestion.answers[idx].text, OnAnswerSelected);
             answerItemUI.ResetSelection();
@@ -77,7 +77,7 @@ public class QuestionGameManager : MonoBehaviour
         selectedAnswerIndex = answerIndex;
         for (int i = 0; i < curQuestion.answers.Length; i++) {
             if (i != selectedAnswerIndex) {
-                answersContainer.GetChild(i).GetComponent<AnswerItemUI>().ResetSelection();
+               GetAnswerItemUI(i).ResetSelection();
             }
         }
         SetSubmitButtonEnable(true);
@@ -88,7 +88,15 @@ public class QuestionGameManager : MonoBehaviour
         finishedCount++;
         bool result = curQuestion.answers[selectedAnswerIndex].value;
         Debug.Log("Your answer is " + result);
-        ShowResultPopup(result);
+
+        if (result) {
+            GetAnswerItemUI(selectedAnswerIndex).HighlightCorrect();
+        } else {
+            int correctIdx = GetCorrectAnswerIndex(curQuestion);
+            GetAnswerItemUI(correctIdx).HighlightCorrect();
+            GetAnswerItemUI(selectedAnswerIndex).HighlightWrong();
+        }
+        StartCoroutine(ShowResultPopup(result, 0.5f));
     }
 
     private void SetSubmitButtonEnable(bool enable)
@@ -98,8 +106,11 @@ public class QuestionGameManager : MonoBehaviour
         bgImage.color = enable ? submitBtnColorEnabled : Color.gray;
     }
 
-    private void ShowResultPopup(bool result)
+    private IEnumerator ShowResultPopup(bool result, float delaySec = 0f)
     {
+        if (delaySec > 0) {
+            yield return new WaitForSeconds(delaySec);
+        }
         resultPopup.Show(result, IsFinished());
     }
 
@@ -110,5 +121,20 @@ public class QuestionGameManager : MonoBehaviour
     private bool IsFinished()
     {
         return finishedCount >= QuestionBank.Inst.questions.Length;
+    }
+
+    private AnswerItemUI GetAnswerItemUI(int idx)
+    {
+        return answersContainer.GetChild(idx).GetComponent<AnswerItemUI>();
+    }
+
+    private int GetCorrectAnswerIndex(Question question)
+    {
+        for (int i = 0; i < question.answers.Length; i++) {
+            if (question.answers[i].value) {
+                return i;
+            }
+        }
+        return -1;
     }
 }
