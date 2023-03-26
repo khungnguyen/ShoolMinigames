@@ -31,6 +31,11 @@ public class MemoryGameItem : MonoBehaviour, IPointerClickHandler
         matched = false;
     }
 
+    public Sprite GetSprite()
+    {
+        return card.GetFrontImage();
+    }
+
     public void OnPointerClick(PointerEventData eventData)
     {
         if (!s_interactable || matched) return;

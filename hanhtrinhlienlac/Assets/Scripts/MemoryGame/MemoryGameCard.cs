@@ -35,6 +35,11 @@ public class MemoryGameCard : MonoBehaviour
         front.GetComponent<Image>().sprite = sprite;
     }
 
+    public Sprite GetFrontImage()
+    {
+        return front.GetComponent<Image>().sprite;
+    }
+
     public void SetState(bool open)
     {
         targetAngleY = open ? 0 : 180;
