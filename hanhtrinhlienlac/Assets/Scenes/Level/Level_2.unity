@@ -2604,6 +2604,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: a75a957dc83a859489bd4c8adc07b1b6, type: 3}
   - {fileID: 21300000, guid: f98e1d476fdc2de4cab363d187164ca8, type: 3}
   - {fileID: 21300000, guid: 52d5fb617b8f67c4eb7325747d8f5a82, type: 3}
+  matThuSprite: {fileID: 21300000, guid: f5ceaaa5c418bb64ebc038ff5a3aaf8f, type: 3}
   fishingRodSprite: {fileID: 21300000, guid: 29f1d5acb29fbd143a63e736b577cead, type: 3}
   resutlPopup: {fileID: 1817343940}
 --- !u!1001 &736367104

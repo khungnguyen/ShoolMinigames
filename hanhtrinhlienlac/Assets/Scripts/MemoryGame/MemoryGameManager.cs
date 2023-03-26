@@ -9,6 +9,7 @@ public class MemoryGameManager : MonoBehaviour
 {
     [SerializeField] private Transform[] levelContainers;
     [SerializeField] private Sprite[] sprites;
+    [SerializeField] private Sprite matThuSprite;
     [SerializeField] private Sprite fishingRodSprite;
     [SerializeField] private MemoryGameResultPopup resutlPopup;
 
@@ -74,8 +75,8 @@ public class MemoryGameManager : MonoBehaviour
             spriteIndexes.RemoveAt(idx);
             var sprite = sprites[spriteIdx];
 
-            if (IsLastLevel() && pair.Defective) {
-                sprite = fishingRodSprite;
+            if (pair.Defective) {
+                sprite = IsLastLevel() ? fishingRodSprite : matThuSprite;
             }
 
             Debug.Log(pair);
