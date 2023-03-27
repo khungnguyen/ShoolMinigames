@@ -244,14 +244,10 @@ namespace MiniGames
             TrackEntry track = SetAniamtion(deathAnimation, loop);
             track.Complete += (track) =>
             {
-                Debug.Log("Finished Die Animation " + track.Animation.Name);
                 _player.NotifyRevive();
                 SetAnimationState(AnimationState.IDLE);
 
             };
-            // _spine.AnimationState.End+=(track)=> {
-            //     Debug.Log("Finished Die AnimationState " + track.Animation.Name);
-            // };
 
         }
         private void AnimateJump(bool loop)
@@ -262,7 +258,7 @@ namespace MiniGames
         private void AnimateLanding(bool loop)
         {
              TrackEntry track = SetAniamtion(ladingAnimation, false);
-            // track.TimeScale = 0.1f;
+
         }
 
     }

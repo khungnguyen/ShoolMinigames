@@ -43,6 +43,7 @@ public class BuffaloController : PlayerController
             Debug.LogError("Buffalo stop");
             _player.EnableInput(true);
             _player.RideTheOx(false);
+            _player.Activate();
             _buffaloMove = false;
             stopAniamtion(0);
             death();
@@ -56,20 +57,24 @@ public class BuffaloController : PlayerController
 
         }
     }
+    public override void GatherInput()
+    {
+
+        Input = new FrameInput
+        {
+            JumpDown = false,
+            JumpUp = false,
+            X = _buffaloMove?1f:0f
+        };
+    }
     void Update()
     {
         if (_player != null && _buffaloMove)
         {
             _player.SetPosition(attachSeatPoint.position);
-            Input = new FrameInput
-            {
-                JumpDown = false,
-                JumpUp = false,
-                X = 1f
-            };
-
         }
         base.Update();
+
     }
     private void setAnimation(String name, bool loop)
     {

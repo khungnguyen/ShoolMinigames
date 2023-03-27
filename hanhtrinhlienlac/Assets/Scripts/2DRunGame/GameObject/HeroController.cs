@@ -20,6 +20,7 @@ public class HeroController : PlayerController
     public void RideTheOx(bool enable)
     {
         rideTheOx = enable;
+        Deactivate();
         GodMode(enable);
     }
 

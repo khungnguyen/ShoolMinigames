@@ -1,7 +1,9 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using Cinemachine;
+using Unity.VisualScripting;
 using UnityEngine;
 
 namespace MiniGames
@@ -33,16 +35,20 @@ namespace MiniGames
         // This is horrible, but for some reason colliders are not fully established when update starts...
         private bool _active;
         void Awake() => Invoke(nameof(Activate), 0.5f);
-        void Activate() => _active = true;
+        public void Activate() => _active = true;
+        public void Deactivate() =>_active = false;
         public bool enableInput = true;
 
         private bool _bounceBack = false;
 
         private Bounds _restrictedArea;
 
-        public void setRestrictedArea(Bounds b)
+        public void SetRestrictedArea(Bounds b)
         {
             _restrictedArea = b;
+        }
+        public Bounds GetRestricedArea() {
+            return _restrictedArea;
         }
         public void EnableBounce()
         {
@@ -51,11 +57,13 @@ namespace MiniGames
         protected void Update()
         {
             if (!_active || isDie) return;
+           // Debug.Log(""))
             // Calculate velocity
             Velocity = (transform.position - _lastPosition) / Time.deltaTime;
             _lastPosition = transform.position;
-
+            
             GatherInput();
+            Debug.Log("Who call" + this.name + "Input" + Input.X);
             // if (_bounceBack)
             // {
             //     Input = new FrameInput
@@ -77,7 +85,7 @@ namespace MiniGames
         }
         public void UpdateRestrictedArea()
         {
-            if (_restrictedArea != null)
+            if (Vector2.Distance(_restrictedArea.min,_restrictedArea.max)!=0)
             {
                 var minX = _restrictedArea.min.x;
                 var maxX = _restrictedArea.max.x;
@@ -332,8 +340,10 @@ namespace MiniGames
 
             // check furthest movement. If nothing hit, move and don't do extra checks
             var hit = Physics2D.OverlapBox(furthestPoint, _characterBounds.size, 0, _groundLayer);
+            
             if (!hit)
             {
+                Debug.Log("Call here" + move);
                 transform.position += move;
                 return;
             }
