@@ -6,6 +6,7 @@ using Unity.VisualScripting;
 using Spine.Unity;
 using System;
 using System.Buffers;
+using Mono.Cecil.Cil;
 
 public class BuffaloController : PlayerController
 {
@@ -63,7 +64,11 @@ public class BuffaloController : PlayerController
         {
             //TODO
             {
-                var par = Instantiate(dustVfx, other.transform.position, other.transform.rotation);
+                Bounds b =  (other.transform.GetComponent<Collider2D>()).bounds;
+                float w = b.max.x-b.min.x;
+                float h = b.max.y - b.min.y;
+                var newPos = new Vector2(other.transform.position.x + w,other.transform.position.y - h/2);
+                var par = Instantiate(dustVfx, newPos, other.transform.rotation);
                 Destroy(par, 2f);
             }
             Destroy(other.gameObject);
