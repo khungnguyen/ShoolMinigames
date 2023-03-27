@@ -36,7 +36,7 @@ namespace MiniGames
         private bool _active;
         void Awake() => Invoke(nameof(Activate), 0.5f);
         public void Activate() => _active = true;
-        public void Deactivate() =>_active = false;
+        public void Deactivate() => _active = false;
         public bool enableInput = true;
 
         private bool _bounceBack = false;
@@ -47,7 +47,8 @@ namespace MiniGames
         {
             _restrictedArea = b;
         }
-        public Bounds GetRestricedArea() {
+        public Bounds GetRestricedArea()
+        {
             return _restrictedArea;
         }
         public void EnableBounce()
@@ -57,35 +58,23 @@ namespace MiniGames
         protected void Update()
         {
             if (!_active || isDie) return;
-           // Debug.Log(""))
-            // Calculate velocity
             Velocity = (transform.position - _lastPosition) / Time.deltaTime;
             _lastPosition = transform.position;
-            
+
             GatherInput();
-            Debug.Log("Who call" + this.name + "Input" + Input.X);
-            // if (_bounceBack)
-            // {
-            //     Input = new FrameInput
-            //     {
-            //         JumpUp = true,
-            //         X = Math.Sign(_currentHorizontalSpeed) > 0 ? -1 : 1,
-            //     };
-            //     _bounceBack = false;
-            // }
+
             RunCollisionChecks();
 
             CalculateWalk(); // Horizontal movement
             CalculateJumpApex(); // Affects fall speed, so calculate before gravity
             CalculateGravity(); // Vertical movement
             CalculateJump(); // Possibly overrides vertical
-
             MoveCharacter(); // Actually perform the axis movement
             UpdateRestrictedArea();
         }
         public void UpdateRestrictedArea()
         {
-            if (Vector2.Distance(_restrictedArea.min,_restrictedArea.max)!=0)
+            if (Vector2.Distance(_restrictedArea.min, _restrictedArea.max) != 0)
             {
                 var minX = _restrictedArea.min.x;
                 var maxX = _restrictedArea.max.x;
@@ -340,10 +329,9 @@ namespace MiniGames
 
             // check furthest movement. If nothing hit, move and don't do extra checks
             var hit = Physics2D.OverlapBox(furthestPoint, _characterBounds.size, 0, _groundLayer);
-            
+
             if (!hit)
             {
-                Debug.Log("Call here" + move);
                 transform.position += move;
                 return;
             }

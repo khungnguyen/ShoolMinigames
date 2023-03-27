@@ -5,6 +5,7 @@ using MiniGames;
 using Unity.VisualScripting;
 using Spine.Unity;
 using System;
+using System.Buffers;
 
 public class BuffaloController : PlayerController
 {
@@ -12,6 +13,8 @@ public class BuffaloController : PlayerController
     private HeroController _player;
 
     public Transform attachSeatPoint;
+
+    public ParticleSystem dustVfx;
 
     [SpineAnimation]
     public string buffaloWalk;
@@ -56,6 +59,15 @@ public class BuffaloController : PlayerController
             };
 
         }
+        else if (other.CompareTag("Obstacle"))
+        {
+            //TODO
+            {
+                var par = Instantiate(dustVfx, other.transform.position, other.transform.rotation);
+                Destroy(par, 2f);
+            }
+            Destroy(other.gameObject);
+        }
     }
     public override void GatherInput()
     {
@@ -64,7 +76,7 @@ public class BuffaloController : PlayerController
         {
             JumpDown = false,
             JumpUp = false,
-            X = _buffaloMove?1f:0f
+            X = _buffaloMove ? 1f : 0f
         };
     }
     void Update()
