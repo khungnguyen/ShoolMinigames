@@ -5546,10 +5546,6 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 95089426}
     m_Modifications:
-    - target: {fileID: 2327518708315034810, guid: d38015f4d79a4014190bf4e9fc634064, type: 3}
-      propertyPath: startingAnimation
-      value: idle
-      objectReference: {fileID: 0}
     - target: {fileID: 2766928409017901218, guid: d38015f4d79a4014190bf4e9fc634064, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -5634,9 +5630,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5149197478800813305, guid: d38015f4d79a4014190bf4e9fc634064, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: -449
+    - target: {fileID: 3880335051257249091, guid: d38015f4d79a4014190bf4e9fc634064, type: 3}
+      propertyPath: _useDash
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7823804002020764022, guid: d38015f4d79a4014190bf4e9fc634064, type: 3}
       propertyPath: m_Name

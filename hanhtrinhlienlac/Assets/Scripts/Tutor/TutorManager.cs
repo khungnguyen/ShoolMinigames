@@ -12,6 +12,7 @@ public class TutorManager : MonoBehaviour
     [SerializeField] float _speechSpeed = 0.1f;
     [SerializeField] TMP_Text _text;
     [SerializeField] TutorData _data;
+    [SerializeField] bool _useDash = false;
     private int _curTutStep = 0;
 
     private bool _isWriting = false;
@@ -34,14 +35,16 @@ public class TutorManager : MonoBehaviour
     }
     public void onClick()
     {
-        if(_isWriting) {
+        if (_isWriting)
+        {
             StopAllCoroutines();
             UpdateText(_curPart.tuts[_curTutStep].text);
             _isWriting = false;
         }
-        else {
-        _curTutStep++;
-         StartSpeechWordByWord();
+        else
+        {
+            _curTutStep++;
+            StartSpeechWordByWord();
         }
 
     }
@@ -58,7 +61,8 @@ public class TutorManager : MonoBehaviour
             if (count > s.Length) break;
             yield return new WaitForSeconds(_speechSpeed);
             String t = s.Substring(0, count++);
-            UpdateText(t);
+            Debug.Log(t.Length + "-" + count);
+            UpdateText(t + (_useDash && s.Length == count - 1 ? "" : " _"));
         }
         _isWriting = false;
     }
