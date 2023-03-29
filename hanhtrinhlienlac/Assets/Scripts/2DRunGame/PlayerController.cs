@@ -19,7 +19,6 @@ namespace MiniGames
     {
 
         // Public for external hooks
-        public CinemachineConfiner _cinmemachineConfiner;
         public Vector3 Velocity { get; private set; }
         public FrameInput Input { get; set; }
         public bool JumpingThisFrame { get; private set; }
@@ -57,7 +56,7 @@ namespace MiniGames
         }
         protected void Update()
         {
-            if (!_active || isDie) return;
+            if (!_active) return;
             Velocity = (transform.position - _lastPosition) / Time.deltaTime;
             _lastPosition = transform.position;
 

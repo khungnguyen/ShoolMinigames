@@ -12,6 +12,9 @@ public class HeroController : PlayerController
     public bool rideTheOx = false;
     public bool godMode = false;
 
+    public bool finishLevel = false;
+
+
     private MarkedPoint _revivePoint;
     public System.Action<GameEnum.LevelType> OnLevelFinish;
     public System.Action<MarkedPoint> OnPlayerDeath;
@@ -38,30 +41,37 @@ public class HeroController : PlayerController
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (godMode) return;
-        // Debug.LogError("OnTriggerEnter2D" + other.tag);
+        Debug.LogError("OnTriggerEnter2D HeroController" + other.tag);
         if (other.CompareTag("EndPoint"))
         {
             if (OnLevelFinish != null)
             {
                 var next = other.GetComponent<MarkedPoint>().nextLevel;
-                OnLevelFinish.Invoke(next);
+                finishLevel = true;
+                EnableInput(false);
+                // OnLevelFinish.Invoke(next);
+                StartCoroutine(TriggerFinshLevelEvent(next, 2));
             }
 
         }
         else if (other.CompareTag("Obstacle"))
         {
             _revivePoint = other.GetComponent<Obstacle>()?.revivePoint;
-            // if (true)
-            // {
-            //     EnableBounce();
-            // }
-            // else
-            {
-              death();
-            }
-
+            death();
 
         }
+    }
+    public void reset()
+    {
+        finishLevel = false;
+        isDie = false;
+        godMode = false;
+        EnableInput(true);
+    }
+    IEnumerator TriggerFinshLevelEvent(GameEnum.LevelType next, float seconds)
+    {
+        yield return new WaitForSeconds(seconds);
+        OnLevelFinish.Invoke(next);
     }
     public void SetOnPlayerFinishMap(Action<GameEnum.LevelType> callback)
     {

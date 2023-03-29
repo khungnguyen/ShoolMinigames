@@ -32,7 +32,6 @@ public class BuffaloController : PlayerController
         if (other.CompareTag("Player"))
         {
             _player = other.transform.GetComponent<HeroController>();
-            Debug.LogError("OnTriggerEnter2D Player");
             if (!_player.Grounded)
             {
                 _player.SetPosition(attachSeatPoint.position);

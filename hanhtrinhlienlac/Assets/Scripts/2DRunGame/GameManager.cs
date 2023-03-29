@@ -45,6 +45,7 @@ public class GameManager : MonoBehaviour
         var spawnPoint = next.GetStartPoint().getPosition();
         _playerController.SetPosition(spawnPoint);
         _playerController.SetRestrictedArea(next.GetLevelBounds());
+        _playerController.reset();
     }
     private void OnPlayerDeath(MarkedPoint revivePoint)
     {

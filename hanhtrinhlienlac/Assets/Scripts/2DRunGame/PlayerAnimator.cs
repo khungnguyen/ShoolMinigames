@@ -43,6 +43,9 @@ namespace MiniGames
 
         [SpineAnimation]
         public string deathAnimation;
+
+        [SpineAnimation]
+        public string victoryAnimation;
         private HeroController _player;
         private bool _playerGrounded;
         private ParticleSystem.MinMaxGradient _currentGradient;
@@ -55,7 +58,8 @@ namespace MiniGames
             LANDING,
             RUN,
             RIDE_OX,
-            DIE
+            DIE,
+            VICTORY
         }
 
         void Awake()
@@ -75,6 +79,11 @@ namespace MiniGames
             if (_player.isDie)
             {
                 SetAnimationState(AnimationState.DIE, false);
+                return;
+            }
+            if (_player.finishLevel)
+            {
+                SetAnimationState(AnimationState.VICTORY, true);
                 return;
             }
             // Flip the sprite
@@ -172,13 +181,7 @@ namespace MiniGames
         #endregion
         private TrackEntry SetAniamtion(String s, bool loop)
         {
-            if(__previousAState == AnimationState.LANDING && _curAState == AnimationState.IDLE) {
-                return AddAnimation(s, loop);
-            }
-            else {
-                return _spine.AnimationState.SetAnimation(0, s, loop);
-            }
-
+            return _spine.AnimationState.SetAnimation(0, s, loop);
         }
         private TrackEntry AddAnimation(String s, bool loop)
         {
@@ -224,12 +227,25 @@ namespace MiniGames
                         AnimateLanding(loop);
                         break;
                     }
+                case AnimationState.VICTORY:
+                    {
+                        AnimateVictory(loop);
+                        break;
+                    }
             }
 
         }
         private void AnimateIdel(bool loop)
         {
-            SetAniamtion(idleAnimationName, loop);
+            if (__previousAState == AnimationState.LANDING && _curAState == AnimationState.IDLE)
+            {
+                AddAnimation(idleAnimationName, loop);
+            }
+            else
+            {
+                SetAniamtion(idleAnimationName, loop);
+            }
+
         }
         private void AnimateRun(bool loop)
         {
@@ -257,10 +273,13 @@ namespace MiniGames
         }
         private void AnimateLanding(bool loop)
         {
-             TrackEntry track = SetAniamtion(ladingAnimation, false);
+            TrackEntry track = SetAniamtion(ladingAnimation, false);
 
         }
-
+        private void AnimateVictory(bool loop)
+        {
+            TrackEntry track = SetAniamtion(victoryAnimation, loop);
+        }
     }
 
 

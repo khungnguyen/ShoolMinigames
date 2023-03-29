@@ -6,19 +6,25 @@ using UnityEngine.SceneManagement;
 public class UIManager : MonoBehaviour
 {
 
-
+    public Animation transitionBackground;
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
-    public void GoBackToMainMenu() {
+    public void GoBackToMainMenu()
+    {
         SceneManager.LoadScene("Main");
+    }
+    public void PlayTransitionEffect()
+    {
+        transitionBackground.Play();
+       // transitionBackground["MinGameSceneTransition"].time;
     }
 }
