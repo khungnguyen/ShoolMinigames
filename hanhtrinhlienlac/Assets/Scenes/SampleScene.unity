@@ -2470,11 +2470,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4757522507050213446, guid: c84a3b84a67a6bc46bcd2f8107473d58, type: 3}
   m_PrefabInstance: {fileID: 461566890}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &895823205 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7281249846274092732, guid: d38015f4d79a4014190bf4e9fc634064, type: 3}
-  m_PrefabInstance: {fileID: 2935357141534290515}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &898434936
 GameObject:
   m_ObjectHideFlags: 0
@@ -3773,11 +3768,6 @@ PrefabInstance:
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 5b49ded3553f8904887b9a923be6e132, type: 3}
---- !u!1 &1438847409 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1438847409, guid: d38015f4d79a4014190bf4e9fc634064, type: 3}
-  m_PrefabInstance: {fileID: 2935357141534290515}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1461351424
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5379,7 +5369,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &2037868731
 Transform:
   m_ObjectHideFlags: 0
@@ -5640,26 +5630,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3880335051257249091, guid: d38015f4d79a4014190bf4e9fc634064, type: 3}
-      propertyPath: _parentPanel
-      value: 
-      objectReference: {fileID: 895823205}
-    - target: {fileID: 3880335051257249091, guid: d38015f4d79a4014190bf4e9fc634064, type: 3}
-      propertyPath: _startAtBegin
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3880335051257249091, guid: d38015f4d79a4014190bf4e9fc634064, type: 3}
-      propertyPath: _buttonShowHelp
-      value: 
-      objectReference: {fileID: 1438847409}
-    - target: {fileID: 3880335051257249091, guid: d38015f4d79a4014190bf4e9fc634064, type: 3}
-      propertyPath: objects.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3880335051257249091, guid: d38015f4d79a4014190bf4e9fc634064, type: 3}
-      propertyPath: objects.Array.data[0]
-      value: 
-      objectReference: {fileID: 895823205}
     - target: {fileID: 7823804002020764022, guid: d38015f4d79a4014190bf4e9fc634064, type: 3}
       propertyPath: m_Name
       value: Tutor
