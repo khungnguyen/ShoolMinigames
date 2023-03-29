@@ -5546,24 +5546,9 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 95089426}
     m_Modifications:
-    - target: {fileID: 602567518719506837, guid: d38015f4d79a4014190bf4e9fc634064, type: 3}
-      propertyPath: tutData.Array.data[0].tuts.Array.data[0].text
-      value: "Ch\xE0o m\u1EEBng \u0111\u1EBFn v\u1EDBi th\u1EBF gi\u1EDBi game c\u1EE7a
-        ch\xFAng t\xF4i, ch\xFAng t\xF4i l\xE0 \u0111\u1ED9i l\xE0m game 2D"
-      objectReference: {fileID: 0}
-    - target: {fileID: 602567518719506837, guid: d38015f4d79a4014190bf4e9fc634064, type: 3}
-      propertyPath: tutData.Array.data[0].tuts.Array.data[1].text
-      value: "\u0110\xE2 l\xE0 text th\u1EE9 2 c\u1EE7a tutorial, v\xE0 t\xF4i kh\xF4ng
-        bi\u1EBFt ghi g\xEC v\xE0o \u0111\xE2y cho text n\xF3 d\xE0i ra n\xEAn \u0111\xE0nh
-        vi\u1EBFt b\u1EADy."
-      objectReference: {fileID: 0}
-    - target: {fileID: 2028463779515686517, guid: d38015f4d79a4014190bf4e9fc634064, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 116
-      objectReference: {fileID: 0}
-    - target: {fileID: 2028463779515686517, guid: d38015f4d79a4014190bf4e9fc634064, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 47
+    - target: {fileID: 2327518708315034810, guid: d38015f4d79a4014190bf4e9fc634064, type: 3}
+      propertyPath: startingAnimation
+      value: idle
       objectReference: {fileID: 0}
     - target: {fileID: 2766928409017901218, guid: d38015f4d79a4014190bf4e9fc634064, type: 3}
       propertyPath: m_Pivot.x
@@ -5651,11 +5636,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5149197478800813305, guid: d38015f4d79a4014190bf4e9fc634064, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -485
-      objectReference: {fileID: 0}
-    - target: {fileID: 5149197478800813305, guid: d38015f4d79a4014190bf4e9fc634064, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -400
+      value: -449
       objectReference: {fileID: 0}
     - target: {fileID: 7823804002020764022, guid: d38015f4d79a4014190bf4e9fc634064, type: 3}
       propertyPath: m_Name
