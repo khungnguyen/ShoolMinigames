@@ -30,7 +30,7 @@ public struct TutPart
 [System.Serializable]
 public struct TutItem
 {
-    public String text;
+    public string text;
     public AudioClip audio;
 }
 

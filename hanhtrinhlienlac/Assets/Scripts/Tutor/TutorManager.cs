@@ -48,21 +48,26 @@ public class TutorManager : MonoBehaviour
         }
 
     }
-    private void UpdateText(String s)
+    private void UpdateText(string s)
     {
         _text.SetText(s);
     }
-    IEnumerator DrawText(String s)
+    IEnumerator DrawText(string s)
     {
         _isWriting = true;
         int count = 0;
+        string postfix = "";
+       
         while (true)
         {
             if (count > s.Length) break;
             yield return new WaitForSeconds(_speechSpeed);
-            String t = s.Substring(0, count++);
-            Debug.Log(t.Length + "-" + count);
-            UpdateText(t + (_useDash && s.Length == count - 1 ? "" : " _"));
+            string t = s[..count++];
+             if (_useDash)
+        {
+            postfix = (s.Length == count - 1) ? "" : " _" ;
+        }
+            UpdateText(t + postfix);
         }
         _isWriting = false;
     }
