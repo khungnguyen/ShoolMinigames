@@ -15,6 +15,8 @@ public class TutorManager : MonoBehaviour
     [SerializeField] bool _useDash = false;
     [SerializeField] bool _startAtBegin = true;
 
+    [SerializeField] AudioSource _audioSource;
+
 
     [SerializeField] GameObject _parentPanel;
     [SerializeField] GameObject _buttonShowHelp;
@@ -50,13 +52,17 @@ public class TutorManager : MonoBehaviour
     }
     private void StartSpeechWordByWord()
     {
+        if (_audioSource.isPlaying)
+        {
+            _audioSource.Stop();
+        }
+        if (_curPart.tuts[_curTutStep].audio != null)
+        {
+            _audioSource?.PlayOneShot(_curPart.tuts[_curTutStep].audio, 1);
+        }
         StartCoroutine(DrawText(_curPart.tuts[_curTutStep].text));
     }
-    // Update is called once per frame
-    void Update()
-    {
 
-    }
     public void onClick()
     {
         if (_isWriting)
@@ -74,13 +80,17 @@ public class TutorManager : MonoBehaviour
             }
             else
             {
-                ShowTutor(false);
-                ShowButtonHelp(true);
-                OnTutComplete?.Invoke();
+                EndTutorial();
             }
 
         }
 
+    }
+    private void EndTutorial()
+    {
+        ShowTutor(false);
+        ShowButtonHelp(true);
+        OnTutComplete?.Invoke();
     }
     private void UpdateText(string s)
     {
@@ -91,7 +101,6 @@ public class TutorManager : MonoBehaviour
         _isWriting = true;
         int count = 0;
         string postfix = "";
-
         while (true)
         {
             if (count > s.Length) break;
@@ -108,10 +117,12 @@ public class TutorManager : MonoBehaviour
     public void ShowTutor(bool enable)
     {
         _parentPanel.SetActive(enable);
-        if(enable) {
+        if (enable)
+        {
             StartTutorial();
         }
-        else {
+        else
+        {
             UpdateText(""); // clear text
         }
     }
