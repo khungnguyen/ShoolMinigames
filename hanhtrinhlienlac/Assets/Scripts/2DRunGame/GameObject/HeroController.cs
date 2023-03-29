@@ -49,7 +49,6 @@ public class HeroController : PlayerController
                 var next = other.GetComponent<MarkedPoint>().nextLevel;
                 finishLevel = true;
                 EnableInput(false);
-                // OnLevelFinish.Invoke(next);
                 StartCoroutine(TriggerFinshLevelEvent(next, 2));
             }
 

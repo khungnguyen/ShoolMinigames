@@ -12,6 +12,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] CinemachineConfiner _cinemachineConfiner;
     [SerializeField] HeroController _playerController;
 
+    [SerializeField] UIManager _gameUI;
+
     public static GameManager inst;
 
 
@@ -35,17 +37,21 @@ public class GameManager : MonoBehaviour
         LevelInfo next = _levelManager.FindLevel(nextLevel);
         if (next != null)
         {
-             ChangeLevel(next);
-             _curLevel = nextLevel;
+            ChangeLevel(next);
+            _curLevel = nextLevel;
         }
     }
     private void ChangeLevel(LevelInfo next)
     {
-        _cinemachineConfiner.m_BoundingShape2D = next.GetCinemachinConfinerData();
-        var spawnPoint = next.GetStartPoint().getPosition();
-        _playerController.SetPosition(spawnPoint);
-        _playerController.SetRestrictedArea(next.GetLevelBounds());
-        _playerController.reset();
+        _gameUI.PlayTransitionEffect(() =>
+        {
+            _cinemachineConfiner.m_BoundingShape2D = next.GetCinemachinConfinerData();
+            var spawnPoint = next.GetStartPoint().getPosition();
+            _playerController.SetPosition(spawnPoint);
+            _playerController.SetRestrictedArea(next.GetLevelBounds());
+            _playerController.reset();
+        });
+
     }
     private void OnPlayerDeath(MarkedPoint revivePoint)
     {

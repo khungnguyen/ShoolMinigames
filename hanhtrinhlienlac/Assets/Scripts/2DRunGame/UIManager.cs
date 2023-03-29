@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,7 +7,7 @@ using UnityEngine.SceneManagement;
 public class UIManager : MonoBehaviour
 {
 
-    public Animation transitionBackground;
+    [SerializeField] TransitionEffect _transitionEffect;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,9 +23,9 @@ public class UIManager : MonoBehaviour
     {
         SceneManager.LoadScene("Main");
     }
-    public void PlayTransitionEffect()
+    public void PlayTransitionEffect(Action a)
     {
-        transitionBackground.Play();
+        _transitionEffect.PlayEffect(a);
        // transitionBackground["MinGameSceneTransition"].time;
     }
 }
