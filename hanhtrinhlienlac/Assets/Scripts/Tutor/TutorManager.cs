@@ -13,18 +13,42 @@ public class TutorManager : MonoBehaviour
     [SerializeField] TMP_Text _text;
     [SerializeField] TutorData _data;
     [SerializeField] bool _useDash = false;
+    [SerializeField] bool _startAtBegin = true;
+
+
+    [SerializeField] GameObject _parentPanel;
+    [SerializeField] GameObject _buttonShowHelp;
     private int _curTutStep = 0;
 
     private bool _isWriting = false;
 
-
+    public Action OnTutComplete;
+    public Action onTutStart;
     private TutPart _curPart;
+    void Awake()
+    {
+        gameObject.SetActive(_startAtBegin);
+    }
     void Start()
     {
         _curPart = _data.getAllParts().Find(e => e.type == tutoriaType);
+        StartTutorial();
+    }
+    public TutorManager SetTutType(TutoriaType type)
+    {
+        tutoriaType = type;
+        _curPart = _data.getAllParts().Find(e => e.type == tutoriaType);
+        return this;
+    }
+    public void StartTutorial()
+    {
+        onTutStart?.Invoke();
+        ShowButtonHelp(false);
+        if (!gameObject.activeSelf) gameObject.SetActive(true);
+        reset();
         StartSpeechWordByWord();
     }
-    public void StartSpeechWordByWord()
+    private void StartSpeechWordByWord()
     {
         StartCoroutine(DrawText(_curPart.tuts[_curTutStep].text));
     }
@@ -43,8 +67,18 @@ public class TutorManager : MonoBehaviour
         }
         else
         {
-            _curTutStep++;
-            StartSpeechWordByWord();
+            if (_curPart.tuts.Count - 1 > _curTutStep)
+            {
+                _curTutStep++;
+                StartSpeechWordByWord();
+            }
+            else
+            {
+                ShowTutor(false);
+                ShowButtonHelp(true);
+                OnTutComplete?.Invoke();
+            }
+
         }
 
     }
@@ -57,19 +91,37 @@ public class TutorManager : MonoBehaviour
         _isWriting = true;
         int count = 0;
         string postfix = "";
-       
+
         while (true)
         {
             if (count > s.Length) break;
             yield return new WaitForSeconds(_speechSpeed);
             string t = s[..count++];
-             if (_useDash)
-        {
-            postfix = (s.Length == count - 1) ? "" : " _" ;
-        }
+            if (_useDash)
+            {
+                postfix = (s.Length == count - 1) ? "" : " _";
+            }
             UpdateText(t + postfix);
         }
         _isWriting = false;
+    }
+    public void ShowTutor(bool enable)
+    {
+        _parentPanel.SetActive(enable);
+        if(enable) {
+            StartTutorial();
+        }
+        else {
+            UpdateText(""); // clear text
+        }
+    }
+    public void ShowButtonHelp(bool e)
+    {
+        _buttonShowHelp.SetActive(e);
+    }
+    public void reset()
+    {
+        _curTutStep = 0;
     }
 }
 public enum TutoriaType
