@@ -6,7 +6,7 @@ using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
 
-public class HeroController : PlayerController
+public class HeroController : BaseController
 {
 
     public bool rideTheOx = false;
@@ -46,7 +46,7 @@ public class HeroController : PlayerController
         {
             if (OnLevelFinish != null)
             {
-                var next = other.GetComponent<MarkedPoint>().nextLevel;
+                var next = other.GetComponent<FinishLevelPoint>().nextLevel;
                 finishLevel = true;
                 EnableInput(false);
                 StartCoroutine(TriggerFinshLevelEvent(next, 2));

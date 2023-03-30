@@ -4,9 +4,8 @@ using UnityEngine;
 
 public class Obstacle : ObjectBase
 {
+    public GameEnum.ObstacleType objectType;
     public MarkedPoint revivePoint;
 
-    private void Awake() {
-        //dustVfx.gameObject.SetActive(false);
-    }
+    
 }

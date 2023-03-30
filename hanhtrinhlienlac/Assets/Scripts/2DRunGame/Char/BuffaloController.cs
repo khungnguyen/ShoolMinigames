@@ -8,7 +8,7 @@ using System;
 using System.Buffers;
 using Mono.Cecil.Cil;
 
-public class BuffaloController : PlayerController
+public class BuffaloController : BaseController
 {
     public SkeletonAnimation _skeleton;
     private HeroController _player;

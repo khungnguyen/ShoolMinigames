@@ -5,9 +5,10 @@ using UnityEngine.U2D.IK;
 
 public class MarkedPoint : ObjectBase
 {
-    private void Awake() {
+    private void Awake()
+    {
         GetComponent<SpriteRenderer>().enabled = false;
     }
- public GameEnum.PointType type;
- public GameEnum.LevelType nextLevel;
+    public GameEnum.PointType type;
+
 }

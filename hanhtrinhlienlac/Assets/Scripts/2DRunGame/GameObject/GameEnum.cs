@@ -2,7 +2,7 @@
 
 public class GameEnum 
 {
-  public enum ObjectType {
+  public enum ObstacleType {
     NA,
     ROCK,
     SPIKE,

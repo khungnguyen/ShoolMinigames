@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class ObjectBase : MonoBehaviour
 {
-    public GameEnum.ObjectType objectType;
     public void setPosition(Vector2 v) {
             transform.position = v;
     }
