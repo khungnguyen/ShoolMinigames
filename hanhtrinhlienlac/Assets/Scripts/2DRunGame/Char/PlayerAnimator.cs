@@ -260,9 +260,9 @@ namespace MiniGames
             TrackEntry track = SetAniamtion(deathAnimation, loop);
             track.Complete += (track) =>
             {
-                _player.NotifyRevive();
                 SetAnimationState(AnimationState.IDLE);
-
+                _player.NotifyRevive();
+               
             };
 
         }

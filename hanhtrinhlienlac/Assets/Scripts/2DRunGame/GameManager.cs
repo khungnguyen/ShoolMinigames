@@ -29,6 +29,7 @@ public class GameManager : MonoBehaviour
         _playerController.OnLevelFinish += OnPlayerFinishMap;
         _playerController.OnPlayerDeath += OnPlayerDeath;
         _playerController.OnPlayerRevive += OnPlayerRevive;
+        _playerController.OnCollect += OnPlayerCollect;
         LevelInfo startLevel = _levelManager.FindLevel(_curLevel);
         ChangeLevel(startLevel);
     }
@@ -84,6 +85,9 @@ public class GameManager : MonoBehaviour
 
 
     }
-    // Start is called before the first frame update
+    private void OnPlayerCollect(int i)
+    {
+        _gameUI.SetScore(i);
+    }
 
 }

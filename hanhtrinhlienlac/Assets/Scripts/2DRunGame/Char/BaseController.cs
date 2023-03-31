@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using UnityEngine;
 
@@ -148,14 +149,14 @@ public class BaseController : MonoBehaviour, IPlayerController
     private void OnDrawGizmos()
     {
         // Bounds
-        Gizmos.color = Color.yellow;
+        Gizmos.color = UnityEngine.Color.yellow;
         Gizmos.DrawWireCube(transform.position + _characterBounds.center, _characterBounds.size);
 
         // Rays
         // if (!Application.isPlaying) 
         {
             CalculateRayRanged();
-            Gizmos.color = Color.blue;
+            Gizmos.color = UnityEngine.Color.blue;
             foreach (var range in new List<RayRange> { _raysUp, _raysRight, _raysDown, _raysLeft })
             {
                 foreach (var point in EvaluateRayPositions(range))
@@ -168,7 +169,7 @@ public class BaseController : MonoBehaviour, IPlayerController
         // if (!Application.isPlaying) return;
 
         // Draw the future position. Handy for visualizing gravity
-        Gizmos.color = Color.red;
+        Gizmos.color = UnityEngine.Color.red;
         var move = new Vector3(_currentHorizontalSpeed, _currentVerticalSpeed) * Time.deltaTime;
         Gizmos.DrawWireCube(transform.position + move, _characterBounds.size);
     }
@@ -358,5 +359,8 @@ public class BaseController : MonoBehaviour, IPlayerController
     public Vector2 GetPosition()
     {
         return transform.position;
+    }
+    public Bounds GetCharBounds() {
+        return _characterBounds;
     }
 } 

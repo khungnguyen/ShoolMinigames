@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -8,6 +9,7 @@ public class UIManager : MonoBehaviour
 {
 
     [SerializeField] TransitionEffect _transitionEffect;
+    [SerializeField] TMP_Text _score;
     // Start is called before the first frame update
     void Start()
     {
@@ -26,6 +28,10 @@ public class UIManager : MonoBehaviour
     public void PlayTransitionEffect(Action a)
     {
         _transitionEffect.PlayEffect(a);
-       // transitionBackground["MinGameSceneTransition"].time;
+        // transitionBackground["MinGameSceneTransition"].time;
+    }
+    public void SetScore(int s)
+    {
+        _score.text = s.ToString();
     }
 }

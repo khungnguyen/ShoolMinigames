@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 1170505603}
   - component: {fileID: 1170505607}
   - component: {fileID: 1170505606}
+  - component: {fileID: 1701056082}
   m_Layer: 6
   m_Name: Spine
   m_TagString: Untagged
@@ -163,6 +164,32 @@ MonoBehaviour:
   flipBy180DegreeRotation: 0
   skeletonRenderer: {fileID: 1170505603}
   skeletonGraphic: {fileID: 0}
+--- !u!114 &1701056082
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1170505601}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f21c9538588898a45a3da22bf4779ab3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rootMotionBoneName: root
+  transformPositionX: 1
+  transformPositionY: 1
+  transformRotation: 0
+  rootMotionScaleX: 1
+  rootMotionScaleY: 1
+  rootMotionScaleRotation: 1
+  rootMotionTranslateXPerY: 0
+  rootMotionTranslateYPerX: 0
+  rigidBody2D: {fileID: 0}
+  applyRigidbody2DGravity: 0
+  rigidBody: {fileID: 0}
+  disableOnOverride: 1
+  animationTrackFlags: -1
 --- !u!1 &1223195698
 GameObject:
   m_ObjectHideFlags: 0
@@ -19699,7 +19726,8 @@ MonoBehaviour:
   jumpnimationName: jump
   ladingAnimation: landing
   sitOnTheOxAnimation: idle
-  deathAnimation: idle
+  deathAnimation: fall_back
+  victoryAnimation: victory
 --- !u!82 &771776640
 AudioSource:
   m_ObjectHideFlags: 0
@@ -19976,7 +20004,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.002747178}
+  m_Offset: {x: 0, y: -0.08475113}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -19987,7 +20015,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1.2912185}
+  m_Size: {x: 1, y: 2.5286865}
   m_EdgeRadius: 0
 --- !u!114 &927613138
 MonoBehaviour:
@@ -20001,7 +20029,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0fbb6db05694c1147b1c9bafeacc87d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _cinmemachineConfiner: {fileID: 0}
   isDie: 0
   enableInput: 1
   _characterBounds:
@@ -20028,6 +20055,8 @@ MonoBehaviour:
   _freeColliderIterations: 10
   rideTheOx: 0
   godMode: 0
+  finishLevel: 0
+  _dustVfx: {fileID: 6467265068652234796, guid: 2f1cd8faa84a24244a9f20d203e22856, type: 3}
 --- !u!1 &6432609861764478824
 GameObject:
   m_ObjectHideFlags: 0
