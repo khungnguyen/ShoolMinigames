@@ -44,8 +44,7 @@ public class HeroController : BaseController
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (godMode) return;
-        Debug.LogError("OnTriggerEnter2D HeroController" + other.tag);
+        if (godMode || isDie) return;
         if (other.CompareTag(Defined.TAG_ENDPOINT))
         {
             if (OnLevelFinish != null)
@@ -143,11 +142,11 @@ public class HeroController : BaseController
     }
     private void HideSpine()
     {
-       TransparentSpine(true);
+        TransparentSpine(true);
     }
-     private void ShowSpine()
+    private void ShowSpine()
     {
-       TransparentSpine(false);
+        TransparentSpine(false);
     }
     private void TransparentSpine(bool e = true)
     {

@@ -4,17 +4,21 @@ using Cinemachine;
 using MiniGames;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.PlayerLoop;
 
 public class GameManager : MonoBehaviour
 {
     [SerializeField] LevelManager _levelManager;
     [SerializeField] CinemachineVirtualCamera _cinemachineCamera;
+    [SerializeField] Camera _gameCamera;
     [SerializeField] CinemachineConfiner _cinemachineConfiner;
     [SerializeField] HeroController _playerController;
 
     [SerializeField] UIManager _gameUI;
 
     public static GameManager inst;
+
+    private Bounds _cameraBounds;
 
 
 
@@ -51,6 +55,7 @@ public class GameManager : MonoBehaviour
             _playerController.SetPosition(spawnPoint);
             _playerController.SetRestrictedArea(next.GetLevelBounds());
             _playerController.reset();
+            SpawnBullet();
         });
 
     }
@@ -89,5 +94,17 @@ public class GameManager : MonoBehaviour
     {
         _gameUI.SetScore(i);
     }
-
+    private void SpawnBullet()
+    {
+        _levelManager.SpawnBullet();
+        Invoke("SpawnBullet", Random.Range(0.5f, 3f));
+    }
+    private void Update() {
+        float height = 2f * _gameCamera.orthographicSize;
+        float width = height * _gameCamera.aspect;
+        var center = new Vector3(_gameCamera.transform.position.x, _gameCamera.transform.position.y);
+        var size = new Vector3(width + 5, height);
+        _cameraBounds = new Bounds(center, size);
+        _levelManager.SetCameraBounds(_cameraBounds);
+    }
 }
