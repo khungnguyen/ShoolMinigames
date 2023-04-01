@@ -7,6 +7,7 @@ public class LeaderboardContent : MonoBehaviour
 {
     [SerializeField] private RectTransform itemsContainer;
     [SerializeField] private GameObject itemPrefab;
+    [SerializeField] private GameObject localPlayerItemPrefab;
     [SerializeField] private ScrollRect scrollRect;
     // Start is called before the first frame update
     void Start()
@@ -22,23 +23,36 @@ public class LeaderboardContent : MonoBehaviour
 
     public void SetData(LeaderboardData data)
     {
+        int uiDestroyedCount = 0;
         int idx = 0;
         for (; idx < data.list.Count; idx++) {
             var info = data.list[idx];
-            GameObject go;
-            if (idx < itemsContainer.childCount) {
-                go = itemsContainer.GetChild(idx)?.gameObject;
-                go.SetActive(true);
-            } else {
-                go = Instantiate(itemPrefab);
+            bool isLocalPlayer = info.playerId == "tuiot";
+
+            GameObject go = null;
+            while (idx + uiDestroyedCount < itemsContainer.childCount) {
+                var _go = itemsContainer.GetChild(idx + uiDestroyedCount).gameObject;
+                if (_go.GetComponent<LeaderboardItemUI>().IsForLocalPlayer == isLocalPlayer) {
+                    go = _go;
+                    go.SetActive(true);
+                    break;
+                } else {
+                    Object.Destroy(_go);
+                    uiDestroyedCount++;
+                }
+            }
+
+            if (go == null) {
+                go = Instantiate(isLocalPlayer ? localPlayerItemPrefab : itemPrefab);
                 go.transform.SetParent(itemsContainer);
             }
             var infoUI = go.GetComponent<LeaderboardItemUI>();
             infoUI.SetInfo(info);
         }
 
-        for (; idx < itemsContainer.childCount; idx++) {
-            itemsContainer.GetChild(idx).gameObject.SetActive(false);
+        int uiIdx = idx + uiDestroyedCount;
+        for (; uiIdx < itemsContainer.childCount; uiIdx++) {
+            itemsContainer.GetChild(uiIdx).gameObject.SetActive(false);
         }
 
         //

@@ -1168,6 +1168,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemsContainer: {fileID: 1729875510}
   itemPrefab: {fileID: 8169786603240318798, guid: b68bdaa589b105444862bf71e2e11741, type: 3}
+  localPlayerItemPrefab: {fileID: 2392438556107468518, guid: 978a6942f4a39bf4db49585b30d3673f, type: 3}
   scrollRect: {fileID: 1617037050}
 --- !u!1 &1040008090
 GameObject:
@@ -1739,7 +1740,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -1.7208252, y: -376.49988}
+  m_AnchoredPosition: {x: -1.7208252, y: -376.50003}
   m_SizeDelta: {x: -3.4416504, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1729875511

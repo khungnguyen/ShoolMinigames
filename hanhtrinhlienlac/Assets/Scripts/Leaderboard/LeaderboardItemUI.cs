@@ -7,7 +7,10 @@ public class LeaderboardItemUI : MonoBehaviour
     [SerializeField] private TMPro.TextMeshProUGUI rankTMP;
     [SerializeField] private TMPro.TextMeshProUGUI playerNameTMP;
     [SerializeField] private TMPro.TextMeshProUGUI scoreTMP;
+    [SerializeField] private bool forLocalPlayer = false;
 
+    public bool IsForLocalPlayer { get => forLocalPlayer; }
+    
     // Start is called before the first frame update
     void Start()
     {
