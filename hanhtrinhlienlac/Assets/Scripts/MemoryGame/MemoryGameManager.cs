@@ -54,6 +54,7 @@ public class MemoryGameManager : MonoBehaviour
 
     public void ShowNextLevel()
     {
+        Scroring.Inst.StartOrResume();
         resutlPopup.Hide();
 
         curLevelIdx++;
@@ -126,10 +127,12 @@ public class MemoryGameManager : MonoBehaviour
 
                 if (indexesInPairs.Count == 0)
                 {
+                    Scroring.Inst.Pause();
                     StartCoroutine(ShowResultPopup(0.5f, null, null));
                 }
                 else if (indexesInPairs.Count == 1 && indexesInPairs[0].Defective)
                 {
+                    Scroring.Inst.Pause();
                     var item = GetItemByIndex(indexesInPairs[0].A);
                     item.SetState(true, 1f);
                     string extraText = IsLastLevel() ? "Công cụ tìm được" : "Mật thư tìm được";
