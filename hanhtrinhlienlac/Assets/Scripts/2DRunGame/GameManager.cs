@@ -34,6 +34,8 @@ public class GameManager : MonoBehaviour
         _playerController.OnPlayerDeath += OnPlayerDeath;
         _playerController.OnPlayerRevive += OnPlayerRevive;
         _playerController.OnCollect += OnPlayerCollect;
+        _gameUI.getTutorManager().OnTutStart += OnTutorStart;
+        _gameUI.getTutorManager().OnTutComplete += OnTutorEnd;
         LevelInfo startLevel = _levelManager.FindLevel(_curLevel);
         ChangeLevel(startLevel);
     }
@@ -55,7 +57,11 @@ public class GameManager : MonoBehaviour
             _playerController.SetPosition(spawnPoint);
             _playerController.SetRestrictedArea(next.GetLevelBounds());
             _playerController.reset();
+            _playerController.EnableInput(false);
+            _playerController.GodMode(true);
             SpawnBullet();
+            _gameUI.getTutorManager().SetTutType(GetTutByLevel(_curLevel)).ShowTutor(true);
+
         });
 
     }
@@ -99,12 +105,30 @@ public class GameManager : MonoBehaviour
         _levelManager.SpawnBullet();
         Invoke("SpawnBullet", Random.Range(0.5f, 3f));
     }
-    private void Update() {
+    private void Update()
+    {
         float height = 2f * _gameCamera.orthographicSize;
         float width = height * _gameCamera.aspect;
         var center = new Vector3(_gameCamera.transform.position.x, _gameCamera.transform.position.y);
         var size = new Vector3(width + 5, height);
         _cameraBounds = new Bounds(center, size);
         _levelManager.SetCameraBounds(_cameraBounds);
+    }
+    private void OnTutorStart(TutoriaType t) {
+
+    }
+     private void OnTutorEnd(TutoriaType t) {
+        _playerController.EnableInput(true);
+        _playerController.GodMode(false);
+    }
+    private TutoriaType GetTutByLevel(GameEnum.LevelType l) {
+        return l switch
+        {
+            GameEnum.LevelType.Level1 => TutoriaType.Run2D_Game_1,
+            GameEnum.LevelType.Level2 => TutoriaType.Run2D_Game_2,
+            GameEnum.LevelType.Level3 => TutoriaType.Run2D_Game_3,
+            GameEnum.LevelType.Level4 => TutoriaType.Run2D_Game_4,
+            _ => TutoriaType.Run2D_Game_1,
+        };
     }
 }

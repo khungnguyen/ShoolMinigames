@@ -9,6 +9,7 @@ public class UIManager : MonoBehaviour
 {
 
     [SerializeField] TransitionEffect _transitionEffect;
+    [SerializeField] TutorManager _tutor;
     [SerializeField] TMP_Text _score;
     // Start is called before the first frame update
     void Start()
@@ -33,5 +34,8 @@ public class UIManager : MonoBehaviour
     public void SetScore(int s)
     {
         _score.text = s.ToString();
+    }
+    public TutorManager getTutorManager() {
+        return _tutor;
     }
 }

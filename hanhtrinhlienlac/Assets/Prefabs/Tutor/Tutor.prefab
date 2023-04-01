@@ -168,8 +168,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -2.0116, y: 53.30609}
-  m_SizeDelta: {x: 759.2112, y: 309.4901}
+  m_AnchoredPosition: {x: 4.8615, y: 53.30609}
+  m_SizeDelta: {x: 739.5737, y: 309.4901}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7979786583716521263
 CanvasRenderer:
@@ -464,7 +464,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2766928409017901218
 RectTransform:
   m_ObjectHideFlags: 0
@@ -538,18 +538,61 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tutData:
-  - type: 0
+  - type: 3
     tuts:
-    - text: "Ch\xE0o m\u1EEBng \u0111\u1EBFn v\u1EDBi th\u1EBF gi\u1EDBi game c\u1EE7a
-        ch\xFAng t\xF4i, ch\xFAng t\xF4i l\xE0 \u0111\u1ED9i l\xE0m game 2D"
+    - text: "B\xE2y gi\u1EDD m\xECnh b\u1EAFt \u0111\u1EA7u h\xE0nh tr\xECnh giao
+        m\u1EADt th\u01B0 th\xF4i. Nh\u1EA5n ph\xEDm D ho\u1EB7c -> \u0111\u1EC3
+        ti\u1EBFn v\u1EC1 ph\xEDa tr\u01B0\u1EDBc, ph\xEDm A ho\u1EB7c -> \u0111\u1EC3
+        quay v\u1EC1 ph\xEDa sau. D\xF9ng ph\xEDm kho\u1EA3ng c\xE1ch (ph\xEDm d\xE0i)
+        \u0111\u1EC3 nh\u1EA3y qua c\xE1c ch\u01B0\u1EDBng ng\u1EA1i v\u1EADt."
       audio: {fileID: 0}
-    - text: "\u0110\xE2 l\xE0 text th\u1EE9 2 c\u1EE7a tutorial, v\xE0 t\xF4i kh\xF4ng
-        bi\u1EBFt ghi g\xEC v\xE0o \u0111\xE2y cho text n\xF3 d\xE0i ra n\xEAn \u0111\xE0nh
-        vi\u1EBFt b\u1EADy."
+    - text: "\u0110\xE2y l\xE0 khu r\u1EEBng v\u1EDBi nh\u1EEFng con su\u1ED1i n\u01B0\u1EDBc
+        r\u1EA5t nguy hi\u1EC3m. D\xF9ng ph\xEDm kho\u1EA3ng c\xE1ch (ph\xEDm d\xE0i)
+        \u0111\u1EC3 v\u01B0\u1EE3t qua c\xE1c \u0111o\u1EA1n n\u01B0\u1EDBc nha.
+        C\u1ED1 g\u1EAFng \u0111\u1EEBng \u0111\u1EC3 r\u01A1i xu\u1ED1ng n\u01B0\u1EDBc."
       audio: {fileID: 0}
-    - text: "\u0110\xE2y l\xE0 text th\u1EE9 ba d\xE0i \u01A1i l\xE0 d\xE0i, d\xE0i
-        \u0111\u1EBFn n\u1ED5i m\xE0 ch\u01B0a vi\u1EBFt \u0111\xE3 m\u1ECFi tay
-        r\u1ED3i c\xE1c b\u1EA1n \u1EA1"
+    - text: "B\u1EAFt \u0111\u1EA7u th\xF4i!"
+      audio: {fileID: 0}
+  - type: 4
+    tuts:
+    - text: "Gi\u1EDD ch\xFAng ta \u0111\u1EBFn khu \u0111\u1ED3ng b\u1EB1ng, kh\xF4ng
+        c\xF2n nh\u1EEFng d\xF2ng su\u1ED1i nh\u01B0ng b\u1EA1n ph\u1EA3i ch\xFA
+        \xFD nh\u1EEFng h\xF2n \u0111\xE1, c\xE0nh c\xE2y, ko l\xE0 b\u1ECB v\u1EA5p
+        t\xE9 \u0111\xF3."
+      audio: {fileID: 0}
+    - text: "C\xF3 nh\xECn th\u1EA5y con tr\xE2u \u0111ang g\u1EB7m c\u1ECF b\xEAn
+        \u0111\u01B0\u1EDDng ko? B\u1EA1n c\xF3 th\u1EC3 nh\u1EA3y l\xEAn l\u01B0ng
+        n\xF3 \u0111\u1EC3 c\u01B0\u1EDFi n\xF3 th\u1EADt nhanh qua khu \u0111\u1ED3ng
+        b\u1EB1ng n\xE0y."
+      audio: {fileID: 0}
+    - text: "B\u1EAFt \u0111\u1EA7u th\xF4i!"
+      audio: {fileID: 0}
+  - type: 5
+    tuts:
+    - text: "V\u01B0\u1EE3t qua khu \u0111\u1ED3ng b\u1EB1ng r\u1ED3i, gi\u1EDD l\xE0
+        t\u1EDBi nh\u1EEFng c\xE1nh \u0111\u1ED3ng ru\u1ED9ng b\u1EADc thang th\u1EADt
+        \u0111\u1EB9p. Tuy nhi\xEAn n\u1EBFu r\u01A1i v\xE0o nh\u1EEFng v\u0169ng
+        l\u1EA7y s\u1EBD l\xE0m b\u1EA1n \u0111i ch\u1EADm h\u01A1n r\u1EA5t nhi\u1EC1u
+        \u0111\xF3. C\u1ED1 g\u1EAFn n\xE9 nh\u1EEFng v\u0169ng l\u1EA7y nha."
+      audio: {fileID: 0}
+    - text: "B\u1EAFt \u0111\u1EA7u th\xF4i!"
+      audio: {fileID: 0}
+  - type: 6
+    tuts:
+    - text: "Khu n\xFAi \u0111\xE1 n\xE0y s\u1EBD r\u1EA5t nguy hi\u1EC3m, \u0111\xE2y
+        c\u0169ng l\xE0 chi\u1EBFn tr\u01B0\u1EDDng \xE1c li\u1EC7t. C\u1EA9n th\u1EADn
+        nh\u1EEFng vi\xEAn \u0111\u1EA1n c\xF3 th\u1EC3 b\u1EAFn t\u1EDBi b\u1EA5t
+        th\xECnh l\xECnh. C\u0103n c\u1EE9 c\u1EE7a C\xE1ch M\u1EA1ng ph\xEDa tr\u01B0\u1EDBc
+        r\u1ED3i. C\u1ED1 l\xEAn."
+      audio: {fileID: 0}
+    - text: "B\u1EAFt \u0111\u1EA7u th\xF4i!"
+      audio: {fileID: 0}
+  - type: 7
+    tuts:
+    - text: "Ch\xFAc m\u1EEBng b\u1EA1n \u0111\xE3 trao \u0111\u01B0\u1EE3c m\u1EADt
+        th\u01B0 cho anh b\u1ED9 \u0111\u1ED9i. B\u1EA1n \u0111\xE3 g\xF3p c\xF4ng
+        l\u1EDBn cho c\xE1ch m\u1EA1ng v\xE0 thu \u0111\u01B0\u1EE3c r\u1EA5t nhi\u1EC1u
+        huy hi\u1EC7u M\u0103ng Mon."
       audio: {fileID: 0}
 --- !u!114 &3880335051257249091
 MonoBehaviour:
@@ -563,11 +606,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6dbb07aa454278146bead99ae72bfdbd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tutoriaType: 0
-  _speechSpeed: 0.05
+  tutoriaType: 3
+  _speechSpeed: 0.03
   _text: {fileID: 6480378855966914659}
   _data: {fileID: 602567518719506837}
-  _useDash: 0
+  _useDash: 1
   _startAtBegin: 1
   _audioSource: {fileID: 2093094557}
   _parentPanel: {fileID: 7281249846274092732}

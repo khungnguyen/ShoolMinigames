@@ -44,7 +44,7 @@ public class HeroController : BaseController
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (godMode || isDie) return;
+        if (godMode || isDie || finishLevel) return;
         if (other.CompareTag(Defined.TAG_ENDPOINT))
         {
             if (OnLevelFinish != null)

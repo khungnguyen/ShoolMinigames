@@ -24,8 +24,8 @@ public class TutorManager : MonoBehaviour
 
     private bool _isWriting = false;
 
-    public Action OnTutComplete;
-    public Action onTutStart;
+    public Action<TutoriaType> OnTutComplete;
+    public Action<TutoriaType> OnTutStart;
     private TutPart _curPart;
     void Awake()
     {
@@ -44,7 +44,7 @@ public class TutorManager : MonoBehaviour
     }
     public void StartTutorial()
     {
-        onTutStart?.Invoke();
+        OnTutStart?.Invoke(tutoriaType);
         ShowButtonHelp(false);
         if (!gameObject.activeSelf) gameObject.SetActive(true);
         reset();
@@ -90,7 +90,7 @@ public class TutorManager : MonoBehaviour
     {
         ShowTutor(false);
         ShowButtonHelp(true);
-        OnTutComplete?.Invoke();
+        OnTutComplete?.Invoke(tutoriaType);
     }
     private void UpdateText(string s)
     {
@@ -140,5 +140,9 @@ public enum TutoriaType
     MainMenu,
     Quiz,
     Pair,
-    Run2D
+    Run2D_Game_1,
+    Run2D_Game_2,
+    Run2D_Game_3,
+    Run2D_Game_4,
+    Run2D_Game_End,
 }
