@@ -47,3 +47,16 @@ class Pair<T>
         return defective ? "Defective Pair [" + a + ", --]" : "Pair [" + a + ", " + b + "]";
     }
 }
+
+class Pair<T, U> 
+{
+    private T a;
+    public T A { get => a; }
+    private U b;
+    public U B { get => B; }
+    
+    public Pair(T _a, U _b) {
+        a = _a;
+        b = _b;
+    }
+}
