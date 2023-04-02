@@ -37,7 +37,7 @@ public class GameManager : MonoBehaviour
         _gameUI.getTutorManager().OnTutStart += OnTutorStart;
         _gameUI.getTutorManager().OnTutComplete += OnTutorEnd;
         LevelInfo startLevel = _levelManager.FindLevel(_curLevel);
-        ChangeLevel(startLevel);
+        ChangeLevel(startLevel,true);
     }
     private void OnPlayerFinishMap(GameEnum.LevelType nextLevel)
     {
@@ -48,9 +48,9 @@ public class GameManager : MonoBehaviour
             _curLevel = nextLevel;
         }
     }
-    private void ChangeLevel(LevelInfo next)
+    private void ChangeLevel(LevelInfo next, bool isEnter = false)
     {
-        _gameUI.PlayTransitionEffect(() =>
+        _gameUI.PlayTransitionEffect(isEnter,() =>
         {
             _cinemachineConfiner.m_BoundingShape2D = next.GetCinemachinConfinerData();
             var spawnPoint = next.GetStartPoint().getPosition();
@@ -60,9 +60,9 @@ public class GameManager : MonoBehaviour
             _playerController.EnableInput(false);
             _playerController.GodMode(true);
             _gameUI.getTutorManager().SetTutType(GetTutByLevel(_curLevel)).ShowTutor(true);
+            
 
         });
-
     }
     private void OnPlayerDeath(MarkedPoint revivePoint)
     {
@@ -97,7 +97,7 @@ public class GameManager : MonoBehaviour
     }
     private void OnPlayerCollect(int i)
     {
-        _gameUI.SetScore(i);
+        _gameUI.SetScore(Defined.BOUNS_SCORE);
     }
     private void SpawnBullet()
     {
@@ -121,6 +121,7 @@ public class GameManager : MonoBehaviour
     {
         _playerController.EnableInput(true);
         _playerController.GodMode(false);
+        _gameUI.StartScoring();
         //  SpawnBullet();
     }
     private TutoriaType GetTutByLevel(GameEnum.LevelType l)

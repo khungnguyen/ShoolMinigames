@@ -100,7 +100,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   skeletonDataAsset: {fileID: 11400000, guid: ede7908005add374299ebb42eae833bb, type: 2}
-  initialSkinName: char_1
+  initialSkinName: char_3
   fixPrefabOverrideViaMeshFilter: 2
   initialFlipX: 0
   initialFlipY: 0
@@ -19968,7 +19968,7 @@ Transform:
   m_Children:
   - {fileID: 5979605535021479280}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &927613137
 Rigidbody2D:
@@ -20033,7 +20033,7 @@ MonoBehaviour:
   enableInput: 1
   _characterBounds:
     m_Center: {x: 0, y: 0, z: 0}
-    m_Extent: {x: 0.6, y: 1.36, z: 0}
+    m_Extent: {x: 0.28, y: 1.36, z: 0}
   _groundLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -20057,6 +20057,7 @@ MonoBehaviour:
   godMode: 0
   finishLevel: 0
   _dustVfx: {fileID: 6467265068652234796, guid: 2f1cd8faa84a24244a9f20d203e22856, type: 3}
+  spineColor: {fileID: 1170505603}
 --- !u!1 &6432609861764478824
 GameObject:
   m_ObjectHideFlags: 0

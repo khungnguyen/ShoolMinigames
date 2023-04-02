@@ -78,7 +78,10 @@ public class Scroring : MonoBehaviour
     {
         bonusScore += value;
     }
-
+    public void AddRemainingTimeScore(float value)
+    {
+        curRemainingTimeScore += value;
+    }
     private void UpdateVisual()
     {
         scoreTMPro.text = displayTotalScore ? TotalScore.ToString() : CurRemainingTimeScore.ToString();

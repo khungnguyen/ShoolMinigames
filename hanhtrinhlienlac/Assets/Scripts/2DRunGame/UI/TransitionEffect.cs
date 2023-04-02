@@ -7,10 +7,10 @@ public class TransitionEffect : MonoBehaviour
 {
     [SerializeField] Animation _effect;
     private Action _onChangeEvent;
-    public void PlayEffect(Action finish)
+    public void PlayEffect(bool isEnterGame,Action finish)
     {
         _onChangeEvent = finish;
-        _effect.Play();
+        _effect.Play(isEnterGame?"EnterGameTransition":"MinGameSceneTransition");
         
     }
     public void OnNotifyChangeGameScene()

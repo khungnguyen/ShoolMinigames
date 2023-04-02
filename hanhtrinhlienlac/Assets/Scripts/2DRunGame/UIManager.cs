@@ -10,7 +10,7 @@ public class UIManager : MonoBehaviour
 
     [SerializeField] TransitionEffect _transitionEffect;
     [SerializeField] TutorManager _tutor;
-    [SerializeField] TMP_Text _score;
+    [SerializeField] Scroring _score;
     // Start is called before the first frame update
     void Start()
     {
@@ -26,16 +26,19 @@ public class UIManager : MonoBehaviour
     {
         SceneManager.LoadScene("Main");
     }
-    public void PlayTransitionEffect(Action a)
+    public void PlayTransitionEffect(bool isEnter,Action a)
     {
-        _transitionEffect.PlayEffect(a);
+        _transitionEffect.PlayEffect(isEnter,a);
         // transitionBackground["MinGameSceneTransition"].time;
     }
     public void SetScore(int s)
     {
-        _score.text = s.ToString();
+       _score.AddRemainingTimeScore(s);
     }
     public TutorManager getTutorManager() {
         return _tutor;
+    }
+    public void StartScoring() {
+        _score.StartOrResume();
     }
 }
