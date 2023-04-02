@@ -59,7 +59,6 @@ public class GameManager : MonoBehaviour
             _playerController.reset();
             _playerController.EnableInput(false);
             _playerController.GodMode(true);
-            SpawnBullet();
             _gameUI.getTutorManager().SetTutType(GetTutByLevel(_curLevel)).ShowTutor(true);
 
         });
@@ -114,14 +113,18 @@ public class GameManager : MonoBehaviour
         _cameraBounds = new Bounds(center, size);
         _levelManager.SetCameraBounds(_cameraBounds);
     }
-    private void OnTutorStart(TutoriaType t) {
+    private void OnTutorStart(TutoriaType t)
+    {
 
     }
-     private void OnTutorEnd(TutoriaType t) {
+    private void OnTutorEnd(TutoriaType t)
+    {
         _playerController.EnableInput(true);
         _playerController.GodMode(false);
+        //  SpawnBullet();
     }
-    private TutoriaType GetTutByLevel(GameEnum.LevelType l) {
+    private TutoriaType GetTutByLevel(GameEnum.LevelType l)
+    {
         return l switch
         {
             GameEnum.LevelType.Level1 => TutoriaType.Run2D_Game_1,

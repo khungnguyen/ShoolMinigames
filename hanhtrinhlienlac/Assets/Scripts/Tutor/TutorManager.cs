@@ -14,6 +14,7 @@ public class TutorManager : MonoBehaviour
     [SerializeField] TutorData _data;
     [SerializeField] bool _useDash = false;
     [SerializeField] bool _startAtBegin = true;
+    [SerializeField] bool _useHelp = true;
 
     [SerializeField] AudioSource _audioSource;
 
@@ -23,6 +24,8 @@ public class TutorManager : MonoBehaviour
     private int _curTutStep = 0;
 
     private bool _isWriting = false;
+
+    private bool _completed = false;
 
     public Action<TutoriaType> OnTutComplete;
     public Action<TutoriaType> OnTutStart;
@@ -65,6 +68,7 @@ public class TutorManager : MonoBehaviour
 
     public void onClick()
     {
+        if (_completed) return;
         if (_isWriting)
         {
             StopAllCoroutines();
@@ -88,6 +92,7 @@ public class TutorManager : MonoBehaviour
     }
     private void EndTutorial()
     {
+        _completed = true;
         ShowTutor(false);
         ShowButtonHelp(true);
         OnTutComplete?.Invoke(tutoriaType);
@@ -128,11 +133,12 @@ public class TutorManager : MonoBehaviour
     }
     public void ShowButtonHelp(bool e)
     {
-        _buttonShowHelp.SetActive(e);
+        _buttonShowHelp.SetActive(_useHelp && e);
     }
     public void reset()
     {
         _curTutStep = 0;
+        _completed = false;
     }
 }
 public enum TutoriaType

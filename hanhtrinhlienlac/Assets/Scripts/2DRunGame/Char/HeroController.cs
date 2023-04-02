@@ -45,6 +45,7 @@ public class HeroController : BaseController
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (godMode || isDie || finishLevel) return;
+        Debug.LogError("OnTriggerEnter2D" + other.tag);
         if (other.CompareTag(Defined.TAG_ENDPOINT))
         {
             if (OnLevelFinish != null)
@@ -89,15 +90,7 @@ public class HeroController : BaseController
     public void EnableInput(bool e)
     {
         enableInput = e;
-        if (!e)
-        {
-            Input = new FrameInput
-            {
-                JumpDown = false,
-                JumpUp = false,
-                X = 0f
-            };
-        }
+        Debug.LogError(("EnableInput" + e));
     }
     public override void GatherInput()
     {
@@ -113,6 +106,15 @@ public class HeroController : BaseController
             {
                 lastJumpPressed = Time.time;
             }
+        }
+        else
+        {
+            Input = new FrameInput
+            {
+                JumpDown = false,
+                JumpUp = false,
+                X = 0f
+            };
         }
 
     }
@@ -132,7 +134,7 @@ public class HeroController : BaseController
             point = null;
             var dust = Instantiate<GameObject>(_dustVfx, new Vector2(transform.position.x, transform.position.y - GetCharBounds().size.y / 2), Quaternion.identity);
             Destroy(dust, 1f);
-            Invoke("ShowSpine", 0.2f);
+            Invoke("ShowSpine", 0.4f);
 
         }
     }

@@ -1,0 +1,56 @@
+Character-Anim_2.png
+size:1024,512
+filter:Linear,Linear
+pma:true
+An/ao
+bounds:634,302,127,194
+An/ao phai
+bounds:849,33,70,103
+offsets:1,1,72,105
+An/ao trai
+bounds:483,2,84,128
+offsets:3,2,88,132
+rotate:90
+An/cap
+bounds:483,293,149,203
+offsets:2,1,152,206
+An/chan phai
+bounds:763,376,120,199
+rotate:90
+An/chan trai
+bounds:483,88,132,203
+An/dau
+bounds:2,39,479,457
+offsets:1,1,481,459
+An/day trai
+bounds:763,284,90,200
+offsets:1,1,92,202
+rotate:90
+An/long may phai
+bounds:921,59,80,31
+offsets:1,1,82,33
+rotate:90
+An/long may trai
+bounds:964,398,98,27
+offsets:2,1,101,29
+rotate:90
+An/mai trai
+bounds:617,27,129,109
+offsets:3,1,133,112
+An/mat phai
+bounds:748,44,99,92
+offsets:2,1,103,95
+An/mieng
+bounds:2,13,93,24
+offsets:2,1,96,26
+An/mui
+bounds:954,104,43,35
+offsets:2,1,46,38
+An/quan
+bounds:758,138,137,144
+An/tay phai
+bounds:617,138,153,139
+rotate:90
+An/tay trai
+bounds:897,141,141,102
+rotate:90
