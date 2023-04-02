@@ -45,6 +45,7 @@ public class HeroController : BaseController
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (godMode || isDie || finishLevel) return;
+        Debug.LogError("OnTriggerEnter2D" + other.tag);
         if (other.CompareTag(Defined.TAG_ENDPOINT))
         {
             if (OnLevelFinish != null)
@@ -132,7 +133,7 @@ public class HeroController : BaseController
             point = null;
             var dust = Instantiate<GameObject>(_dustVfx, new Vector2(transform.position.x, transform.position.y - GetCharBounds().size.y / 2), Quaternion.identity);
             Destroy(dust, 1f);
-            Invoke("ShowSpine", 0.2f);
+            Invoke("ShowSpine", 0.4f);
 
         }
     }
