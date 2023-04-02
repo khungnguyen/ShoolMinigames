@@ -3,6 +3,7 @@
     "questions": [
         {
             "allowShuffle": true,
+            "anwserByImage": false,
             "text": "Hội Nhi Đồng Cứu quốc ra đời tại đâu vào thời gian nào?",
             "answers": [
                 {
@@ -26,6 +27,7 @@
         },
         {
             "allowShuffle": true,
+            "anwserByImage": false,
             "text": "Ngoài anh Kim Đồng, bốn thành viên còn lại của Hội Nhi đồng Cứu quốc là những ai?",
             "answers": [
                 {
@@ -49,6 +51,7 @@
         },
         {
             "allowShuffle": true,
+            "anwserByImage": true,
             "text": "Giải pháp của anh Kim Đồng để cất giữ tài liệu an toàn nhất",
             "answers": [
                 {
@@ -72,6 +75,7 @@
         },
         {
             "allowShuffle": true,
+            "anwserByImage": false,
             "text": "Các thành viên Hội Nhi đồng Cứu quốc đã từng dẫn đường cho một vị lãnh đạo cấp cao của nước ta, Người đó là ai?",
             "answers": [
                 {
@@ -95,6 +99,7 @@
         },
         {
             "allowShuffle": true,
+            "anwserByImage": false,
             "text": "Kim Đồng chọn giải pháp nào sau đây để bảo vệ an toàn cho cán bộ cách mạng?",
             "answers": [
                 {

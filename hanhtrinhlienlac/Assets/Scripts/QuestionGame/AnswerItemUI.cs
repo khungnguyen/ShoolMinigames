@@ -6,7 +6,7 @@ using UnityEngine.EventSystems;
 using UnityEngine.UI;
 using System;
 
-public class AnswerItemUI : MonoBehaviour, IPointerClickHandler
+public class AnswerItemUI : MonoBehaviour, IPointerClickHandler, IAnswerItemUI
 {
     private static string[] ids = new[] {"A", "B", "C", "D", "E", "G", "H", "I", "K"};
     [SerializeField] private TextMeshProUGUI idTMPro;

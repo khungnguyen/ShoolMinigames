@@ -9,6 +9,7 @@ public class QuestionGameManager : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI questionTMPro;
     [SerializeField] private Transform answersContainer;
+    [SerializeField] private Transform imageAnswersContainer;
     [SerializeField] private GameObject answerPrefab;
     [SerializeField] private QuestionGameResultPopup resultPopup;
 
@@ -17,6 +18,8 @@ public class QuestionGameManager : MonoBehaviour
     private int selectedAnswerIndex = -1;
 
     private int finishedCount = 0;
+
+    private Transform curAnswerContainer;
 
     // Start is called before the first frame update
     void Start()
@@ -54,20 +57,29 @@ public class QuestionGameManager : MonoBehaviour
 
         curQuestion = QuestionBank.Inst.questions[curQuestionIndex];
 
+        if (curQuestion.anwserByImage) {
+            curAnswerContainer = imageAnswersContainer;
+            answersContainer.gameObject.SetActive(false);
+        } else {
+            curAnswerContainer = answersContainer;
+            imageAnswersContainer.gameObject.SetActive(false);
+        }
+        curAnswerContainer.gameObject.SetActive(true);
+
         questionTMPro.text = curQuestion.text;
         
         int idx = 0;
         // Set answers' data
         for (; idx < curQuestion.answers.Length; idx++) {
+            curAnswerContainer.GetChild(idx).gameObject.SetActive(true);
             var answerItemUI = GetAnswerItemUI(idx);
-            answerItemUI.gameObject.SetActive(true);
             answerItemUI.SetData(idx, curQuestion.answers[idx].text, OnAnswerSelected);
             answerItemUI.ResetSelection();
             answerItemUI.SetInteractable(true);
         }
         // Deactivate unused answer slots
-        for (; idx < answersContainer.childCount; idx++) {
-            answersContainer.GetChild(idx).gameObject.SetActive(false);
+        for (; idx < curAnswerContainer.childCount; idx++) {
+            curAnswerContainer.GetChild(idx).gameObject.SetActive(false);
         }
     }
 
@@ -81,7 +93,7 @@ public class QuestionGameManager : MonoBehaviour
             }
             itemUI.SetInteractable(false);
         }
-        
+
         Scroring.Inst.Pause();
         // show result then move to next question
         StartCoroutine(SubmitWithDelay(1));
@@ -129,9 +141,9 @@ public class QuestionGameManager : MonoBehaviour
         return finishedCount >= QuestionBank.Inst.questions.Length;
     }
 
-    private AnswerItemUI GetAnswerItemUI(int idx)
+    private IAnswerItemUI GetAnswerItemUI(int idx)
     {
-        return answersContainer.GetChild(idx).GetComponent<AnswerItemUI>();
+        return curAnswerContainer.GetChild(idx).GetComponent<IAnswerItemUI>();
     }
 
     private int GetCorrectAnswerIndex(Question question)
