@@ -1448,7 +1448,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scoreTMPro: {fileID: 493537285}
-  maxScore: 500
+  maxRemainingTimeScore: 500
   scoreLostPerSec: 1
 --- !u!1001 &820025735
 PrefabInstance:

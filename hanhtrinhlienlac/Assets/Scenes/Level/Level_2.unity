@@ -7763,6 +7763,10 @@ PrefabInstance:
       propertyPath: maxScore
       value: 300
       objectReference: {fileID: 0}
+    - target: {fileID: 1562576386, guid: 0d46752f310c3524e9de73d125f27ac9, type: 3}
+      propertyPath: maxRemainingTimeScore
+      value: 500
+      objectReference: {fileID: 0}
     - target: {fileID: 2296058262986904532, guid: 0d46752f310c3524e9de73d125f27ac9, type: 3}
       propertyPath: m_Name
       value: Score
