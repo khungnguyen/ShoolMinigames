@@ -12,15 +12,15 @@ public class AnswerItemUI : MonoBehaviour, IPointerClickHandler
     [SerializeField] private TextMeshProUGUI idTMPro;
     [SerializeField] private TextMeshProUGUI textTMPro;
     [SerializeField] private Image bgImage;
-    [SerializeField] private Color bgColorSelected;
-    private Color bgColorDefault;
+    [SerializeField] private Sprite bgSpriteSelected;
+    private Sprite bgSpriteDefault;
     private Color textColorDefault;
 
     private int index;
     private Action<int> onSelectedCB;
 
     void Awake() {
-        bgColorDefault = bgImage.color;
+        bgSpriteDefault = bgImage.sprite;
         textColorDefault = textTMPro.color;
     }
     // Start is called before the first frame update
@@ -42,24 +42,27 @@ public class AnswerItemUI : MonoBehaviour, IPointerClickHandler
 
     public void ResetSelection()
     {
-        bgImage.color = bgColorDefault;
+        bgImage.sprite = bgSpriteDefault;
+        bgImage.color = Color.white;
         textTMPro.color = textColorDefault;
     }
 
     public void HighlightCorrect()
     {
+        bgImage.sprite = bgSpriteSelected;
         bgImage.color = Color.green;
     }
 
     public void HighlightWrong()
     {
+        bgImage.sprite = bgSpriteSelected;
         bgImage.color = Color.red;
     }
 
     private void OnSelected()
     {
-        bgImage.color = bgColorSelected;
-        textTMPro.color = bgColorDefault;
+        bgImage.sprite = bgSpriteSelected;
+        textTMPro.color = Color.yellow;
         onSelectedCB(index);
     }
 }
