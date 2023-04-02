@@ -50,6 +50,7 @@ public class GameManager : MonoBehaviour
     }
     private void ChangeLevel(LevelInfo next, bool isEnter = false)
     {
+        _gameUI.PauseScoring();
         _gameUI.PlayTransitionEffect(isEnter,() =>
         {
             _cinemachineConfiner.m_BoundingShape2D = next.GetCinemachinConfinerData();

@@ -41,4 +41,7 @@ public class UIManager : MonoBehaviour
     public void StartScoring() {
         _score.StartOrResume();
     }
+    public void PauseScoring() {
+        _score.Pause();
+    }
 }
