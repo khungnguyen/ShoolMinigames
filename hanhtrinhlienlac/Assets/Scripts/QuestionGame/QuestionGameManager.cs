@@ -45,6 +45,8 @@ public class QuestionGameManager : MonoBehaviour
     }
 
     public void ShowNextQuestion() {
+        Scroring.Inst.StartOrResume();
+
         HideResultPopup();
 
         curQuestionIndex++;
@@ -80,6 +82,7 @@ public class QuestionGameManager : MonoBehaviour
             itemUI.SetInteractable(false);
         }
         
+        Scroring.Inst.Pause();
         // show result then move to next question
         StartCoroutine(SubmitWithDelay(1));
     }

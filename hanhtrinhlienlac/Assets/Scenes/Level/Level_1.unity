@@ -1368,6 +1368,7 @@ GameObject:
   - component: {fileID: 771522566}
   - component: {fileID: 771522568}
   - component: {fileID: 771522567}
+  - component: {fileID: 771522569}
   m_Layer: 5
   m_Name: Score
   m_TagString: Untagged
@@ -1434,6 +1435,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 771522565}
   m_CullTransparentMesh: 1
+--- !u!114 &771522569
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 771522565}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4fc08dc34fbefc49b3d306ccc0601c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scoreTMPro: {fileID: 493537285}
+  maxScore: 500
+  scoreLostPerSec: 1
 --- !u!1001 &820025735
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3124,7 +3140,6 @@ MonoBehaviour:
   questionTMPro: {fileID: 1956945975}
   answersContainer: {fileID: 919726098}
   answerPrefab: {fileID: 8202215867450220495, guid: 0399f0d65d38b0f47bcab5087c22df9a, type: 3}
-  submitBtn: {fileID: 0}
   resultPopup: {fileID: 1994644017}
 --- !u!114 &1993827567
 MonoBehaviour:
