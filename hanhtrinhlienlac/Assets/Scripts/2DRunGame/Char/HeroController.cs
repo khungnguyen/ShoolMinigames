@@ -90,7 +90,6 @@ public class HeroController : BaseController
     public void EnableInput(bool e)
     {
         enableInput = e;
-        Debug.LogError(("EnableInput" + e));
     }
     public override void GatherInput()
     {
