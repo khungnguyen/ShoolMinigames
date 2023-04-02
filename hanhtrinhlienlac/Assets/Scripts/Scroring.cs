@@ -9,6 +9,7 @@ public class Scroring : MonoBehaviour
     [SerializeField] private TMPro.TextMeshProUGUI scoreTMPro;
     [SerializeField] private float maxRemainingTimeScore = 120f;
     [SerializeField] private float scoreLostPerSec = 1f;
+    [SerializeField] private bool displayTotalScore = true;
 
 
     private float curRemainingTimeScore;
@@ -80,6 +81,6 @@ public class Scroring : MonoBehaviour
 
     private void UpdateVisual()
     {
-        scoreTMPro.text = CurRemainingTimeScore.ToString();
+        scoreTMPro.text = displayTotalScore ? TotalScore.ToString() : CurRemainingTimeScore.ToString();
     }
 }
