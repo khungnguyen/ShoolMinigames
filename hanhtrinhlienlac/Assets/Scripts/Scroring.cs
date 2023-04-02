@@ -7,16 +7,22 @@ public class Scroring : MonoBehaviour
     private static Scroring _inst;
     public static Scroring Inst {get => _inst;}
     [SerializeField] private TMPro.TextMeshProUGUI scoreTMPro;
-    [SerializeField] private float maxScore = 120f;
+    [SerializeField] private float maxRemainingTimeScore = 120f;
     [SerializeField] private float scoreLostPerSec = 1f;
 
 
-    private float curScore;
+    private float curRemainingTimeScore;
+    private float bonusScore;
     private bool isCounting = false;
 
-    public float CurScore {
-        get => Mathf.RoundToInt(curScore);
+    public float CurRemainingTimeScore {
+        get => Mathf.RoundToInt(curRemainingTimeScore);
     }
+
+    public float TotalScore {
+        get => Mathf.RoundToInt(curRemainingTimeScore + bonusScore);
+    }
+
 
     void Awake()
     {
@@ -32,15 +38,15 @@ public class Scroring : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (isCounting && curScore > 0)
+        if (isCounting && curRemainingTimeScore > 0)
         {
-            curScore -= scoreLostPerSec * Time.deltaTime;
-            if (curScore < 0) 
+            curRemainingTimeScore -= scoreLostPerSec * Time.deltaTime;
+            if (curRemainingTimeScore < 0) 
             {
-                curScore = 0;
+                curRemainingTimeScore = 0;
             }
 
-            scoreTMPro.text = CurScore.ToString();
+            UpdateVisual();
         }
     }
 
@@ -62,7 +68,18 @@ public class Scroring : MonoBehaviour
     public void Reset()
     {
         isCounting = false;
-        curScore = maxScore;
-        scoreTMPro.text = CurScore.ToString();
+        curRemainingTimeScore = maxRemainingTimeScore;
+        bonusScore = 0f;
+        UpdateVisual();
+    }
+
+    public void AddBonusScore(float value)
+    {
+        bonusScore += value;
+    }
+
+    private void UpdateVisual()
+    {
+        scoreTMPro.text = CurRemainingTimeScore.ToString();
     }
 }

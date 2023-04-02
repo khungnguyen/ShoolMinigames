@@ -24,7 +24,8 @@ public class QuestionGameResultPopup : MonoBehaviour
         resultTextTMPro.text = texts[idx];
 
         if (finished) {
-            btnNextText.text = "Hoàn thành";
+            resultTextTMPro.text = "Chúc mừng bạn đã hoàn thành thử thách";
+            btnNextText.text = "OK";
         }
     }
 
