@@ -45,6 +45,7 @@ public class LeaderboardContent : MonoBehaviour
             if (go == null) {
                 go = Instantiate(isLocalPlayer ? localPlayerItemPrefab : itemPrefab);
                 go.transform.SetParent(itemsContainer);
+                go.transform.localScale = new Vector3(1, 1, 1);
             }
             var infoUI = go.GetComponent<LeaderboardItemUI>();
             infoUI.SetInfo(info);
