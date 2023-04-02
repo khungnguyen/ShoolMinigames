@@ -90,15 +90,7 @@ public class HeroController : BaseController
     public void EnableInput(bool e)
     {
         enableInput = e;
-        if (!e)
-        {
-            Input = new FrameInput
-            {
-                JumpDown = false,
-                JumpUp = false,
-                X = 0f
-            };
-        }
+        Debug.LogError(("EnableInput" + e));
     }
     public override void GatherInput()
     {
@@ -114,6 +106,15 @@ public class HeroController : BaseController
             {
                 lastJumpPressed = Time.time;
             }
+        }
+        else
+        {
+            Input = new FrameInput
+            {
+                JumpDown = false,
+                JumpUp = false,
+                X = 0f
+            };
         }
 
     }

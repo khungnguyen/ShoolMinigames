@@ -24,6 +24,8 @@ public class TutorManager : MonoBehaviour
 
     private bool _isWriting = false;
 
+    private bool _completed = false;
+
     public Action<TutoriaType> OnTutComplete;
     public Action<TutoriaType> OnTutStart;
     private TutPart _curPart;
@@ -65,6 +67,7 @@ public class TutorManager : MonoBehaviour
 
     public void onClick()
     {
+        if(_completed) return;
         if (_isWriting)
         {
             StopAllCoroutines();
@@ -88,6 +91,7 @@ public class TutorManager : MonoBehaviour
     }
     private void EndTutorial()
     {
+        _completed = true;
         ShowTutor(false);
         ShowButtonHelp(true);
         OnTutComplete?.Invoke(tutoriaType);
@@ -133,6 +137,7 @@ public class TutorManager : MonoBehaviour
     public void reset()
     {
         _curTutStep = 0;
+        _completed = false;
     }
 }
 public enum TutoriaType

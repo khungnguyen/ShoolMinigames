@@ -33,7 +33,7 @@ Transform:
   - {fileID: 5394435327784015548}
   - {fileID: 1752191690849843494}
   m_Father: {fileID: 0}
-  m_RootOrder: -1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1811696445547899738
 MonoBehaviour:
@@ -74,7 +74,7 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 0.21660233, y: 0.36279213}
+    - - {x: 0.05126953, y: 0.34948933}
       - {x: -0.35197496, y: 0.5737597}
       - {x: -0.485631, y: 0.14364469}
       - {x: -0.47865444, y: -0.19978377}

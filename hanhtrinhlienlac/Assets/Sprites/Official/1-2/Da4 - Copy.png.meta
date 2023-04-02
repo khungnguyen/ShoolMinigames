@@ -47,7 +47,7 @@ TextureImporter:
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 2
-  spritePivot: {x: 0.5, y: 0.5}
+  spritePivot: {x: 0.5, y: 1}
   spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
@@ -122,8 +122,8 @@ TextureImporter:
     physicsShape:
     - - {x: -84.5, y: 11.5}
       - {x: -113.5, y: 13.5}
-      - {x: -93.5, y: 1.5}
-      - {x: -62.5, y: -20.5}
+      - {x: -111.5, y: -22.5}
+      - {x: -101.5, y: -21.5}
       - {x: -30.5, y: -22.5}
       - {x: 61.5, y: -22.5}
       - {x: 116.5, y: -18.5}
