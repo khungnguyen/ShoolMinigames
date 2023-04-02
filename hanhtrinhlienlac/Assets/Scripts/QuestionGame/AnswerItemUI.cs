@@ -18,6 +18,7 @@ public class AnswerItemUI : MonoBehaviour, IPointerClickHandler
 
     private int index;
     private Action<int> onSelectedCB;
+    private bool interactable;
 
     void Awake() {
         bgSpriteDefault = bgImage.sprite;
@@ -37,7 +38,10 @@ public class AnswerItemUI : MonoBehaviour, IPointerClickHandler
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        OnSelected();
+        if (interactable)
+        {
+            OnSelected();
+        }
     }
 
     public void ResetSelection()
@@ -57,6 +61,11 @@ public class AnswerItemUI : MonoBehaviour, IPointerClickHandler
     {
         bgImage.sprite = bgSpriteSelected;
         bgImage.color = Color.red;
+    }
+
+    public void SetInteractable(bool v)
+    {
+        interactable = v;
     }
 
     private void OnSelected()

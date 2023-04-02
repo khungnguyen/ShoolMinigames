@@ -10,9 +10,7 @@ public class QuestionGameManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI questionTMPro;
     [SerializeField] private Transform answersContainer;
     [SerializeField] private GameObject answerPrefab;
-    [SerializeField] private Button submitBtn;
     [SerializeField] private QuestionGameResultPopup resultPopup;
-    private Color submitBtnColorEnabled;
 
     private int curQuestionIndex = -1;
     private Question curQuestion;
@@ -23,7 +21,6 @@ public class QuestionGameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        submitBtnColorEnabled = submitBtn.GetComponent<Image>().color;
         ShowNextQuestion();
     }
 
@@ -49,7 +46,6 @@ public class QuestionGameManager : MonoBehaviour
 
     public void ShowNextQuestion() {
         HideResultPopup();
-        SetSubmitButtonEnable(false);
 
         curQuestionIndex++;
         Debug.Assert(curQuestionIndex < QuestionBank.Inst.questions.Length);
@@ -65,6 +61,7 @@ public class QuestionGameManager : MonoBehaviour
             answerItemUI.gameObject.SetActive(true);
             answerItemUI.SetData(idx, curQuestion.answers[idx].text, OnAnswerSelected);
             answerItemUI.ResetSelection();
+            answerItemUI.SetInteractable(true);
         }
         // Deactivate unused answer slots
         for (; idx < answersContainer.childCount; idx++) {
@@ -76,15 +73,21 @@ public class QuestionGameManager : MonoBehaviour
     {
         selectedAnswerIndex = answerIndex;
         for (int i = 0; i < curQuestion.answers.Length; i++) {
+            var itemUI = GetAnswerItemUI(i);
             if (i != selectedAnswerIndex) {
-               GetAnswerItemUI(i).ResetSelection();
+               itemUI.ResetSelection();
             }
+            itemUI.SetInteractable(false);
         }
-        SetSubmitButtonEnable(true);
+        
+        // show result then move to next question
+        StartCoroutine(SubmitWithDelay(1));
     }
 
-    public void OnSubmitBtnClicked()
+    private IEnumerator SubmitWithDelay(float delaySec)
     {
+        yield return new WaitForSeconds(delaySec);
+
         finishedCount++;
         bool result = curQuestion.answers[selectedAnswerIndex].value;
         Debug.Log("Your answer is " + result);
@@ -96,14 +99,14 @@ public class QuestionGameManager : MonoBehaviour
             GetAnswerItemUI(correctIdx).HighlightCorrect();
             GetAnswerItemUI(selectedAnswerIndex).HighlightWrong();
         }
-        StartCoroutine(ShowResultPopup(result, 0.5f));
-    }
 
-    private void SetSubmitButtonEnable(bool enable)
-    {
-        submitBtn.enabled = enable;
-        var bgImage = submitBtn.GetComponent<Image>();
-        bgImage.color = enable ? submitBtnColorEnabled : Color.gray;
+        yield return new WaitForSeconds(2);
+
+        if (IsFinished()) {
+            StartCoroutine(ShowResultPopup(result, 0));
+        } else {
+            ShowNextQuestion();
+        }
     }
 
     private IEnumerator ShowResultPopup(bool result, float delaySec = 0f)
