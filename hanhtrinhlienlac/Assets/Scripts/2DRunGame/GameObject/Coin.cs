@@ -19,7 +19,7 @@ public class Coin : ObjectBase
         if (_fly)
         {
             var wp = _cam.ScreenToWorldPoint(_target);
-            transform.position = Vector2.Lerp(transform.position, wp, 3f * Time.deltaTime);
+            transform.position = Vector2.Lerp(transform.position, wp, 6f * Time.deltaTime);
             var distance = Vector2.Distance(transform.position, wp);
             if (distance < 1f)
             {
