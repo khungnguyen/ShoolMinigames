@@ -16,6 +16,9 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] UIManager _gameUI;
 
+    [SerializeField] AudioSource _sound;
+    [SerializeField] List<AudioClip> __soundData;
+
     public static GameManager inst;
 
     private Bounds _cameraBounds;
@@ -51,6 +54,7 @@ public class GameManager : MonoBehaviour
     private void ChangeLevel(LevelInfo next, bool isEnter = false)
     {
         _gameUI.PauseScoring();
+        PlayBGM(_curLevel);
         _gameUI.PlayTransitionEffect(isEnter,() =>
         {
             _cinemachineConfiner.m_BoundingShape2D = next.GetCinemachinConfinerData();
@@ -136,5 +140,9 @@ public class GameManager : MonoBehaviour
             GameEnum.LevelType.Level4 => TutoriaType.Run2D_Game_4,
             _ => TutoriaType.Run2D_Game_1,
         };
+    }
+    public void PlayBGM(GameEnum.LevelType index) {
+        _sound.Stop();
+        _sound.PlayOneShot(__soundData[(int)index]);
     }
 }

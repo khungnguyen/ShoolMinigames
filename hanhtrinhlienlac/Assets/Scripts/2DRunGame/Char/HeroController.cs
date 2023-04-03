@@ -14,6 +14,8 @@ public class HeroController : BaseController
     public bool godMode = false;
     public bool finishLevel = false;
     [SerializeField] GameObject _dustVfx;
+    [SerializeField] AudioSource _sound;
+    [SerializeField] List<AudioClip> __soundData;
 
 
     private MarkedPoint _revivePoint;
@@ -22,7 +24,14 @@ public class HeroController : BaseController
     public System.Action<MarkedPoint> OnPlayerRevive;
     public System.Action<int> OnCollect;
 
+
     private int _curScore = 0;
+
+    public enum SOUND {
+        COIN,
+        DIE,
+        VICTORY
+    }
 
     public void RideTheOx(bool enable)
     {
@@ -36,6 +45,7 @@ public class HeroController : BaseController
         EnableInput(false);
         base.death();
         OnPlayerDeath?.Invoke(_revivePoint);
+        PlaySFX(SOUND.DIE);
     }
 
     public void GodMode(bool enable)
@@ -54,6 +64,7 @@ public class HeroController : BaseController
                 finishLevel = true;
                 EnableInput(false);
                 StartCoroutine(TriggerFinshLevelEvent(next, 2));
+                PlaySFX(SOUND.VICTORY);
             }
 
         }
@@ -68,6 +79,7 @@ public class HeroController : BaseController
             _curScore++;
             OnCollect?.Invoke(_curScore);
             Destroy(other.gameObject);
+            PlaySFX(SOUND.COIN);
 
         }
     }
@@ -157,4 +169,8 @@ public class HeroController : BaseController
     public void SetParentLayer(Transform parent) {
         transform.parent = parent;
     }
+    public void PlaySFX(SOUND index) {
+        _sound.PlayOneShot(__soundData[(int)index]);
+    }
+    
 }
