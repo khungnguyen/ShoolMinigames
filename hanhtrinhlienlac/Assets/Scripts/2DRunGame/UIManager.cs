@@ -11,6 +11,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] TransitionEffect _transitionEffect;
     [SerializeField] TutorManager _tutor;
     [SerializeField] Scroring _score;
+    [SerializeField] Transform _coinHubTarget;
     // Start is called before the first frame update
     void Start()
     {
@@ -43,5 +44,8 @@ public class UIManager : MonoBehaviour
     }
     public void PauseScoring() {
         _score.Pause();
+    }
+    public Vector2 GetCoinHubWorldPos() {
+        return _coinHubTarget.position;
     }
 }

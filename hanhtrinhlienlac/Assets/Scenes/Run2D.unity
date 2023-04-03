@@ -5273,6 +5273,7 @@ MonoBehaviour:
   _transitionEffect: {fileID: 1836240141}
   _tutor: {fileID: 2093094557}
   _score: {fileID: 8623364211415965236}
+  _coinHubTarget: {fileID: 713674408}
 --- !u!114 &520442657
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6406,6 +6407,51 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5138001272925817641, guid: cc389c07cc797324ca87c3bb4907af90, type: 3}
   m_PrefabInstance: {fileID: 1423743268379961726}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &713674407
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 713674408}
+  - component: {fileID: 713674409}
+  m_Layer: 5
+  m_Name: CointTarget
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &713674408
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 713674407}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3280158629856432799}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -117.4, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &713674409
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 713674407}
+  m_CullTransparentMesh: 1
 --- !u!1001 &727360386
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9044,6 +9090,7 @@ GameObject:
   - component: {fileID: 797321037}
   - component: {fileID: 797321036}
   - component: {fileID: 797321039}
+  - component: {fileID: 797321040}
   m_Layer: 0
   m_Name: CameraUI
   m_TagString: Untagged
@@ -9143,6 +9190,39 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &797321040
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 797321035}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a79441f348de89743a2939f4d699eac1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_RenderShadows: 1
+  m_RequiresDepthTextureOption: 2
+  m_RequiresOpaqueTextureOption: 2
+  m_CameraType: 0
+  m_Cameras: []
+  m_RendererIndex: -1
+  m_VolumeLayerMask:
+    serializedVersion: 2
+    m_Bits: 1
+  m_VolumeTrigger: {fileID: 0}
+  m_VolumeFrameworkUpdateModeOption: 2
+  m_RenderPostProcessing: 0
+  m_Antialiasing: 0
+  m_AntialiasingQuality: 2
+  m_StopNaN: 0
+  m_Dithering: 0
+  m_ClearDepth: 1
+  m_AllowXRRendering: 1
+  m_RequiresDepthTexture: 0
+  m_RequiresColorTexture: 0
+  m_Version: 2
 --- !u!4 &800919245 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4289537788124121475, guid: 5e69b8ba018669640b3f4a99386c6ad4, type: 3}
@@ -30525,6 +30605,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6689478921741170163}
+  - {fileID: 713674408}
   m_Father: {fileID: 848563007}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

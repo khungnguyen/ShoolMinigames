@@ -22,7 +22,7 @@ public class HeroController : BaseController
     public System.Action<GameEnum.LevelType> OnLevelFinish;
     public System.Action<MarkedPoint> OnPlayerDeath;
     public System.Action<MarkedPoint> OnPlayerRevive;
-    public System.Action<int> OnCollect;
+    public System.Action<Coin> OnCollect;
 
 
     private int _curScore = 0;
@@ -77,8 +77,8 @@ public class HeroController : BaseController
         else if (other.CompareTag(Defined.TAG_COLLECTABLE))
         {
             _curScore++;
-            OnCollect?.Invoke(_curScore);
-            Destroy(other.gameObject);
+            OnCollect?.Invoke(other.GetComponent<Coin>());
+            //Destroy(other.gameObject);
             PlaySFX(SOUND.COIN);
 
         }

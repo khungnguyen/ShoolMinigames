@@ -101,9 +101,11 @@ public class GameManager : MonoBehaviour
 
 
     }
-    private void OnPlayerCollect(int i)
+    private void OnPlayerCollect(Coin g)
     {
         _gameUI.SetScore(Defined.BOUNS_SCORE);
+        var wp = _gameUI.GetCoinHubWorldPos();
+        g.SetTarget(wp,_gameCamera);
     }
     private void SpawnBullet()
     {
