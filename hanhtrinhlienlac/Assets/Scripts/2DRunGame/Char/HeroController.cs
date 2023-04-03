@@ -154,4 +154,7 @@ public class HeroController : BaseController
         Spine.Skeleton skeleton = spineColor.skeleton;
         skeleton.A = e ? 0f : 1f;
     }
+    public void SetParentLayer(Transform parent) {
+        transform.parent = parent;
+    }
 }

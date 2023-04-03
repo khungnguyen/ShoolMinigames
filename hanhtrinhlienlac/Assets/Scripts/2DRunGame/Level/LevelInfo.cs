@@ -7,7 +7,10 @@ public class LevelInfo : MonoBehaviour
     // Start is called before the first frame update
     [SerializeField] PolygonCollider2D _cinemachineConfiger;
     [SerializeField] GameEnum.LevelType _levelType;
+    [SerializeField] Transform _playerLayer;
     List<MarkedPoint> _markedPoints;
+
+    
 
     private Bounds _levelBound;
     private void Awake()
@@ -42,5 +45,8 @@ public class LevelInfo : MonoBehaviour
     }
     public Bounds GetLevelBounds() {
         return _levelBound;
+    }
+    public Transform GetPlayerLayer() {
+        return _playerLayer;
     }
 }

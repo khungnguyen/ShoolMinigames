@@ -55,6 +55,7 @@ public class GameManager : MonoBehaviour
         {
             _cinemachineConfiner.m_BoundingShape2D = next.GetCinemachinConfinerData();
             var spawnPoint = next.GetStartPoint().getPosition();
+            _playerController.SetParentLayer(next.GetPlayerLayer());
             _playerController.SetPosition(spawnPoint);
             _playerController.SetRestrictedArea(next.GetLevelBounds());
             _playerController.reset();
