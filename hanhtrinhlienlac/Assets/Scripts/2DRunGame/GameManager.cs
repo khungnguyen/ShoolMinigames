@@ -145,6 +145,8 @@ public class GameManager : MonoBehaviour
     }
     public void PlayBGM(GameEnum.LevelType index) {
         _sound.Stop();
-        _sound.PlayOneShot(__soundData[(int)index]);
+        _sound.clip = __soundData[(int)index];
+        _sound.Play();
+        _sound.loop = true;
     }
 }
