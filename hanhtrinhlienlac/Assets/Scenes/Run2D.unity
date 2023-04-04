@@ -19694,18 +19694,10 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 0}
-    - target: {fileID: 1549182303, guid: a4c8629bff4a7f34ea6cc0bdee8ae71e, type: 3}
-      propertyPath: timeScale
-      value: 1.5
-      objectReference: {fileID: 0}
     - target: {fileID: 1549182304, guid: a4c8629bff4a7f34ea6cc0bdee8ae71e, type: 3}
       propertyPath: m_Materials.Array.size
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 1549182304, guid: a4c8629bff4a7f34ea6cc0bdee8ae71e, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: b78c6d08aa8613047aafafbbdc6a0954, type: 2}
     - target: {fileID: 6186900627717814294, guid: a4c8629bff4a7f34ea6cc0bdee8ae71e, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -32329,7 +32321,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 9c040d126d63e94438471d0d98980a77, type: 3}
   - {fileID: 8300000, guid: 47decd277f635cc48a48e4d3b3577cf9, type: 3}
   - {fileID: 8300000, guid: a68e9bd3289524b4ea13a22ab7757a2b, type: 3}
-  _curLevel: 2
+  _curLevel: 1
 --- !u!82 &1563516803
 AudioSource:
   m_ObjectHideFlags: 0

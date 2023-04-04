@@ -16,6 +16,9 @@ public class BuffaloController : BaseController
     public Transform attachSeatPoint;
 
     public ParticleSystem dustVfx;
+    [SerializeField] AudioSource _sound;
+    [SerializeField] List<AudioClip> __soundData;
+
 
     [SpineAnimation]
     public string buffaloWalk;
@@ -36,6 +39,9 @@ public class BuffaloController : BaseController
             {
                 _player.SetPosition(attachSeatPoint.position);
                 _buffaloMove = true;
+                _sound.clip = __soundData[1];
+                _sound.loop = true;
+                _sound.Play();
                 _player.EnableInput(false);
                 setAnimation(buffaloWalk, true);
                 _player.RideTheOx(true);
@@ -57,18 +63,20 @@ public class BuffaloController : BaseController
                 JumpUp = false,
                 X = 0f
             };
+            _sound.Stop();
 
         }
         else if (other.CompareTag("Obstacle"))
         {
             //TODO
             {
-                Bounds b =  (other.transform.GetComponent<Collider2D>()).bounds;
-                float w = b.max.x-b.min.x;
+                Bounds b = (other.transform.GetComponent<Collider2D>()).bounds;
+                float w = b.max.x - b.min.x;
                 float h = b.max.y - b.min.y;
-                var newPos = new Vector2(other.transform.position.x + w,other.transform.position.y - h/2);
+                var newPos = new Vector2(other.transform.position.x + w, other.transform.position.y - h / 2);
                 var par = Instantiate(dustVfx, newPos, other.transform.rotation);
-                Destroy(par, 2f);
+                Destroy(par.gameObject, 2f);
+                _sound.PlayOneShot(__soundData[0]);
             }
             Destroy(other.gameObject);
         }
@@ -87,6 +95,7 @@ public class BuffaloController : BaseController
     {
         if (_player != null && _buffaloMove)
         {
+            
             _player.SetPosition(attachSeatPoint.position);
         }
         base.Update();
