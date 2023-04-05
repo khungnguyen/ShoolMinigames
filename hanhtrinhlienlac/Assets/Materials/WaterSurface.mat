@@ -7,8 +7,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Waterfall
-  m_Shader: {fileID: -6465566751694194690, guid: 68c079e3888085d45bd380f51efb02ad, type: 3}
+  m_Name: WaterSurface
+  m_Shader: {fileID: -6465566751694194690, guid: 9089892454d4bee4792d13ea1062bcc1, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
@@ -44,8 +44,8 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Main_Texture:
-        m_Texture: {fileID: 2800000, guid: a0668828e9866604f8e67e2628e083c2, type: 3}
-        m_Scale: {x: 3.38, y: 1.27}
+        m_Texture: {fileID: 2800000, guid: 02c8214f415272c4cac8c8877b5f85c6, type: 3}
+        m_Scale: {x: 1.36, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MaskTex:
         m_Texture: {fileID: 0}
@@ -80,7 +80,7 @@ Material:
     - _EnableExternalAlpha: 0
     - _QueueControl: 0
     - _QueueOffset: 0
-    - _Scroll_Speed: 1.02
+    - _Scroll_Speed: -0.12
     m_Colors:
     - Color_36218622185947c6a5ae36366d8e21d8: {r: 0.03921569, g: 0.09803919, b: 0.27450976, a: 0.7058824}
     - Color_93e06cd551a5449091bcde90b46765a0: {r: 0.03804734, g: 0.5490196, b: 0.5490196, a: 0.1960784}

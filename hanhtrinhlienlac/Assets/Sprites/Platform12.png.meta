@@ -1,12 +1,12 @@
 fileFormatVersion: 2
-guid: f404dbb2a5802a44db3272ae2473a0b9
+guid: fb382c11d6236ce4888af9accfa50a4f
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
   serializedVersion: 12
   mipmaps:
     mipMapMode: 0
-    enableMipMap: 1
+    enableMipMap: 0
     sRGBTexture: 1
     linearTexture: 0
     fadeOut: 0
@@ -37,10 +37,10 @@ TextureImporter:
     filterMode: 1
     aniso: 1
     mipBias: 0
-    wrapU: 0
-    wrapV: 0
-    wrapW: 0
-  nPOTScale: 1
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
   spriteMode: 1
@@ -52,9 +52,9 @@ TextureImporter:
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
-  alphaIsTransparency: 0
+  alphaIsTransparency: 1
   spriteTessellationDetail: 0
-  textureType: 0
+  textureType: 8
   textureShape: 1
   singleChannelComponent: 0
   flipbookRows: 1
@@ -118,12 +118,17 @@ TextureImporter:
   spriteSheet:
     serializedVersion: 2
     sprites: []
-    outline: []
-    physicsShape:
-    - - {x: -2, y: -52}
-      - {x: -2, y: -52}
-      - {x: -2, y: -52}
-      - {x: -2, y: -52}
+    outline:
+    - - {x: 123.5, y: 51}
+      - {x: 97.5, y: 43}
+      - {x: 30.5, y: 23}
+      - {x: -55.5, y: 0}
+      - {x: -146.5, y: -40}
+      - {x: -155.5, y: -46}
+      - {x: -156.5, y: -53}
+      - {x: 156.5, y: -53}
+      - {x: 156.5, y: 53}
+    physicsShape: []
     bones: []
     spriteID: 5e97eb03825dee720800000000000000
     internalID: 1537655665
