@@ -49,4 +49,7 @@ public class LevelInfo : MonoBehaviour
     public Transform GetPlayerLayer() {
         return _playerLayer;
     }
+    public void SetActive(bool b) {
+        gameObject.SetActive(b);
+    }
 }

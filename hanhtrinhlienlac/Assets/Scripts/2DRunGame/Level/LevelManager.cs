@@ -32,6 +32,9 @@ public class LevelManager : MonoBehaviour
             bullet.setPosition(new Vector2(x, randomY));
         }
     }
+    private void Awake() {
+        _levels.ForEach(e => e.SetActive(false));
+    }
 
 
 }

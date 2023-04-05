@@ -172,5 +172,8 @@ public class HeroController : BaseController
     public void PlaySFX(SOUND index) {
         _sound.PlayOneShot(__soundData[(int)index]);
     }
+    public void ChangeSkin(string s) {
+        spineColor.skeleton.SetSkin(s);
+    }
     
 }

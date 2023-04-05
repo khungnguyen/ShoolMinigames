@@ -20,4 +20,11 @@ public class GameEnum
     Level3,
     Level4
   }
+  public enum CHARACTER {
+    char_1,
+    char_2,
+    char_3,
+    char_4,
+    char_5
+  }
 }
