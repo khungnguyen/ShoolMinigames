@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using Spine.Unity;
 using TMPro;
+using UnityEngine.UI;
+
 public class CharSelectorUI : MonoBehaviour
 {
     [SerializeField] SkeletonGraphic _spine;
@@ -10,6 +12,9 @@ public class CharSelectorUI : MonoBehaviour
     [SerializeField] TMP_Text _textDetailed;
     private void Start() {
         OnCharSelect("char_1");
+        _charInfoList.ForEach(e=>{
+            e.uiItem.SetInfo(e).SetClickListener(OnCharSelect);
+        });
     }
     public void OnCharSelect(string id)
     {
@@ -34,4 +39,7 @@ public struct CharInfo {
     public string charId;
     public string charName;
     public string info;
+
+    public Image avatar;
+    public CharItem uiItem;
 }
