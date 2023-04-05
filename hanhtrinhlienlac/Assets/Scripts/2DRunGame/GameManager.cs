@@ -27,12 +27,14 @@ public class GameManager : MonoBehaviour
 
     [SerializeField]
     private GameEnum.LevelType _curLevel;
+    private GameEnum.LevelType _previous;
     void Awake()
     {
         inst = this;
     }
     void Start()
     {
+        _playerController.ChangeSkin(UserInfo.GetInstance().GetSkin());
         _playerController.OnLevelFinish += OnPlayerFinishMap;
         _playerController.OnPlayerDeath += OnPlayerDeath;
         _playerController.OnPlayerRevive += OnPlayerRevive;
@@ -40,23 +42,32 @@ public class GameManager : MonoBehaviour
         _gameUI.getTutorManager().OnTutStart += OnTutorStart;
         _gameUI.getTutorManager().OnTutComplete += OnTutorEnd;
         LevelInfo startLevel = _levelManager.FindLevel(_curLevel);
-        ChangeLevel(startLevel,true);
+        ChangeLevel(startLevel, true);
     }
     private void OnPlayerFinishMap(GameEnum.LevelType nextLevel)
     {
         LevelInfo next = _levelManager.FindLevel(nextLevel);
         if (next != null)
         {
-            ChangeLevel(next);
+            _previous = _curLevel;
             _curLevel = nextLevel;
+            ChangeLevel(next);
         }
     }
     private void ChangeLevel(LevelInfo next, bool isEnter = false)
     {
+
         _gameUI.PauseScoring();
         PlayBGM(_curLevel);
-        _gameUI.PlayTransitionEffect(isEnter,() =>
+        _gameUI.PlayTransitionEffect(isEnter, () =>
         {
+            if (_curLevel != _previous)
+            {
+                LevelInfo previous = _levelManager.FindLevel(_previous);
+                previous?.SetActive(false);
+                Destroy(previous.gameObject);
+            }
+            next.SetActive(true);
             _cinemachineConfiner.m_BoundingShape2D = next.GetCinemachinConfinerData();
             var spawnPoint = next.GetStartPoint().getPosition();
             _playerController.SetParentLayer(next.GetPlayerLayer());
@@ -66,7 +77,7 @@ public class GameManager : MonoBehaviour
             _playerController.EnableInput(false);
             _playerController.GodMode(true);
             _gameUI.getTutorManager().SetTutType(GetTutByLevel(_curLevel)).ShowTutor(true);
-            
+
 
         });
     }
@@ -105,7 +116,7 @@ public class GameManager : MonoBehaviour
     {
         _gameUI.SetScore(Defined.BOUNS_SCORE);
         var wp = _gameUI.GetCoinHubWorldPos();
-        g.SetTarget(wp,_gameCamera);
+        g.SetTarget(wp, _gameCamera);
     }
     private void SpawnBullet()
     {
@@ -143,7 +154,8 @@ public class GameManager : MonoBehaviour
             _ => TutoriaType.Run2D_Game_1,
         };
     }
-    public void PlayBGM(GameEnum.LevelType index) {
+    public void PlayBGM(GameEnum.LevelType index)
+    {
         _sound.Stop();
         _sound.clip = __soundData[(int)index];
         _sound.Play();
