@@ -8,6 +8,7 @@ public class LeaderboardContent : MonoBehaviour
     [SerializeField] private RectTransform itemsContainer;
     [SerializeField] private GameObject itemPrefab;
     [SerializeField] private GameObject localPlayerItemPrefab;
+    [SerializeField] private LeaderboardItemUI localPlayerItemUIFixedPos;
     [SerializeField] private ScrollRect scrollRect;
     // Start is called before the first frame update
     void Start()
@@ -28,6 +29,10 @@ public class LeaderboardContent : MonoBehaviour
         for (; idx < data.list.Count; idx++) {
             var info = data.list[idx];
             bool isLocalPlayer = info.playerId == "tuiot";
+
+            if (isLocalPlayer) {
+                localPlayerItemUIFixedPos.SetInfo(info);
+            }
 
             GameObject go = null;
             while (idx + uiDestroyedCount < itemsContainer.childCount) {
