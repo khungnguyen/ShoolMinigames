@@ -7,7 +7,7 @@ public class UserInfo
 {
     private static UserInfo _inst;
 
-    private string _skinName = "char_4";
+    private string _skinName = "char_5";
     private UserInfo()
     {
 

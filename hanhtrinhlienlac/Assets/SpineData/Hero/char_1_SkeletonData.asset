@@ -24,8 +24,11 @@ MonoBehaviour:
     multiplyMaterials: []
     screenMaterials: []
   skeletonDataModifiers: []
-  fromAnimation: []
-  toAnimation: []
-  duration: []
+  fromAnimation:
+  - trau_idle
+  toAnimation:
+  - trau_nguoi_run
+  duration:
+  - 0
   defaultMix: 0.2
   controller: {fileID: 0}

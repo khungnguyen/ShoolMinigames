@@ -2,11 +2,12 @@ using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
+using Spine.Unity;
 using UnityEngine;
 
 public class BaseController : MonoBehaviour, IPlayerController
 {
-
+    public SkeletonAnimation spine;
     // Public for external hooks
     public Vector3 Velocity { get; private set; }
     public FrameInput Input { get; set; }
@@ -362,5 +363,11 @@ public class BaseController : MonoBehaviour, IPlayerController
     }
     public Bounds GetCharBounds() {
         return _characterBounds;
+    }
+    public void ChangeSkin(string s)
+    {
+        spine.skeleton.SetSkin(s);
+        spine.Skeleton.SetSlotsToSetupPose();
+        spine.LateUpdate();
     }
 } 

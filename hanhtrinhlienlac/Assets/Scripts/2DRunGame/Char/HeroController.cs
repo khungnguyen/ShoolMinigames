@@ -27,7 +27,8 @@ public class HeroController : BaseController
 
     private int _curScore = 0;
 
-    public enum SOUND {
+    public enum SOUND
+    {
         COIN,
         DIE,
         VICTORY
@@ -133,7 +134,7 @@ public class HeroController : BaseController
     {
         base.Update();
     }
-    public SkeletonAnimation spineColor;
+    
     public void Revive(MarkedPoint point)
     {
         if (point != null)
@@ -163,17 +164,16 @@ public class HeroController : BaseController
     }
     private void TransparentSpine(bool e = true)
     {
-        Spine.Skeleton skeleton = spineColor.skeleton;
+        Spine.Skeleton skeleton = spine.skeleton;
         skeleton.A = e ? 0f : 1f;
     }
-    public void SetParentLayer(Transform parent) {
+    public void SetParentLayer(Transform parent)
+    {
         transform.parent = parent;
     }
-    public void PlaySFX(SOUND index) {
+    public void PlaySFX(SOUND index)
+    {
         _sound.PlayOneShot(__soundData[(int)index]);
-    }
-    public void ChangeSkin(string s) {
-        spineColor.skeleton.SetSkin(s);
     }
     
 }
