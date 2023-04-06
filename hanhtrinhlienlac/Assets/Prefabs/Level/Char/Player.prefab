@@ -85,7 +85,7 @@ MeshRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 5
+  m_SortingOrder: 6
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!114 &1170505603
 MonoBehaviour:
@@ -100,7 +100,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   skeletonDataAsset: {fileID: 11400000, guid: ede7908005add374299ebb42eae833bb, type: 2}
-  initialSkinName: char_3
+  initialSkinName: char_1
   fixPrefabOverrideViaMeshFilter: 2
   initialFlipX: 0
   initialFlipY: 0
@@ -19832,7 +19832,7 @@ TrailRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5124300410236407460}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
@@ -20029,6 +20029,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0fbb6db05694c1147b1c9bafeacc87d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spine: {fileID: 1170505603}
   isDie: 0
   enableInput: 1
   _characterBounds:
@@ -20062,7 +20063,6 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 4358069bc6889b04ebb9d8aab09fc804, type: 3}
   - {fileID: 8300000, guid: 5a96155caf4e6c24eb40836d61da1477, type: 3}
   - {fileID: 8300000, guid: db05d2282090eef4e9a929c19d137d12, type: 3}
-  spineColor: {fileID: 1170505603}
 --- !u!1 &6432609861764478824
 GameObject:
   m_ObjectHideFlags: 0

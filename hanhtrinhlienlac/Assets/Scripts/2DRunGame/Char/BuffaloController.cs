@@ -22,21 +22,27 @@ public class BuffaloController : BaseController
 
     [SpineAnimation]
     public string buffaloWalk;
+    [SpineAnimation]
+    public string buffaloIdle;
 
     private bool _buffaloMove = false;
 
     private Vector2 _initialPos;
+
+    private bool _rideOx = false;
     private void Start()
     {
         _initialPos = transform.position;
+        ChangeSkin("default");
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("Player") && !_rideOx)
         {
             _player = other.transform.GetComponent<HeroController>();
             if (!_player.Grounded)
             {
+                _player.gameObject.SetActive(false);
                 _player.SetPosition(attachSeatPoint.position);
                 _buffaloMove = true;
                 _sound.clip = __soundData[1];
@@ -45,6 +51,9 @@ public class BuffaloController : BaseController
                 _player.EnableInput(false);
                 setAnimation(buffaloWalk, true);
                 _player.RideTheOx(true);
+
+                ChangeSkin(UserInfo.GetInstance().GetSkin());
+                _rideOx = true;
             }
         }
         else if (other.CompareTag("EndPoint"))
@@ -53,8 +62,10 @@ public class BuffaloController : BaseController
             _player.EnableInput(true);
             _player.RideTheOx(false);
             _player.Activate();
+            _player.gameObject.SetActive(true);
             _buffaloMove = false;
-            stopAniamtion(0);
+            setAnimation(buffaloIdle, true);
+            ChangeSkin("default");
             death();
             //  transform.position = _initialPos;
             Input = new FrameInput
@@ -95,7 +106,7 @@ public class BuffaloController : BaseController
     {
         if (_player != null && _buffaloMove)
         {
-            
+
             _player.SetPosition(attachSeatPoint.position);
         }
         base.Update();
