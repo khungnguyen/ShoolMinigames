@@ -7,8 +7,8 @@ public class LeaderboardTab : MonoBehaviour
 {
     private static readonly float DATA_REFRESH_INTERVAL = 300f; // 5 minutes
     [SerializeField] private ELeaderboardId id;
-    [SerializeField] private LayoutElement layoutElement;
     [SerializeField] private TMPro.TextMeshProUGUI textTMP;
+    [SerializeField] private GameObject darkLayer;
 
     public ELeaderboardId Id { get => id; }
     private LeaderboardData data;
@@ -48,17 +48,13 @@ public class LeaderboardTab : MonoBehaviour
     {
         TryGettingData();
         LeaderboardsMgr.Inst.OnTabSelected(this);
-        layoutElement.minWidth = 200;
-        layoutElement.minHeight = 100;
-        GetComponent<Image>().color = Color.green;
         textTMP.fontStyle = TMPro.FontStyles.Bold;
+        darkLayer.SetActive(false);
     }
 
     public void OnDeselected()
     {
-        layoutElement.minWidth = 0;
-        layoutElement.minHeight = 0;
-        GetComponent<Image>().color = Color.white;
         textTMP.fontStyle = TMPro.FontStyles.Normal;
+        darkLayer.SetActive(true);
     }
 }

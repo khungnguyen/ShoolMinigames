@@ -53,5 +53,23 @@ public class LeaderboardsMgr : MonoBehaviour
         curSelectedTab?.OnDeselected();
         curSelectedTab = item;
         content.SetData(item.Data);
+        int idx = 0;
+        for (int i = 0; i < tabs.Count; i++) {
+            var tab = tabs[i];
+            if (tab == curSelectedTab) {
+                break;
+            }
+            tab.transform.SetSiblingIndex(idx++);
+        }
+        for (int i = tabs.Count - 1; i > 0; i--) {
+            var tab = tabs[i];
+            tab.transform.SetSiblingIndex(idx++);
+            if (tab == curSelectedTab) {
+                break;
+            }
+        }
+        // for (int i = 0; i < tabs.Count; i++) {
+        //     tabs[i].transform.SetSiblingIndex(tabs.Count - 1 - i);
+        // }
     }
 }
