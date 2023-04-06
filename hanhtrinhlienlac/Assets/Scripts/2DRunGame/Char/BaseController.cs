@@ -366,7 +366,7 @@ public class BaseController : MonoBehaviour, IPlayerController
     }
     public void ChangeSkin(string s)
     {
-        spine.skeleton.SetSkin(s);
+        spine.Skeleton.SetSkin(s);
         spine.Skeleton.SetSlotsToSetupPose();
         spine.LateUpdate();
     }
