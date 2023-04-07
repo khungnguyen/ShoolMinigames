@@ -108,10 +108,10 @@ public class QuestionGameManager : MonoBehaviour
         Debug.Log("Your answer is " + result);
 
         if (result) {
-            GetAnswerItemUI(selectedAnswerIndex).HighlightCorrect();
+            GetAnswerItemUI(selectedAnswerIndex).HighlightCorrect(true);
         } else {
             int correctIdx = GetCorrectAnswerIndex(curQuestion);
-            GetAnswerItemUI(correctIdx).HighlightCorrect();
+            GetAnswerItemUI(correctIdx).HighlightCorrect(false);
             GetAnswerItemUI(selectedAnswerIndex).HighlightWrong();
         }
 

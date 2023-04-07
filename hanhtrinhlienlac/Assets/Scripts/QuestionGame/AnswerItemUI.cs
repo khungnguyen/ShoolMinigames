@@ -13,6 +13,8 @@ public class AnswerItemUI : MonoBehaviour, IPointerClickHandler, IAnswerItemUI
     [SerializeField] private TextMeshProUGUI textTMPro;
     [SerializeField] private Image bgImage;
     [SerializeField] private Sprite bgSpriteSelected;
+    [SerializeField] private GameObject correctMark;
+    [SerializeField] private GameObject incorrectMark;
     private Sprite bgSpriteDefault;
     private Color textColorDefault;
 
@@ -34,6 +36,7 @@ public class AnswerItemUI : MonoBehaviour, IPointerClickHandler, IAnswerItemUI
         idTMPro.text = ids[index];
         textTMPro.text = text;
         this.onSelectedCB = onSelectedCB;
+        ResetSelection();
     }
 
     public void OnPointerClick(PointerEventData eventData)
@@ -49,18 +52,22 @@ public class AnswerItemUI : MonoBehaviour, IPointerClickHandler, IAnswerItemUI
         bgImage.sprite = bgSpriteDefault;
         bgImage.color = Color.white;
         textTMPro.color = textColorDefault;
+        correctMark.SetActive(false);
+        incorrectMark.SetActive(false);
     }
 
-    public void HighlightCorrect()
+    public void HighlightCorrect(bool userCorrect)
     {
         bgImage.sprite = bgSpriteSelected;
         bgImage.color = Color.green;
+        correctMark.SetActive(userCorrect);
     }
 
     public void HighlightWrong()
     {
         bgImage.sprite = bgSpriteSelected;
         bgImage.color = Color.red;
+        incorrectMark.SetActive(true);
     }
 
     public void SetInteractable(bool v)

@@ -8,9 +8,12 @@ using UnityEngine.UI;
 public class AnswerImageItemUI : MonoBehaviour, IPointerClickHandler, IAnswerItemUI
 {
     [SerializeField] private Image bgImage;
+    [SerializeField] private Image bgFrame;
     [SerializeField] private Color colorSelected;
     [SerializeField] private Color colorCorrect;
     [SerializeField] private Color colorWrong;
+    [SerializeField] private GameObject correctMark;
+    [SerializeField] private GameObject incorrectMark;
     private int index;
     private Action<int> onSelectedCB;
     private bool interactable;
@@ -43,26 +46,31 @@ public class AnswerImageItemUI : MonoBehaviour, IPointerClickHandler, IAnswerIte
     public void SetData(int index, string text, Action<int> onSelectedCB) {
         this.index = index;
         this.onSelectedCB = onSelectedCB;
+        ResetSelection();
     }
 
     public void ResetSelection()
     {
-        bgImage.color = Color.white;
+        bgFrame.color = Color.white;
+        correctMark.SetActive(false);
+        incorrectMark.SetActive(false);
     }
 
-    public void HighlightCorrect()
+    public void HighlightCorrect(bool userCorrect)
     {
-        bgImage.color = colorCorrect;
+        bgFrame.color = colorCorrect;
+        correctMark.SetActive(userCorrect);
     }
 
     public void HighlightWrong()
     {
-        bgImage.color = colorWrong;
+        // bgFrame.color = colorWrong;
+        incorrectMark.SetActive(true);
     }
 
     private void OnSelected()
     {
-        bgImage.color = colorSelected;
+        bgFrame.color = colorSelected;
         onSelectedCB(index);
     }
 }
