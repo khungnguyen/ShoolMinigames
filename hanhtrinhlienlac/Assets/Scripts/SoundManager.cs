@@ -8,6 +8,8 @@ public class SoundManager : MonoBehaviour
     private AudioSource _bgmChannel;
     private List<AudioSource> _sfxChannels;
     public static SoundManager inst;
+
+    private bool _mute = false;
     void Awake()
     {
         inst = this;
@@ -17,20 +19,26 @@ public class SoundManager : MonoBehaviour
         }
         _bgmChannel = gameObject.AddComponent<AudioSource>();
     }
+    public void Mute(bool enable)
+    {
+        _mute = enable;
+    }
     private void PlayAudio(AudioSource source, AudioClip c, bool loop = false, int volume = 100, float secondDelay = 0f)
     {
-        source.clip = c;
-        source.loop = loop;
-        source.volume = volume;
-        if (secondDelay != 0)
+        if (!_mute)
         {
-            source.PlayDelayed(secondDelay);
+            source.clip = c;
+            source.loop = loop;
+            source.volume = volume;
+            if (secondDelay != 0)
+            {
+                source.PlayDelayed(secondDelay);
+            }
+            else
+            {
+                source.Play();
+            }
         }
-        else
-        {
-            source.Play();
-        }
-
     }
     /**
     * PlaySfx Play a sfx sound
