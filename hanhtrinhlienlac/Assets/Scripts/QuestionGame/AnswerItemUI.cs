@@ -15,6 +15,8 @@ public class AnswerItemUI : MonoBehaviour, IPointerClickHandler, IAnswerItemUI
     [SerializeField] private Sprite bgSpriteSelected;
     [SerializeField] private GameObject correctMark;
     [SerializeField] private GameObject incorrectMark;
+    [SerializeField] private ScoreEarningAnim scoreEarningAnim;
+
     private Sprite bgSpriteDefault;
     private Color textColorDefault;
 
@@ -61,6 +63,9 @@ public class AnswerItemUI : MonoBehaviour, IPointerClickHandler, IAnswerItemUI
         bgImage.sprite = bgSpriteSelected;
         bgImage.color = Color.green;
         correctMark.SetActive(userCorrect);
+        if (userCorrect) {
+            scoreEarningAnim.Play();
+        }
     }
 
     public void HighlightWrong()

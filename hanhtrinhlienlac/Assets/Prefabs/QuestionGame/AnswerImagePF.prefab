@@ -1,5 +1,64 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &104549464
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 104549465}
+  - component: {fileID: 104549466}
+  m_Layer: 5
+  m_Name: ScoreEarningAnim
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &104549465
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 104549464}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 360473794359602233}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &104549466
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 104549464}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd44976468dc91f449f922a94f0487d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  score: 10
+  pointPrefab: {fileID: 8898355293487503039, guid: f5ad6b16b57eaf74c9d95c40ae8b54c5, type: 3}
+  maxDelay: 0.5
+  minStartX: -100
+  maxStartX: 100
+  minStartY: -50
+  maxStartY: 50
+  speedMovingUp: 200
+  minDuration: 1
+  maxDuration: 1.5
 --- !u!1 &1273269553
 GameObject:
   m_ObjectHideFlags: 0
@@ -415,6 +474,7 @@ RectTransform:
   - {fileID: 1895574793}
   - {fileID: 1273269554}
   - {fileID: 1356475695}
+  - {fileID: 104549465}
   m_Father: {fileID: 0}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -437,11 +497,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bgImage: {fileID: 7671532163474733946}
   bgFrame: {fileID: 1903710082}
-  colorSelected: {r: 1, g: 0.8823912, b: 0, a: 0.7176471}
-  colorCorrect: {r: 0.109803915, g: 1, b: 0, a: 0.5882353}
+  colorSelected: {r: 1, g: 0.8823912, b: 0, a: 1}
+  colorCorrect: {r: 0.109803915, g: 1, b: 0, a: 1}
   colorWrong: {r: 1, g: 0, b: 0, a: 0.5882353}
   correctMark: {fileID: 1273269553}
   incorrectMark: {fileID: 1356475694}
+  scoreEarningAnim: {fileID: 104549466}
 --- !u!1 &9173092628607788119
 GameObject:
   m_ObjectHideFlags: 0

@@ -14,6 +14,8 @@ public class AnswerImageItemUI : MonoBehaviour, IPointerClickHandler, IAnswerIte
     [SerializeField] private Color colorWrong;
     [SerializeField] private GameObject correctMark;
     [SerializeField] private GameObject incorrectMark;
+    [SerializeField] private ScoreEarningAnim scoreEarningAnim;
+
     private int index;
     private Action<int> onSelectedCB;
     private bool interactable;
@@ -60,6 +62,9 @@ public class AnswerImageItemUI : MonoBehaviour, IPointerClickHandler, IAnswerIte
     {
         bgFrame.color = colorCorrect;
         correctMark.SetActive(userCorrect);
+        if (userCorrect) {
+            scoreEarningAnim.Play();
+        }
     }
 
     public void HighlightWrong()
