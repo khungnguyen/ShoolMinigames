@@ -21,6 +21,9 @@ public class CharFollower : MonoBehaviour
     private bool _moveBack = false;
     private CheckPointType _checkPointType;
     private Vector2 _curScale;
+    public Action<CheckPointType> OnCheckPointClickToPlayGame;
+    static int s_savePoint = -1;
+    static CheckPointType s_saveCheckPoint;
 
     void Start()
     {
@@ -31,6 +34,24 @@ public class CharFollower : MonoBehaviour
         }
         checkPoints.ForEach(e => e.OnClick += OnCheckPointSelected);
         _curScale = transform.localScale;
+        OnResume();
+    }
+    void OnResume()
+    {
+        if (s_savePoint != -1 && s_saveCheckPoint != CheckPointType.NA)
+        {
+            StartAtPoint(s_savePoint);
+            _checkPointType = s_saveCheckPoint;
+        }
+    }
+    void StartAtPoint(int point)
+    {
+
+        // Debug.LogError("Num of Anchor" + pathCreator.bezierPath.NumAnchorPoints);
+        // Debug.LogError("Num of NumPoints" + pathCreator.bezierPath.NumPoints);
+        // Debug.LogError("Num of bezierPath.NumSegments" + pathCreator.bezierPath.NumSegments);
+        transform.position = pathCreator.path.GetPoint(point);
+        distanceTravelled = pathCreator.path.GetClosestTimeOnPath(transform.position) * pathCreator.path.length;
     }
     bool stop = true;
     void Update()
@@ -49,6 +70,7 @@ public class CharFollower : MonoBehaviour
             transform.position = pathCreator.path.GetPointAtDistance(distanceTravelled, endOfPathInstruction);
             Quaternion r = pathCreator.path.GetRotationAtDistance(distanceTravelled, endOfPathInstruction);
             transform.rotation = Quaternion.Euler(r.x, r.y, r.z);
+            //int curPoint = pathCreator.path.
             // if(Vector2.Distance(transform.position,pathCreator.path.GetPoint(1))<=speed * Time.deltaTime) {
             //     stop = true;
             // }
@@ -67,28 +89,56 @@ public class CharFollower : MonoBehaviour
 
         if (other.CompareTag(Defined.TAG_CHECKPOINT))
         {
-            if (other.GetComponent<MapCheckPoint>().checkPointType == _checkPointType) 
+            if (other.GetComponent<MapCheckPoint>().checkPointType == _checkPointType)
             {
                 stop = true;
                 SetAnimation(idle);
+                var data = pathCreator.path.CalculateClosestPointOnPathData(transform.position);
+                // Debug.Log("OnCheckPointSelected nextIndex" + data.nextIndex);
+                // Debug.Log("OnCheckPointSelected previousIndex" + data.previousIndex);
+                // Debug.Log("OnCheckPointSelected previousIndex" + data.percentBetweenIndices);
+                // Debug.Log("OnCheckPointSelected distanceTravelled" + distanceTravelled);
+                // Debug.Log("OnCheckPointSelected cal" + pathCreator.path.length/data.percentBetweenIndices);
+                // Debug.Log("OnCheckPointSelected cal" + pathCreator.path.length);
+                // Debug.Log("OnCheckPointSelected GetClosestTimeOnPath" +pathCreator.path.GetClosestTimeOnPath(transform.position));
+                // Debug.Log("OnCheckPointSelected Distance" +pathCreator.path.GetClosestTimeOnPath(transform.position)*pathCreator.path.length);
+                s_savePoint = data.previousIndex;
+
             }
         }
     }
     public void OnCheckPointSelected(CheckPointType t)
     {
         Debug.Log("OnCheckPointSelected" + t);
-        if(t == _checkPointType) return;
-        stop = false;
-        if((int)t >(int)_checkPointType) {
-            _moveBack = false;
-            transform.localScale=_curScale* new Vector2(1,1);
+        if (!stop)
+        {
+            //char is moving, do not thing
+
         }
-        else {
-            _moveBack = true;
-            transform.localScale=_curScale* new Vector2(-1,1);
+        else if (t == _checkPointType && stop)
+        {
+            // char is not moving, stop at correct checkpoint
+            // trigger callback function 
+            OnCheckPointClickToPlayGame?.Invoke(t);
         }
-        _checkPointType = t;
-        SetAnimation(run);
+        else
+        {
+            stop = false;
+            if ((int)t > (int)_checkPointType)
+            {
+                _moveBack = false;
+                transform.localScale = _curScale * new Vector2(1, 1);
+            }
+            else
+            {
+                _moveBack = true;
+                transform.localScale = _curScale * new Vector2(-1, 1);
+            }
+            s_saveCheckPoint = _checkPointType = t;
+
+            SetAnimation(run);
+        }
+
     }
     public void ChangeSkin(string s)
     {
@@ -96,8 +146,9 @@ public class CharFollower : MonoBehaviour
         spine.Skeleton.SetSlotsToSetupPose();
         spine.LateUpdate();
     }
-    public void SetAnimation(string anim) {
-         spine.AnimationState.SetAnimation(0,anim, true);
+    public void SetAnimation(string anim)
+    {
+        spine.AnimationState.SetAnimation(0, anim, true);
     }
 
 }

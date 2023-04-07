@@ -9,6 +9,7 @@ public class CharItem : MonoBehaviour
 {
     [SerializeField] Image _avatar;
     [SerializeField] TMP_Text _name;
+    [SerializeField] Button _button;
 
     private CharInfo _info;
     private Action<string> _listener;
@@ -23,6 +24,13 @@ public class CharItem : MonoBehaviour
     {
         _info = s;
         _name.SetText(_info.charName);
+        _button.transition = Selectable.Transition.SpriteSwap;
+        _button.targetGraphic.transform.GetComponent<Image>().sprite = _info.avatar;
+        _button.spriteState = new SpriteState {
+            highlightedSprite = _info.avatarSelected,
+            pressedSprite = _info.avatarSelected,
+            selectedSprite =_info.avatarSelected
+        };
         return this;
     }
     public void SetClickListener(Action<string> ac)

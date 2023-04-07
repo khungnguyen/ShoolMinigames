@@ -39,7 +39,7 @@ public struct CharInfo {
     public string charId;
     public string charName;
     public string info;
-
-    public Image avatar;
+    public Sprite avatar;
+    public Sprite avatarSelected;
     public CharItem uiItem;
 }
