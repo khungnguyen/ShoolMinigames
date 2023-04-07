@@ -35,6 +35,7 @@ public class CharFollower : MonoBehaviour
         checkPoints.ForEach(e => e.OnClick += OnCheckPointSelected);
         _curScale = transform.localScale;
         OnResume();
+        ChangeSkin(UserInfo.GetInstance().GetSkin());
     }
     void OnResume()
     {
@@ -94,14 +95,6 @@ public class CharFollower : MonoBehaviour
                 stop = true;
                 SetAnimation(idle);
                 var data = pathCreator.path.CalculateClosestPointOnPathData(transform.position);
-                // Debug.Log("OnCheckPointSelected nextIndex" + data.nextIndex);
-                // Debug.Log("OnCheckPointSelected previousIndex" + data.previousIndex);
-                // Debug.Log("OnCheckPointSelected previousIndex" + data.percentBetweenIndices);
-                // Debug.Log("OnCheckPointSelected distanceTravelled" + distanceTravelled);
-                // Debug.Log("OnCheckPointSelected cal" + pathCreator.path.length/data.percentBetweenIndices);
-                // Debug.Log("OnCheckPointSelected cal" + pathCreator.path.length);
-                // Debug.Log("OnCheckPointSelected GetClosestTimeOnPath" +pathCreator.path.GetClosestTimeOnPath(transform.position));
-                // Debug.Log("OnCheckPointSelected Distance" +pathCreator.path.GetClosestTimeOnPath(transform.position)*pathCreator.path.length);
                 s_savePoint = data.previousIndex;
 
             }

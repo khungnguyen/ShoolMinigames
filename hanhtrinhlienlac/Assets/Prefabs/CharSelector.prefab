@@ -633,7 +633,7 @@ MonoBehaviour:
     avatar: {fileID: 21300000, guid: ad8f2507ced49224c83860dfca2fd81f, type: 3}
     uiItem: {fileID: 1841948437816723100}
     url: https://vi.wikipedia.org/wiki/Kim_%C4%90%E1%BB%93ng
-  - charId: char_2
+  - charId: char_5
     charName: "CAO S\u01A0N"
     info: "T\xEAn th\u1EADt: N\xF4ng V\u0103n Th\xE0n. T\xEAn c\xE1ch m\u1EA1ng Cao
       S\u01A1n mang \xFD ngh\u0129a l\xE0 ng\u01B0\u1EDDi c\xF3 \u0111\u1EE9c h\u1EA1nh
@@ -644,20 +644,6 @@ MonoBehaviour:
     avatar: {fileID: 21300000, guid: d3d2f80d927438d46a67d055df694586, type: 3}
     uiItem: {fileID: 8049424778369724231}
     url: https://vi.wikipedia.org/wiki/Cao_S%C6%A1n_(ng%C6%B0%E1%BB%9Di_T%C3%A0y)
-  - charId: char_3
-    charName: "THANH TH\u1EE6Y "
-    info: "T\xEAn th\u1EADt: L\xFD Th\u1ECB X\u1EADu. T\xEAn c\xE1ch m\u1EA1ng Thanh
-      Th\u1EE7y mang \xFD ngh\u0129a l\xE0 l\xE0n n\u01B0\u1EDBc su\u1ED1i trong
-      xanh tinh khi\u1EBFt.<br>\u0110\u1ED9i vi\xEAn \u0110\u1ED9i Nhi \u0111\u1ED3ng
-      C\u1EE9u qu\u1ED1c.<br>Nhi\u1EC7m v\u1EE5: c\xF9ng Th\u1EE7y Ti\xEAn \u0111\u01B0\u1EE3c
-      ph\xE2n c\xF4ng h\xE1i rau \u1EDF nh\u1EEFng \u0111o\u1EA1n c\xF3 c\xE2y r\u1EEBng
-      ph\u1EE7 tr\xE0n ra \u0111\u01B0\u1EDDng. Khi th\u1EA5y b\xF3ng gi\u1EB7c,
-      Thanh Th\u1EE7y s\u1EBD gi\u1EA3 v\u1EDD c\xE3i nhau v\u1EDBi Th\u1EE7y Ti\xEAn
-      v\xE0 k\xE9o l\u1EA5y qu\xE2n gi\u1EB7c nh\u1EDD gi\u1EB7c ph\xE2n x\u1EED
-      \u0111\u1EC3 \u0111\xE1nh l\u1EA1c h\u01B0\u1EDBng."
-    avatar: {fileID: 21300000, guid: ed5fc15e1997f6a439b3324009391f78, type: 3}
-    uiItem: {fileID: 8049424777939050526}
-    url: https://tuyengiao.vn/nghien-cuu/nghiep-vu-cong-tac-tuyen-giao/chuyen-ve-doi-nhi-dong-cuu-quoc-dau-tien-31749
   - charId: char_4
     charName: "TH\u1EE6Y TI\xCAN"
     info: "T\xEAn th\u1EADt: L\xFD Th\u1ECB N\u1EF3.T\xEAn c\xE1ch m\u1EA1ng Th\u1EE7y
@@ -670,9 +656,23 @@ MonoBehaviour:
       l\u1EA5y qu\xE2n gi\u1EB7c nh\u1EDD gi\u1EB7c ph\xE2n x\u1EED \u0111\u1EC3
       \u0111\xE1nh l\u1EA1c h\u01B0\u1EDBng."
     avatar: {fileID: 21300000, guid: 59e826e04fa37d046802cdda28cc87aa, type: 3}
-    uiItem: {fileID: 8049424778939859700}
+    uiItem: {fileID: 8049424777939050526}
     url: https://tuyengiao.vn/nghien-cuu/nghiep-vu-cong-tac-tuyen-giao/chuyen-ve-doi-nhi-dong-cuu-quoc-dau-tien-31749
-  - charId: char_5
+  - charId: char_3
+    charName: "THANH TH\u1EE6Y "
+    info: "T\xEAn th\u1EADt: L\xFD Th\u1ECB X\u1EADu. T\xEAn c\xE1ch m\u1EA1ng Thanh
+      Th\u1EE7y mang \xFD ngh\u0129a l\xE0 l\xE0n n\u01B0\u1EDBc su\u1ED1i trong
+      xanh tinh khi\u1EBFt.<br>\u0110\u1ED9i vi\xEAn \u0110\u1ED9i Nhi \u0111\u1ED3ng
+      C\u1EE9u qu\u1ED1c.<br>Nhi\u1EC7m v\u1EE5: c\xF9ng Th\u1EE7y Ti\xEAn \u0111\u01B0\u1EE3c
+      ph\xE2n c\xF4ng h\xE1i rau \u1EDF nh\u1EEFng \u0111o\u1EA1n c\xF3 c\xE2y r\u1EEBng
+      ph\u1EE7 tr\xE0n ra \u0111\u01B0\u1EDDng. Khi th\u1EA5y b\xF3ng gi\u1EB7c,
+      Thanh Th\u1EE7y s\u1EBD gi\u1EA3 v\u1EDD c\xE3i nhau v\u1EDBi Th\u1EE7y Ti\xEAn
+      v\xE0 k\xE9o l\u1EA5y qu\xE2n gi\u1EB7c nh\u1EDD gi\u1EB7c ph\xE2n x\u1EED
+      \u0111\u1EC3 \u0111\xE1nh l\u1EA1c h\u01B0\u1EDBng."
+    avatar: {fileID: 21300000, guid: ed5fc15e1997f6a439b3324009391f78, type: 3}
+    uiItem: {fileID: 8049424779677890986}
+    url: https://tuyengiao.vn/nghien-cuu/nghiep-vu-cong-tac-tuyen-giao/chuyen-ve-doi-nhi-dong-cuu-quoc-dau-tien-31749
+  - charId: char_2
     charName: 'THANH MINH '
     info: "T\xEAn th\u1EADt: L\xFD V\u0103n T\u1ECBnh. T\xEAn c\xE1ch m\u1EA1ng Thanh
       Minh mang \xFD ngh\u0129a l\xE0 bu\u1ED5i s\u1EDBm mai trong l\xE0nh. <br>\u0110\u1ED9i
@@ -684,7 +684,7 @@ MonoBehaviour:
       l\u1EF1c \u0111\u1EB7c bi\u1EC7t: ng\u01B0\u1EDDi h\u01B0\u1EDBng d\u1EABn
       cho c\xE1c b\u1EA1n trong \u0110\u1ED9i h\u1ECDc ch\u1EEF qu\u1ED1c ng\u1EEF."
     avatar: {fileID: 21300000, guid: 9aaa16833bde92340a16d410e8495aad, type: 3}
-    uiItem: {fileID: 8049424779677890986}
+    uiItem: {fileID: 8049424778939859700}
     url: https://tuyengiao.vn/nghien-cuu/nghiep-vu-cong-tac-tuyen-giao/chuyen-ve-doi-nhi-dong-cuu-quoc-dau-tien-31749
   _textDetailed: {fileID: 2084217290}
 --- !u!1 &1745381078552752774
@@ -1037,7 +1037,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8519305712057673651, guid: bde779c2fa5bfc94eb7f105e1ee24116, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 83
+      value: 108.6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
@@ -1156,7 +1156,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8519305712057673651, guid: bde779c2fa5bfc94eb7f105e1ee24116, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 83.7
+      value: 108.6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []

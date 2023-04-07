@@ -7,10 +7,14 @@ public class Map : MonoBehaviour
 {
     // Start is called before the first frame update
     [SerializeField] CharFollower _char;
-    void Start()
+    [SerializeField] CharSelectorUI _charSelectorUI;
+    void Awake()
     {
         _char.OnCheckPointClickToPlayGame += OnSelectedLevel;
+        _charSelectorUI.OnHide();
+        _charSelectorUI.OnCharSelectListener += OnCharSelected;
     }
+
 
     // Update is called once per frame
     void Update()
@@ -48,8 +52,17 @@ public class Map : MonoBehaviour
                     break;
                 }
         }
-        if(level.Length > 0) {
+        if (level.Length > 0)
+        {
             SceneManager.LoadScene(level);
         }
+    }
+    public void OnCharSelectorClick()
+    {
+        _charSelectorUI.OnShow();
+    }
+    private void OnCharSelected(string id)
+    {
+        _char.ChangeSkin(id);
     }
 }

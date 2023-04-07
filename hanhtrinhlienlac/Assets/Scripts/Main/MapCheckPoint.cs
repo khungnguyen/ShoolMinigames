@@ -18,4 +18,5 @@ public enum CheckPointType
     CHECK_POINT_1,
     CHECK_POINT_2,
     CHECK_POINT_3,
+    CHECK_POINT_4,
 }

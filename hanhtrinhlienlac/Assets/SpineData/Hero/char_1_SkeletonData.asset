@@ -26,9 +26,12 @@ MonoBehaviour:
   skeletonDataModifiers: []
   fromAnimation:
   - trau_idle
+  - fall_back
   toAnimation:
   - trau_nguoi_run
+  - idle
   duration:
+  - 0
   - 0
   defaultMix: 0.2
   controller: {fileID: 0}

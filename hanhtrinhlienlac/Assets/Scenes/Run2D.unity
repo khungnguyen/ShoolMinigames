@@ -34187,7 +34187,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 9c040d126d63e94438471d0d98980a77, type: 3}
   - {fileID: 8300000, guid: 47decd277f635cc48a48e4d3b3577cf9, type: 3}
   - {fileID: 8300000, guid: a68e9bd3289524b4ea13a22ab7757a2b, type: 3}
-  _curLevel: 1
+  _curLevel: 0
 --- !u!82 &1563516803
 AudioSource:
   m_ObjectHideFlags: 0
@@ -49768,41 +49768,17 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 95089426}
     m_Modifications:
-    - target: {fileID: 2084217289, guid: e59cc51f51bf35f49a25d12cb138ca02, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: -135.1421
-      objectReference: {fileID: 0}
-    - target: {fileID: 2084217289, guid: e59cc51f51bf35f49a25d12cb138ca02, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -42.27722
-      objectReference: {fileID: 0}
     - target: {fileID: 1745381077614117323, guid: e59cc51f51bf35f49a25d12cb138ca02, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1745381078490126130, guid: e59cc51f51bf35f49a25d12cb138ca02, type: 3}
-      propertyPath: _charInfoList.Array.data[0].url
-      value: https://vi.wikipedia.org/wiki/Kim_%C4%90%E1%BB%93ng
-      objectReference: {fileID: 0}
-    - target: {fileID: 1745381078490126130, guid: e59cc51f51bf35f49a25d12cb138ca02, type: 3}
-      propertyPath: _charInfoList.Array.data[1].url
-      value: https://vi.wikipedia.org/wiki/Cao_S%C6%A1n_(ng%C6%B0%E1%BB%9Di_T%C3%A0y)
-      objectReference: {fileID: 0}
-    - target: {fileID: 1745381078490126130, guid: e59cc51f51bf35f49a25d12cb138ca02, type: 3}
-      propertyPath: _charInfoList.Array.data[2].url
-      value: https://tuyengiao.vn/nghien-cuu/nghiep-vu-cong-tac-tuyen-giao/chuyen-ve-doi-nhi-dong-cuu-quoc-dau-tien-31749
-      objectReference: {fileID: 0}
-    - target: {fileID: 1745381078490126130, guid: e59cc51f51bf35f49a25d12cb138ca02, type: 3}
-      propertyPath: _charInfoList.Array.data[3].url
-      value: https://tuyengiao.vn/nghien-cuu/nghiep-vu-cong-tac-tuyen-giao/chuyen-ve-doi-nhi-dong-cuu-quoc-dau-tien-31749
-      objectReference: {fileID: 0}
-    - target: {fileID: 1745381078490126130, guid: e59cc51f51bf35f49a25d12cb138ca02, type: 3}
-      propertyPath: _charInfoList.Array.data[4].url
-      value: https://tuyengiao.vn/nghien-cuu/nghiep-vu-cong-tac-tuyen-giao/chuyen-ve-doi-nhi-dong-cuu-quoc-dau-tien-31749
+      value: 144.68
       objectReference: {fileID: 0}
     - target: {fileID: 1745381078490126142, guid: e59cc51f51bf35f49a25d12cb138ca02, type: 3}
       propertyPath: m_Name
       value: CharSelector
+      objectReference: {fileID: 0}
+    - target: {fileID: 1745381078490126142, guid: e59cc51f51bf35f49a25d12cb138ca02, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1745381078490126143, guid: e59cc51f51bf35f49a25d12cb138ca02, type: 3}
       propertyPath: m_Pivot.x
@@ -49890,19 +49866,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7927023361906671357, guid: e59cc51f51bf35f49a25d12cb138ca02, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: 144.68
       objectReference: {fileID: 0}
     - target: {fileID: 7927023362242905507, guid: e59cc51f51bf35f49a25d12cb138ca02, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: 144.68
       objectReference: {fileID: 0}
     - target: {fileID: 7927023362813093904, guid: e59cc51f51bf35f49a25d12cb138ca02, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: 144.68
       objectReference: {fileID: 0}
     - target: {fileID: 7927023363389581129, guid: e59cc51f51bf35f49a25d12cb138ca02, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: 144.68
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []

@@ -4,12 +4,15 @@ using UnityEngine;
 using Spine.Unity;
 using TMPro;
 using UnityEngine.UI;
+using System;
 
 public class CharSelectorUI : MonoBehaviour
 {
     [SerializeField] SkeletonGraphic _spine;
     [SerializeField] List<CharInfo> _charInfoList;
     [SerializeField] TMP_Text _textDetailed;
+
+    public Action<string> OnCharSelectListener;
 
     private string _curSelectedChar = "";
     private void Start()
@@ -21,7 +24,7 @@ public class CharSelectorUI : MonoBehaviour
         OnCharSelect(UserInfo.GetInstance().GetSkin());
     }
 
-    public void OnCharSelect(string id)
+    private void OnCharSelect(string id)
     {
         _spine.Skeleton.SetSkin(id);
         _spine.Skeleton.SetSlotsToSetupPose();
@@ -36,6 +39,7 @@ public class CharSelectorUI : MonoBehaviour
             e.uiItem.OnSelected(e.charId.Equals(id));
         });
         _curSelectedChar = id;
+        OnCharSelectListener.Invoke(id);
     }
     public void OnHide()
     {
