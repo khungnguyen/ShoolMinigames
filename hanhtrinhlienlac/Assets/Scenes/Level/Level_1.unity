@@ -3547,6 +3547,7 @@ MonoBehaviour:
   imageAnswersContainer: {fileID: 1466572571}
   answerPrefab: {fileID: 8202215867450220495, guid: 0399f0d65d38b0f47bcab5087c22df9a, type: 3}
   resultPopup: {fileID: 1994644017}
+  resultShowingDuration: 5
 --- !u!114 &1993827567
 MonoBehaviour:
   m_ObjectHideFlags: 0

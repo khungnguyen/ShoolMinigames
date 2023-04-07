@@ -12,6 +12,7 @@ public class QuestionGameManager : MonoBehaviour
     [SerializeField] private Transform imageAnswersContainer;
     [SerializeField] private GameObject answerPrefab;
     [SerializeField] private QuestionGameResultPopup resultPopup;
+    [SerializeField] private float resultShowingDuration = 2;
 
     private int curQuestionIndex = -1;
     private Question curQuestion;
@@ -115,7 +116,7 @@ public class QuestionGameManager : MonoBehaviour
             GetAnswerItemUI(selectedAnswerIndex).HighlightWrong();
         }
 
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(resultShowingDuration);
 
         if (IsFinished()) {
             StartCoroutine(ShowResultPopup(result, 0));
