@@ -36,8 +36,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 297, y: -199}
-  m_SizeDelta: {x: 855, y: 400}
+  m_AnchoredPosition: {x: 324.75464, y: -199}
+  m_SizeDelta: {x: 904.816, y: 400}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &591965198
 CanvasRenderer:
@@ -112,8 +112,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -4.2009277, y: -42.27722}
-  m_SizeDelta: {x: -65.6294, y: -135.1421}
+  m_AnchoredPosition: {x: -0.6425781, y: -42.27722}
+  m_SizeDelta: {x: -58.5128, y: -135.1421}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2084217291
 CanvasRenderer:
@@ -143,9 +143,15 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: '
-
-'
+  m_text: "T\xEAn th\u1EADt: L\xFD V\u0103n T\u1ECBnh. T\xEAn c\xE1ch m\u1EA1ng Thanh
+    Minh mang \xFD ngh\u0129a l\xE0 bu\u1ED5i s\u1EDBm mai trong l\xE0nh.<br>\u0110\u1ED9i
+    vi\xEAn \u0110\u1ED9i Nhi \u0111\u1ED3ng C\u1EE9u qu\u1ED1c.<br>Nhi\u1EC7m v\u1EE5:
+    ch\u0103n tr\xE2u \u1EDF \u0111o\u1EA1n \u0111\u1EA5t r\u1ED9ng tr\xEAn \u0111\u1EC9nh
+    \u0111\xE8o G\xF9. Khi th\u1EA5y gi\u1EB7c, Thanh Minh s\u1EBD d\u1ED3n hai con
+    tr\xE2u cho ch\xFAng ch\u1ECDi nhau, h\xF2 h\xE9t c\u1ED5 v\u0169 \u0111\u1EC3
+    g\xE2y s\u1EF1 ch\xFA \xFD c\u1EE7a qu\xE2n gi\u1EB7c.<br>N\u0103ng l\u1EF1c
+    \u0111\u1EB7c bi\u1EC7t: h\u01B0\u1EDBng d\u1EABn c\xE1c b\u1EA1n trong \u0110\u1ED9i
+    h\u1ECDc ch\u1EEF qu\u1ED1c ng\u1EEF."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: a63ac461950ca554dbbf127395afaf57, type: 2}
   m_sharedMaterial: {fileID: 5911009495154939706, guid: a63ac461950ca554dbbf127395afaf57, type: 2}
@@ -179,14 +185,14 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 1
-  m_HorizontalAlignment: 1
+  m_HorizontalAlignment: 8
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
   m_lineSpacing: 0
   m_lineSpacingMax: 0
-  m_paragraphSpacing: 0
+  m_paragraphSpacing: 30
   m_charWidthMaxAdj: 0
   m_enableWordWrapping: 1
   m_wordWrappingRatios: 0.4
@@ -208,7 +214,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: 0, y: 0, z: 0.00024414062, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -675,14 +681,14 @@ MonoBehaviour:
   - charId: char_2
     charName: 'THANH MINH '
     info: "T\xEAn th\u1EADt: L\xFD V\u0103n T\u1ECBnh. T\xEAn c\xE1ch m\u1EA1ng Thanh
-      Minh mang \xFD ngh\u0129a l\xE0 bu\u1ED5i s\u1EDBm mai trong l\xE0nh. <br>\u0110\u1ED9i
+      Minh mang \xFD ngh\u0129a l\xE0 bu\u1ED5i s\u1EDBm mai trong l\xE0nh.<br>\u0110\u1ED9i
       vi\xEAn \u0110\u1ED9i Nhi \u0111\u1ED3ng C\u1EE9u qu\u1ED1c.<br>Nhi\u1EC7m
       v\u1EE5: ch\u0103n tr\xE2u \u1EDF \u0111o\u1EA1n \u0111\u1EA5t r\u1ED9ng tr\xEAn
       \u0111\u1EC9nh \u0111\xE8o G\xF9. Khi th\u1EA5y gi\u1EB7c, Thanh Minh s\u1EBD
       d\u1ED3n hai con tr\xE2u cho ch\xFAng ch\u1ECDi nhau, h\xF2 h\xE9t c\u1ED5
       v\u0169 \u0111\u1EC3 g\xE2y s\u1EF1 ch\xFA \xFD c\u1EE7a qu\xE2n gi\u1EB7c.<br>N\u0103ng
-      l\u1EF1c \u0111\u1EB7c bi\u1EC7t: ng\u01B0\u1EDDi h\u01B0\u1EDBng d\u1EABn
-      cho c\xE1c b\u1EA1n trong \u0110\u1ED9i h\u1ECDc ch\u1EEF qu\u1ED1c ng\u1EEF."
+      l\u1EF1c \u0111\u1EB7c bi\u1EC7t: h\u01B0\u1EDBng d\u1EABn c\xE1c b\u1EA1n
+      trong \u0110\u1ED9i h\u1ECDc ch\u1EEF qu\u1ED1c ng\u1EEF."
     avatar: {fileID: 21300000, guid: 9aaa16833bde92340a16d410e8495aad, type: 3}
     uiItem: {fileID: 8049424778939859700}
     url: https://tuyengiao.vn/nghien-cuu/nghiep-vu-cong-tac-tuyen-giao/chuyen-ve-doi-nhi-dong-cuu-quoc-dau-tien-31749
@@ -916,6 +922,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8519305712033733721, guid: bde779c2fa5bfc94eb7f105e1ee24116, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8519305712057673651, guid: bde779c2fa5bfc94eb7f105e1ee24116, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: 0
@@ -1034,6 +1044,10 @@ PrefabInstance:
     - target: {fileID: 8519305710824642581, guid: bde779c2fa5bfc94eb7f105e1ee24116, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8519305712033733721, guid: bde779c2fa5bfc94eb7f105e1ee24116, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8519305712057673651, guid: bde779c2fa5bfc94eb7f105e1ee24116, type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -1154,6 +1168,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 8519305712033733721, guid: bde779c2fa5bfc94eb7f105e1ee24116, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8519305712057673651, guid: bde779c2fa5bfc94eb7f105e1ee24116, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: 108.6
@@ -1273,6 +1291,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -10
       objectReference: {fileID: 0}
+    - target: {fileID: 8519305712033733721, guid: bde779c2fa5bfc94eb7f105e1ee24116, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: bde779c2fa5bfc94eb7f105e1ee24116, type: 3}
@@ -1387,6 +1409,10 @@ PrefabInstance:
     - target: {fileID: 8519305710824642581, guid: bde779c2fa5bfc94eb7f105e1ee24116, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: -10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8519305712033733721, guid: bde779c2fa5bfc94eb7f105e1ee24116, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
