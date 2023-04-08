@@ -16,10 +16,7 @@ public class MemoryGameManager : MonoBehaviour
 
     private int curLevelIdx = -1;
     private Transform curLevelContainer;
-
-    private List<Pair<int>> indexesInPairs;
-
-    private int curSelectedItemIndex = -1;
+    private MemoryGameItem curSelectedItem;
 
 
     // Start is called before the first frame update
@@ -65,90 +62,92 @@ public class MemoryGameManager : MonoBehaviour
 
         curLevelContainer.gameObject.SetActive(true);
         //Setup level
-        curSelectedItemIndex = -1;
-        indexesInPairs = RandomPairsFromRange(0, curLevelContainer.childCount);
+        curSelectedItem = null;
+        var indexesInPairs = RandomPairsFromRange(0, curLevelContainer.childCount);
         var cardIndexes = Enumerable.Range(0, scriptableCards.Length).ToList();
         
         Debug.Assert(cardIndexes.Count >= indexesInPairs.Count);
 
         foreach (var pair in indexesInPairs) {
-            //random sprite
+            //random card data
             var idx = UnityEngine.Random.Range(0, cardIndexes.Count - 1);
-            var spriteIdx = cardIndexes[idx];
+            var cardIdx = cardIndexes[idx];
             cardIndexes.RemoveAt(idx);
-            var sprite = scriptableCards[spriteIdx].sprite;
+            var data = scriptableCards[cardIdx];
 
             if (pair.Defective) {
-                sprite = IsLastLevel() ? fishingRodCard.sprite : matThuCard.sprite;
+                data = IsLastLevel() ? fishingRodCard : matThuCard;
             }
 
             Debug.Log(pair);
+            
             var itemIdx = pair.A;
             var item = GetItemByIndex(itemIdx);
-            item.SetData(itemIdx, sprite, OnItemSelected);
+            item.SetData(data, OnItemSelected);
             item.SetState(false);
             if (!pair.Defective) {
                 itemIdx = pair.B;
                 item = GetItemByIndex(itemIdx);
-                item.SetData(itemIdx, sprite, OnItemSelected);
+                item.SetData(data, OnItemSelected);
                 item.SetState(false);
             }
         }
     }
 
-    public void OnItemSelected(int itemIndex)
+    public void OnItemSelected(MemoryGameItem item)
     {
-        // Debug.Log("On selected item " + itemIndex);
-        if (curSelectedItemIndex < 0) 
+        if (curSelectedItem == null) 
         {
             Debug.Log("No cards is turn over, just turn over the selected one");
-            curSelectedItemIndex = itemIndex;
-            GetItemByIndex(itemIndex).SetState(true);
+            curSelectedItem = item;
+            item.SetState(true);
+            StartCoroutine(ShowCardInfo(item.CardData, 0.5f));
         }
-        else if (itemIndex == curSelectedItemIndex) 
+        else if (item == curSelectedItem)
         {
             Debug.Log("Clicked on the last opened card. Face down the card");
-            GetItemByIndex(itemIndex).SetState(false);
-            curSelectedItemIndex = -1;
+            item.SetState(false);
+            curSelectedItem = null;
+            StartCoroutine(ShowCardInfo(null, 0f));
         }
         else
         {
-            GetItemByIndex(itemIndex).SetState(true);
+            item.SetState(true);
 
-            var curSelectedPair = indexesInPairs.Find(p => p.Has(curSelectedItemIndex) && p.Has(itemIndex));
-            if (curSelectedPair != null) 
+            if (item.CardData == curSelectedItem.CardData) 
             {
                 Debug.Log("Matched!");
-                GetItemByIndex(itemIndex).OnMatched();
-                GetItemByIndex(curSelectedItemIndex).OnMatched();
-                // GetItemByIndex(itemIndex).ShowHide(false);
-                // GetItemByIndex(curSelectedItemIndex).ShowHide(false);
-                curSelectedItemIndex = -1;
+                Scroring.Inst.Pause();
 
-                indexesInPairs.Remove(curSelectedPair);
+                item.OnMatched();
+                curSelectedItem.OnMatched();
+                // itemIndex.ShowHide(false);
+                // curSelectedItemIndex.ShowHide(false);
+                curSelectedItem = null;
 
-                if (indexesInPairs.Count == 0)
+                var remainingItems = GetRemainingItems();
+
+                if (remainingItems.Count == 0)
                 {
-                    Scroring.Inst.Pause();
                     StartCoroutine(ShowResultPopup(0.5f, null, null));
                 }
-                else if (indexesInPairs.Count == 1 && indexesInPairs[0].Defective)
+                else if (remainingItems.Count == 1)
                 {
-                    Scroring.Inst.Pause();
-                    var item = GetItemByIndex(indexesInPairs[0].A);
-                    // item.SetState(true, 1f);
-                    OnItemSelected(indexesInPairs[0].A);
+                    var lastItem = remainingItems[0];
+                    lastItem.SetState(true, 1f);
+                    StartCoroutine(ShowCardInfo(lastItem.CardData, 1f));
                     string extraText = IsLastLevel() ? "Công cụ tìm được" : "Mật thư tìm được";
-                    Sprite extraImage = item.GetSprite();
+                    Sprite extraImage = lastItem.CardData.sprite;
                     StartCoroutine(ShowResultPopup(2f, extraText, extraImage));
                 }
             } 
             else 
             {
                 Debug.Log("Not match, face down both of cards");
-                GetItemByIndex(itemIndex).SetState(false, 0.5f);
-                GetItemByIndex(curSelectedItemIndex).SetState(false, 0.5f);
-                curSelectedItemIndex = -1;
+                item.SetState(false, 0.5f);
+                curSelectedItem.SetState(false, 0.5f);
+                curSelectedItem = null;
+                StartCoroutine(ShowCardInfo(null, 1f));
             }
         }
     }
@@ -177,9 +176,22 @@ public class MemoryGameManager : MonoBehaviour
         return listPair;
     }
 
-    private void ShowCardInfo(ScriptableCard card)
+    private IEnumerator ShowCardInfo(ScriptableCard card, float delay)
     {
-        cardInfoTMP.text = card.desc;
+        yield return new WaitForSeconds(delay);
+        cardInfoTMP.text = card ? card.desc : "";
+    }
+
+    private List<MemoryGameItem> GetRemainingItems()
+    {
+        var list = new List<MemoryGameItem>();
+        for (int i = curLevelContainer.childCount - 1; i >=0; i--) {
+            var item = curLevelContainer.GetChild(i).GetComponent<MemoryGameItem>();
+            if (!item.Matched) {
+                list.Add(item);
+            }
+        }
+        return list;
     }
 
     private bool IsLastLevel()

@@ -7,11 +7,13 @@ using UnityEngine.EventSystems;
 public class MemoryGameItem : MonoBehaviour, IPointerClickHandler
 {
     private static bool s_interactable = true;
-    [SerializeField] private MemoryGameCard card;
+    [SerializeField] private MemoryGameCard cardUI;
 
-    private int index;
-    private Action<int> onClickedCB;
+    private ScriptableCard cardData;
+    public ScriptableCard CardData { get => cardData; }
+    private Action<MemoryGameItem> onClickedCB;
     private bool matched;
+    public bool Matched { get => matched; }
 
     // Start is called before the first frame update
     void Start()
@@ -23,23 +25,18 @@ public class MemoryGameItem : MonoBehaviour, IPointerClickHandler
     {
     }
 
-    public void SetData(int idx, Sprite sprite, Action<int> onItemClickedCB)
+    public void SetData(ScriptableCard data, Action<MemoryGameItem> onItemClickedCB)
     {
-        index = idx;
-        card.SetFrontImage(sprite);
+        cardData = data;
+        cardUI.SetFrontImage(data.sprite);
         onClickedCB = onItemClickedCB;
         matched = false;
-    }
-
-    public Sprite GetSprite()
-    {
-        return card.GetFrontImage();
     }
 
     public void OnPointerClick(PointerEventData eventData)
     {
         if (!s_interactable || matched) return;
-        onClickedCB(index);
+        onClickedCB(this);
     }
 
     public void SetState(bool open, float delaySec = 0f)
@@ -48,7 +45,7 @@ public class MemoryGameItem : MonoBehaviour, IPointerClickHandler
             s_interactable = false;
             StartCoroutine(SetStateWithDelay(open, delaySec));
         } else {
-            card.SetState(open);
+            cardUI.SetState(open);
         }
     }
 
