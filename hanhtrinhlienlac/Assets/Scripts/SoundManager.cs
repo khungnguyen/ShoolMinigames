@@ -9,14 +9,21 @@ public class SoundManager : MonoBehaviour
     private List<AudioSource> _sfxChannels;
     public static SoundManager inst;
 
-    private bool _mute = false;
-    void Awake()
+    private static bool _mute = false;
+    private void Awake()
     {
-        inst = this;
         for (int i = 0; i < numberSFXChannels; i++)
         {
-            _sfxChannels.Add(gameObject.AddComponent<AudioSource>());
+            var go = new GameObject();
+            go.transform.parent = transform;
+            go.transform.name = "sfx" + i;
+            var source = go.AddComponent<AudioSource>();
         }
+    }
+    void Start()
+    {
+        inst = this;
+        _sfxChannels = new List<AudioSource>(gameObject.GetComponentsInChildren<AudioSource>());
         _bgmChannel = gameObject.AddComponent<AudioSource>();
     }
     public void Mute(bool enable)

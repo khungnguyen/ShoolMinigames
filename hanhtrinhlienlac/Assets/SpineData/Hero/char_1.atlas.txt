@@ -3,377 +3,379 @@ size:2048,2048
 filter:Linear,Linear
 pma:true
 Trau/b_leg_down
-bounds:675,1128,108,184
+bounds:675,1059,108,184
 Trau/b_leg_up
-bounds:583,770,157,276
+bounds:762,1285,157,276
 Trau/body
-bounds:2,1542,758,504
+bounds:2,1540,758,504
 Trau/f_leg_down
-bounds:276,392,195,217
-rotate:90
+bounds:1089,1360,195,217
 Trau/f_leg_up
-bounds:279,92,123,191
+bounds:289,630,123,191
 offsets:5,0,128,191
 rotate:90
 Trau/head
-bounds:2,1048,671,492
+bounds:2,1046,671,492
 Trau/horn
-bounds:762,1788,575,258
+bounds:762,1786,575,258
 offsets:1,2,578,261
 Trau/tail
-bounds:516,587,149,168
+bounds:276,460,149,168
 char_1/ao
-bounds:1312,1546,92,130
+bounds:159,6,92,130
 rotate:90
 char_1/ao phai
-bounds:667,571,64,87
+bounds:279,104,64,87
 offsets:1,1,66,90
 rotate:90
 char_1/ao trai
-bounds:763,386,61,88
+bounds:1019,1273,61,88
 offsets:1,1,63,90
+rotate:90
 char_1/can cau phai
-bounds:675,1314,226,68
-offsets:55,27,283,96
+bounds:675,1245,293,85
+offsets:65,34,359,120
 rotate:90
 char_1/can cau phai 2
-bounds:1733,1489,56,41
-offsets:1,1,283,96
+bounds:1513,1327,72,47
+offsets:0,1,359,120
 rotate:90
 char_1/chan phai
-bounds:420,2,73,88
+bounds:1312,1577,73,88
+rotate:90
 char_1/chan trai
-bounds:688,386,73,88
+bounds:913,1186,73,88
 char_1/dau
-bounds:1049,1581,261,205
+bounds:1049,1579,261,205
 offsets:1,1,263,207
 char_1/dui phai
-bounds:472,115,81,112
+bounds:279,170,81,112
 offsets:1,1,84,115
-rotate:90
 char_1/dui trai
-bounds:1940,1952,94,106
+bounds:1940,1950,94,106
 offsets:2,1,97,108
 rotate:90
 char_1/gio
-bounds:2,4,96,155
+bounds:2,2,96,155
 rotate:90
 char_1/long may phai
-bounds:1825,1526,48,24
+bounds:898,777,48,24
 offsets:1,1,50,27
+rotate:90
 char_1/long may trai
-bounds:745,1314,68,27
+bounds:913,1157,68,27
 offsets:1,1,70,29
 char_1/mat phai
-bounds:594,211,38,43
+bounds:522,454,38,43
 offsets:1,1,40,45
 char_1/mat thu
-bounds:279,217,194,173
+bounds:583,850,194,173
+rotate:90
 char_2/mat thu
-bounds:279,217,194,173
+bounds:583,850,194,173
+rotate:90
 char_3/mat thu
-bounds:279,217,194,173
+bounds:583,850,194,173
+rotate:90
 char_4/mat thu
-bounds:279,217,194,173
+bounds:583,850,194,173
+rotate:90
 char_5/mat thu
-bounds:279,217,194,173
+bounds:583,850,194,173
+rotate:90
 char_1/mat trai
-bounds:755,638,55,48
+bounds:840,507,55,48
 offsets:2,1,58,50
 char_1/mi phai
-bounds:1006,1313,54,56
+bounds:1376,1269,54,56
 offsets:1,1,57,58
+rotate:90
 char_1/mi trai
-bounds:937,1446,75,65
+bounds:1436,1324,75,65
 offsets:1,1,77,67
 char_1/mieng
-bounds:1924,1781,69,17
+bounds:917,1066,69,17
 offsets:2,1,72,20
-rotate:90
 char_1/mui
-bounds:1943,1826,28,23
+bounds:664,454,28,23
 offsets:1,1,30,25
-rotate:90
 char_1/nhan
-bounds:495,459,141,126
+bounds:785,1142,141,126
 offsets:1,1,143,128
+rotate:90
 char_1/non
-bounds:1339,1852,299,194
+bounds:1339,1850,299,194
 offsets:1,1,301,196
 char_1/tay phai
-bounds:1680,1547,79,87
+bounds:1484,1673,79,87
 offsets:0,5,79,92
-rotate:90
 char_1/tay trai
-bounds:1719,1628,62,94
+bounds:1436,1481,62,94
 char_1/tay trai 2
-bounds:751,1047,60,79
+bounds:753,624,60,79
+rotate:90
 char_1/toc phai
-bounds:762,1565,285,221
+bounds:762,1563,285,221
 offsets:1,2,287,224
 char_1/trong phai
-bounds:1680,1494,51,51
+bounds:562,443,51,51
 offsets:1,1,53,53
 char_1/trong trai
-bounds:756,572,64,63
+bounds:1434,1259,64,63
 offsets:1,1,66,65
-rotate:90
 char_1/white phai
-bounds:1783,1628,10,10
+bounds:762,1245,10,10
 offsets:1,1,12,12
 char_1/white trai
-bounds:1094,1521,43,33
+bounds:879,827,43,33
 offsets:1,1,45,36
-rotate:90
 char_2/ao
-bounds:1455,1633,89,130
+bounds:785,1051,89,130
 rotate:90
 char_2/ao phai
-bounds:821,1349,56,74
+bounds:834,629,56,74
 offsets:1,1,58,76
+rotate:90
 char_2/ao trai
-bounds:1769,1554,55,72
+bounds:1530,1599,55,72
 offsets:1,1,57,75
 char_2/chan phai
-bounds:1893,1635,73,88
+bounds:1286,1487,73,88
 char_2/chan trai
-bounds:1968,1632,73,88
+bounds:1286,1397,73,88
 char_2/dau
-bounds:2,382,272,282
+bounds:2,380,272,282
 offsets:1,1,274,284
 char_2/day
-bounds:1049,1566,81,13
+bounds:1722,1676,81,13
 offsets:1,1,83,15
 char_2/dui phai
-bounds:638,476,85,93
+bounds:1397,1667,85,93
 offsets:1,1,87,96
 char_2/dui trai
-bounds:1940,1856,94,106
+bounds:1940,1854,94,106
 offsets:2,1,97,108
 rotate:90
 char_2/long may phai
-bounds:1825,1504,43,20
+bounds:363,287,43,20
 offsets:1,1,45,23
 char_2/long may trai
-bounds:1059,1386,55,17
+bounds:1803,1696,55,17
 offsets:2,1,58,19
 rotate:90
 char_2/mat phai
-bounds:1776,1505,47,47
+bounds:615,447,47,47
 offsets:2,1,50,49
 char_2/mat trai
-bounds:1014,1443,68,58
+bounds:828,767,68,58
 offsets:1,1,70,60
-rotate:90
 char_2/mieng
-bounds:596,256,55,15
+bounds:924,805,55,15
 offsets:1,1,57,17
-char_2/mui
-bounds:1943,1799,25,23
-offsets:1,1,27,25
 rotate:90
+char_2/mui
+bounds:1516,1278,25,23
+offsets:1,1,27,25
 char_2/nhan
-bounds:1312,1640,141,126
+bounds:482,627,141,126
 offsets:1,1,143,128
 char_2/non
-bounds:1640,1852,298,194
+bounds:1640,1850,298,194
 offsets:2,1,301,196
 char_2/sao
-bounds:1968,1784,78,70
-char_2/tay phai
-bounds:1213,1515,64,70
-offsets:0,4,64,74
+bounds:1064,1193,78,70
 rotate:90
+char_2/tay phai
+bounds:835,557,64,70
+offsets:0,4,64,74
 char_2/tay trai
-bounds:725,476,60,93
+bounds:713,528,60,93
 char_2/tay trai 2
-bounds:879,1342,60,79
+bounds:1598,1675,60,79
 char_3/ao
-bounds:495,371,86,131
+bounds:1339,1762,86,131
 rotate:90
 char_3/ao phai
-bounds:745,1343,74,79
+bounds:753,686,74,79
 offsets:1,1,76,81
 char_3/ao trai
-bounds:628,371,58,86
+bounds:775,536,58,86
 offsets:1,2,60,89
 char_3/can cau phai
-bounds:289,589,225,166
+bounds:921,1336,225,166
 offsets:1,1,227,168
+rotate:90
 char_3/chan phai
-bounds:742,957,73,88
+bounds:1361,1487,73,88
 char_3/chan trai
-bounds:268,2,74,88
+bounds:1402,1577,74,88
 char_3/dau
-bounds:289,757,292,289
+bounds:289,755,292,289
 offsets:1,1,294,291
 char_3/day phai
-bounds:762,1513,50,88
+bounds:1286,1282,50,88
 offsets:1,1,52,90
 rotate:90
 char_3/day trai
-bounds:852,1513,50,88
+bounds:363,309,50,88
 offsets:1,1,52,90
-rotate:90
 char_3/long may phai
-bounds:787,484,86,31
+bounds:1565,1674,86,31
 offsets:1,2,90,34
 rotate:90
 char_3/long may trai
-bounds:1659,1485,59,19
+bounds:395,399,59,19
 offsets:1,2,61,23
 rotate:90
 char_3/mat phai
-bounds:1032,1513,60,50
+bounds:713,476,60,50
 offsets:27,11,88,62
 char_3/mat trai
-bounds:596,273,96,58
+bounds:921,1276,96,58
 offsets:1,1,98,61
-rotate:90
 char_3/mieng
-bounds:1826,1552,55,14
+bounds:1822,1696,55,14
 offsets:1,1,57,16
+rotate:90
 char_3/mui
-bounds:815,1314,26,21
+bounds:762,1257,26,21
 offsets:1,2,28,24
 rotate:90
 char_3/nhan
-bounds:1495,1724,141,126
+bounds:625,623,141,126
 offsets:1,1,143,128
-char_3/ro
-bounds:1783,1640,83,108
-offsets:1,1,85,111
 rotate:90
+char_3/ro
+bounds:1312,1652,83,108
+offsets:1,1,85,111
 char_3/tay phai
-bounds:1826,1568,64,70
+bounds:1552,1505,64,70
 offsets:0,4,64,74
 char_3/tay trai
-bounds:656,276,60,93
+bounds:427,437,60,93
+rotate:90
 char_3/tay trai 2
-bounds:941,1365,60,79
+bounds:1660,1675,60,79
 char_3/vay
-bounds:475,259,119,110
+bounds:758,939,119,110
 char_4/ao
-bounds:667,637,86,131
+bounds:1472,1762,86,131
+rotate:90
 char_4/ao phai
-bounds:675,1048,74,78
+bounds:988,1193,74,78
 offsets:1,1,76,80
 char_4/ao trai
-bounds:755,688,58,87
+bounds:739,767,58,87
 offsets:1,1,60,89
+rotate:90
 char_4/chan phai
-bounds:742,777,70,88
+bounds:1436,1391,70,88
 char_4/chan trai
-bounds:745,1424,70,87
+bounds:1109,1288,70,87
+rotate:90
 char_4/dau
-bounds:2,666,285,380
+bounds:2,664,285,380
 offsets:1,1,287,382
 char_4/day phai
-bounds:942,1513,50,88
+bounds:1478,1577,50,88
 offsets:1,1,52,90
-rotate:90
 char_4/day trai
-bounds:785,1225,50,87
+bounds:1500,1488,50,87
 offsets:1,2,52,91
 char_4/long may phai
-bounds:638,459,44,15
+bounds:664,479,44,15
 offsets:1,1,46,17
 char_4/long may trai
-bounds:1285,1522,57,20
+bounds:1530,1577,57,20
 offsets:1,1,59,23
-rotate:90
 char_4/mat phai
-bounds:941,1311,63,52
+bounds:775,482,63,52
 offsets:1,1,65,54
 char_4/mat trai
-bounds:780,292,92,60
+bounds:879,862,92,60
 offsets:1,1,94,62
 rotate:90
 char_4/mieng
-bounds:718,275,56,14
+bounds:1500,1266,56,14
 offsets:1,1,58,16
+rotate:90
 char_4/mui
-bounds:472,92,16,21
+bounds:739,827,16,21
 offsets:3,1,20,23
 char_4/nhan
-bounds:1781,1725,141,125
+bounds:570,496,141,125
 offsets:1,1,143,127
 char_4/ro
-bounds:495,5,84,108
+bounds:1846,1740,84,108
 offsets:1,1,86,110
 char_4/tay phai
-bounds:1964,1567,63,70
+bounds:1556,1433,63,70
 offsets:0,4,63,74
-rotate:90
 char_4/tay trai
-bounds:1565,1483,61,92
+bounds:1286,1334,61,92
 rotate:90
 char_4/tay trai 2
-bounds:1968,1722,60,78
-rotate:90
+bounds:829,687,60,78
 char_4/vay
-bounds:1444,1521,119,110
+bounds:758,827,119,110
 char_5/ao
-bounds:1587,1630,92,130
+bounds:1605,1756,92,130
 rotate:90
 char_5/ao phai
-bounds:880,1423,55,88
+bounds:1136,1198,55,88
 offsets:1,1,57,90
 char_5/ao trai
-bounds:817,1425,61,86
+bounds:1198,1297,61,86
 offsets:1,1,63,88
+rotate:90
 char_5/chan phai
-bounds:742,867,73,88
+bounds:1361,1397,73,88
 char_5/chan trai
-bounds:344,2,74,88
+bounds:291,14,74,88
 char_5/dau
-bounds:2,102,278,275
+bounds:2,100,278,275
 offsets:2,1,281,277
 rotate:90
 char_5/dui phai
-bounds:1565,1546,82,113
+bounds:279,284,82,113
 offsets:1,1,84,115
-rotate:90
 char_5/dui trai
-bounds:159,5,95,107
+bounds:1737,1753,95,107
 offsets:1,1,97,109
 rotate:90
 char_5/long may phai
-bounds:276,619,45,11
+bounds:675,1046,45,11
 offsets:1,1,47,13
-rotate:90
 char_5/long may trai
-bounds:1074,1453,58,17
+bounds:1556,1414,58,17
 offsets:2,1,61,20
-rotate:90
 char_5/mat phai
-bounds:785,1138,85,46
+bounds:1508,1401,85,46
 offsets:3,1,90,48
 rotate:90
 char_5/mat trai
-bounds:1003,1371,70,54
+bounds:1380,1325,70,54
 offsets:2,1,73,57
 rotate:90
 char_5/mieng
-bounds:1307,1529,55,15
+bounds:840,490,55,15
 offsets:1,1,57,17
 char_5/mui
-bounds:1455,1744,28,22
+bounds:1516,1303,28,22
 offsets:1,1,30,24
 char_5/nhan
-bounds:1638,1724,141,126
+bounds:427,499,141,126
 offsets:1,1,143,128
 char_5/sao 2
-bounds:475,198,117,59
+bounds:276,399,117,59
 char_5/tay phai
-bounds:1892,1569,64,70
+bounds:917,1085,64,70
 offsets:0,4,64,74
-rotate:90
 char_5/tay trai
-bounds:718,291,60,93
+bounds:879,956,60,93
 char_5/tay trai 2
-bounds:1132,1519,60,79
+bounds:1722,1691,60,79
 rotate:90
 char_5/tui
-bounds:1339,1768,82,154
+bounds:583,766,82,154
 rotate:90

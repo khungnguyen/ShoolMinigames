@@ -24,9 +24,8 @@ public class HeroController : BaseController
     public System.Action<MarkedPoint> OnPlayerRevive;
     public System.Action<Coin> OnCollect;
 
-
     private int _curScore = 0;
-
+    public bool inWater = false;
     public enum SOUND
     {
         COIN,
@@ -37,8 +36,14 @@ public class HeroController : BaseController
     public void RideTheOx(bool enable)
     {
         rideTheOx = enable;
-        Deactivate();
         GodMode(enable);
+        TransparentSpine(enable);
+        if(enable) {
+            Deactivate();
+        }
+        else {
+            Activate();
+        }
     }
 
     public override void death()
@@ -55,7 +60,7 @@ public class HeroController : BaseController
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (godMode || isDie || finishLevel) return;
+        if (isDie || finishLevel) return;
         Debug.LogError("OnTriggerEnter2D" + other.tag);
         if (other.CompareTag(Defined.TAG_ENDPOINT))
         {
@@ -69,11 +74,20 @@ public class HeroController : BaseController
             }
 
         }
-        else if (other.CompareTag(Defined.TAG_OBSTACLE))
+        else if (other.CompareTag(Defined.TAG_OBSTACLE) && !godMode)
         {
             _revivePoint = other.GetComponent<Obstacle>()?.revivePoint;
-            death();
+            if (other.GetComponent<Obstacle>().objectType == GameEnum.ObstacleType.WATER)
+            {
+                inWater = true;
 
+
+            }
+            else
+            {
+                inWater = false;
+            }
+            death();
         }
         else if (other.CompareTag(Defined.TAG_COLLECTABLE))
         {
@@ -134,7 +148,7 @@ public class HeroController : BaseController
     {
         base.Update();
     }
-    
+
     public void Revive(MarkedPoint point)
     {
         if (point != null)
@@ -173,7 +187,7 @@ public class HeroController : BaseController
     }
     public void PlaySFX(SOUND index)
     {
-        _sound.PlayOneShot(__soundData[(int)index]);
+        SoundManager.inst.PlaySfx(__soundData[(int)index]);
     }
-    
+
 }

@@ -1,0 +1,50 @@
+Character-Anim-chubodoi.png
+size:1024,512
+filter:Linear,Linear
+pma:true
+chu bo doi/ao
+bounds:2,2,108,180
+rotate:90
+chu bo doi/ao phai
+bounds:626,401,68,109
+offsets:1,1,70,111
+chu bo doi/ao trai
+bounds:696,410,76,100
+offsets:2,1,79,102
+chu bo doi/chan phai
+bounds:438,296,111,214
+chu bo doi/chan trai
+bounds:184,18,92,212
+offsets:0,0,115,212
+rotate:90
+chu bo doi/dau
+bounds:2,112,434,398
+offsets:1,1,436,400
+chu bo doi/mat
+bounds:398,37,73,22
+offsets:2,2,76,25
+rotate:90
+chu bo doi/mat copy
+bounds:438,120,69,61
+offsets:2,1,72,63
+chu bo doi/mat copy 2
+bounds:882,493,56,17
+offsets:1,1,58,20
+chu bo doi/mat copy 3
+bounds:551,312,83,71
+offsets:1,1,85,74
+rotate:90
+chu bo doi/mieng
+bounds:518,225,69,17
+offsets:2,1,72,20
+rotate:90
+chu bo doi/mui
+bounds:854,457,26,53
+offsets:1,1,29,58
+chu bo doi/tay phai
+bounds:774,419,78,91
+chu bo doi/tay trai
+bounds:438,183,78,111
+chu bo doi/tay trai 2
+bounds:551,397,73,113
+offsets:1,1,75,115

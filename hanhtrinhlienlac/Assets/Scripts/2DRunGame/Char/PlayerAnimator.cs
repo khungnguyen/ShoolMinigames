@@ -46,6 +46,10 @@ namespace MiniGames
 
         [SpineAnimation]
         public string victoryAnimation;
+        [SpineAnimation]
+        public string sadAnimation;
+        [SpineAnimation]
+        public string sitAnimation;
         private HeroController _player;
         private bool _playerGrounded;
         private ParticleSystem.MinMaxGradient _currentGradient;
@@ -59,7 +63,9 @@ namespace MiniGames
             RUN,
             RIDE_OX,
             DIE,
-            VICTORY
+            VICTORY,
+            SAD,
+            SIT
         }
 
         void Awake()
@@ -111,7 +117,7 @@ namespace MiniGames
             if (_player.LandingThisFrame)
             {
                 SetAnimationState(AnimationState.LANDING, false);
-                _source.PlayOneShot(_footsteps[Random.Range(0, _footsteps.Length)]);
+                SoundManager.inst.PlaySfx(_footsteps[Random.Range(0, _footsteps.Length)],false,1);
             }
 
             // Jump effects
@@ -232,6 +238,17 @@ namespace MiniGames
                         AnimateVictory(loop);
                         break;
                     }
+                case AnimationState.SAD:
+                    {
+                        AnimateSad(loop);
+                        break;
+                    }
+                case AnimationState.SIT:
+                    {
+                        AnimateSit(loop);
+                        break;
+                    }
+
             }
 
         }
@@ -257,12 +274,13 @@ namespace MiniGames
         }
         private void AnimateDie(bool loop)
         {
-            TrackEntry track = SetAniamtion(deathAnimation, loop);
+            String anim = _player.inWater?sadAnimation:deathAnimation;
+            TrackEntry track = SetAniamtion(anim, loop);
             track.Complete += (track) =>
             {
                 SetAnimationState(AnimationState.IDLE);
                 _player.NotifyRevive();
-               
+
             };
 
         }
@@ -279,6 +297,14 @@ namespace MiniGames
         private void AnimateVictory(bool loop)
         {
             TrackEntry track = SetAniamtion(victoryAnimation, loop);
+        } 
+        private void AnimateSad(bool loop)
+        {
+            TrackEntry track = SetAniamtion(sadAnimation, loop);
+        }
+        private void AnimateSit(bool loop)
+        {
+            TrackEntry track = SetAniamtion(sitAnimation, loop);
         }
     }
 

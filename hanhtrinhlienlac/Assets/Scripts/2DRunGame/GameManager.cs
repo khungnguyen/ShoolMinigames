@@ -5,6 +5,7 @@ using MiniGames;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.PlayerLoop;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -43,6 +44,7 @@ public class GameManager : MonoBehaviour
         _gameUI.getTutorManager().OnTutComplete += OnTutorEnd;
         LevelInfo startLevel = _levelManager.FindLevel(_curLevel);
         ChangeLevel(startLevel, true);
+        
     }
     private void OnPlayerFinishMap(GameEnum.LevelType nextLevel)
     {
@@ -52,6 +54,9 @@ public class GameManager : MonoBehaviour
             _previous = _curLevel;
             _curLevel = nextLevel;
             ChangeLevel(next);
+        }
+        else {
+            OnEndGame();
         }
     }
     private void ChangeLevel(LevelInfo next, bool isEnter = false)
@@ -77,7 +82,6 @@ public class GameManager : MonoBehaviour
             _playerController.EnableInput(false);
             _playerController.GodMode(true);
             _gameUI.getTutorManager().SetTutType(GetTutByLevel(_curLevel)).ShowTutor(true);
-
 
         });
     }
@@ -156,9 +160,11 @@ public class GameManager : MonoBehaviour
     }
     public void PlayBGM(GameEnum.LevelType index)
     {
-        _sound.Stop();
-        _sound.clip = __soundData[(int)index];
-        _sound.Play();
-        _sound.loop = true;
+        SoundManager.inst.StopBGM();
+        SoundManager.inst.PlayBGM(__soundData[(int)index],true);
+    }
+    public void OnEndGame() {
+        UserInfo.GetInstance().SetCompletedRunGame(true);
+        SceneManager.LoadScene("Main");
     }
 }

@@ -41,13 +41,10 @@ public class BuffaloController : BaseController
         {
             _player = other.transform.GetComponent<HeroController>();
             if (!_player.Grounded)
-            {
-                _player.gameObject.SetActive(false);
+            {;
                 _player.SetPosition(attachSeatPoint.position);
                 _buffaloMove = true;
-                _sound.clip = __soundData[1];
-                _sound.loop = true;
-                _sound.Play();
+                SoundManager.inst.PlaySfx(__soundData[1],true,1);
                 _player.EnableInput(false);
                 setAnimation(buffaloWalk, true);
                 _player.RideTheOx(true);
@@ -61,8 +58,6 @@ public class BuffaloController : BaseController
             Debug.LogError("Buffalo stop");
             _player.EnableInput(true);
             _player.RideTheOx(false);
-            _player.Activate();
-            _player.gameObject.SetActive(true);
             _buffaloMove = false;
             setAnimation(buffaloIdle, true);
             ChangeSkin("default");
@@ -74,7 +69,7 @@ public class BuffaloController : BaseController
                 JumpUp = false,
                 X = 0f
             };
-            _sound.Stop();
+            SoundManager.inst.StopSfx();
 
         }
         else if (other.CompareTag("Obstacle"))
@@ -87,7 +82,7 @@ public class BuffaloController : BaseController
                 var newPos = new Vector2(other.transform.position.x + w, other.transform.position.y - h / 2);
                 var par = Instantiate(dustVfx, newPos, other.transform.rotation);
                 Destroy(par.gameObject, 2f);
-                _sound.PlayOneShot(__soundData[0]);
+                SoundManager.inst.PlaySfx(__soundData[0]);
             }
             Destroy(other.gameObject);
         }

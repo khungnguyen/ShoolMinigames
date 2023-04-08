@@ -22,8 +22,12 @@ public class CharFollower : MonoBehaviour
     private CheckPointType _checkPointType;
     private Vector2 _curScale;
     public Action<CheckPointType> OnCheckPointClickToPlayGame;
+
+    private bool avoidUserClick = false;
     static int s_savePoint = -1;
     static CheckPointType s_saveCheckPoint;
+
+
 
     void Start()
     {
@@ -43,6 +47,9 @@ public class CharFollower : MonoBehaviour
         {
             StartAtPoint(s_savePoint);
             _checkPointType = s_saveCheckPoint;
+        }
+        if(UserInfo.GetInstance().IsPlayerCompleteRunGame()) {
+            OnCheckPointSelected(CheckPointType.CHECK_POINT_4);
         }
     }
     void StartAtPoint(int point)
@@ -93,29 +100,27 @@ public class CharFollower : MonoBehaviour
             if (other.GetComponent<MapCheckPoint>().checkPointType == _checkPointType)
             {
                 stop = true;
-                SetAnimation(idle);
                 var data = pathCreator.path.CalculateClosestPointOnPathData(transform.position);
                 s_savePoint = data.previousIndex;
-
+                SetAnimation(idle, () =>
+                {
+                    OnCheckPointClickToPlayGame?.Invoke(_checkPointType);
+                    avoidUserClick = false;
+                });
             }
         }
     }
     public void OnCheckPointSelected(CheckPointType t)
     {
         Debug.Log("OnCheckPointSelected" + t);
-        if (!stop)
+        if (!stop || avoidUserClick)
         {
             //char is moving, do not thing
 
         }
-        else if (t == _checkPointType && stop)
-        {
-            // char is not moving, stop at correct checkpoint
-            // trigger callback function 
-            OnCheckPointClickToPlayGame?.Invoke(t);
-        }
         else
         {
+            avoidUserClick = true;
             stop = false;
             if ((int)t > (int)_checkPointType)
             {
@@ -139,9 +144,13 @@ public class CharFollower : MonoBehaviour
         spine.Skeleton.SetSlotsToSetupPose();
         spine.LateUpdate();
     }
-    public void SetAnimation(string anim)
+    public void SetAnimation(string anim, Action completed = null)
     {
-        spine.AnimationState.SetAnimation(0, anim, true);
+        var track = spine.AnimationState.SetAnimation(0, anim, true);
+        track.Complete += (t) =>
+        {
+            completed?.Invoke();
+        };
     }
 
 }

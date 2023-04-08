@@ -8,6 +8,7 @@ public class UserInfo
     private static UserInfo _inst;
 
     private string _skinName = "char_5";
+    private bool _isPlayerCompletedRunGame = false;
     private UserInfo()
     {
 
@@ -25,6 +26,12 @@ public class UserInfo
     }
     public string GetSkin() {
         return _skinName;
+    }
+    public void SetCompletedRunGame(bool b = true) {
+        _isPlayerCompletedRunGame = true;
+    }
+    public bool IsPlayerCompleteRunGame() {
+        return _isPlayerCompletedRunGame;
     }
 
 }
