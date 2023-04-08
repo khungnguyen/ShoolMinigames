@@ -8,12 +8,14 @@ public class MemoryGameItem : MonoBehaviour, IPointerClickHandler
 {
     private static bool s_interactable = true;
     [SerializeField] private MemoryGameCard cardUI;
+    [SerializeField] private CanvasGroup canvasGroup;
 
     private ScriptableCard cardData;
     public ScriptableCard CardData { get => cardData; }
     private Action<MemoryGameItem> onClickedCB;
     private bool matched;
     public bool Matched { get => matched; }
+    private float targetAlpha = 1f;
 
     // Start is called before the first frame update
     void Start()
@@ -23,6 +25,17 @@ public class MemoryGameItem : MonoBehaviour, IPointerClickHandler
     // Update is called once per frame
     void Update()
     {
+        if (canvasGroup.alpha < targetAlpha) {
+            canvasGroup.alpha += 2 * Time.deltaTime;
+            if (canvasGroup.alpha > targetAlpha) {
+                canvasGroup.alpha = targetAlpha;
+            }
+        } else if (canvasGroup.alpha > targetAlpha) {
+            canvasGroup.alpha -= 2 * Time.deltaTime;
+            if (canvasGroup.alpha < targetAlpha) {
+                canvasGroup.alpha = targetAlpha;
+            }
+        }
     }
 
     public void SetData(ScriptableCard data, Action<MemoryGameItem> onItemClickedCB)
@@ -31,6 +44,7 @@ public class MemoryGameItem : MonoBehaviour, IPointerClickHandler
         cardUI.SetFrontImage(data.sprite);
         onClickedCB = onItemClickedCB;
         matched = false;
+        ShowHide(true, true);
     }
 
     public void OnPointerClick(PointerEventData eventData)
@@ -54,8 +68,21 @@ public class MemoryGameItem : MonoBehaviour, IPointerClickHandler
         matched = true;
     }
 
-    public void ShowHide(bool show) {
-        //Todo
+    public void ShowHide(bool show, bool force = false, float delay = 0f) {
+        if (delay > 0) {
+            StartCoroutine(ShowHideWithDelay(show, force, delay));
+            return;
+        }
+        targetAlpha = show ? 1f : 0f;
+        if (force) {
+            canvasGroup.alpha = targetAlpha;
+        }
+    }
+
+    private IEnumerator ShowHideWithDelay(bool show, bool force, float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        ShowHide(show, force);
     }
 
     private IEnumerator SetStateWithDelay(bool open, float delaySec)

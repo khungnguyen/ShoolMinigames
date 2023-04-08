@@ -121,8 +121,10 @@ public class MemoryGameManager : MonoBehaviour
 
                 item.OnMatched();
                 curSelectedItem.OnMatched();
-                // itemIndex.ShowHide(false);
-                // curSelectedItemIndex.ShowHide(false);
+                item.ShowHide(false, false, 1f);
+                curSelectedItem.ShowHide(false, false, 1f);
+                StartCoroutine(ShowCardInfo(null, 1f));
+                
                 curSelectedItem = null;
 
                 var remainingItems = GetRemainingItems();
