@@ -13,6 +13,7 @@ public class MemoryGameManager : MonoBehaviour
     [SerializeField] private ScriptableCard fishingRodCard;
     [SerializeField] private TMPro.TextMeshProUGUI cardInfoTMP;
     [SerializeField] private MemoryGameResultPopup resutlPopup;
+    [SerializeField] private int scorePerMatchedPair;
 
     private int curLevelIdx = -1;
     private Transform curLevelContainer;
@@ -117,7 +118,7 @@ public class MemoryGameManager : MonoBehaviour
             if (item.CardData == curSelectedItem.CardData) 
             {
                 Debug.Log("Matched!");
-                Scroring.Inst.Pause();
+                Scroring.Inst.AddRemainingTimeScore(scorePerMatchedPair);
 
                 item.OnMatched();
                 curSelectedItem.OnMatched();
@@ -129,18 +130,22 @@ public class MemoryGameManager : MonoBehaviour
 
                 var remainingItems = GetRemainingItems();
 
-                if (remainingItems.Count == 0)
-                {
-                    StartCoroutine(ShowResultPopup(0.5f, null, null));
-                }
-                else if (remainingItems.Count == 1)
-                {
-                    var lastItem = remainingItems[0];
-                    lastItem.SetState(true, 1f);
-                    StartCoroutine(ShowCardInfo(lastItem.CardData, 1f));
-                    string extraText = IsLastLevel() ? "Công cụ tìm được" : "Mật thư tìm được";
-                    Sprite extraImage = lastItem.CardData.sprite;
-                    StartCoroutine(ShowResultPopup(2f, extraText, extraImage));
+                if (remainingItems.Count <= 1) {
+                    // Grid was solved
+                    Scroring.Inst.Pause();
+                    if (remainingItems.Count == 0)
+                    {
+                        StartCoroutine(ShowResultPopup(0.5f, null, null));
+                    }
+                    else if (remainingItems.Count == 1)
+                    {
+                        var lastItem = remainingItems[0];
+                        lastItem.SetState(true, 1f);
+                        StartCoroutine(ShowCardInfo(lastItem.CardData, 1f));
+                        string extraText = IsLastLevel() ? "Công cụ tìm được" : "Mật thư tìm được";
+                        Sprite extraImage = lastItem.CardData.sprite;
+                        StartCoroutine(ShowResultPopup(2f, extraText, extraImage));
+                    }
                 }
             } 
             else 
