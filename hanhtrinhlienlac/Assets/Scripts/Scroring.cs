@@ -77,10 +77,12 @@ public class Scroring : MonoBehaviour
     public void AddBonusScore(float value)
     {
         bonusScore += value;
+        UpdateVisual();
     }
     public void AddRemainingTimeScore(float value)
     {
         curRemainingTimeScore += value;
+        UpdateVisual();
     }
     private void UpdateVisual()
     {
