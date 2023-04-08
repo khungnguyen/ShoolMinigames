@@ -126,7 +126,7 @@ public class GameManager : MonoBehaviour
     private void SpawnBullet()
     {
         _levelManager.SpawnBullet();
-        Invoke("SpawnBullet", Random.Range(0.5f, 3f));
+        Invoke("SpawnBullet", Random.Range(2f, 5f));
     }
     private void Update()
     {
@@ -156,9 +156,13 @@ public class GameManager : MonoBehaviour
             _playerController.EnableInput(true);
             _playerController.GodMode(false);
             _gameUI.StartScoring();
-            //  SpawnBullet()
+           if(t == TutoriaType.Run2D_Game_4) {
+                SpawnBullet();
+           }
+           else {
+                CancelInvoke("SpawnBullet");
+           }
         }
-;
     }
     private TutoriaType GetTutByLevel(GameEnum.LevelType l)
     {

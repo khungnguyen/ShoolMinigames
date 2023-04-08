@@ -33,7 +33,7 @@ Transform:
   - {fileID: 3106749348780932667}
   - {fileID: 3106749349458004738}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &3106749348622238531
 MonoBehaviour:
@@ -49,7 +49,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectType: 4
   revivePoint: {fileID: 0}
-  _speed: 10
+  _speed: 5
 --- !u!61 &3106749348622238528
 BoxCollider2D:
   m_ObjectHideFlags: 0
