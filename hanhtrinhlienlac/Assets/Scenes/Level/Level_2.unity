@@ -6163,10 +6163,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "T\xECm v\u1EADt ch\u1EE9a t\xE0i li\u1EC7u"
+  m_text: "T\xCCM KI\u1EBEM M\u1EACT TH\u01AF"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: a63ac461950ca554dbbf127395afaf57, type: 2}
+  m_sharedMaterial: {fileID: 5911009495154939706, guid: a63ac461950ca554dbbf127395afaf57, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -6190,7 +6190,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 39.35
+  m_fontSize: 37.05
   m_fontSizeBase: 46
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -6698,8 +6698,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: ADS
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: a63ac461950ca554dbbf127395afaf57, type: 2}
+  m_sharedMaterial: {fileID: 5911009495154939706, guid: a63ac461950ca554dbbf127395afaf57, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -7759,14 +7759,6 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 1947546061}
     m_Modifications:
-    - target: {fileID: 1562576386, guid: 0d46752f310c3524e9de73d125f27ac9, type: 3}
-      propertyPath: maxScore
-      value: 300
-      objectReference: {fileID: 0}
-    - target: {fileID: 1562576386, guid: 0d46752f310c3524e9de73d125f27ac9, type: 3}
-      propertyPath: maxRemainingTimeScore
-      value: 500
-      objectReference: {fileID: 0}
     - target: {fileID: 2296058262986904532, guid: 0d46752f310c3524e9de73d125f27ac9, type: 3}
       propertyPath: m_Name
       value: Score
