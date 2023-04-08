@@ -115,6 +115,7 @@ public class QuestionGameManager : MonoBehaviour
 
         if (result) {
             GetAnswerItemUI(selectedAnswerIndex).HighlightCorrect(true);
+            Scroring.Inst.AddRemainingTimeScore(curQuestion.score);
         } else {
             int correctIdx = GetCorrectAnswerIndex(curQuestion);
             GetAnswerItemUI(correctIdx).HighlightCorrect(false);
