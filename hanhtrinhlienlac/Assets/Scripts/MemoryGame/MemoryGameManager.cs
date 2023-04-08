@@ -8,9 +8,10 @@ using UnityEngine.SceneManagement;
 public class MemoryGameManager : MonoBehaviour
 {
     [SerializeField] private Transform[] levelContainers;
-    [SerializeField] private Sprite[] sprites;
-    [SerializeField] private Sprite matThuSprite;
-    [SerializeField] private Sprite fishingRodSprite;
+    [SerializeField] private ScriptableCard[] scriptableCards;
+    [SerializeField] private ScriptableCard matThuCard;
+    [SerializeField] private ScriptableCard fishingRodCard;
+    [SerializeField] private TMPro.TextMeshProUGUI cardInfoTMP;
     [SerializeField] private MemoryGameResultPopup resutlPopup;
 
     private int curLevelIdx = -1;
@@ -64,20 +65,21 @@ public class MemoryGameManager : MonoBehaviour
 
         curLevelContainer.gameObject.SetActive(true);
         //Setup level
+        curSelectedItemIndex = -1;
         indexesInPairs = RandomPairsFromRange(0, curLevelContainer.childCount);
-        var spriteIndexes = Enumerable.Range(0, sprites.Length).ToList();
+        var cardIndexes = Enumerable.Range(0, scriptableCards.Length).ToList();
         
-        Debug.Assert(spriteIndexes.Count >= indexesInPairs.Count);
+        Debug.Assert(cardIndexes.Count >= indexesInPairs.Count);
 
         foreach (var pair in indexesInPairs) {
             //random sprite
-            var idx = UnityEngine.Random.Range(0, spriteIndexes.Count - 1);
-            var spriteIdx = spriteIndexes[idx];
-            spriteIndexes.RemoveAt(idx);
-            var sprite = sprites[spriteIdx];
+            var idx = UnityEngine.Random.Range(0, cardIndexes.Count - 1);
+            var spriteIdx = cardIndexes[idx];
+            cardIndexes.RemoveAt(idx);
+            var sprite = scriptableCards[spriteIdx].sprite;
 
             if (pair.Defective) {
-                sprite = IsLastLevel() ? fishingRodSprite : matThuSprite;
+                sprite = IsLastLevel() ? fishingRodCard.sprite : matThuCard.sprite;
             }
 
             Debug.Log(pair);
@@ -134,7 +136,8 @@ public class MemoryGameManager : MonoBehaviour
                 {
                     Scroring.Inst.Pause();
                     var item = GetItemByIndex(indexesInPairs[0].A);
-                    item.SetState(true, 1f);
+                    // item.SetState(true, 1f);
+                    OnItemSelected(indexesInPairs[0].A);
                     string extraText = IsLastLevel() ? "Công cụ tìm được" : "Mật thư tìm được";
                     Sprite extraImage = item.GetSprite();
                     StartCoroutine(ShowResultPopup(2f, extraText, extraImage));
@@ -172,6 +175,11 @@ public class MemoryGameManager : MonoBehaviour
         }
 
         return listPair;
+    }
+
+    private void ShowCardInfo(ScriptableCard card)
+    {
+        cardInfoTMP.text = card.desc;
     }
 
     private bool IsLastLevel()
