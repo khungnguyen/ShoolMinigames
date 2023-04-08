@@ -48,8 +48,10 @@ public class CharFollower : MonoBehaviour
             StartAtPoint(s_savePoint);
             _checkPointType = s_saveCheckPoint;
         }
-        if(UserInfo.GetInstance().IsPlayerCompleteRunGame()) {
+        if (UserInfo.GetInstance().IsPlayerCompleteRunGame())
+        {
             OnCheckPointSelected(CheckPointType.CHECK_POINT_4);
+            StartAtPoint(pathCreator.path.localPoints.Length -1);
         }
     }
     void StartAtPoint(int point)
@@ -97,22 +99,20 @@ public class CharFollower : MonoBehaviour
 
         if (other.CompareTag(Defined.TAG_CHECKPOINT))
         {
-            if (other.GetComponent<MapCheckPoint>().checkPointType == _checkPointType)
+            if (other.GetComponent<MapCheckPoint>().checkPointType == _checkPointType && avoidUserClick)
             {
                 stop = true;
                 var data = pathCreator.path.CalculateClosestPointOnPathData(transform.position);
                 s_savePoint = data.previousIndex;
-                SetAnimation(idle, () =>
-                {
-                    OnCheckPointClickToPlayGame?.Invoke(_checkPointType);
-                    avoidUserClick = false;
-                });
+                SetAnimation(idle, true);
+                Debug.Log("OnTriggerEnter2D");
+                StartCoroutine(DelayGoToGame(_checkPointType));
             }
         }
     }
     public void OnCheckPointSelected(CheckPointType t)
     {
-        Debug.Log("OnCheckPointSelected" + t);
+
         if (!stop || avoidUserClick)
         {
             //char is moving, do not thing
@@ -121,20 +121,29 @@ public class CharFollower : MonoBehaviour
         else
         {
             avoidUserClick = true;
-            stop = false;
-            if ((int)t > (int)_checkPointType)
+            Debug.Log("OnCheckPointSelected" + t);
+            if (t == _checkPointType)
             {
-                _moveBack = false;
-                transform.localScale = _curScale * new Vector2(1, 1);
+
+                GoToGame(t);
+                StopAllCoroutines();
             }
             else
             {
-                _moveBack = true;
-                transform.localScale = _curScale * new Vector2(-1, 1);
+                stop = false;
+                if ((int)t > (int)_checkPointType)
+                {
+                    _moveBack = false;
+                    transform.localScale = _curScale * new Vector2(1, 1);
+                }
+                else
+                {
+                    _moveBack = true;
+                    transform.localScale = _curScale * new Vector2(-1, 1);
+                }
+                s_saveCheckPoint = _checkPointType = t;
+                SetAnimation(run, true);
             }
-            s_saveCheckPoint = _checkPointType = t;
-
-            SetAnimation(run);
         }
 
     }
@@ -144,13 +153,24 @@ public class CharFollower : MonoBehaviour
         spine.Skeleton.SetSlotsToSetupPose();
         spine.LateUpdate();
     }
-    public void SetAnimation(string anim, Action completed = null)
+    public void SetAnimation(string anim, bool loop = false, Action completed = null)
     {
-        var track = spine.AnimationState.SetAnimation(0, anim, true);
+        var track = spine.AnimationState.SetAnimation(0, anim, loop);
         track.Complete += (t) =>
         {
             completed?.Invoke();
         };
+    }
+    IEnumerator DelayGoToGame(CheckPointType t)
+    {
+        yield return new WaitForSeconds(1);
+        GoToGame(t);
+    }
+    private void GoToGame(CheckPointType t)
+    {
+        avoidUserClick = false;
+        OnCheckPointClickToPlayGame?.Invoke(t);
+        Debug.LogError("GotoGame");
     }
 
 }

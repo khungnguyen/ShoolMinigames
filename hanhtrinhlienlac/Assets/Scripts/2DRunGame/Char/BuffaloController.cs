@@ -37,7 +37,7 @@ public class BuffaloController : BaseController
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Player") && !_rideOx)
+        if (other.CompareTag(Defined.TAG_PLAYER) && !_rideOx)
         {
             _player = other.transform.GetComponent<HeroController>();
             if (!_player.Grounded)
@@ -53,7 +53,7 @@ public class BuffaloController : BaseController
                 _rideOx = true;
             }
         }
-        else if (other.CompareTag("EndPoint"))
+        else if (other.CompareTag(Defined.TAG_ENDPOINT))
         {
             Debug.LogError("Buffalo stop");
             _player.EnableInput(true);
@@ -72,7 +72,7 @@ public class BuffaloController : BaseController
             SoundManager.inst.StopSfx();
 
         }
-        else if (other.CompareTag("Obstacle"))
+        else if (other.CompareTag(Defined.TAG_OBSTACLE))
         {
             //TODO
             {
@@ -85,6 +85,11 @@ public class BuffaloController : BaseController
                 SoundManager.inst.PlaySfx(__soundData[0]);
             }
             Destroy(other.gameObject);
+        } 
+        else if (other.CompareTag(Defined.TAG_COLLECTABLE))
+        {
+          
+            _player.OnCoinCollect(other.GetComponent<Coin>());
         }
     }
     public override void GatherInput()

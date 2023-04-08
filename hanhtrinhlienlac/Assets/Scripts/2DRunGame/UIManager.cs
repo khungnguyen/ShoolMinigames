@@ -12,6 +12,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] TutorManager _tutor;
     [SerializeField] Scroring _score;
     [SerializeField] Transform _coinHubTarget;
+    [SerializeField] RewardUI _rewardUI;
     // Start is called before the first frame update
     void Start()
     {
@@ -47,5 +48,11 @@ public class UIManager : MonoBehaviour
     }
     public Vector2 GetCoinHubWorldPos() {
         return _coinHubTarget.position;
+    }
+    public Scroring GetScoring() {
+        return _score;
+    }
+    public RewardUI GetRewardUI() {
+        return _rewardUI;
     }
 }

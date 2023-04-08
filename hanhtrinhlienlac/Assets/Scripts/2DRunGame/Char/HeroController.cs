@@ -25,7 +25,10 @@ public class HeroController : BaseController
     public System.Action<Coin> OnCollect;
 
     private int _curScore = 0;
+
+    private bool _autoMove;
     public bool inWater = false;
+
     public enum SOUND
     {
         COIN,
@@ -38,10 +41,12 @@ public class HeroController : BaseController
         rideTheOx = enable;
         GodMode(enable);
         TransparentSpine(enable);
-        if(enable) {
+        if (enable)
+        {
             Deactivate();
         }
-        else {
+        else
+        {
             Activate();
         }
     }
@@ -69,8 +74,17 @@ public class HeroController : BaseController
                 var next = other.GetComponent<FinishLevelPoint>().nextLevel;
                 finishLevel = true;
                 EnableInput(false);
-                StartCoroutine(TriggerFinshLevelEvent(next, 2));
                 PlaySFX(SOUND.VICTORY);
+
+                if (next == GameEnum.LevelType.EndGame)
+                {
+
+                    StartCoroutine(AutoMoveToSoilder(2));
+                }
+                else
+                {
+                    StartCoroutine(TriggerFinshLevelEvent(next, 2));
+                }
             }
 
         }
@@ -91,12 +105,21 @@ public class HeroController : BaseController
         }
         else if (other.CompareTag(Defined.TAG_COLLECTABLE))
         {
-            _curScore++;
-            OnCollect?.Invoke(other.GetComponent<Coin>());
-            //Destroy(other.gameObject);
-            PlaySFX(SOUND.COIN);
 
+            OnCoinCollect(other.GetComponent<Coin>());
         }
+        else if (other.CompareTag(Defined.TAG_SOILDER))
+        {
+            _autoMove = false;
+            //  Deactivate();
+            StartCoroutine(TriggerFinshLevelEvent(GameEnum.LevelType.EndGame, 2));
+        }
+    }
+    public void OnCoinCollect(Coin c)
+    {
+        _curScore++;
+        OnCollect?.Invoke(c);
+        PlaySFX(SOUND.COIN);
     }
     public void reset()
     {
@@ -124,9 +147,9 @@ public class HeroController : BaseController
         {
             Input = new FrameInput
             {
-                JumpDown = UnityEngine.Input.GetButtonDown("Jump"),
-                JumpUp = UnityEngine.Input.GetButtonUp("Jump"),
-                X = UnityEngine.Input.GetAxisRaw("Horizontal")
+                JumpDown = _autoMove ? false : UnityEngine.Input.GetButtonDown("Jump"),
+                JumpUp = _autoMove ? false : UnityEngine.Input.GetButtonUp("Jump"),
+                X = _autoMove ? 1 : UnityEngine.Input.GetAxisRaw("Horizontal")
             };
             if (Input.JumpDown)
             {
@@ -188,6 +211,13 @@ public class HeroController : BaseController
     public void PlaySFX(SOUND index)
     {
         SoundManager.inst.PlaySfx(__soundData[(int)index]);
+    }
+    IEnumerator AutoMoveToSoilder(int time)
+    {
+        yield return new WaitForSeconds(time);
+        EnableInput(true);
+        _autoMove = true;
+        finishLevel = false;
     }
 
 }

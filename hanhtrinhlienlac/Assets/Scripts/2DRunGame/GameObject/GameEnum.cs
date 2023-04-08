@@ -13,12 +13,15 @@ public class GameEnum
     STARTPOINT,
     ENDPOINT,
     REVIVEPOINT,
+
+    SOILDER_BRAVO
   }
   public enum LevelType {
     Level1,
     Level2,
     Level3,
-    Level4
+    Level4,
+    EndGame
   }
   public enum CHARACTER {
     char_1,

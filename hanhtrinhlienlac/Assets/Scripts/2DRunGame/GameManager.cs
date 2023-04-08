@@ -44,7 +44,7 @@ public class GameManager : MonoBehaviour
         _gameUI.getTutorManager().OnTutComplete += OnTutorEnd;
         LevelInfo startLevel = _levelManager.FindLevel(_curLevel);
         ChangeLevel(startLevel, true);
-        
+
     }
     private void OnPlayerFinishMap(GameEnum.LevelType nextLevel)
     {
@@ -55,7 +55,8 @@ public class GameManager : MonoBehaviour
             _curLevel = nextLevel;
             ChangeLevel(next);
         }
-        else {
+        else
+        {
             OnEndGame();
         }
     }
@@ -138,14 +139,26 @@ public class GameManager : MonoBehaviour
     }
     private void OnTutorStart(TutoriaType t)
     {
-
+        _gameUI.PauseScoring();
     }
     private void OnTutorEnd(TutoriaType t)
     {
-        _playerController.EnableInput(true);
-        _playerController.GodMode(false);
-        _gameUI.StartScoring();
-        //  SpawnBullet();
+        if (t == TutoriaType.Run2D_Game_End)
+        {
+            var score = _gameUI.GetScoring().CurRemainingTimeScore;
+            _gameUI.GetRewardUI().Show(score.ToString(),() =>
+            {
+                BackToMainMenu();
+            });
+        }
+        else
+        {
+            _playerController.EnableInput(true);
+            _playerController.GodMode(false);
+            _gameUI.StartScoring();
+            //  SpawnBullet()
+        }
+;
     }
     private TutoriaType GetTutByLevel(GameEnum.LevelType l)
     {
@@ -155,16 +168,22 @@ public class GameManager : MonoBehaviour
             GameEnum.LevelType.Level2 => TutoriaType.Run2D_Game_2,
             GameEnum.LevelType.Level3 => TutoriaType.Run2D_Game_3,
             GameEnum.LevelType.Level4 => TutoriaType.Run2D_Game_4,
+            GameEnum.LevelType.EndGame => TutoriaType.Run2D_Game_End,
             _ => TutoriaType.Run2D_Game_1,
         };
     }
     public void PlayBGM(GameEnum.LevelType index)
     {
         SoundManager.inst.StopBGM();
-        SoundManager.inst.PlayBGM(__soundData[(int)index],true);
+        SoundManager.inst.PlayBGM(__soundData[(int)index], true);
     }
-    public void OnEndGame() {
+    private void OnEndGame()
+    {
         UserInfo.GetInstance().SetCompletedRunGame(true);
+        _gameUI.getTutorManager().SetTutType(TutoriaType.Run2D_Game_End).ShowTutor(true);
+    }
+    private void BackToMainMenu()
+    {
         SceneManager.LoadScene("Main");
     }
 }

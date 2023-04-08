@@ -7,7 +7,9 @@ public class MarkedPoint : ObjectBase
 {
     private void Awake()
     {
-        GetComponentInChildren<SpriteRenderer>().enabled = false;
+        var spr = GetComponentInChildren<SpriteRenderer>();
+        if (spr!=null)
+            spr.enabled = false;
     }
     public GameEnum.PointType type;
 

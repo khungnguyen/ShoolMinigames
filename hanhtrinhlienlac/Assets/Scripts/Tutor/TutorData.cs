@@ -17,7 +17,8 @@ public class TutorData : MonoBehaviour
     {
 
     }
-    public List<TutPart> getAllParts() {
+    public List<TutPart> getAllParts()
+    {
         return tutData;
     }
 }
@@ -26,6 +27,7 @@ public struct TutPart
 {
     public TutoriaType type;
     public List<TutItem> tuts;
+    public TutSpeaker speaker;
 }
 [System.Serializable]
 public struct TutItem
@@ -34,3 +36,9 @@ public struct TutItem
     public AudioClip audio;
 }
 
+[System.Serializable]
+public enum TutSpeaker
+{
+    AN,
+    SOILDER
+}

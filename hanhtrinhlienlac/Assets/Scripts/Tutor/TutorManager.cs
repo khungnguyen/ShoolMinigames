@@ -8,7 +8,7 @@ using UnityEngine;
 public class TutorManager : MonoBehaviour
 {
     // Start is called before the first frame update
-    public TutoriaType tutoriaType = TutoriaType.MainMenu;
+    public TutoriaType tutorialType = TutoriaType.MainMenu;
     [SerializeField] float _speechSpeed = 0.1f;
     [SerializeField] TMP_Text _text;
     [SerializeField] TutorData _data;
@@ -21,6 +21,7 @@ public class TutorManager : MonoBehaviour
 
     [SerializeField] GameObject _parentPanel;
     [SerializeField] GameObject _buttonShowHelp;
+    [SerializeField] List<Transform> _speakers;
     private int _curTutStep = 0;
 
     private bool _isWriting = false;
@@ -36,18 +37,25 @@ public class TutorManager : MonoBehaviour
     }
     void Start()
     {
-        _curPart = _data.getAllParts().Find(e => e.type == tutoriaType);
-        StartTutorial();
+        if (tutorialType != TutoriaType.NA)
+        {
+            SetTutType(tutorialType);
+            StartTutorial();
+        }
+
     }
     public TutorManager SetTutType(TutoriaType type)
     {
-        tutoriaType = type;
-        _curPart = _data.getAllParts().Find(e => e.type == tutoriaType);
+        tutorialType = type;
+        _curPart = _data.getAllParts().Find(e => e.type == type);
+        _speakers.ForEach(e => e.gameObject.SetActive(e.name.Equals(_curPart.speaker.ToString())));
+        //Debug.LogError("type" + type.ToString());
         return this;
     }
     public void StartTutorial()
     {
-        OnTutStart?.Invoke(tutoriaType);
+        StopAllCoroutines();
+        OnTutStart?.Invoke(tutorialType);
         ShowButtonHelp(false);
         if (!gameObject.activeSelf) gameObject.SetActive(true);
         reset();
@@ -95,7 +103,8 @@ public class TutorManager : MonoBehaviour
         _completed = true;
         ShowTutor(false);
         ShowButtonHelp(true);
-        OnTutComplete?.Invoke(tutoriaType);
+        StopAllCoroutines();
+        OnTutComplete?.Invoke(tutorialType);
     }
     private void UpdateText(string s)
     {
@@ -143,6 +152,7 @@ public class TutorManager : MonoBehaviour
 }
 public enum TutoriaType
 {
+    NA,
     MainMenu,
     Quiz,
     Pair,
