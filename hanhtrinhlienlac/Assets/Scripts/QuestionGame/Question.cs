@@ -11,5 +11,6 @@ public class Question
     public bool anwserByImage;
     public string text;
     public Question.Answer[] answers;
+    public string moreInfoURL;
     public string note;
 }

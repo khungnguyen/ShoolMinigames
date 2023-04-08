@@ -39,6 +39,11 @@ public class QuestionGameManager : MonoBehaviour
         SceneManager.LoadScene("Main");
     }
 
+    public void OnMoreInfoButtonClicked()
+    {
+        Application.OpenURL(curQuestion.moreInfoURL);
+    }
+
     public void OnButtonNextClicked()
     {
         if (IsFinished()) {
