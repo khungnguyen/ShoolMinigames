@@ -15,12 +15,13 @@ public class Scroring : MonoBehaviour
     private float curRemainingTimeScore;
     private float bonusScore;
     private bool isCounting = false;
+    private float lastDisplayingScore;
 
-    public float CurRemainingTimeScore {
+    public int CurRemainingTimeScore {
         get => Mathf.RoundToInt(curRemainingTimeScore);
     }
 
-    public float TotalScore {
+    public int TotalScore {
         get => Mathf.RoundToInt(curRemainingTimeScore + bonusScore);
     }
 
@@ -46,7 +47,13 @@ public class Scroring : MonoBehaviour
             {
                 curRemainingTimeScore = 0;
             }
+        }
 
+        int curDisplayingScore = displayTotalScore ? TotalScore : CurRemainingTimeScore;
+        if (lastDisplayingScore != curDisplayingScore) {
+            var diff = curDisplayingScore - lastDisplayingScore;
+            var delta = diff < 2 ? diff : diff * Time.deltaTime / 0.2f;
+            lastDisplayingScore += delta;
             UpdateVisual();
         }
     }
@@ -71,21 +78,22 @@ public class Scroring : MonoBehaviour
         isCounting = false;
         curRemainingTimeScore = maxRemainingTimeScore;
         bonusScore = 0f;
-        UpdateVisual();
+        UpdateVisual(true);
     }
 
     public void AddBonusScore(float value)
     {
         bonusScore += value;
-        UpdateVisual();
     }
     public void AddRemainingTimeScore(float value)
     {
         curRemainingTimeScore += value;
-        UpdateVisual();
     }
-    private void UpdateVisual()
+    private void UpdateVisual(bool force = false)
     {
-        scoreTMPro.text = displayTotalScore ? TotalScore.ToString() : CurRemainingTimeScore.ToString();
+        if (force) {
+            lastDisplayingScore = displayTotalScore ? TotalScore : CurRemainingTimeScore;
+        }
+        scoreTMPro.text = Mathf.RoundToInt(lastDisplayingScore).ToString();
     }
 }
