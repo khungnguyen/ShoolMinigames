@@ -415,8 +415,8 @@ MonoBehaviour:
   m_text: "T\u1EA1i th\xF4n Tr\u01B0\u1EDDng H\xE0, x\xE3 \u0110\xE0o Qu\u1EA3n,
     huy\u1EC7n H\xE0 Qu\u1EA3ng, t\u1EC9nh Cao B\u1EB1ng, v\xE0o ng\xE0y 15/5/1940\r"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: a63ac461950ca554dbbf127395afaf57, type: 2}
+  m_sharedMaterial: {fileID: 5911009495154939706, guid: a63ac461950ca554dbbf127395afaf57, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -440,7 +440,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 20.1
+  m_fontSize: 19.5
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
