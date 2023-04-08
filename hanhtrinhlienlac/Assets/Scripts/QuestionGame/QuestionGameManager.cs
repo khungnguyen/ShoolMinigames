@@ -13,6 +13,8 @@ public class QuestionGameManager : MonoBehaviour
     [SerializeField] private GameObject answerPrefab;
     [SerializeField] private QuestionGameResultPopup resultPopup;
     [SerializeField] private float resultShowingDuration = 2;
+    [SerializeField] private TutorManager tutorComp;
+    [SerializeField] private Scroring scoreComp;
 
     private int curQuestionIndex = -1;
     private Question curQuestion;
@@ -21,7 +23,18 @@ public class QuestionGameManager : MonoBehaviour
     private int finishedCount = 0;
 
     private Transform curAnswerContainer;
-
+    void Awake()
+    {
+        tutorComp.OnTutComplete += (t) =>
+        {
+            scoreComp.StartOrResume();
+        };
+        tutorComp.OnTutStart += (t) =>
+        {
+            Debug.Log("---------------------");
+            scoreComp.Pause();
+        };
+    }
     // Start is called before the first frame update
     void Start()
     {
@@ -31,7 +44,7 @@ public class QuestionGameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     public void OnButtonBackToMapClicked()
@@ -46,14 +59,16 @@ public class QuestionGameManager : MonoBehaviour
 
     public void OnButtonNextClicked()
     {
-        if (IsFinished()) {
+        if (IsFinished())
+        {
             OnButtonBackToMapClicked();
             return;
         }
         ShowNextQuestion();
     }
 
-    public void ShowNextQuestion() {
+    public void ShowNextQuestion()
+    {
         Scroring.Inst.StartOrResume();
 
         HideResultPopup();
@@ -63,20 +78,24 @@ public class QuestionGameManager : MonoBehaviour
 
         curQuestion = QuestionBank.Inst.questions[curQuestionIndex];
 
-        if (curQuestion.anwserByImage) {
+        if (curQuestion.anwserByImage)
+        {
             curAnswerContainer = imageAnswersContainer;
             answersContainer.gameObject.SetActive(false);
-        } else {
+        }
+        else
+        {
             curAnswerContainer = answersContainer;
             imageAnswersContainer.gameObject.SetActive(false);
         }
         curAnswerContainer.gameObject.SetActive(true);
 
         questionTMPro.text = curQuestion.text;
-        
+
         int idx = 0;
         // Set answers' data
-        for (; idx < curQuestion.answers.Length; idx++) {
+        for (; idx < curQuestion.answers.Length; idx++)
+        {
             curAnswerContainer.GetChild(idx).gameObject.SetActive(true);
             var answerItemUI = GetAnswerItemUI(idx);
             answerItemUI.SetData(idx, curQuestion.answers[idx].text, OnAnswerSelected);
@@ -84,7 +103,8 @@ public class QuestionGameManager : MonoBehaviour
             answerItemUI.SetInteractable(true);
         }
         // Deactivate unused answer slots
-        for (; idx < curAnswerContainer.childCount; idx++) {
+        for (; idx < curAnswerContainer.childCount; idx++)
+        {
             curAnswerContainer.GetChild(idx).gameObject.SetActive(false);
         }
     }
@@ -92,10 +112,12 @@ public class QuestionGameManager : MonoBehaviour
     public void OnAnswerSelected(int answerIndex)
     {
         selectedAnswerIndex = answerIndex;
-        for (int i = 0; i < curQuestion.answers.Length; i++) {
+        for (int i = 0; i < curQuestion.answers.Length; i++)
+        {
             var itemUI = GetAnswerItemUI(i);
-            if (i != selectedAnswerIndex) {
-               itemUI.ResetSelection();
+            if (i != selectedAnswerIndex)
+            {
+                itemUI.ResetSelection();
             }
             itemUI.SetInteractable(false);
         }
@@ -113,10 +135,13 @@ public class QuestionGameManager : MonoBehaviour
         bool result = curQuestion.answers[selectedAnswerIndex].value;
         Debug.Log("Your answer is " + result);
 
-        if (result) {
+        if (result)
+        {
             GetAnswerItemUI(selectedAnswerIndex).HighlightCorrect(true);
             Scroring.Inst.AddRemainingTimeScore(curQuestion.score);
-        } else {
+        }
+        else
+        {
             int correctIdx = GetCorrectAnswerIndex(curQuestion);
             GetAnswerItemUI(correctIdx).HighlightCorrect(false);
             GetAnswerItemUI(selectedAnswerIndex).HighlightWrong();
@@ -124,22 +149,27 @@ public class QuestionGameManager : MonoBehaviour
 
         yield return new WaitForSeconds(resultShowingDuration);
 
-        if (IsFinished()) {
+        if (IsFinished())
+        {
             StartCoroutine(ShowResultPopup(result, 0));
-        } else {
+        }
+        else
+        {
             ShowNextQuestion();
         }
     }
 
     private IEnumerator ShowResultPopup(bool result, float delaySec = 0f)
     {
-        if (delaySec > 0) {
+        if (delaySec > 0)
+        {
             yield return new WaitForSeconds(delaySec);
         }
         resultPopup.Show(result, IsFinished());
     }
 
-    private void HideResultPopup() {
+    private void HideResultPopup()
+    {
         resultPopup.Hide();
     }
 
@@ -155,8 +185,10 @@ public class QuestionGameManager : MonoBehaviour
 
     private int GetCorrectAnswerIndex(Question question)
     {
-        for (int i = 0; i < question.answers.Length; i++) {
-            if (question.answers[i].value) {
+        for (int i = 0; i < question.answers.Length; i++)
+        {
+            if (question.answers[i].value)
+            {
                 return i;
             }
         }

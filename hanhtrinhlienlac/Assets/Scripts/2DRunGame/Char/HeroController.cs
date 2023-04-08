@@ -80,6 +80,7 @@ public class HeroController : BaseController
                 {
 
                     StartCoroutine(AutoMoveToSoilder(2));
+                    GodMode(true);
                 }
                 else
                 {

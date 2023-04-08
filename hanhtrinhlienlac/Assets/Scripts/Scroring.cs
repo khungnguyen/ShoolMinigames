@@ -40,6 +40,7 @@ public class Scroring : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         if (isCounting && curRemainingTimeScore > 0)
         {
             curRemainingTimeScore -= scoreLostPerSec * Time.deltaTime;
