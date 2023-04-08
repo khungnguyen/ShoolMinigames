@@ -61,7 +61,7 @@ public class AnswerImageItemUI : MonoBehaviour, IPointerClickHandler, IAnswerIte
     public void HighlightCorrect(bool userCorrect)
     {
         bgFrame.color = colorCorrect;
-        correctMark.SetActive(userCorrect);
+        correctMark.SetActive(true);
         if (userCorrect) {
             scoreEarningAnim.Play();
         }

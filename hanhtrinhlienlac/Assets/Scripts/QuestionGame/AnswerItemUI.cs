@@ -62,7 +62,7 @@ public class AnswerItemUI : MonoBehaviour, IPointerClickHandler, IAnswerItemUI
     {
         bgImage.sprite = bgSpriteSelected;
         bgImage.color = Color.green;
-        correctMark.SetActive(userCorrect);
+        correctMark.SetActive(true);
         if (userCorrect) {
             scoreEarningAnim.Play();
         }
