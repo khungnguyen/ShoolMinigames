@@ -171,7 +171,7 @@ public class MemoryGameManager : MonoBehaviour
                     Scroring.Inst.Pause();
                     if (remainingItems.Count == 0)
                     {
-                        StartCoroutine(ShowResultPopup(0.5f, null, null));
+                        StartCoroutine(ShowResultPopup(0.5f, null));
                     }
                     else if (remainingItems.Count == 1)
                     {
@@ -179,9 +179,7 @@ public class MemoryGameManager : MonoBehaviour
                         lastItem.SetState(true, 1f);
                         StartCoroutine(ShowCardInfo(lastItem.CardData, 1f));
                         soundMgr.PlaySfx(audioClips.clickSFX, false, 0, 100, 1f);
-                        string extraText = IsLastLevel() ? "Công cụ tìm được" : "Mật thư tìm được";
-                        Sprite extraImage = lastItem.CardData.sprite;
-                        StartCoroutine(ShowResultPopup(2f, extraText, extraImage));
+                        StartCoroutine(ShowResultPopup(2f, lastItem.CardData.sprite, IsLastLevel()));
                     }
                 }
             }
@@ -259,12 +257,12 @@ public class MemoryGameManager : MonoBehaviour
         return curLevelContainer.GetChild(idx).GetComponent<MemoryGameItem>();
     }
 
-    private IEnumerator ShowResultPopup(float delaySec, string extraText = null, Sprite extraImage = null)
+    private IEnumerator ShowResultPopup(float delaySec, Sprite extraImage = null, bool isFinishRod = false)
     {
         yield return new WaitForSeconds(delaySec);
-        resutlPopup.Show(IsLastLevel(), extraText, extraImage);
+        resutlPopup.Show(IsLastLevel(), extraImage, isFinishRod);
         if (IsLastLevel()) {
-            StartCoroutine(ShowRewardUI(1));
+            StartCoroutine(ShowRewardUI(2));
         }
     }
 
