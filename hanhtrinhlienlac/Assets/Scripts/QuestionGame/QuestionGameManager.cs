@@ -14,12 +14,14 @@ public class QuestionGameManager : MonoBehaviour
         public AudioClip clickSFX;
         public AudioClip scoringSFX;
         public AudioClip wrongSFX;
+        public AudioClip levelFinishSFX;
     }
     [SerializeField] private TextMeshProUGUI questionTMPro;
     [SerializeField] private Transform answersContainer;
     [SerializeField] private Transform imageAnswersContainer;
     [SerializeField] private GameObject answerPrefab;
-    [SerializeField] private QuestionGameResultPopup resultPopup;
+    // [SerializeField] private QuestionGameResultPopup resultPopup;
+    [SerializeField] private RewardUI rewardUI;
     [SerializeField] private float resultShowingDuration = 2;
     [SerializeField] private TutorManager tutorComp;
     [SerializeField] private SoundManager soundMgr;
@@ -44,7 +46,7 @@ public class QuestionGameManager : MonoBehaviour
             Scroring.Inst.Pause();
         };
 
-        soundMgr.PlayBGM(audioClips.bgm, true);
+        StartCoroutine(PlayBGMDelay(audioClips.bgm, true));
     }
 
     // Update is called once per frame
@@ -77,8 +79,6 @@ public class QuestionGameManager : MonoBehaviour
     {
         Scroring.Inst.StartOrResume();
         soundMgr.PlaySfx(audioClips.nextQuestionSFX, false, 1);
-
-        HideResultPopup();
 
         curQuestionIndex++;
         Debug.Assert(curQuestionIndex < QuestionBank.Inst.questions.Length);
@@ -161,7 +161,7 @@ public class QuestionGameManager : MonoBehaviour
 
         if (IsFinished())
         {
-            StartCoroutine(ShowResultPopup(result, 0));
+            StartCoroutine(ShowRewardPopup(result, 0));
         }
         else
         {
@@ -169,18 +169,20 @@ public class QuestionGameManager : MonoBehaviour
         }
     }
 
-    private IEnumerator ShowResultPopup(bool result, float delaySec = 0f)
+    private IEnumerator PlayBGMDelay(AudioClip ac, bool loop)
+    {
+        yield return new WaitForEndOfFrame();
+        soundMgr.PlayBGM(ac, loop);
+    }
+
+    private IEnumerator ShowRewardPopup(bool result, float delaySec = 0f)
     {
         if (delaySec > 0)
         {
             yield return new WaitForSeconds(delaySec);
         }
-        resultPopup.Show(result, IsFinished());
-    }
-
-    private void HideResultPopup()
-    {
-        resultPopup.Hide();
+        soundMgr.PlaySfx(audioClips.levelFinishSFX, false, 1);
+        rewardUI.Show(Scroring.Inst.TotalScore.ToString(), OnButtonBackToMapClicked);
     }
 
     private bool IsFinished()
