@@ -5,29 +5,39 @@ using UnityEngine.UI;
 
 public class MemoryGameResultPopup : MonoBehaviour
 {
-    [SerializeField] private TMPro.TextMeshProUGUI contentText;
-    [SerializeField] private TMPro.TextMeshProUGUI extraInfoText;
+    [SerializeField] private GameObject msgVuotQuaThuThach;
+    [SerializeField] private GameObject msgMatThuFound;
+    [SerializeField] private GameObject msgFishingRodFound;
     [SerializeField] private Image extraInfoImage;
-    [SerializeField] private TMPro.TextMeshProUGUI btnNextText;
+    [SerializeField] private GameObject btnNext;
     // Start is called before the first frame update
     void Start()
     {
         
     }
 
-    public void Show(bool finished, string extraText = null, Sprite extraImage = null)
+    public void Show(bool finished, Sprite extraImage = null, bool isFishingRod = false)
     {
         gameObject.SetActive(true);
-        contentText.text = "Chúc mừng!";
         if (finished) {
-            // btnNextText.text = "Hoàn thành";
-            btnNextText.gameObject.SetActive(false);
+            btnNext.SetActive(false);
         }
+
         //extra info
-        extraInfoText.gameObject.SetActive(extraText != null);
-        extraInfoText.text = extraText;
-        extraInfoImage.gameObject.SetActive(extraImage != null);
-        extraInfoImage.sprite = extraImage;
+        if (extraImage) {
+            extraInfoImage.gameObject.SetActive(true);
+            extraInfoImage.sprite = extraImage;
+            
+            msgVuotQuaThuThach.SetActive(false);
+            msgFishingRodFound.SetActive(isFishingRod);
+            msgMatThuFound.SetActive(!isFishingRod);
+        } else {
+            extraInfoImage.gameObject.SetActive(false);
+
+            msgVuotQuaThuThach.SetActive(true);
+            msgFishingRodFound.SetActive(false);
+            msgMatThuFound.SetActive(false);
+        }
     }
     
     public void Hide()
