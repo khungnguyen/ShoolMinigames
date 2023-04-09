@@ -13,6 +13,7 @@ public class MemoryGameManager : MonoBehaviour
         public AudioClip clickSFX;
         public AudioClip scoringSFX;
         public AudioClip wrongSFX;
+        public AudioClip levelFinishedSFX;
     }
     [SerializeField] private Transform[] levelContainers;
     [SerializeField] private ScriptableCard[] scriptableCards;
@@ -20,6 +21,7 @@ public class MemoryGameManager : MonoBehaviour
     [SerializeField] private ScriptableCard fishingRodCard;
     [SerializeField] private TMPro.TextMeshProUGUI cardInfoTMP;
     [SerializeField] private MemoryGameResultPopup resutlPopup;
+    [SerializeField] private RewardUI rewardUI;
     [SerializeField] private int scorePerMatchedPair;
     [SerializeField] private TutorManager tutorComp;
     [SerializeField] private SoundManager soundMgr;
@@ -51,7 +53,7 @@ public class MemoryGameManager : MonoBehaviour
             Scroring.Inst.Pause();
         };
 
-        soundMgr.PlayBGM(audioClips.bgm, true);
+        StartCoroutine(PlayBGMDelay(audioClips.bgm, true));
     }
 
     // Update is called once per frame
@@ -221,6 +223,12 @@ public class MemoryGameManager : MonoBehaviour
         return listPair;
     }
 
+    private IEnumerator PlayBGMDelay(AudioClip ac, bool loop)
+    {
+        yield return new WaitForEndOfFrame();
+        soundMgr.PlayBGM(ac, loop);
+    }
+
     private IEnumerator ShowCardInfo(ScriptableCard card, float delay)
     {
         yield return new WaitForSeconds(delay);
@@ -255,5 +263,15 @@ public class MemoryGameManager : MonoBehaviour
     {
         yield return new WaitForSeconds(delaySec);
         resutlPopup.Show(IsLastLevel(), extraText, extraImage);
+        if (IsLastLevel()) {
+            StartCoroutine(ShowRewardUI(1));
+        }
+    }
+
+    private IEnumerator ShowRewardUI(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        soundMgr.PlaySfx(audioClips.levelFinishedSFX);
+        rewardUI.Show(Scroring.Inst.TotalScore.ToString(), OnButtonBackToMapClicked);
     }
 }
