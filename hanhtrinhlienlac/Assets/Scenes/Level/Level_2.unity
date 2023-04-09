@@ -3182,6 +3182,7 @@ MonoBehaviour:
   audioClips:
     bgm: {fileID: 8300000, guid: 47decd277f635cc48a48e4d3b3577cf9, type: 3}
     nextGameSFX: {fileID: 8300000, guid: 83bca23629beb0042ba60b63aa1c1152, type: 3}
+    gameSolvedSFX: {fileID: 8300000, guid: f724dba3c6ebcdc44bd507ff4f4052e2, type: 3}
     clickSFX: {fileID: 8300000, guid: d62537845a6a7424ab2a64bc9956306c, type: 3}
     scoringSFX: {fileID: 8300000, guid: 0d9cca10f6b4ac74f94b8da0dd4f6fea, type: 3}
     wrongSFX: {fileID: 8300000, guid: 15932b38da5f143459135107b1b36e61, type: 3}

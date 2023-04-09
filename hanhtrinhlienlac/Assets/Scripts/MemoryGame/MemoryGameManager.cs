@@ -10,6 +10,7 @@ public class MemoryGameManager : MonoBehaviour
     [Serializable] struct AudioClips {
         public AudioClip bgm;
         public AudioClip nextGameSFX;
+        public AudioClip gameSolvedSFX;
         public AudioClip clickSFX;
         public AudioClip scoringSFX;
         public AudioClip wrongSFX;
@@ -260,6 +261,7 @@ public class MemoryGameManager : MonoBehaviour
     private IEnumerator ShowResultPopup(float delaySec, Sprite extraImage = null, bool isFinishRod = false)
     {
         yield return new WaitForSeconds(delaySec);
+        soundMgr.PlaySfx(audioClips.gameSolvedSFX, false, 1);
         resutlPopup.Show(IsLastLevel(), extraImage, isFinishRod);
         if (IsLastLevel()) {
             StartCoroutine(ShowRewardUI(2));
