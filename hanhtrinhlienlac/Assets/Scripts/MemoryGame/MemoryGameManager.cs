@@ -15,23 +15,10 @@ public class MemoryGameManager : MonoBehaviour
     [SerializeField] private MemoryGameResultPopup resutlPopup;
     [SerializeField] private int scorePerMatchedPair;
     [SerializeField] private TutorManager tutorComp;
-    [SerializeField] private Scroring scoreComp;
 
     private int curLevelIdx = -1;
     private Transform curLevelContainer;
     private MemoryGameItem curSelectedItem;
-    void Awake()
-    {
-        tutorComp.OnTutComplete += (t) =>
-        {
-            scoreComp.StartOrResume();
-        };
-        tutorComp.OnTutStart += (t) =>
-        {
-            
-            scoreComp.Pause();
-        };
-    }
 
     // Start is called before the first frame update
     void Start()
@@ -42,6 +29,17 @@ public class MemoryGameManager : MonoBehaviour
         }
 
         ShowNextLevel();
+        Scroring.Inst.Pause();
+
+        tutorComp.OnTutComplete += (t) =>
+        {
+            Scroring.Inst.StartOrResume();
+        };
+
+        tutorComp.OnTutStart += (t) =>
+        {
+            Scroring.Inst.Pause();
+        };
     }
 
     // Update is called once per frame
