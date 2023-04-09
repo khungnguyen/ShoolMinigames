@@ -9952,7 +9952,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &345050151
 Transform:
   m_ObjectHideFlags: 0
@@ -80437,6 +80437,29 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 95089426}
     m_Modifications:
+    - target: {fileID: 602567518719506837, guid: d38015f4d79a4014190bf4e9fc634064, type: 3}
+      propertyPath: tutData.Array.data[2].tuts.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 602567518719506837, guid: d38015f4d79a4014190bf4e9fc634064, type: 3}
+      propertyPath: tutData.Array.data[0].tuts.Array.data[1].text
+      value: "\u0110\xE2y l\xE0 khu r\u1EEBng v\u1EDBi nh\u1EEFng con su\u1ED1i r\u1EA5t
+        nguy hi\u1EC3m, b\u1EA1n \u0111\u1EEBng \u0111\u1EC3 r\u01A1i xu\u1ED1ng
+        n\u01B0\u1EDBc nha.<br>C\u1ED1 g\u1EAFng tr\xE1nh c\xE1c ch\u01B0\u1EDBng
+        ng\u1EA1i v\u1EADt tr\xEAn \u0111\u01B0\u1EDDng. "
+      objectReference: {fileID: 0}
+    - target: {fileID: 602567518719506837, guid: d38015f4d79a4014190bf4e9fc634064, type: 3}
+      propertyPath: tutData.Array.data[2].tuts.Array.data[1].text
+      value: "\u0110\u1EA5t n\u01B0\u1EDBc m\xECnh qu\xE1 \u0111\u1EB9p \u0111\xFAng
+        kh\xF4ng n\xE0o? Ti\u1EBFp t\u1EE5c h\xE0nh tr\xECnh th\xF4i! "
+      objectReference: {fileID: 0}
+    - target: {fileID: 602567518719506837, guid: d38015f4d79a4014190bf4e9fc634064, type: 3}
+      propertyPath: tutData.Array.data[4].tuts.Array.data[0].text
+      value: "C\xE1m \u01A1n em \u0111\xE3 giao M\u1EADt Th\u01B0 cho anh th\u1EADt
+        \u0111\xFAng l\xFAc.<br>Em \u0111\xE3 g\xF3p c\xF4ng l\u1EDBn cho C\xE1ch
+        M\u1EA1ng v\xE0 thu \u0111\u01B0\u1EE3c r\u1EA5t nhi\u1EC1u huy hi\u1EC7u
+        M\u0103ng Non.  Ch\xFAc m\u1EEBng em."
+      objectReference: {fileID: 0}
     - target: {fileID: 2766928409017901218, guid: d38015f4d79a4014190bf4e9fc634064, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
