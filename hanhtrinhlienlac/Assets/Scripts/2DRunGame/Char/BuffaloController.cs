@@ -82,7 +82,7 @@ public class BuffaloController : BaseController
                 var newPos = new Vector2(other.transform.position.x + w, other.transform.position.y - h / 2);
                 var par = Instantiate(dustVfx, newPos, other.transform.rotation);
                 Destroy(par.gameObject, 2f);
-                SoundManager.inst.PlaySfx(__soundData[0]);
+                // SoundManager.inst.PlaySfx(__soundData[0]);
             }
             Destroy(other.gameObject);
         } 

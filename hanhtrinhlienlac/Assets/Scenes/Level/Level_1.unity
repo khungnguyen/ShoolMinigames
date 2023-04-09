@@ -3875,7 +3875,7 @@ MonoBehaviour:
   soundMgr: {fileID: 1993827568}
   audioClips:
     bgm: {fileID: 8300000, guid: 9c040d126d63e94438471d0d98980a77, type: 3}
-    nextQuestionSFX: {fileID: 8300000, guid: e1b258f7b7b4a874b882b08db107db49, type: 3}
+    nextQuestionSFX: {fileID: 8300000, guid: 83bca23629beb0042ba60b63aa1c1152, type: 3}
     clickSFX: {fileID: 8300000, guid: 60796aa45e9506d4f82d6a45aa74a28c, type: 3}
     scoringSFX: {fileID: 8300000, guid: 2c5b2a5e2e9818d458c9d10400c2279f, type: 3}
     wrongSFX: {fileID: 8300000, guid: 15932b38da5f143459135107b1b36e61, type: 3}

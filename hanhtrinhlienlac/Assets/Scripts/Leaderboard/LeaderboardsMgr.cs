@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -12,12 +13,18 @@ public enum ELeaderboardId {
 
 public class LeaderboardsMgr : MonoBehaviour
 {
+    [Serializable] struct AudioClips {
+        public AudioClip bgm;
+        public AudioClip clickSFX;
+    }
     private static LeaderboardsMgr _inst;
     public static LeaderboardsMgr Inst { get => _inst; }
 
     [SerializeField] private List<LeaderboardTab> tabs;
     [SerializeField] private LeaderboardContent content;
 
+    [SerializeField] private SoundManager soundMgr;
+    [SerializeField] private AudioClips audioClips;
     private LeaderboardTab curSelectedTab;
 
     void Awake() 
@@ -34,18 +41,19 @@ public class LeaderboardsMgr : MonoBehaviour
     void Start()
     {
         var defaultSelectedItem = tabs.Find(t => t.Id == ELeaderboardId.FINAL);
-        defaultSelectedItem.OnSelected();
+        defaultSelectedItem.OnSelected();        
+        StartCoroutine(PlayBGMDelay(audioClips.bgm, true));
     }
 
     // Update is called once per frame
     void Update()
     {
-        
     }
 
     public void OnBackButtonClicked()
     {
         SceneManager.LoadScene("Main");
+        soundMgr.PlaySfx(audioClips.clickSFX);
     }
 
     public void OnTabSelected(LeaderboardTab item)
@@ -68,8 +76,23 @@ public class LeaderboardsMgr : MonoBehaviour
                 break;
             }
         }
+        StartCoroutine(PlaySFXDelay(audioClips.clickSFX));
+        
         // for (int i = 0; i < tabs.Count; i++) {
         //     tabs[i].transform.SetSiblingIndex(tabs.Count - 1 - i);
         // }
+    }
+
+    private IEnumerator PlayBGMDelay(AudioClip ac, bool loop)
+    {
+        yield return new WaitForEndOfFrame();
+        soundMgr.PlayBGM(ac, loop);
+    }
+
+    private IEnumerator PlaySFXDelay(AudioClip ac)
+    {
+        //Thanh.To cheat delay to avoid error at first frame
+        yield return new WaitForEndOfFrame();
+        soundMgr.PlaySfx(ac);
     }
 }
