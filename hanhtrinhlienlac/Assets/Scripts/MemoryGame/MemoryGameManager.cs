@@ -65,6 +65,7 @@ public class MemoryGameManager : MonoBehaviour
 
     public void OnButtonBackToMapClicked()
     {
+        soundMgr.PlaySfx(audioClips.clickSFX, false, 1);
         SceneManager.LoadScene("Main");
     }
 
