@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,9 +6,15 @@ using UnityEngine.SceneManagement;
 
 public class Map : MonoBehaviour
 {
-    // Start is called before the first frame update
+    [Serializable] struct AudioClips {
+        public AudioClip bgm;
+        public AudioClip clickSFX;
+    }
     [SerializeField] CharFollower _char;
     [SerializeField] CharSelectorUI _charSelectorUI;
+    [SerializeField] private SoundManager soundMgr;
+    [SerializeField] private AudioClips audioClips;
+
     void Awake()
     {
         _char.OnCheckPointClickToPlayGame += OnSelectedLevel;
@@ -15,6 +22,10 @@ public class Map : MonoBehaviour
         _charSelectorUI.OnCharSelectListener += OnCharSelected;
     }
 
+    void Start()
+    {
+        StartCoroutine(PlayBGMDelay(audioClips.bgm, true));
+    }
 
     // Update is called once per frame
     void Update()
@@ -64,5 +75,11 @@ public class Map : MonoBehaviour
     private void OnCharSelected(string id)
     {
         _char.ChangeSkin(id);
+    }
+
+    private IEnumerator PlayBGMDelay(AudioClip ac, bool loop)
+    {
+        yield return new WaitForEndOfFrame();
+        soundMgr.PlayBGM(ac, loop);
     }
 }

@@ -4,16 +4,28 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using UnityEngine.SceneManagement;
+using System;
 
 public class QuestionGameManager : MonoBehaviour
 {
+    [Serializable] struct AudioClips {
+        public AudioClip bgm;
+        public AudioClip nextQuestionSFX;
+        public AudioClip clickSFX;
+        public AudioClip scoringSFX;
+        public AudioClip wrongSFX;
+        public AudioClip levelFinishSFX;
+    }
     [SerializeField] private TextMeshProUGUI questionTMPro;
     [SerializeField] private Transform answersContainer;
     [SerializeField] private Transform imageAnswersContainer;
     [SerializeField] private GameObject answerPrefab;
-    [SerializeField] private QuestionGameResultPopup resultPopup;
+    // [SerializeField] private QuestionGameResultPopup resultPopup;
+    [SerializeField] private RewardUI rewardUI;
     [SerializeField] private float resultShowingDuration = 2;
     [SerializeField] private TutorManager tutorComp;
+    [SerializeField] private SoundManager soundMgr;
+    [SerializeField] private AudioClips audioClips;
 
     private int curQuestionIndex = -1;
     private Question curQuestion;
@@ -33,6 +45,8 @@ public class QuestionGameManager : MonoBehaviour
         {
             Scroring.Inst.Pause();
         };
+
+        StartCoroutine(PlayBGMDelay(audioClips.bgm, true));
     }
 
     // Update is called once per frame
@@ -64,8 +78,7 @@ public class QuestionGameManager : MonoBehaviour
     public void ShowNextQuestion()
     {
         Scroring.Inst.StartOrResume();
-
-        HideResultPopup();
+        soundMgr.PlaySfx(audioClips.nextQuestionSFX, false, 1);
 
         curQuestionIndex++;
         Debug.Assert(curQuestionIndex < QuestionBank.Inst.questions.Length);
@@ -117,6 +130,7 @@ public class QuestionGameManager : MonoBehaviour
         }
 
         Scroring.Inst.Pause();
+        soundMgr.PlaySfx(audioClips.clickSFX);
         // show result then move to next question
         StartCoroutine(SubmitWithDelay(1));
     }
@@ -133,19 +147,21 @@ public class QuestionGameManager : MonoBehaviour
         {
             GetAnswerItemUI(selectedAnswerIndex).HighlightCorrect(true);
             Scroring.Inst.AddRemainingTimeScore(curQuestion.score);
+            soundMgr.PlaySfx(audioClips.scoringSFX);
         }
         else
         {
             int correctIdx = GetCorrectAnswerIndex(curQuestion);
             GetAnswerItemUI(correctIdx).HighlightCorrect(false);
             GetAnswerItemUI(selectedAnswerIndex).HighlightWrong();
+            soundMgr.PlaySfx(audioClips.wrongSFX);
         }
 
         yield return new WaitForSeconds(resultShowingDuration);
 
         if (IsFinished())
         {
-            StartCoroutine(ShowResultPopup(result, 0));
+            StartCoroutine(ShowRewardPopup(result, 0));
         }
         else
         {
@@ -153,18 +169,20 @@ public class QuestionGameManager : MonoBehaviour
         }
     }
 
-    private IEnumerator ShowResultPopup(bool result, float delaySec = 0f)
+    private IEnumerator PlayBGMDelay(AudioClip ac, bool loop)
+    {
+        yield return new WaitForEndOfFrame();
+        soundMgr.PlayBGM(ac, loop);
+    }
+
+    private IEnumerator ShowRewardPopup(bool result, float delaySec = 0f)
     {
         if (delaySec > 0)
         {
             yield return new WaitForSeconds(delaySec);
         }
-        resultPopup.Show(result, IsFinished());
-    }
-
-    private void HideResultPopup()
-    {
-        resultPopup.Hide();
+        soundMgr.PlaySfx(audioClips.levelFinishSFX, false, 1);
+        rewardUI.Show(Scroring.Inst.TotalScore.ToString(), OnButtonBackToMapClicked);
     }
 
     private bool IsFinished()

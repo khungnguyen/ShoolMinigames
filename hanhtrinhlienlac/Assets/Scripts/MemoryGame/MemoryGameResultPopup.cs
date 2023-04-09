@@ -20,7 +20,8 @@ public class MemoryGameResultPopup : MonoBehaviour
         gameObject.SetActive(true);
         contentText.text = "Chúc mừng!";
         if (finished) {
-            btnNextText.text = "Hoàn thành";
+            // btnNextText.text = "Hoàn thành";
+            btnNextText.gameObject.SetActive(false);
         }
         //extra info
         extraInfoText.gameObject.SetActive(extraText != null);

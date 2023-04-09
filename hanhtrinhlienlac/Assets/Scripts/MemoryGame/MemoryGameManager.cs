@@ -7,14 +7,25 @@ using UnityEngine.SceneManagement;
 
 public class MemoryGameManager : MonoBehaviour
 {
+    [Serializable] struct AudioClips {
+        public AudioClip bgm;
+        public AudioClip nextGameSFX;
+        public AudioClip clickSFX;
+        public AudioClip scoringSFX;
+        public AudioClip wrongSFX;
+        public AudioClip levelFinishedSFX;
+    }
     [SerializeField] private Transform[] levelContainers;
     [SerializeField] private ScriptableCard[] scriptableCards;
     [SerializeField] private ScriptableCard matThuCard;
     [SerializeField] private ScriptableCard fishingRodCard;
     [SerializeField] private TMPro.TextMeshProUGUI cardInfoTMP;
     [SerializeField] private MemoryGameResultPopup resutlPopup;
+    [SerializeField] private RewardUI rewardUI;
     [SerializeField] private int scorePerMatchedPair;
     [SerializeField] private TutorManager tutorComp;
+    [SerializeField] private SoundManager soundMgr;
+    [SerializeField] private AudioClips audioClips;
 
     private int curLevelIdx = -1;
     private Transform curLevelContainer;
@@ -34,12 +45,15 @@ public class MemoryGameManager : MonoBehaviour
         tutorComp.OnTutComplete += (t) =>
         {
             Scroring.Inst.StartOrResume();
+            soundMgr.PlaySfx(audioClips.nextGameSFX);
         };
 
         tutorComp.OnTutStart += (t) =>
         {
             Scroring.Inst.Pause();
         };
+
+        StartCoroutine(PlayBGMDelay(audioClips.bgm, true));
     }
 
     // Update is called once per frame
@@ -67,6 +81,9 @@ public class MemoryGameManager : MonoBehaviour
     public void ShowNextLevel()
     {
         Scroring.Inst.StartOrResume();
+        if (curLevelIdx >= 0) {
+            soundMgr.PlaySfx(audioClips.nextGameSFX);
+        }
         resutlPopup.Hide();
 
         curLevelIdx++;
@@ -113,6 +130,7 @@ public class MemoryGameManager : MonoBehaviour
 
     public void OnItemSelected(MemoryGameItem item)
     {
+        soundMgr.PlaySfx(audioClips.clickSFX);
         if (curSelectedItem == null)
         {
             Debug.Log("No cards is turn over, just turn over the selected one");
@@ -135,6 +153,7 @@ public class MemoryGameManager : MonoBehaviour
             {
                 Debug.Log("Matched!");
                 Scroring.Inst.AddRemainingTimeScore(scorePerMatchedPair);
+                soundMgr.PlaySfx(audioClips.scoringSFX, false, 1, 100, 0.5f);
 
                 item.OnMatched();
                 curSelectedItem.OnMatched();
@@ -159,6 +178,7 @@ public class MemoryGameManager : MonoBehaviour
                         var lastItem = remainingItems[0];
                         lastItem.SetState(true, 1f);
                         StartCoroutine(ShowCardInfo(lastItem.CardData, 1f));
+                        soundMgr.PlaySfx(audioClips.clickSFX, false, 0, 100, 1f);
                         string extraText = IsLastLevel() ? "Công cụ tìm được" : "Mật thư tìm được";
                         Sprite extraImage = lastItem.CardData.sprite;
                         StartCoroutine(ShowResultPopup(2f, extraText, extraImage));
@@ -168,6 +188,7 @@ public class MemoryGameManager : MonoBehaviour
             else
             {
                 Debug.Log("Not match, face down both of cards");
+                soundMgr.PlaySfx(audioClips.wrongSFX, false, 1, 100, 0.5f);
                 item.SetState(false, 0.5f);
                 curSelectedItem.SetState(false, 0.5f);
                 curSelectedItem = null;
@@ -200,6 +221,12 @@ public class MemoryGameManager : MonoBehaviour
         }
 
         return listPair;
+    }
+
+    private IEnumerator PlayBGMDelay(AudioClip ac, bool loop)
+    {
+        yield return new WaitForEndOfFrame();
+        soundMgr.PlayBGM(ac, loop);
     }
 
     private IEnumerator ShowCardInfo(ScriptableCard card, float delay)
@@ -236,5 +263,15 @@ public class MemoryGameManager : MonoBehaviour
     {
         yield return new WaitForSeconds(delaySec);
         resutlPopup.Show(IsLastLevel(), extraText, extraImage);
+        if (IsLastLevel()) {
+            StartCoroutine(ShowRewardUI(1));
+        }
+    }
+
+    private IEnumerator ShowRewardUI(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        soundMgr.PlaySfx(audioClips.levelFinishedSFX);
+        rewardUI.Show(Scroring.Inst.TotalScore.ToString(), OnButtonBackToMapClicked);
     }
 }

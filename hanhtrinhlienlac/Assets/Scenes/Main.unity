@@ -1476,6 +1476,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1369676257}
   - component: {fileID: 1369676256}
+  - component: {fileID: 1369676258}
   m_Layer: 0
   m_Name: Main
   m_TagString: Untagged
@@ -1497,6 +1498,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _char: {fileID: 277961512}
   _charSelectorUI: {fileID: 551064371}
+  soundMgr: {fileID: 1369676258}
+  audioClips:
+    bgm: {fileID: 8300000, guid: 9c040d126d63e94438471d0d98980a77, type: 3}
+    clickSFX: {fileID: 8300000, guid: 60796aa45e9506d4f82d6a45aa74a28c, type: 3}
 --- !u!4 &1369676257
 Transform:
   m_ObjectHideFlags: 0
@@ -1512,6 +1517,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1369676258
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1369676255}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6afcf4a1f5817bd4c88528505d9593b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  numberSFXChannels: 2
 --- !u!1 &1519989159
 GameObject:
   m_ObjectHideFlags: 0
