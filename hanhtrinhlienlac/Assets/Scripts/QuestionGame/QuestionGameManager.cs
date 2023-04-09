@@ -14,7 +14,6 @@ public class QuestionGameManager : MonoBehaviour
     [SerializeField] private QuestionGameResultPopup resultPopup;
     [SerializeField] private float resultShowingDuration = 2;
     [SerializeField] private TutorManager tutorComp;
-    [SerializeField] private Scroring scoreComp;
 
     private int curQuestionIndex = -1;
     private Question curQuestion;
@@ -23,22 +22,17 @@ public class QuestionGameManager : MonoBehaviour
     private int finishedCount = 0;
 
     private Transform curAnswerContainer;
-    void Awake()
+    
+    void Start()
     {
         tutorComp.OnTutComplete += (t) =>
         {
-            scoreComp.StartOrResume();
+            ShowNextQuestion();
         };
         tutorComp.OnTutStart += (t) =>
         {
-            Debug.Log("---------------------");
-            scoreComp.Pause();
+            Scroring.Inst.Pause();
         };
-    }
-    // Start is called before the first frame update
-    void Start()
-    {
-        ShowNextQuestion();
     }
 
     // Update is called once per frame
