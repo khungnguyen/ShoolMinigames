@@ -3622,6 +3622,7 @@ GameObject:
   - component: {fileID: 1993827564}
   - component: {fileID: 1993827566}
   - component: {fileID: 1993827567}
+  - component: {fileID: 1993827568}
   m_Layer: 5
   m_Name: QuestionGame
   m_TagString: Untagged
@@ -3678,7 +3679,13 @@ MonoBehaviour:
   resultPopup: {fileID: 1994644017}
   resultShowingDuration: 5
   tutorComp: {fileID: 1537470060}
-  scoreComp: {fileID: 771522569}
+  soundMgr: {fileID: 1993827568}
+  audioClips:
+    bgm: {fileID: 8300000, guid: 9c040d126d63e94438471d0d98980a77, type: 3}
+    nextQuestionSFX: {fileID: 8300000, guid: e1b258f7b7b4a874b882b08db107db49, type: 3}
+    clickSFX: {fileID: 8300000, guid: 60796aa45e9506d4f82d6a45aa74a28c, type: 3}
+    scoringSFX: {fileID: 8300000, guid: 2c5b2a5e2e9818d458c9d10400c2279f, type: 3}
+    wrongSFX: {fileID: 8300000, guid: 15932b38da5f143459135107b1b36e61, type: 3}
 --- !u!114 &1993827567
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3705,6 +3712,19 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
+--- !u!114 &1993827568
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1993827560}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6afcf4a1f5817bd4c88528505d9593b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  numberSFXChannels: 2
 --- !u!1 &1994644013
 GameObject:
   m_ObjectHideFlags: 0

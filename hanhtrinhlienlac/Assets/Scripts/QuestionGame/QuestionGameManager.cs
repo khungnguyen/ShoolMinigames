@@ -4,9 +4,17 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using UnityEngine.SceneManagement;
+using System;
 
 public class QuestionGameManager : MonoBehaviour
 {
+    [Serializable] struct AudioClips {
+        public AudioClip bgm;
+        public AudioClip nextQuestionSFX;
+        public AudioClip clickSFX;
+        public AudioClip scoringSFX;
+        public AudioClip wrongSFX;
+    }
     [SerializeField] private TextMeshProUGUI questionTMPro;
     [SerializeField] private Transform answersContainer;
     [SerializeField] private Transform imageAnswersContainer;
@@ -14,6 +22,8 @@ public class QuestionGameManager : MonoBehaviour
     [SerializeField] private QuestionGameResultPopup resultPopup;
     [SerializeField] private float resultShowingDuration = 2;
     [SerializeField] private TutorManager tutorComp;
+    [SerializeField] private SoundManager soundMgr;
+    [SerializeField] private AudioClips audioClips;
 
     private int curQuestionIndex = -1;
     private Question curQuestion;
@@ -33,6 +43,8 @@ public class QuestionGameManager : MonoBehaviour
         {
             Scroring.Inst.Pause();
         };
+
+        soundMgr.PlayBGM(audioClips.bgm, true);
     }
 
     // Update is called once per frame
@@ -64,6 +76,7 @@ public class QuestionGameManager : MonoBehaviour
     public void ShowNextQuestion()
     {
         Scroring.Inst.StartOrResume();
+        soundMgr.PlaySfx(audioClips.nextQuestionSFX, false, 1);
 
         HideResultPopup();
 
@@ -117,6 +130,7 @@ public class QuestionGameManager : MonoBehaviour
         }
 
         Scroring.Inst.Pause();
+        soundMgr.PlaySfx(audioClips.clickSFX);
         // show result then move to next question
         StartCoroutine(SubmitWithDelay(1));
     }
@@ -133,12 +147,14 @@ public class QuestionGameManager : MonoBehaviour
         {
             GetAnswerItemUI(selectedAnswerIndex).HighlightCorrect(true);
             Scroring.Inst.AddRemainingTimeScore(curQuestion.score);
+            soundMgr.PlaySfx(audioClips.scoringSFX);
         }
         else
         {
             int correctIdx = GetCorrectAnswerIndex(curQuestion);
             GetAnswerItemUI(correctIdx).HighlightCorrect(false);
             GetAnswerItemUI(selectedAnswerIndex).HighlightWrong();
+            soundMgr.PlaySfx(audioClips.wrongSFX);
         }
 
         yield return new WaitForSeconds(resultShowingDuration);
