@@ -2758,6 +2758,7 @@ GameObject:
   m_Component:
   - component: {fileID: 727477133}
   - component: {fileID: 727477135}
+  - component: {fileID: 727477136}
   m_Layer: 5
   m_Name: MemoryGame
   m_TagString: Untagged
@@ -2822,7 +2823,26 @@ MonoBehaviour:
   resutlPopup: {fileID: 1817343940}
   scorePerMatchedPair: 50
   tutorComp: {fileID: 428065569}
-  scoreComp: {fileID: 1949864605}
+  soundMgr: {fileID: 727477136}
+  audioClips:
+    bgm: {fileID: 8300000, guid: 47decd277f635cc48a48e4d3b3577cf9, type: 3}
+    nextGameSFX: {fileID: 8300000, guid: e1b258f7b7b4a874b882b08db107db49, type: 3}
+    clickSFX: {fileID: 8300000, guid: d62537845a6a7424ab2a64bc9956306c, type: 3}
+    scoringSFX: {fileID: 8300000, guid: 0d9cca10f6b4ac74f94b8da0dd4f6fea, type: 3}
+    wrongSFX: {fileID: 8300000, guid: 15932b38da5f143459135107b1b36e61, type: 3}
+--- !u!114 &727477136
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 727477132}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6afcf4a1f5817bd4c88528505d9593b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  numberSFXChannels: 2
 --- !u!1001 &736367104
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7301,17 +7321,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: -25}
   m_SizeDelta: {x: -100, y: -50}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1949864605 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1562576386, guid: 0d46752f310c3524e9de73d125f27ac9, type: 3}
-  m_PrefabInstance: {fileID: 4029598961131383604}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d4fc08dc34fbefc49b3d306ccc0601c6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1969106818
 GameObject:
   m_ObjectHideFlags: 0
