@@ -1839,7 +1839,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1745381077614117323, guid: e59cc51f51bf35f49a25d12cb138ca02, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 144.68
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1745381078490126128, guid: e59cc51f51bf35f49a25d12cb138ca02, type: 3}
+      propertyPath: m_RaycastTarget
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1745381078490126130, guid: e59cc51f51bf35f49a25d12cb138ca02, type: 3}
       propertyPath: soundMgr
@@ -1855,7 +1859,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1745381078490126142, guid: e59cc51f51bf35f49a25d12cb138ca02, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1745381078490126143, guid: e59cc51f51bf35f49a25d12cb138ca02, type: 3}
       propertyPath: m_Pivot.x
@@ -1943,19 +1947,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7927023361906671357, guid: e59cc51f51bf35f49a25d12cb138ca02, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 144.68
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7927023362242905507, guid: e59cc51f51bf35f49a25d12cb138ca02, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 144.68
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7927023362813093904, guid: e59cc51f51bf35f49a25d12cb138ca02, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 144.68
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7927023363389581129, guid: e59cc51f51bf35f49a25d12cb138ca02, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 144.68
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
@@ -2034,7 +2038,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 0}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -2121,7 +2125,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6afcf4a1f5817bd4c88528505d9593b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  numberSFXChannels: 2
+  _numberSFXChannels: 10
 --- !u!1 &1449454958
 GameObject:
   m_ObjectHideFlags: 0
@@ -3779,7 +3783,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6afcf4a1f5817bd4c88528505d9593b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  numberSFXChannels: 2
+  _numberSFXChannels: 10
 --- !u!1 &2090596378
 GameObject:
   m_ObjectHideFlags: 0

@@ -31015,8 +31015,8 @@ MonoBehaviour:
   disableRenderingOnOverride: 1
   updateTiming: 1
   unscaledTime: 0
-  _animationName: animation2
-  loop: 0
+  _animationName: idle
+  loop: 1
   timeScale: 1
 --- !u!23 &872599265
 MeshRenderer:
@@ -31099,8 +31099,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _spine: {fileID: 872599264}
-  _idle: 
-  _bravo: animation2
+  _idle: idle
+  _handup: idle len xoa dau
+  _bravo: xoa dau
 --- !u!1001 &873380330
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -31651,6 +31652,22 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 1438685132195576303, guid: a4c8629bff4a7f34ea6cc0bdee8ae71e, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.8869629
+      objectReference: {fileID: 0}
+    - target: {fileID: 1438685132195576303, guid: a4c8629bff4a7f34ea6cc0bdee8ae71e, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.46184072
+      objectReference: {fileID: 0}
+    - target: {fileID: 3350911216512609414, guid: a4c8629bff4a7f34ea6cc0bdee8ae71e, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.85329574
+      objectReference: {fileID: 0}
+    - target: {fileID: 3350911216512609414, guid: a4c8629bff4a7f34ea6cc0bdee8ae71e, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.5214273
+      objectReference: {fileID: 0}
     - target: {fileID: 6186900627717814294, guid: a4c8629bff4a7f34ea6cc0bdee8ae71e, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -31698,6 +31715,30 @@ PrefabInstance:
     - target: {fileID: 6186900627717814295, guid: a4c8629bff4a7f34ea6cc0bdee8ae71e, type: 3}
       propertyPath: m_Name
       value: buffalo
+      objectReference: {fileID: 0}
+    - target: {fileID: 6474948375331796590, guid: a4c8629bff4a7f34ea6cc0bdee8ae71e, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.89659476
+      objectReference: {fileID: 0}
+    - target: {fileID: 6474948375331796590, guid: a4c8629bff4a7f34ea6cc0bdee8ae71e, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.44285193
+      objectReference: {fileID: 0}
+    - target: {fileID: 6791704193079677480, guid: a4c8629bff4a7f34ea6cc0bdee8ae71e, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.8760423
+      objectReference: {fileID: 0}
+    - target: {fileID: 6791704193079677480, guid: a4c8629bff4a7f34ea6cc0bdee8ae71e, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.48223427
+      objectReference: {fileID: 0}
+    - target: {fileID: 7918545727896834532, guid: a4c8629bff4a7f34ea6cc0bdee8ae71e, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.844873
+      objectReference: {fileID: 0}
+    - target: {fileID: 7918545727896834532, guid: a4c8629bff4a7f34ea6cc0bdee8ae71e, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.53496695
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
@@ -55421,7 +55462,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 47decd277f635cc48a48e4d3b3577cf9, type: 3}
   - {fileID: 8300000, guid: a68e9bd3289524b4ea13a22ab7757a2b, type: 3}
   - {fileID: 8300000, guid: a68e9bd3289524b4ea13a22ab7757a2b, type: 3}
-  _curLevel: 1
+  _curLevel: 3
 --- !u!82 &1563516803
 AudioSource:
   m_ObjectHideFlags: 0

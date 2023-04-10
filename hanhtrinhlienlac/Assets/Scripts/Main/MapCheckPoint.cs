@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class MapCheckPoint : MonoBehaviour
 {
@@ -11,15 +12,15 @@ public class MapCheckPoint : MonoBehaviour
     {
         OnClick.Invoke(checkPointType);
     }
-    private void OnMouseDown()
+
+    private void OnMouseUp()
     {
-        if (useClick)
+        if (!EventSystem.current.IsPointerOverGameObject() && useClick)
         {
-            Debug.Log("Mouse Click Detected");
             OnCheckPointClick();
         }
-
     }
+
 }
 [System.Serializable]
 public enum CheckPointType
