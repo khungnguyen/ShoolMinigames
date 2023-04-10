@@ -1839,7 +1839,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1745381077614117323, guid: e59cc51f51bf35f49a25d12cb138ca02, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: 144.68
       objectReference: {fileID: 0}
     - target: {fileID: 1745381078490126128, guid: e59cc51f51bf35f49a25d12cb138ca02, type: 3}
       propertyPath: m_RaycastTarget
@@ -1859,7 +1859,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1745381078490126142, guid: e59cc51f51bf35f49a25d12cb138ca02, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1745381078490126143, guid: e59cc51f51bf35f49a25d12cb138ca02, type: 3}
       propertyPath: m_Pivot.x
@@ -1947,19 +1947,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7927023361906671357, guid: e59cc51f51bf35f49a25d12cb138ca02, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: 144.68
       objectReference: {fileID: 0}
     - target: {fileID: 7927023362242905507, guid: e59cc51f51bf35f49a25d12cb138ca02, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: 144.68
       objectReference: {fileID: 0}
     - target: {fileID: 7927023362813093904, guid: e59cc51f51bf35f49a25d12cb138ca02, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: 144.68
       objectReference: {fileID: 0}
     - target: {fileID: 7927023363389581129, guid: e59cc51f51bf35f49a25d12cb138ca02, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: 144.68
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []

@@ -13,7 +13,7 @@ public class Soilder : MonoBehaviour
 
     private void Start()
     {
-        ChangeAnim(_idle);
+        ChangeAnim(_idle,true);
     }
 
     private void OnTriggerEnter2D(Collider2D other)

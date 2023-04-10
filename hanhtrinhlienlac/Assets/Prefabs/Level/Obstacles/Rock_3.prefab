@@ -33,7 +33,7 @@ Transform:
   - {fileID: 6160415049963318763}
   - {fileID: 573042988743393905}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &470242230776533005
 MonoBehaviour:
@@ -173,6 +173,14 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 3294264962707014667}
     m_Modifications:
+    - target: {fileID: 5844111620961448041, guid: 8e9e4333a00ac9441bf35ea04b5c6fa5, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5844111620961448041, guid: 8e9e4333a00ac9441bf35ea04b5c6fa5, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6859163836230767465, guid: 8e9e4333a00ac9441bf35ea04b5c6fa5, type: 3}
       propertyPath: m_Name
       value: RevivePoint

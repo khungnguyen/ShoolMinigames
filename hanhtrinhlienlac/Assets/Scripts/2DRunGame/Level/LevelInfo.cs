@@ -16,6 +16,7 @@ public class LevelInfo : MonoBehaviour
     private void Awake()
     {
         _markedPoints = new List<MarkedPoint>(GetComponentsInChildren<MarkedPoint>(true));
+        _markedPoints.Sort((a,b)=>(a.getPosition().x-b.getPosition().x)>0?1:-1);
         _levelBound = _cinemachineConfiger.bounds;
     }
     void Start()

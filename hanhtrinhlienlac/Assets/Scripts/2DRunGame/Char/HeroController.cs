@@ -115,7 +115,8 @@ public class HeroController : BaseController
         else if (other.CompareTag(Defined.TAG_SOILDER))
         {
             _autoMove = false;
-            //  Deactivate();
+            EnableInput(false);
+         //   Deactivate();
             StartCoroutine(TriggerFinshLevelEvent(GameEnum.LevelType.EndGame, 2));
         }
     }
