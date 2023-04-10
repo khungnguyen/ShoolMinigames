@@ -26,31 +26,43 @@ public class BuffaloController : BaseController
     public string buffaloIdle;
 
     private bool _buffaloMove = false;
+    private bool __buffaloMoveAround = true;
+
 
     private Vector2 _initialPos;
 
     private bool _rideOx = false;
+    private string _previousAnim = "";
+
+
     private void Start()
     {
         _initialPos = transform.position;
         ChangeSkin("default");
+        StartCoroutine(MoveAround());
     }
+
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag(Defined.TAG_PLAYER) && !_rideOx)
         {
             _player = other.transform.GetComponent<HeroController>();
-            if (!_player.Grounded)
-            {;
+            if (!_player.Grounded && _player.GetPosition().y >= transform.position.y + 1f)
+            {
                 _player.SetPosition(attachSeatPoint.position);
                 _buffaloMove = true;
-                SoundManager.inst.PlaySfx(__soundData[1],true,1);
+                __buffaloMoveAround = false;
+                SoundManager.inst.PlaySfx(__soundData[1], true);
                 _player.EnableInput(false);
                 setAnimation(buffaloWalk, true);
                 _player.RideTheOx(true);
 
                 ChangeSkin(UserInfo.GetInstance().GetSkin());
                 _rideOx = true;
+                if(transform.localScale.x == -1) {
+                    transform.localScale = new Vector2(1,1);
+                }
+                
             }
         }
         else if (other.CompareTag(Defined.TAG_ENDPOINT))
@@ -82,38 +94,98 @@ public class BuffaloController : BaseController
                 var newPos = new Vector2(other.transform.position.x + w, other.transform.position.y - h / 2);
                 var par = Instantiate(dustVfx, newPos, other.transform.rotation);
                 Destroy(par.gameObject, 2f);
-                // SoundManager.inst.PlaySfx(__soundData[0]);
+                SoundManager.inst.PlaySfx(__soundData[0]);
             }
             Destroy(other.gameObject);
-        } 
+        }
         else if (other.CompareTag(Defined.TAG_COLLECTABLE))
         {
-          
-            _player.OnCoinCollect(other.GetComponent<Coin>());
+            if(other.TryGetComponent<Coin>(out  var coin)){
+                coin.setScore(Defined.BONUS_SCORE_BUFFALO);
+                _player.OnCoinCollect(coin);
+             }
+     
+        }
+    }
+    private int _direction = 0;
+    IEnumerator MoveAround()
+    {
+        float distance = UnityEngine.Random.Range(2f, 5f);
+        setAnimation(buffaloWalk, true);
+        _direction = 1;
+        transform.localScale = new Vector2(_direction, 1);
+        float idleTime = -1;
+        int previousDir = _direction;
+        while (true)
+        {
+            if (_buffaloMove)
+            {
+                break;
+            }
+            else if (idleTime > 0)
+            {
+                idleTime -= Time.deltaTime;
+                Debug.Log(idleTime);
+                yield return null;
+            }
+            else if ((transform.position.x > _initialPos.x + distance) && _direction ==1 || (transform.position.x < _initialPos.x - distance)&&_direction ==-1)
+            {
+                idleTime = UnityEngine.Random.Range(0.5f, 1.5f);
+                previousDir = _direction;
+                _direction = 0;
+                setAnimation(buffaloIdle, true);
+                distance = UnityEngine.Random.Range(2f, 5f);
+            }
+            else
+            {
+                setAnimation(buffaloWalk, true);
+                _direction = -previousDir;
+                transform.localScale = new Vector2(_direction, 1);
+            }
+            yield return null;
         }
     }
     public override void GatherInput()
     {
-
-        Input = new FrameInput
+        if (__buffaloMoveAround)
         {
-            JumpDown = false,
-            JumpUp = false,
-            X = _buffaloMove ? 1f : 0f
-        };
+            Input = new FrameInput
+            {
+                JumpDown = false,
+                JumpUp = false,
+                X = _direction,
+            };
+        }
+        else
+        {
+            Input = new FrameInput
+            {
+                JumpDown = false,
+                JumpUp = false,
+                X = _buffaloMove ? 1f : 0f
+            };
+        }
     }
     void Update()
     {
-        if (_player != null && _buffaloMove)
+        if (__buffaloMoveAround)
+        {
+            // var x =
+        }
+        else if (_player != null && _buffaloMove)
         {
 
             _player.SetPosition(attachSeatPoint.position);
+
         }
         base.Update();
 
     }
+
     private void setAnimation(String name, bool loop)
     {
+        if (_previousAnim.Equals(name)) return;
+        _previousAnim = name;
         _skeleton.AnimationState.SetAnimation(0, name, loop);
     }
     private void stopAniamtion(int track)

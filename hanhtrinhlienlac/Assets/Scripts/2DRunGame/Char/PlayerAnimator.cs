@@ -117,7 +117,7 @@ namespace MiniGames
             if (_player.LandingThisFrame)
             {
                 SetAnimationState(AnimationState.LANDING, false);
-                SoundManager.inst.PlaySfx(_footsteps[Random.Range(0, _footsteps.Length)],false,1);
+                SoundManager.inst.PlaySfx(_footsteps[Random.Range(0, _footsteps.Length)],false);
             }
 
             // Jump effects

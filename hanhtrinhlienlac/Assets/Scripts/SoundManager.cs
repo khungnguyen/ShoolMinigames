@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SoundManager : MonoBehaviour
 {
-    public int numberSFXChannels = 2;
+    [SerializeField] int _numberSFXChannels = 10;
     private AudioSource _bgmChannel;
     private List<AudioSource> _sfxChannels;
     public static SoundManager inst;
@@ -12,7 +12,7 @@ public class SoundManager : MonoBehaviour
     private static bool _mute = false;
     private void Awake()
     {
-        for (int i = 0; i < numberSFXChannels; i++)
+        for (int i = 0; i < _numberSFXChannels; i++)
         {
             var go = new GameObject();
             go.transform.parent = transform;
@@ -49,10 +49,19 @@ public class SoundManager : MonoBehaviour
     }
     /**
     * PlaySfx Play a sfx sound
+    * channel == -1 : Find free channel to play
+    * channel !=1 : play correct channel
     */
-    public void PlaySfx(AudioClip c, bool loop = false, int channel = 0, int volume = 100, float secondDelay = 0f)
+    public void PlaySfx(AudioClip c, bool loop = false, int channel = -1, int volume = 100, float secondDelay = 0f)
     {
-        PlayAudio(_sfxChannels[channel], c, loop, volume, secondDelay);
+        if(channel != -1) {
+            PlayAudio(_sfxChannels[channel], c, loop, volume, secondDelay);  
+        }
+        else {
+           var sfx = _sfxChannels.Find(e=>!e.isPlaying);
+            PlayAudio(sfx, c, loop, volume, secondDelay);  
+        }
+
     }
     /**
     * PlayBGM play a background music sound.
@@ -61,9 +70,17 @@ public class SoundManager : MonoBehaviour
     {
         PlayAudio(_bgmChannel, c, loop, volume, secondDelay);
     }
-    public void StopSfx(int channel = 0)
+    public void StopSfx(int channel = -1)
     {
-        _sfxChannels[channel].Stop();
+        if (channel == -1)
+        {
+            StopAllSfx();
+        }
+        else
+        {
+            _sfxChannels[channel].Stop();
+        }
+
     }
     public void StopAllSfx()
     {
@@ -87,7 +104,7 @@ public class SoundManager : MonoBehaviour
         StopAllSfx();
         StopBGM();
     }
-    public bool IsSoundPlaying(SoundType type, AudioClip c = null, int channel = 0)
+    public bool IsSoundPlaying(SoundType type, AudioClip c = null, int channel = -1)
     {
         switch (type)
         {
@@ -106,11 +123,19 @@ public class SoundManager : MonoBehaviour
                 {
                     if (c != null)
                     {
-                        return _sfxChannels[channel].clip.GetHashCode() == c.GetHashCode() && _bgmChannel.isPlaying;
+                        if (channel == -1)
+                        {
+                            return _sfxChannels.Find(e => (e.clip.GetHashCode() == c.GetHashCode()) && e.isPlaying);
+                        }
+                        else
+                        {
+                            return _sfxChannels[channel].clip.GetHashCode() == c.GetHashCode() && _sfxChannels[channel].isPlaying;
+                        }
+
                     }
                     else
                     {
-                        return _sfxChannels[channel].isPlaying;
+                        return _sfxChannels.Find(e => e.isPlaying);
                     }
                 }
         }

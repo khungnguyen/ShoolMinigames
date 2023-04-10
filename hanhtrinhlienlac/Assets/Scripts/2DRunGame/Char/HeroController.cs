@@ -107,7 +107,10 @@ public class HeroController : BaseController
         else if (other.CompareTag(Defined.TAG_COLLECTABLE))
         {
 
-            OnCoinCollect(other.GetComponent<Coin>());
+            if(other.TryGetComponent<Coin>(out  var coin)){
+                coin.setScore(rideTheOx?Defined.BONUS_SCORE_BUFFALO :Defined.BONUS_SCORE);
+                OnCoinCollect(coin);
+             }
         }
         else if (other.CompareTag(Defined.TAG_SOILDER))
         {

@@ -119,7 +119,7 @@ public class GameManager : MonoBehaviour
     }
     private void OnPlayerCollect(Coin g)
     {
-        _gameUI.SetScore(Defined.BOUNS_SCORE);
+        _gameUI.SetScore(g.GetScore());
         var wp = _gameUI.GetCoinHubWorldPos();
         g.SetTarget(wp, _gameCamera);
     }

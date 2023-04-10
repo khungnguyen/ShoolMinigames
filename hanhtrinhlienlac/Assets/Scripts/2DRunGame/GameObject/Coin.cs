@@ -8,6 +8,8 @@ public class Coin : ObjectBase
     private Vector2 _target;
     private Camera _cam;
     private bool _fly = false;
+
+    private int _score = 1;
     void Start()
     {
 
@@ -33,6 +35,12 @@ public class Coin : ObjectBase
         _target = p;
         _cam = c;
         _fly = true;
+    }
+    public void setScore(int i) {
+        _score = i;
+    }
+    public int GetScore() {
+        return _score;
     }
 
 }
