@@ -24,7 +24,11 @@ public class BuffaloController : BaseController
     public string buffaloWalk;
     [SpineAnimation]
     public string buffaloIdle;
-
+    
+    [SerializeField] float _minTimeIdle = 0.5f;
+    [SerializeField] float _maxTimeIdle = 1.5f;
+    [SerializeField] float _minDistanceMoveAround = 2f;
+    [SerializeField] float _maxDistanceMoveAround = 5f;
     private bool _buffaloMove = false;
     private bool __buffaloMoveAround = true;
 
@@ -110,7 +114,7 @@ public class BuffaloController : BaseController
     private int _direction = 0;
     IEnumerator MoveAround()
     {
-        float distance = UnityEngine.Random.Range(2f, 5f);
+        float  distance = UnityEngine.Random.Range(_minDistanceMoveAround, _maxDistanceMoveAround);
         setAnimation(buffaloWalk, true);
         _direction = 1;
         transform.localScale = new Vector2(_direction, 1);
@@ -125,16 +129,15 @@ public class BuffaloController : BaseController
             else if (idleTime > 0)
             {
                 idleTime -= Time.deltaTime;
-                Debug.Log(idleTime);
                 yield return null;
             }
             else if ((transform.position.x > _initialPos.x + distance) && _direction ==1 || (transform.position.x < _initialPos.x - distance)&&_direction ==-1)
             {
-                idleTime = UnityEngine.Random.Range(0.5f, 1.5f);
+                idleTime = UnityEngine.Random.Range(_minTimeIdle, _maxTimeIdle);
                 previousDir = _direction;
                 _direction = 0;
                 setAnimation(buffaloIdle, true);
-                distance = UnityEngine.Random.Range(2f, 5f);
+                distance = UnityEngine.Random.Range(_minDistanceMoveAround, _maxDistanceMoveAround);
             }
             else
             {
