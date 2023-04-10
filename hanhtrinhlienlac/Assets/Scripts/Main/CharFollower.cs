@@ -7,7 +7,7 @@ using UnityEngine;
 
 public class CharFollower : MonoBehaviour
 {
-    public SkeletonGraphic spine;
+    public SkeletonAnimation spine;
     public PathCreator pathCreator;
     public EndOfPathInstruction endOfPathInstruction;
     public List<MapCheckPoint> checkPoints;
