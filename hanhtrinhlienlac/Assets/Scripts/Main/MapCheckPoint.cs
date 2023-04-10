@@ -6,9 +6,19 @@ public class MapCheckPoint : MonoBehaviour
 {
     public System.Action<CheckPointType> OnClick;
     public CheckPointType checkPointType;
+    public bool useClick = true;
     public void OnCheckPointClick()
     {
         OnClick.Invoke(checkPointType);
+    }
+    private void OnMouseDown()
+    {
+        if (useClick)
+        {
+            Debug.Log("Mouse Click Detected");
+            OnCheckPointClick();
+        }
+
     }
 }
 [System.Serializable]
