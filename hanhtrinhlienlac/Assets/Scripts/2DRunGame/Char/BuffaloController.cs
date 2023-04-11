@@ -29,6 +29,7 @@ public class BuffaloController : BaseController
     [SerializeField] float _maxTimeIdle = 1.5f;
     [SerializeField] float _minDistanceMoveAround = 2f;
     [SerializeField] float _maxDistanceMoveAround = 5f;
+    [SerializeField] ParticleSystem _moveParticle;
     private bool _buffaloMove = false;
     private bool __buffaloMoveAround = true;
 
@@ -190,6 +191,13 @@ public class BuffaloController : BaseController
         if (_previousAnim.Equals(name)) return;
         _previousAnim = name;
         _skeleton.AnimationState.SetAnimation(0, name, loop);
+        if(name.Equals(buffaloIdle)) {
+            _moveParticle.Stop();
+        }
+        else if(name.Equals(buffaloWalk)) {
+            _moveParticle.Play();
+        }
+    
     }
     private void stopAniamtion(int track)
     {

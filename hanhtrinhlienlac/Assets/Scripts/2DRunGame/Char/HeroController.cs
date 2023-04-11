@@ -13,6 +13,7 @@ public class HeroController : BaseController
     public bool rideTheOx = false;
     public bool godMode = false;
     public bool finishLevel = false;
+    public float mudSpeed = 3;
     [SerializeField] GameObject _dustVfx;
     [SerializeField] AudioSource _sound;
     [SerializeField] List<AudioClip> __soundData;
@@ -28,6 +29,8 @@ public class HeroController : BaseController
 
     private bool _autoMove;
     public bool inWater = false;
+    public bool inMud = false;
+    private float _normalSpeed;
 
     public enum SOUND
     {
@@ -92,34 +95,69 @@ public class HeroController : BaseController
         else if (other.CompareTag(Defined.TAG_OBSTACLE) && !godMode)
         {
             _revivePoint = other.GetComponent<Obstacle>()?.revivePoint;
-            if (other.GetComponent<Obstacle>().objectType == GameEnum.ObstacleType.WATER)
+            var obstacleType = other.GetComponent<Obstacle>().objectType;
+            inWater = obstacleType == GameEnum.ObstacleType.WATER;
+            inMud = obstacleType == GameEnum.ObstacleType.MUD;
+            if (inMud)
             {
-                inWater = true;
-
-
+                InMudBehavior(true);
             }
             else
             {
-                inWater = false;
+                death();
             }
-            death();
+
         }
         else if (other.CompareTag(Defined.TAG_COLLECTABLE))
         {
 
-            if(other.TryGetComponent<Coin>(out  var coin)){
-                coin.setScore(rideTheOx?Defined.BONUS_SCORE_BUFFALO :Defined.BONUS_SCORE);
+            if (other.TryGetComponent<Coin>(out var coin))
+            {
+                coin.setScore(rideTheOx ? Defined.BONUS_SCORE_BUFFALO : Defined.BONUS_SCORE);
                 OnCoinCollect(coin);
-             }
+            }
         }
         else if (other.CompareTag(Defined.TAG_SOILDER))
         {
             _autoMove = false;
             EnableInput(false);
-         //   Deactivate();
+            //   Deactivate();
             StartCoroutine(TriggerFinshLevelEvent(GameEnum.LevelType.EndGame, 2));
         }
     }
+    public void InMudBehavior(bool enter)
+    {
+        float speed = 0;
+        if (enter)
+        {
+            _normalSpeed = GetMoveSpeed();
+            speed = mudSpeed;
+        }
+        else
+        {
+            speed = _normalSpeed;
+        }
+        spine.timeScale = enter?0.5f:1;
+        SetMoveSpeed(speed);
+    }
+    private void OnTriggerExit2D(Collider2D other)
+    {
+
+        if (other.CompareTag(Defined.TAG_OBSTACLE) && !godMode)
+        {
+            _revivePoint = other.GetComponent<Obstacle>()?.revivePoint;
+            var obstacleType = other.GetComponent<Obstacle>().objectType;
+            inWater = !(obstacleType == GameEnum.ObstacleType.WATER);
+            inMud = (obstacleType == GameEnum.ObstacleType.MUD);
+            if (inMud)
+            {
+                 InMudBehavior(false);
+            }
+
+
+        }
+    }
+
     public void OnCoinCollect(Coin c)
     {
         _curScore++;
