@@ -153,9 +153,10 @@ namespace MiniGames
 
             // Detect ground color
             var groundHit = Physics2D.Raycast(transform.position, Vector3.down, 2, _groundMask);
-            if (groundHit && groundHit.transform.TryGetComponent(out SpriteRenderer r))
+            if (groundHit)
             {
-                _currentGradient = new ParticleSystem.MinMaxGradient(r.color * 0.9f, r.color * 1.2f);
+                var c = new Color(1, 1,1); 
+                _currentGradient = new ParticleSystem.MinMaxGradient(c * 0.9f,c * 1.2f);
                 SetColor(_moveParticles);
             }
 
