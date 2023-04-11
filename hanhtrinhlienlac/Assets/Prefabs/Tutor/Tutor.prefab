@@ -904,11 +904,11 @@ MonoBehaviour:
     tuts:
     - text: "Gi\u1EDD ch\xFAng ta \u0111\u1EBFn khu \u0111\u1ED3ng b\u1EB1ng, kh\xF4ng
         c\xF2n nh\u1EEFng d\xF2ng su\u1ED1i nh\u01B0ng b\u1EA1n ph\u1EA3i ch\xFA
-        \xFD nh\u1EEFng h\xF2n \u0111\xE1, c\xE0nh c\xE2y\u2026 ko l\xE0 b\u1ECB
+        \xFD nh\u1EEFng h\xF2n \u0111\xE1, c\xE0nh c\xE2y\u2026 kh\xF4ng l\xE0 b\u1ECB
         v\u1EA5p t\xE9 \u0111\xF3."
       audio: {fileID: 0}
     - text: "C\xF3 nh\xECn th\u1EA5y con tr\xE2u \u0111ang g\u1EB7m c\u1ECF b\xEAn
-        \u0111\u01B0\u1EDDng ko? B\u1EA1n c\xF3 th\u1EC3 nh\u1EA3y l\xEAn l\u01B0ng
+        \u0111\u01B0\u1EDDng kh\xF4ng? B\u1EA1n c\xF3 th\u1EC3 nh\u1EA3y l\xEAn l\u01B0ng
         n\xF3 \u0111\u1EC3 c\u01B0\u1EE1i n\xF3 th\u1EADt nhanh qua khu v\u1EF1c
         n\xE0y. "
       audio: {fileID: 0}
@@ -924,8 +924,7 @@ MonoBehaviour:
     - text: "\u0110\u1EA5t n\u01B0\u1EDBc m\xECnh qu\xE1 \u0111\u1EB9p \u0111\xFAng
         kh\xF4ng n\xE0o? "
       audio: {fileID: 0}
-    - text: "\u0110\u1EA5t n\u01B0\u1EDBc m\xECnh qu\xE1 \u0111\u1EB9p \u0111\xFAng
-        kh\xF4ng n\xE0o? Ti\u1EBFp t\u1EE5c h\xE0nh tr\xECnh th\xF4i! "
+    - text: "Ti\u1EBFp t\u1EE5c h\xE0nh tr\xECnh th\xF4i! "
       audio: {fileID: 0}
     speaker: 0
   - type: 7

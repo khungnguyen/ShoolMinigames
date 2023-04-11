@@ -131,7 +131,7 @@ public class BaseController : MonoBehaviour, IPlayerController
         // This is crying out for some kind of refactor. 
         var b = new Bounds(transform.position, _characterBounds.size);
 
-        _raysDown = new RayRange(b.min.x, b.min.y, b.max.x, b.min.y, Vector2.down);
+        _raysDown = new RayRange(b.min.x + _rayBuffer, b.min.y, b.max.x - _rayBuffer, b.min.y, Vector2.down);
         _raysUp = new RayRange(b.min.x + _rayBuffer, b.max.y, b.max.x - _rayBuffer, b.max.y, Vector2.up);
         _raysLeft = new RayRange(b.min.x, b.min.y + _rayBuffer + 0.2f, b.min.x, b.max.y - _rayBuffer, Vector2.left);
         _raysRight = new RayRange(b.max.x, b.min.y + _rayBuffer + 0.2f, b.max.x, b.max.y - _rayBuffer, Vector2.right);
