@@ -7,7 +7,8 @@ public class GameEnum
     ROCK,
     SPIKE,
     WATER,
-    BULLET
+    BULLET,
+    MUD
   }
    public enum PointType {
     STARTPOINT,

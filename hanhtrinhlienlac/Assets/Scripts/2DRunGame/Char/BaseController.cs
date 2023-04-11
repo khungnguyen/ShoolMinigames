@@ -184,7 +184,13 @@ public class BaseController : MonoBehaviour, IPlayerController
     [SerializeField] private float _moveClamp = 13;
     [SerializeField] private float _deAcceleration = 60f;
     [SerializeField] private float _apexBonus = 2;
-
+    public void SetMoveSpeed(float t)
+    {
+        _moveClamp = t;
+    }
+    public float GetMoveSpeed() {
+        return _moveClamp;
+    }
     private void CalculateWalk()
     {
         if (Input.X != 0)
@@ -361,7 +367,8 @@ public class BaseController : MonoBehaviour, IPlayerController
     {
         return transform.position;
     }
-    public Bounds GetCharBounds() {
+    public Bounds GetCharBounds()
+    {
         return _characterBounds;
     }
     public void ChangeSkin(string s)
@@ -370,4 +377,4 @@ public class BaseController : MonoBehaviour, IPlayerController
         spine.Skeleton.SetSlotsToSetupPose();
         spine.LateUpdate();
     }
-} 
+}
