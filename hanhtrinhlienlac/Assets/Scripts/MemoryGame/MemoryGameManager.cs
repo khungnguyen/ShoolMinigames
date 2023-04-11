@@ -7,7 +7,9 @@ using UnityEngine.SceneManagement;
 
 public class MemoryGameManager : MonoBehaviour
 {
-    [Serializable] struct AudioClips {
+    [Serializable]
+    struct AudioClips
+    {
         public AudioClip bgm;
         public AudioClip nextGameSFX;
         public AudioClip gameSolvedSFX;
@@ -27,6 +29,8 @@ public class MemoryGameManager : MonoBehaviour
     [SerializeField] private TutorManager tutorComp;
     [SerializeField] private SoundManager soundMgr;
     [SerializeField] private AudioClips audioClips;
+
+    [SerializeField] private List<Sprite> secretItemSprs;
 
     private int curLevelIdx = -1;
     private Transform curLevelContainer;
@@ -83,7 +87,8 @@ public class MemoryGameManager : MonoBehaviour
     public void ShowNextLevel()
     {
         Scroring.Inst.StartOrResume();
-        if (curLevelIdx >= 0) {
+        if (curLevelIdx >= 0)
+        {
             soundMgr.PlaySfx(audioClips.nextGameSFX);
         }
         resutlPopup.Hide();
@@ -171,9 +176,11 @@ public class MemoryGameManager : MonoBehaviour
                 {
                     // Grid was solved
                     Scroring.Inst.Pause();
+                    bool finishAGame = false;
                     if (remainingItems.Count == 0)
                     {
-                        StartCoroutine(ShowResultPopup(0.5f, null));
+                        //StartCoroutine(ShowResultPopup(0.5f, null));
+                        finishAGame = true;
                     }
                     else if (remainingItems.Count == 1)
                     {
@@ -181,7 +188,23 @@ public class MemoryGameManager : MonoBehaviour
                         lastItem.SetState(true, 1f);
                         StartCoroutine(ShowCardInfo(lastItem.CardData, 1f));
                         soundMgr.PlaySfx(audioClips.clickSFX, false, 0, 100, 1f);
-                        StartCoroutine(ShowResultPopup(2f, lastItem.CardData.sprite, IsLastLevel()));
+                        // StartCoroutine(ShowResultPopup(2f, lastItem.CardData.sprite, IsLastLevel()));
+                        finishAGame = true;
+                    }
+                    if (finishAGame)
+                    {
+                        float waitingTime = remainingItems.Count == 1?2f:0.5f;
+
+                        if (curLevelIdx < 2)
+                        {
+
+                            StartCoroutine(ShowResultPopup(waitingTime, secretItemSprs[curLevelIdx]));
+                        }
+                        else if (curLevelIdx == 2)
+                        {
+                            soundMgr.PlaySfx(audioClips.clickSFX, false, 0, 100, 1f);
+                            StartCoroutine(ShowResultPopup(waitingTime, null, IsLastLevel()));
+                        }
                     }
                 }
             }
@@ -264,11 +287,11 @@ public class MemoryGameManager : MonoBehaviour
         yield return new WaitForSeconds(delaySec);
         soundMgr.PlaySfx(audioClips.gameSolvedSFX, false, 1);
         resutlPopup.Show(IsLastLevel(), extraImage, isFinishRod);
-        if (IsLastLevel()) {
-            StartCoroutine(ShowRewardUI(2));
+        if (IsLastLevel())
+        {
+            StartCoroutine(ShowRewardUI(4));
         }
     }
-
     private IEnumerator ShowRewardUI(float delay)
     {
         yield return new WaitForSeconds(delay);
