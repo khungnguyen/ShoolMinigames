@@ -64,6 +64,7 @@ public class MemoryGameResultPopup : MonoBehaviour
     public void SetAnimation(string anim, bool loop = false, Action completed = null)
     {
         var track = spine.AnimationState.SetAnimation(0, anim, loop);
+        track.TimeScale = 0.6f; //Thanh.To change speed
         track.Complete += (t) =>
         {
             completed?.Invoke();
