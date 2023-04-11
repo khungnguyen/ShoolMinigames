@@ -289,7 +289,7 @@ public class MemoryGameManager : MonoBehaviour
         resutlPopup.Show(IsLastLevel(), extraImage, isFinishRod);
         if (IsLastLevel())
         {
-            StartCoroutine(ShowRewardUI(4));
+            StartCoroutine(ShowRewardUI(6));
         }
     }
     private IEnumerator ShowRewardUI(float delay)
