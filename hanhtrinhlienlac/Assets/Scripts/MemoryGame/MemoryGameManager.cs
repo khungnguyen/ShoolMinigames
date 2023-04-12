@@ -176,11 +176,9 @@ public class MemoryGameManager : MonoBehaviour
                 {
                     // Grid was solved
                     Scroring.Inst.Pause();
-                    bool finishAGame = false;
                     if (remainingItems.Count == 0)
                     {
-                        //StartCoroutine(ShowResultPopup(0.5f, null));
-                        finishAGame = true;
+                        StartCoroutine(ShowResultPopup(0.5f, null));
                     }
                     else if (remainingItems.Count == 1)
                     {
@@ -188,24 +186,23 @@ public class MemoryGameManager : MonoBehaviour
                         lastItem.SetState(true, 1f);
                         StartCoroutine(ShowCardInfo(lastItem.CardData, 1f));
                         soundMgr.PlaySfx(audioClips.clickSFX, false, 0, 100, 1f);
-                        // StartCoroutine(ShowResultPopup(2f, lastItem.CardData.sprite, IsLastLevel()));
-                        finishAGame = true;
+                        StartCoroutine(ShowResultPopup(2f, lastItem.CardData.sprite, IsLastLevel()));
                     }
-                    if (finishAGame)
-                    {
-                        float waitingTime = remainingItems.Count == 1?2f:0.5f;
+                    // if (finishAGame)
+                    // {
+                    //     float waitingTime = remainingItems.Count == 1 ? 2f : 0.5f;
 
-                        if (curLevelIdx < 2)
-                        {
+                    //     if (curLevelIdx < 2)
+                    //     {
 
-                            StartCoroutine(ShowResultPopup(waitingTime, secretItemSprs[curLevelIdx]));
-                        }
-                        else if (curLevelIdx == 2)
-                        {
-                            soundMgr.PlaySfx(audioClips.clickSFX, false, 0, 100, 1f);
-                            StartCoroutine(ShowResultPopup(waitingTime, null, IsLastLevel()));
-                        }
-                    }
+                    //         StartCoroutine(ShowResultPopup(waitingTime, secretItemSprs[curLevelIdx]));
+                    //     }
+                    //     else if (curLevelIdx == 2)
+                    //     {
+                    //         soundMgr.PlaySfx(audioClips.clickSFX, false, 0, 100, 1f);
+                    //         StartCoroutine(ShowResultPopup(waitingTime, null, IsLastLevel()));
+                    //     }
+                    // }
                 }
             }
             else
@@ -282,13 +279,17 @@ public class MemoryGameManager : MonoBehaviour
         return curLevelContainer.GetChild(idx).GetComponent<MemoryGameItem>();
     }
 
-    private IEnumerator ShowResultPopup(float delaySec, Sprite extraImage = null, bool isFinishRod = false)
+    private IEnumerator ShowResultPopup(float delaySec, Sprite extraImage = null, bool isFinishRod = false, bool Anim = false)
     {
         yield return new WaitForSeconds(delaySec);
         soundMgr.PlaySfx(audioClips.gameSolvedSFX, false, 1);
         resutlPopup.Show(IsLastLevel(), extraImage, isFinishRod);
+
         if (IsLastLevel())
         {
+            resutlPopup.Show(IsLastLevel(), extraImage, isFinishRod);
+            yield return new WaitForSeconds(3);
+            resutlPopup.Show(IsLastLevel(), extraImage, isFinishRod,true);
             StartCoroutine(ShowRewardUI(6));
         }
     }

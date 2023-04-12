@@ -13,38 +13,43 @@ public class MemoryGameResultPopup : MonoBehaviour
     [SerializeField] private Image extraInfoImage;
     [SerializeField] private GameObject btnNext;
     [SerializeField] private SkeletonGraphic spine;
-    private string secretCode ="mat thu";
+    private string secretCode = "mat thu";
     // Start is called before the first frame update
     void Start()
     {
 
     }
 
-    public void Show(bool finished, Sprite extraImage = null, bool isFishingRod = false)
+    public void Show(bool finished, Sprite extraImage = null, bool isFishingRod = false, bool useAnim = false)
     {
         gameObject.SetActive(true);
         if (finished)
         {
             btnNext.SetActive(false);
         }
+        spine.gameObject.SetActive(useAnim);
 
-        //extra info
-        if (extraImage)
+        if (useAnim)
+        {
+            extraInfoImage.enabled = false;
+            ChangeSkin("char_1");
+            SetAnimation(secretCode);
+            msgVuotQuaThuThach.SetActive(false);
+            msgFishingRodFound.SetActive(false);
+            msgMatThuFound.SetActive(true);
+        }
+        else if (extraImage)  //extra info
         {
             extraInfoImage.gameObject.SetActive(true);
             extraInfoImage.sprite = extraImage;
-
             msgVuotQuaThuThach.SetActive(false);
             msgFishingRodFound.SetActive(isFishingRod);
             msgMatThuFound.SetActive(!isFishingRod);
-            spine.gameObject.SetActive(false);
+
         }
         else
         {
-            extraInfoImage.enabled = false;
-            spine.gameObject.SetActive(true);
-            ChangeSkin("char_1");
-            SetAnimation(secretCode);
+            extraInfoImage.gameObject.SetActive(false);
             msgVuotQuaThuThach.SetActive(true);
             msgFishingRodFound.SetActive(false);
             msgMatThuFound.SetActive(false);
@@ -55,7 +60,7 @@ public class MemoryGameResultPopup : MonoBehaviour
     {
         gameObject.SetActive(false);
     }
-     public void ChangeSkin(string s)
+    public void ChangeSkin(string s)
     {
         spine.Skeleton.SetSkin(s);
         spine.Skeleton.SetSlotsToSetupPose();
