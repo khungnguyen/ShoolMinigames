@@ -156,6 +156,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   checkPointType: 4
   button: {fileID: 0}
+  icon: {fileID: 456406244}
 --- !u!58 &5515885
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -780,7 +781,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: bb405f3a9825b914889d81f554a1355a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -1307,6 +1308,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   checkPointType: 2
   button: {fileID: 247666979}
+  icon: {fileID: 1727275555}
 --- !u!58 &430687209
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -1425,11 +1427,8 @@ Transform:
   - {fileID: 430687211}
   - {fileID: 1545110334}
   - {fileID: 5515887}
+  - {fileID: 701643684}
   - {fileID: 1449454959}
-  - {fileID: 1063817065}
-  - {fileID: 1727275553}
-  - {fileID: 1911596233}
-  - {fileID: 456406240}
   m_Father: {fileID: 331194147}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1550,6 +1549,7 @@ GameObject:
   - component: {fileID: 456406243}
   - component: {fileID: 456406242}
   - component: {fileID: 456406241}
+  - component: {fileID: 456406244}
   m_Layer: 0
   m_Name: Icon_Soilder
   m_TagString: Untagged
@@ -1569,7 +1569,7 @@ Transform:
   m_LocalScale: {x: -0.25, y: 0.25, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 437290230}
+  m_Father: {fileID: 701643684}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &456406241
@@ -1662,6 +1662,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 456406239}
   m_Mesh: {fileID: 0}
+--- !u!114 &456406244
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 456406239}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d451da7eb96276945bbc9f1fbe1f392a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  r: {fileID: 456406239}
 --- !u!1 &476619344
 GameObject:
   m_ObjectHideFlags: 0
@@ -1846,6 +1859,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   checkPointType: 1
   button: {fileID: 1079147417}
+  icon: {fileID: 1063817067}
 --- !u!212 &484680423
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1998,6 +2012,41 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 1745381078490126143, guid: e59cc51f51bf35f49a25d12cb138ca02, type: 3}
   m_PrefabInstance: {fileID: 973212341}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &701643683
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 701643684}
+  m_Layer: 0
+  m_Name: IconHolder
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &701643684
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 701643683}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1063817065}
+  - {fileID: 1727275553}
+  - {fileID: 1911596233}
+  - {fileID: 456406240}
+  m_Father: {fileID: 437290230}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &772880811
 GameObject:
   m_ObjectHideFlags: 0
@@ -2668,6 +2717,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1063817065}
   - component: {fileID: 1063817066}
+  - component: {fileID: 1063817067}
   m_Layer: 0
   m_Name: Icon_quiz
   m_TagString: Untagged
@@ -2687,7 +2737,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 437290230}
+  m_Father: {fileID: 701643684}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1063817066
@@ -2732,7 +2782,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 5
   m_Sprite: {fileID: 21300000, guid: bff08c1769fa89541838cfec8aeebf80, type: 3}
-  m_Color: {r: 0.9433962, g: 0.94296557, b: 0.93004626, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -2742,6 +2792,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1063817067
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1063817064}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d451da7eb96276945bbc9f1fbe1f392a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  r: {fileID: 1063817064}
 --- !u!1 &1079147414
 GameObject:
   m_ObjectHideFlags: 0
@@ -3553,6 +3616,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   checkPointType: 3
   button: {fileID: 1744560791}
+  icon: {fileID: 1911596237}
 --- !u!58 &1545110332
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -4053,6 +4117,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1727275553}
   - component: {fileID: 1727275554}
+  - component: {fileID: 1727275555}
   m_Layer: 0
   m_Name: Icon_pair
   m_TagString: Untagged
@@ -4072,7 +4137,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 437290230}
+  m_Father: {fileID: 701643684}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1727275554
@@ -4127,6 +4192,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1727275555
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1727275552}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d451da7eb96276945bbc9f1fbe1f392a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  r: {fileID: 1727275552}
 --- !u!1 &1744560788
 GameObject:
   m_ObjectHideFlags: 0
@@ -4698,6 +4776,7 @@ GameObject:
   - component: {fileID: 1911596236}
   - component: {fileID: 1911596235}
   - component: {fileID: 1911596234}
+  - component: {fileID: 1911596237}
   m_Layer: 0
   m_Name: Icon_Buffalo
   m_TagString: Untagged
@@ -4717,7 +4796,7 @@ Transform:
   m_LocalScale: {x: -0.25, y: 0.25, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 437290230}
+  m_Father: {fileID: 701643684}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1911596234
@@ -4810,6 +4889,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1911596232}
   m_Mesh: {fileID: 0}
+--- !u!114 &1911596237
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1911596232}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d451da7eb96276945bbc9f1fbe1f392a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  r: {fileID: 1911596232}
 --- !u!1 &1981890592
 GameObject:
   m_ObjectHideFlags: 0
