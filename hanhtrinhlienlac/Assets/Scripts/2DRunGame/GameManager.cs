@@ -184,6 +184,7 @@ public class GameManager : MonoBehaviour
     private void OnEndGame()
     {
         UserInfo.GetInstance().SetCompletedRunGame(true);
+         UserInfo.GetInstance().SetUnlockLevel(CheckPointType.CHECK_POINT_4);
         _gameUI.getTutorManager().SetTutType(TutoriaType.Run2D_Game_End).ShowTutor(true);
     }
     private void BackToMainMenu()

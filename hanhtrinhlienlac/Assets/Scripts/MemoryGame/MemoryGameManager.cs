@@ -291,6 +291,7 @@ public class MemoryGameManager : MonoBehaviour
             yield return new WaitForSeconds(3);
             resutlPopup.Show(IsLastLevel(), extraImage, isFinishRod,true);
             StartCoroutine(ShowRewardUI(6));
+            UserInfo.GetInstance().SetUnlockLevel(CheckPointType.CHECK_POINT_3);
         }
     }
     private IEnumerator ShowRewardUI(float delay)

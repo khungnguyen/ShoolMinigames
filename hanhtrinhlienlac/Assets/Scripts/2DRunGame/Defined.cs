@@ -15,6 +15,8 @@ public class Defined : MonoBehaviour
 
     public  static int BONUS_SCORE = 1;
     public  static int BONUS_SCORE_BUFFALO = 1;
+
+    public static string SAVE_KEY_CHAR ="SAVE_KEY_CHAR";
      
 }
 

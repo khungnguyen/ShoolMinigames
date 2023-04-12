@@ -36,22 +36,31 @@ public class CharFollower : MonoBehaviour
             // Subscribed to the pathUpdated event so that we're notified if the path changes during the game
             pathCreator.pathUpdated += OnPathChanged;
         }
-        checkPoints.ForEach(e => e.OnClick += OnCheckPointSelected);
+        checkPoints.ForEach(e =>
+        {
+            if (e.button != null)
+            {
+                e.button.OnClick += OnCheckPointSelected;
+            }
+
+        });
         _curScale = transform.localScale;
         OnResume();
         ChangeSkin(UserInfo.GetInstance().GetSkin());
+
     }
     void OnResume()
     {
-        if (s_savePoint != -1 && s_saveCheckPoint != CheckPointType.NA)
+        
+        if (UserInfo.GetInstance().IsPlayerCompleteRunGame() && s_saveCheckPoint == CheckPointType.CHECK_POINT_3)
+        {
+            OnCheckPointSelected(CheckPointType.CHECK_POINT_4);
+            StartAtPoint(pathCreator.path.localPoints.Length - 1);
+        }
+       else if (s_savePoint != -1 && s_saveCheckPoint != CheckPointType.NA)
         {
             StartAtPoint(s_savePoint);
             _checkPointType = s_saveCheckPoint;
-        }
-        if (UserInfo.GetInstance().IsPlayerCompleteRunGame())
-        {
-            OnCheckPointSelected(CheckPointType.CHECK_POINT_4);
-            StartAtPoint(pathCreator.path.localPoints.Length -1);
         }
     }
     void StartAtPoint(int point)
@@ -110,9 +119,9 @@ public class CharFollower : MonoBehaviour
             }
         }
     }
-    public void OnCheckPointSelected(CheckPointType t)
+    public void OnCheckPointSelected(object ob)
     {
-
+        var t = (CheckPointType)ob;
         if (!stop || avoidUserClick)
         {
             //char is moving, do not thing

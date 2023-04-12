@@ -5,19 +5,21 @@ using UnityEngine.EventSystems;
 
 public class MapCheckPoint : MonoBehaviour
 {
-    public System.Action<CheckPointType> OnClick;
-    public CheckPointType checkPointType;
-    public bool useClick = true;
-    public void OnCheckPointClick()
-    {
-        OnClick.Invoke(checkPointType);
-    }
 
-    private void OnMouseUp()
+    public CheckPointType checkPointType;
+    public ObjectButton button;
+    public MapIconStatus icon;
+    void Start()
     {
-        if (!EventSystem.current.IsPointerOverGameObject() && useClick)
+        bool isUnlocked =UserInfo.GetInstance().IsLevelUnlock(checkPointType);
+        if (button != null)
         {
-            OnCheckPointClick();
+            button.type = checkPointType;
+            button.useClick = isUnlocked;
+           
+        }
+        if(icon != null) {
+             icon.SetStatus(isUnlocked);
         }
     }
 

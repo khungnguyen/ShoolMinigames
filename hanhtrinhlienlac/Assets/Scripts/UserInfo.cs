@@ -7,31 +7,67 @@ public class UserInfo
 {
     private static UserInfo _inst;
 
-    private string _skinName = "char_5";
+    private string _skinName = "";
     private bool _isPlayerCompletedRunGame = false;
     private UserInfo()
     {
-
+        SetUnlockLevel(CheckPointType.CHECK_POINT_1);
     }
     public static UserInfo GetInstance()
     {
         if (_inst == null)
         {
-            _inst = new ();
+            _inst = new();
         }
         return _inst;
     }
-    public void SetSkin(string s) {
+    public void SetSkin(string s)
+    {
         _skinName = s;
+        SavePrefsString(Defined.SAVE_KEY_CHAR, s);
     }
-    public string GetSkin() {
+    public string GetSkin()
+    {
+        if (_skinName.Equals(""))
+        {
+            _skinName = LoadPrefsString(Defined.SAVE_KEY_CHAR, "char_1");
+        }
         return _skinName;
     }
-    public void SetCompletedRunGame(bool b = true) {
+    public void SetCompletedRunGame(bool b = true)
+    {
         _isPlayerCompletedRunGame = true;
     }
-    public bool IsPlayerCompleteRunGame() {
+    public bool IsPlayerCompleteRunGame()
+    {
         return _isPlayerCompletedRunGame;
+    }
+    public void SetUnlockLevel(CheckPointType lv)
+    {
+        SavePrefsInt(lv.ToString(),1);
+    }
+    public bool IsLevelUnlock(CheckPointType lv) {
+        return LoadPrefsInt(lv.ToString(),0) == 1;
+    }
+    public void SavePrefsInt(string key, int s)
+    {
+        PlayerPrefs.SetInt(key, s);
+        PlayerPrefs.Save();
+    }
+
+    public int LoadPrefsInt(string key,int defaultValue)
+    {
+        return PlayerPrefs.GetInt(key, defaultValue);
+    }
+    public void SavePrefsString(string key, string s)
+    {
+        PlayerPrefs.SetString(key, s);
+        PlayerPrefs.Save();
+    }
+    public string LoadPrefsString(string key, string defaultValue)
+    {
+        return PlayerPrefs.GetString(key, defaultValue);
     }
 
 }
+
