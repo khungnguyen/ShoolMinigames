@@ -30,6 +30,8 @@ public class PasswordResetHandler : AccountRequestBase<PasswordResetInputFields>
         UNKNOWN
     }
 
+    [SerializeField] private LoginHandler loginHandler;
+
     public void OnAnyInputValueChanged(string value)
     {
         SetErrorMsg(EError.NONE);
@@ -62,6 +64,11 @@ public class PasswordResetHandler : AccountRequestBase<PasswordResetInputFields>
         };
 
         PostRequest(ACCOUNT_SERVICE_PW_RESET_PATH, data);
+    }
+
+    public void OnBackBtnClicked()
+    {
+        Hide(() => loginHandler.Show());
     }
 
     protected override void onRequestCB(UnityWebRequest uwr)

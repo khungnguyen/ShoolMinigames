@@ -32,6 +32,7 @@ public abstract class AccountRequestBase<T>: MonoBehaviour where T: BasicInputFi
     [SerializeField] protected T inputFields;
     [SerializeField] protected TMPro.TextMeshProUGUI errMsgTMP;
 
+    [SerializeField] protected FadeInOut fadeInOutHelper;
     [SerializeField] private List<GameObject> tabNavObjects = new List<GameObject>();
     [SerializeField] private bool autoSelectThe1stNavObj = true;
 
@@ -58,6 +59,21 @@ public abstract class AccountRequestBase<T>: MonoBehaviour where T: BasicInputFi
     {
         curNavObjIndex = 0;
         SelectNavObjIndex(curNavObjIndex);
+    }
+
+    public void Show(Action onFinishedCB = null)
+    {
+        gameObject.SetActive(true);
+        fadeInOutHelper.FadeOut(null, 0); // immediately alpha = 0
+        fadeInOutHelper.FadeIn((onFinishedCB));
+    }
+
+    public void Hide(Action onFinishedCB = null)
+    {
+        fadeInOutHelper.FadeOut(() => {
+            gameObject.SetActive(false);
+            onFinishedCB?.Invoke();
+        });
     }
 
     abstract protected void onRequestCB(UnityWebRequest uwr);

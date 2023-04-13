@@ -31,6 +31,8 @@ public class RegisterHandler : AccountRequestBase<RegisterInputFields>
         UNKNOWN
     }
 
+    [SerializeField] private LoginHandler loginHandler;
+
     public void OnAnyInputValueChanged(string value)
     {
         SetErrorMsg(EError.NONE);
@@ -63,6 +65,11 @@ public class RegisterHandler : AccountRequestBase<RegisterInputFields>
         };
 
         PostRequest(ACCOUNT_SERVICE_REGISTER_PATH, data);
+    }
+
+    public void OnBackBtnClicked()
+    {
+        Hide(() => loginHandler.Show());
     }
 
     protected override void onRequestCB(UnityWebRequest uwr)

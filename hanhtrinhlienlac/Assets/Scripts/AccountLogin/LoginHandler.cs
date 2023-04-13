@@ -20,6 +20,14 @@ public class LoginHandler : AccountRequestBase<BasicInputFields>
         UNKNOWN
     }
 
+    [SerializeField] private RegisterHandler registerHandler;
+    [SerializeField] private PasswordResetHandler pwResetHandler;
+
+    void Start()
+    {
+        Show();
+    }
+
     public void OnAnyInputValueChanged(string value)
     {
         SetErrorMsg(EError.NONE);
@@ -45,6 +53,16 @@ public class LoginHandler : AccountRequestBase<BasicInputFields>
         }
 
         PostRequest(ACCOUNT_SERVICE_LOGIN_PATH, data);
+    }
+
+    public void OnRegisterBtnClicked()
+    {
+        Hide(() => registerHandler.Show());
+    }
+
+    public void OnPwResetBtnClicked()
+    {
+        Hide(() => pwResetHandler.Show());
     }
 
     protected override void onRequestCB(UnityWebRequest uwr)
