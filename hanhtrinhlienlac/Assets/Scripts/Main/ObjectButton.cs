@@ -14,10 +14,10 @@ public class ObjectButton : MonoBehaviour
 
     void Awake()
     {
-        if (sprRenderer != null)
-        {
-            sprRenderer.color = new Color(1, 1, 1, 0);
-        }
+        // if (sprRenderer != null)
+        // {
+        //     sprRenderer.color = new Color(1, 1, 1, 0);
+        // }
     }
 
 
@@ -37,11 +37,11 @@ public class ObjectButton : MonoBehaviour
     {
         if (!EventSystem.current.IsPointerOverGameObject() && useClick)
         {
-            if (sprRenderer != null)
-            {
-                sprRenderer.color =  new Color(1, 1, 1, 1);
+            // if (sprRenderer != null)
+            // {
+            //     sprRenderer.color =  new Color(1, 1, 1, 1);
         
-            }
+            // }
 
         }
     }
@@ -49,10 +49,10 @@ public class ObjectButton : MonoBehaviour
     {
         if (!EventSystem.current.IsPointerOverGameObject() && useClick)
         {
-            if (sprRenderer != null)
-            {
-                sprRenderer.color = new Color(1, 1, 1, 0);
-            }
+            // if (sprRenderer != null)
+            // {
+            //     sprRenderer.color = new Color(1, 1, 1, 0);
+            // }
 
         }
     }

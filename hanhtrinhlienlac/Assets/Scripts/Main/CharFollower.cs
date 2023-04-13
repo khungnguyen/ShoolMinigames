@@ -51,13 +51,14 @@ public class CharFollower : MonoBehaviour
     }
     void OnResume()
     {
-        
+
         if (UserInfo.GetInstance().IsPlayerCompleteRunGame() && s_saveCheckPoint == CheckPointType.CHECK_POINT_3)
         {
             OnCheckPointSelected(CheckPointType.CHECK_POINT_4);
             StartAtPoint(pathCreator.path.localPoints.Length - 1);
+            UserInfo.GetInstance().SetCompletedRunGame(false);
         }
-       else if (s_savePoint != -1 && s_saveCheckPoint != CheckPointType.NA)
+        else if (s_savePoint != -1 && s_saveCheckPoint != CheckPointType.NA)
         {
             StartAtPoint(s_savePoint);
             _checkPointType = s_saveCheckPoint;
@@ -65,12 +66,9 @@ public class CharFollower : MonoBehaviour
     }
     void StartAtPoint(int point)
     {
-
-        // Debug.LogError("Num of Anchor" + pathCreator.bezierPath.NumAnchorPoints);
-        // Debug.LogError("Num of NumPoints" + pathCreator.bezierPath.NumPoints);
-        // Debug.LogError("Num of bezierPath.NumSegments" + pathCreator.bezierPath.NumSegments);
-        transform.position = pathCreator.path.GetPoint(point);
-        distanceTravelled = pathCreator.path.GetClosestTimeOnPath(transform.position) * pathCreator.path.length;
+        var p = point < (pathCreator.path.length - 1) ? point + 1 : point;
+        transform.position = pathCreator.path.GetPoint(p);
+        distanceTravelled = pathCreator.path.GetClosestDistanceAlongPath(transform.position);//pathCreator.path.GetClosestTimeOnPath(transform.position) * pathCreator.path.length;
     }
     bool stop = true;
     void Update()
