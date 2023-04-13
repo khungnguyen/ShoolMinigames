@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Networking;
 
-public class LoginHandler : AccountRequestBase
+public class LoginHandler : AccountRequestBase<BasicInputFields>
 {
     private static readonly string ACCOUNT_SERVICE_LOGIN_PATH = "/api/v1/pub/login";
 
@@ -13,16 +13,16 @@ public class LoginHandler : AccountRequestBase
         public int code;
     }
 
-    [SerializeField] private GameObject errMsgObj;
-
-    public void OnUsernameInputValueChanged(string value)
-    {
-        SetErrorShowHide(false);
+    enum EError {
+        NONE,
+        NOT_ENOUGH_INFO,
+        USERNAME_PASSWORD_INCORRECT,
+        UNKNOWN
     }
 
-    public void OnPasswordInputValueChanged(string value)
+    public void OnAnyInputValueChanged(string value)
     {
-        SetErrorShowHide(false);
+        SetErrorMsg(EError.NONE);
     }
 
     public void OnPasswordEndEdit(string value)
@@ -35,13 +35,12 @@ public class LoginHandler : AccountRequestBase
     public void OnLoginBtnClicked()
     {
         var data = new LoginData() {
-            username = usernameTMP.text,
-            password = passwordTMP.text
+            username = inputFields.username.text,
+            password = inputFields.password.text
         };
 
         if (!data.isValid()) {
-            Debug.LogWarning("Username or password is not valid!!");
-            SetErrorShowHide(true);
+            SetErrorMsg(EError.NOT_ENOUGH_INFO);
             return;
         }
 
@@ -65,28 +64,42 @@ public class LoginHandler : AccountRequestBase
                     switch (responseData.code) {
                         case 102:
                         case 103:
-                        SetErrorShowHide(true);
+                        SetErrorMsg(EError.USERNAME_PASSWORD_INCORRECT);
                         break;
                         default:
-                        Debug.LogError("Unhandled code!!! " + uwr.downloadHandler.text);
+                        SetErrorMsg(EError.UNKNOWN);
                         break;
                     }
                 }
                 break;
                 default:
                     Debug.LogError("Unhandled response code!!! " + uwr.responseCode);
+                    SetErrorMsg(EError.UNKNOWN);
                     break;
             }
         } else {
-            // Errors happen
+            Debug.LogError("Unhandled response code!!! " + uwr.result);
+            SetErrorMsg(EError.UNKNOWN);
         }
     }
 
-    private void SetErrorShowHide(bool show)
+    private void SetErrorMsg(EError error)
     {
-        errMsgObj.SetActive(show);
+        bool show = error != EError.NONE;
+        errMsgTMP.gameObject.SetActive(show);
         if (show) {
             ResetTabNavSelection();
+            switch (error) {
+                case EError.NOT_ENOUGH_INFO: 
+                errMsgTMP.text = "Vui lòng nhập đầy đủ thông tin!";
+                break;
+                case EError.USERNAME_PASSWORD_INCORRECT: 
+                errMsgTMP.text = "Tài khoản hoặc mật khẩu không đúng.\nVui lòng kiểm tra lại!";
+                break;
+                default:
+                errMsgTMP.text = "Unknown error!";
+                break;
+            }
         }
     }
 }

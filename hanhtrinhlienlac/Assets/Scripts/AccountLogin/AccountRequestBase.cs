@@ -6,7 +6,12 @@ using UnityEngine.EventSystems;
 using UnityEngine.Networking;
 using UnityEngine.UI;
 
-public abstract class AccountRequestBase : MonoBehaviour
+[Serializable]
+public class BasicInputFields {
+    public TMPro.TMP_InputField username;
+    public TMPro.TMP_InputField password;
+}
+public abstract class AccountRequestBase<T>: MonoBehaviour where T: BasicInputFields
 {
     private static readonly string ACCOUNT_SERVICE_BASE_URL = "https://an-school-portal.securityzone.vn";
 
@@ -24,8 +29,9 @@ public abstract class AccountRequestBase : MonoBehaviour
         public string err;
     }
 
-    [SerializeField] protected TMPro.TMP_InputField usernameTMP;
-    [SerializeField] protected TMPro.TMP_InputField passwordTMP;
+    [SerializeField] protected T inputFields;
+    [SerializeField] protected TMPro.TextMeshProUGUI errMsgTMP;
+
     [SerializeField] private List<GameObject> tabNavObjects = new List<GameObject>();
     [SerializeField] private bool autoSelectThe1stNavObj = true;
 
