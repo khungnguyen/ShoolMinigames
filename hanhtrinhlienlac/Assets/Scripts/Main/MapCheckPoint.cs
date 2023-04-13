@@ -8,7 +8,9 @@ public class MapCheckPoint : MonoBehaviour
 
     public CheckPointType checkPointType;
     public ObjectButton button;
-    public MapIconStatus icon;
+
+    public GameObject highLight;
+   // public MapIconStatus icon;
     void Start()
     {
         bool isUnlocked =UserInfo.GetInstance().IsLevelUnlock(checkPointType);
@@ -18,9 +20,10 @@ public class MapCheckPoint : MonoBehaviour
             button.useClick = isUnlocked;
            
         }
-        if(icon != null) {
-             icon.SetStatus(isUnlocked);
-        }
+        highLight?.SetActive(isUnlocked);
+        // if(icon != null) {
+        //      icon.SetStatus(isUnlocked);
+        // }
     }
 
 }
