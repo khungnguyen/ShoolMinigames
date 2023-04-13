@@ -5,14 +5,14 @@ using UnityEngine;
 using UnityEngine.Networking;
 
 [Serializable]
-public class RegisterInputFields: BasicInputFields {
+public class PasswordResetInputFields: BasicInputFields {
     public TMPro.TMP_InputField pwConfirm;
     public TMPro.TMP_InputField inviteCode;
 }
 
-public class RegisterHandler : AccountRequestBase<RegisterInputFields>
+public class PasswordResetHandler : AccountRequestBase<PasswordResetInputFields>
 {
-    private static readonly string ACCOUNT_SERVICE_REGISTER_PATH = "/api/v1/pub/register";
+    private static readonly string ACCOUNT_SERVICE_PW_RESET_PATH = "/api/v1/pub/resetPass";
 
     [Serializable] class RegisterData: RequestData {
         public string inviteCode;
@@ -26,8 +26,7 @@ public class RegisterHandler : AccountRequestBase<RegisterInputFields>
         NOT_ENOUGH_INFO,
         PASSWORDS_NOT_MATCHED,
         INVITE_CODE_NOT_VALID,
-        INVITE_CODE_HAS_BEEN_USED,
-        USERNAME_EXISTED,
+        USERNAME_NOT_FOUND,
         UNKNOWN
     }
 
@@ -62,7 +61,7 @@ public class RegisterHandler : AccountRequestBase<RegisterInputFields>
             password = inputFields.password.text
         };
 
-        PostRequest(ACCOUNT_SERVICE_REGISTER_PATH, data);
+        PostRequest(ACCOUNT_SERVICE_PW_RESET_PATH, data);
     }
 
     protected override void onRequestCB(UnityWebRequest uwr)
@@ -73,7 +72,7 @@ public class RegisterHandler : AccountRequestBase<RegisterInputFields>
             Debug.Log("[onRequestCB] downloadHandler.text: " + uwr.downloadHandler.text);
             switch (uwr.responseCode) {
                 case 200: {
-                    Debug.Log("[onRequestCB] Account registered successfully!");
+                    Debug.Log("[onRequestCB] Password reset successfully!");
                     var responseData = JsonUtility.FromJson<RegisterResponseData>(uwr.downloadHandler.text);
                 }
                 break;
@@ -81,7 +80,7 @@ public class RegisterHandler : AccountRequestBase<RegisterInputFields>
                     var responseData = JsonUtility.FromJson<ResponseData>(uwr.downloadHandler.text);
                     switch (responseData.code) {
                         case 100:
-                        SetErrorMsg(EError.USERNAME_EXISTED);
+                        SetErrorMsg(EError.USERNAME_NOT_FOUND);
                         break;
                         case 101:
                         SetErrorMsg(EError.INVITE_CODE_NOT_VALID);
@@ -119,11 +118,8 @@ public class RegisterHandler : AccountRequestBase<RegisterInputFields>
                 case EError.INVITE_CODE_NOT_VALID:
                 errMsgTMP.text = "Mã thư mời không khả dụng.\nVui lòng kiểm tra lại!";
                 break;
-                case EError.INVITE_CODE_HAS_BEEN_USED: 
-                errMsgTMP.text = "Mã thư mời đã hết hiệu lực.\nVui lòng kiểm tra lại!";
-                break;
-                case EError.USERNAME_EXISTED:
-                errMsgTMP.text = "Tài khoản đã được đăng ký.\nVui lòng tạo một tài khoản khác!";
+                case EError.USERNAME_NOT_FOUND: 
+                errMsgTMP.text = "Tài khoản không đúng.\nVui lòng kiểm tra lại!";
                 break;
                 default:
                 errMsgTMP.text = "Unknown error!";
