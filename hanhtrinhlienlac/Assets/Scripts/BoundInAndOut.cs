@@ -30,9 +30,9 @@ public class BoundInAndOut : MonoBehaviour
     */
     IEnumerator BoundInnOut(Action OnCompleted)
     {
-        yield return StartCoroutine(Bound(startBound, maxBoundSize, 0.2f));
-        yield return StartCoroutine(Bound(maxBoundSize, minBoundSize, 0.1f));
-        yield return StartCoroutine(Bound(minBoundSize, originalBound, 0.1f));
+        yield return StartCoroutine(Bound(startBound, maxBoundSize, 0.3f));
+        yield return StartCoroutine(Bound(maxBoundSize, minBoundSize, 0.15f));
+        yield return StartCoroutine(Bound(minBoundSize, originalBound, 0.15f));
         if (OnCompleted != null)
         {
             OnCompleted();
