@@ -7,6 +7,12 @@ public class UserInfo
 {
     private static UserInfo _inst;
 
+    private string _id;
+    public string Id { get => _id; }
+    private string _inviteCode;
+    public string InviteCode { get => _inviteCode; }
+    private string _username;
+    public string Username { get => _username; }
     private string _skinName = "";
     private bool _isPlayerCompletedRunGame = false;
     private UserInfo()
@@ -21,6 +27,14 @@ public class UserInfo
         }
         return _inst;
     }
+
+    public void OnLoggedIn(string id, string inviteCode, string username)
+    {
+        _id = id;
+        _inviteCode = inviteCode;
+        _username = username;
+    }
+
     public void SetSkin(string s)
     {
         _skinName = s;

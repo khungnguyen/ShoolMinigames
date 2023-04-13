@@ -10,7 +10,17 @@ public class LoginHandler : AccountRequestBase<BasicInputFields>
 
     [Serializable] class LoginData: RequestData {}
     [Serializable] class LoginResponseData {
-        public int code;
+        public string accessToken;
+        public UserInfo userInfo;
+        public int[] games;
+        public int totalBonusScore;
+        public int totalScore;
+
+        [Serializable] public class UserInfo {
+            public string id;
+            public string inviteCode;
+            public string username;
+        }
     }
 
     enum EError {
@@ -23,7 +33,7 @@ public class LoginHandler : AccountRequestBase<BasicInputFields>
     [SerializeField] private RegisterHandler registerHandler;
     [SerializeField] private PasswordResetHandler pwResetHandler;
 
-    void Start()
+    void Awake()
     {
         Show();
     }
@@ -75,6 +85,8 @@ public class LoginHandler : AccountRequestBase<BasicInputFields>
                 case 200: {
                     Debug.Log("[onRequestCB] Login successfully!");
                     var responseData = JsonUtility.FromJson<LoginResponseData>(uwr.downloadHandler.text);
+                    SchoolApiSession.Inst.OnLoggedIn(responseData.accessToken);
+                    UserInfo.GetInstance().OnLoggedIn(responseData.userInfo.id, responseData.userInfo.inviteCode, responseData.userInfo.username);
                 }
                 break;
                 case 400: {
