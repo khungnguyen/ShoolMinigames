@@ -8,6 +8,7 @@ public class RewardUI : MonoBehaviour
 {
     [SerializeField] TMP_Text _score;
     [SerializeField] GameObject[] objectsDisappear;
+    [SerializeField] BoundInAndOut _animation;
 
     public Action OnBackListener;
     public void SetScoreText(string s)
@@ -36,5 +37,9 @@ public class RewardUI : MonoBehaviour
     public void OnBackClick() {
         OnBackListener?.Invoke();
        // Hide();
+    }
+    void OnEnable()
+    {
+        _animation?.PlayBoundInEffect();
     }
 }

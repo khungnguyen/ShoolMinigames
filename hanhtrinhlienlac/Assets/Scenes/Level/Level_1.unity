@@ -3359,17 +3359,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3880335051257249091, guid: d38015f4d79a4014190bf4e9fc634064, type: 3}
-      propertyPath: tutorialType
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 7823804002020764022, guid: d38015f4d79a4014190bf4e9fc634064, type: 3}
       propertyPath: m_Name
       value: Tutor
-      objectReference: {fileID: 0}
-    - target: {fileID: 7823804002020764022, guid: d38015f4d79a4014190bf4e9fc634064, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
@@ -3918,7 +3910,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6afcf4a1f5817bd4c88528505d9593b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  numberSFXChannels: 2
+  _numberSFXChannels: 10
 --- !u!1 &1994644013
 GameObject:
   m_ObjectHideFlags: 0

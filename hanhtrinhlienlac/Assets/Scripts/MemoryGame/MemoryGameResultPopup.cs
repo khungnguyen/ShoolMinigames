@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using Spine.Unity;
 using System;
+using TMPro;
 
 public class MemoryGameResultPopup : MonoBehaviour
 {
@@ -13,6 +14,8 @@ public class MemoryGameResultPopup : MonoBehaviour
     [SerializeField] private Image extraInfoImage;
     [SerializeField] private GameObject btnNext;
     [SerializeField] private SkeletonGraphic spine;
+    [SerializeField] private BoundInAndOut animationPopup;
+    [SerializeField] private String textFoundSecretCode ="Aha! Tìm được cách dấu Mật Thư kín đáo rồi!";
     private string secretCode = "mat thu";
     // Start is called before the first frame update
     void Start()
@@ -37,6 +40,7 @@ public class MemoryGameResultPopup : MonoBehaviour
             msgVuotQuaThuThach.SetActive(false);
             msgFishingRodFound.SetActive(false);
             msgMatThuFound.SetActive(true);
+            msgMatThuFound.GetComponent<TMP_Text>().SetText(textFoundSecretCode);
         }
         else if (extraImage)  //extra info
         {
@@ -55,7 +59,9 @@ public class MemoryGameResultPopup : MonoBehaviour
             msgMatThuFound.SetActive(false);
         }
     }
-
+    private void OnEnable() {
+        animationPopup.PlayBoundInEffect();
+    }
     public void Hide()
     {
         gameObject.SetActive(false);

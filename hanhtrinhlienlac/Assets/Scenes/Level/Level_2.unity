@@ -7490,6 +7490,7 @@ GameObject:
   - component: {fileID: 1817343939}
   - component: {fileID: 1817343938}
   - component: {fileID: 1817343940}
+  - component: {fileID: 1817343941}
   m_Layer: 5
   m_Name: PopupResult
   m_TagString: Untagged
@@ -7574,6 +7575,26 @@ MonoBehaviour:
   extraInfoImage: {fileID: 1024210080}
   btnNext: {fileID: 217037015}
   spine: {fileID: 334572716}
+  animationPopup: {fileID: 1817343941}
+  textFoundSecretCode: "Aha! T\xECm \u0111\u01B0\u1EE3c c\xE1ch d\u1EA5u M\u1EADt
+    Th\u01B0 k\xEDn \u0111\xE1o r\u1ED3i!"
+--- !u!114 &1817343941
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1817343935}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1dd46aba7ba34d842b3b1ab4841433a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxBoundSize: 1.1
+  minBoundSize: 0.9
+  startBound: 0
+  originalBound: 1
+  mTransform: {fileID: 1227247190}
 --- !u!1 &1926337453
 GameObject:
   m_ObjectHideFlags: 0

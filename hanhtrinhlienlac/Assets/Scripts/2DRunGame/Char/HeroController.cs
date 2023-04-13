@@ -69,7 +69,6 @@ public class HeroController : BaseController
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (isDie || finishLevel) return;
-        Debug.LogError("OnTriggerEnter2D" + other.tag);
         if (other.CompareTag(Defined.TAG_ENDPOINT))
         {
             if (OnLevelFinish != null)
