@@ -156,7 +156,7 @@ public class MemoryGameManager : MonoBehaviour
         {
             item.SetState(true);
 
-            if (item.CardData != curSelectedItem.CardData)
+            if (item.CardData == curSelectedItem.CardData)
             {
                 Debug.Log("Matched!");
                 Scroring.Inst.AddRemainingTimeScore(scorePerMatchedPair);
