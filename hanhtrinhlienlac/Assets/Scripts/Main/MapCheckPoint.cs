@@ -19,11 +19,10 @@ public class MapCheckPoint : MonoBehaviour
             button.type = checkPointType;
             button.useClick = isUnlocked;
            
+        } 
+        if(highLight != null) {
+             highLight?.SetActive(isUnlocked);
         }
-        highLight?.SetActive(isUnlocked);
-        // if(icon != null) {
-        //      icon.SetStatus(isUnlocked);
-        // }
     }
 
 }
