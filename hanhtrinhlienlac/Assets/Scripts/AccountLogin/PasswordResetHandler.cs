@@ -31,6 +31,7 @@ public class PasswordResetHandler : AccountRequestBase<PasswordResetInputFields>
     }
 
     [SerializeField] private LoginHandler loginHandler;
+    [SerializeField] private AccountResultPopup resultPopup;
 
     public void OnAnyInputValueChanged(string value)
     {
@@ -80,7 +81,8 @@ public class PasswordResetHandler : AccountRequestBase<PasswordResetInputFields>
             switch (uwr.responseCode) {
                 case 200: {
                     Debug.Log("[onRequestCB] Password reset successfully!");
-                    var responseData = JsonUtility.FromJson<RegisterResponseData>(uwr.downloadHandler.text);
+                    // var responseData = JsonUtility.FromJson<RegisterResponseData>(uwr.downloadHandler.text);
+                    resultPopup.Show(false, true, OnBackBtnClicked);
                 }
                 break;
                 case 400: {

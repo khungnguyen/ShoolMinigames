@@ -32,6 +32,7 @@ public class RegisterHandler : AccountRequestBase<RegisterInputFields>
     }
 
     [SerializeField] private LoginHandler loginHandler;
+    [SerializeField] private AccountResultPopup resultPopup;
 
     public void OnAnyInputValueChanged(string value)
     {
@@ -81,7 +82,8 @@ public class RegisterHandler : AccountRequestBase<RegisterInputFields>
             switch (uwr.responseCode) {
                 case 200: {
                     Debug.Log("[onRequestCB] Account registered successfully!");
-                    var responseData = JsonUtility.FromJson<RegisterResponseData>(uwr.downloadHandler.text);
+                    // var responseData = JsonUtility.FromJson<RegisterResponseData>(uwr.downloadHandler.text);
+                    resultPopup.Show(true, false, OnBackBtnClicked);
                 }
                 break;
                 case 400: {
