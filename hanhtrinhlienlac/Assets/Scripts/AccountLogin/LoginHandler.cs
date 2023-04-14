@@ -10,10 +10,10 @@ public class LoginHandler : AccountRequestBase<BasicInputFields>
     private static readonly string ACCOUNT_SERVICE_LOGIN_PATH = "/api/v1/pub/login";
 
     [Serializable] class LoginData: RequestData {}
-    [Serializable] class LoginResponseData {
+    [Serializable] public class LoginResponseData {
         public string accessToken;
         public UserInfo userInfo;
-        public int[] games;
+        public GameScore[] games;
         public int totalBonusScore;
         public int totalScore;
 
@@ -21,6 +21,12 @@ public class LoginHandler : AccountRequestBase<BasicInputFields>
             public string id;
             public string inviteCode;
             public string username;
+        }
+
+        [Serializable] public class GameScore {
+            public string gameId;
+            public int bonusScore;
+            public float finalScore;
         }
     }
 
@@ -87,7 +93,7 @@ public class LoginHandler : AccountRequestBase<BasicInputFields>
                     Debug.Log("[onRequestCB] Login successfully!");
                     var responseData = JsonUtility.FromJson<LoginResponseData>(uwr.downloadHandler.text);
                     SchoolApiSession.Inst.OnLoggedIn(responseData.accessToken);
-                    UserInfo.GetInstance().OnLoggedIn(responseData.userInfo.id, responseData.userInfo.inviteCode, responseData.userInfo.username);
+                    UserInfo.GetInstance().OnLoggedIn(responseData.userInfo, responseData.games);
 
                     SceneManager.LoadScene("Main");
                 }
