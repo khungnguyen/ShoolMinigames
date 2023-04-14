@@ -158,6 +158,10 @@ public class QuestionGameManager : MonoBehaviour
             soundMgr.PlaySfx(audioClips.wrongSFX);
         }
 
+        if (IsFinished()) {
+            Scroring.Inst.Submit("game1");
+        }
+
         yield return new WaitForSeconds(resultShowingDuration);
 
         if (IsFinished())
