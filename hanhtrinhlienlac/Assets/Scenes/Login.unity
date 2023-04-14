@@ -5076,8 +5076,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 2.0643997, y: -0.236}
+  m_SizeDelta: {x: -28.9015, y: -25.8344}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1114965758
 MonoBehaviour:
@@ -5099,7 +5099,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "QU\xCAN\nM\u1EACT KH\u1EA8U"
+  m_text: "KH\xD4I PH\u1EE4C\nM\u1EACT KH\u1EA8U"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: a63ac461950ca554dbbf127395afaf57, type: 2}
   m_sharedMaterial: {fileID: 2100000, guid: 1a7639079d9f53d4b98dbf227c66d1a5, type: 2}
@@ -5126,10 +5126,10 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 24
+  m_fontSize: 20.5
   m_fontSizeBase: 24
   m_fontWeight: 400
-  m_enableAutoSizing: 0
+  m_enableAutoSizing: 1
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 1
