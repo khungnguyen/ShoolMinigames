@@ -104,19 +104,19 @@ public class MemoryGameManager : MonoBehaviour
         var indexesInPairs = RandomPairsFromRange(0, curLevelContainer.childCount);
         var cardIndexes = Enumerable.Range(0, scriptableCards.Length).ToList();
 
-        Debug.Assert(cardIndexes.Count >= indexesInPairs.Count);
+        Debug.Assert(cardIndexes.Count >= indexesInPairs.FindAll(pair => !pair.Defective).Count);
 
         foreach (var pair in indexesInPairs)
         {
-            //random card data
-            var idx = UnityEngine.Random.Range(0, cardIndexes.Count - 1);
-            var cardIdx = cardIndexes[idx];
-            cardIndexes.RemoveAt(idx);
-            var data = scriptableCards[cardIdx];
-
-            if (pair.Defective)
-            {
+            ScriptableCard data = null;
+            if (pair.Defective) {
                 data = IsLastLevel() ? fishingRodCard : matThuCard;
+            } else {
+                //random card data
+                var idx = UnityEngine.Random.Range(0, cardIndexes.Count - 1);
+                var cardIdx = cardIndexes[idx];
+                cardIndexes.RemoveAt(idx);
+                data = scriptableCards[cardIdx];
             }
 
             Debug.Log(pair);
