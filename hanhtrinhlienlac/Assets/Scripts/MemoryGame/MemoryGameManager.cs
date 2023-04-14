@@ -176,6 +176,7 @@ public class MemoryGameManager : MonoBehaviour
                 {
                     // Grid was solved
                     Scroring.Inst.Pause();
+                    Scroring.Inst.Submit("game2");
                     if (remainingItems.Count == 0)
                     {
                         StartCoroutine(ShowResultPopup(0.5f, null));
