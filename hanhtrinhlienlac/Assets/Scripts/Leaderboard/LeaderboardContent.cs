@@ -24,6 +24,10 @@ public class LeaderboardContent : MonoBehaviour
 
     public void SetData(LeaderboardData data)
     {
+        if (data==null || data.top100==null)
+        {
+            return;
+        }
         int uiDestroyedCount = 0;
         int idx = 0;
         localPlayerItemUIFixedPos.gameObject.SetActive(false);

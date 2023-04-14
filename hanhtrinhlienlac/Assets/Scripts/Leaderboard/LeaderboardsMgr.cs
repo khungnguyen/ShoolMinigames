@@ -40,7 +40,7 @@ public class LeaderboardsMgr : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        var defaultSelectedItem = tabs.Find(t => t.Id == ELeaderboardId.FINAL);
+        var defaultSelectedItem = tabs.Find(t => t.Id == ELeaderboardId.QUESTION_GAME);
         defaultSelectedItem.OnSelected();        
         StartCoroutine(PlayBGMDelay(audioClips.bgm, true));
     }
