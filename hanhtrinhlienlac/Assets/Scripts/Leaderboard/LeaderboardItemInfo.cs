@@ -5,8 +5,9 @@ using UnityEngine;
 [System.Serializable]
 public class LeaderboardItemInfo
 {
+    public string gameId;
+    public string userId;
+    public string username;
+    public int finalScore;
     public int rank;
-    public string playerId;
-    public string playerName;
-    public int score;
 }

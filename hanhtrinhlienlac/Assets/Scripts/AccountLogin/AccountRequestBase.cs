@@ -62,6 +62,11 @@ public abstract class AccountRequestBase<T>: SchoolApiRequestBase where T: Basic
         });
     }
 
+    protected override void onGetRequestCB(UnityWebRequest uwr)
+    {
+        throw new NotImplementedException();
+    }
+
     private void SelectNavObjIndex(int index)
     {
         if (index < 0 || index >= tabNavObjects.Count) {

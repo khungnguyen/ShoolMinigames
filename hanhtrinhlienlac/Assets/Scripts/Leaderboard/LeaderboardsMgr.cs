@@ -83,6 +83,13 @@ public class LeaderboardsMgr : MonoBehaviour
         // }
     }
 
+    public void OnTabDataFetchingFinished(LeaderboardTab tab)
+    {
+        if (curSelectedTab == tab) {
+            content.SetData(tab.Data);
+        }
+    }
+
     private IEnumerator PlayBGMDelay(AudioClip ac, bool loop)
     {
         yield return new WaitForEndOfFrame();
