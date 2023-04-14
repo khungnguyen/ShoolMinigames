@@ -13,6 +13,11 @@ MonoBehaviour:
   m_Name: MatThu
   m_EditorClassIdentifier: 
   sprite: {fileID: 21300000, guid: e2f0d78fb6a3f1b42b54c347d51b8d58, type: 3}
-  desc: "M\u1EADt th\u01B0: mang th\xF4ng tin li\xEAn l\u1EA1c gi\u1EEFa s\u1EDF
-    chi huy v\xE0 c\xE1c chi\u1EBFn s\u0129. C\xF3 vai tr\xF2 r\u1EA5t quan trong
-    trong chi\u1EBFn tranh\r.\n"
+  desc: "M\u1EADt th\u01B0 l\xE0 nh\u1EEFng l\xE1 th\u01B0 mang th\xF4ng tin li\xEAn
+    l\u1EA1c gi\u1EEFa s\u1EDF chi huy v\xE0 c\xE1c chi\u1EBFn s\u0129. C\xF3 vai
+    tr\xF2 r\u1EA5t quan trong trong chi\u1EBFn tranh Vi\u1EC7t Nam. Giao m\u1EADt
+    th\u01B0 l\xE0 m\u1ED9t nhi\u1EC7m v\u1EE5 r\u1EA5t quan tr\u1ECDng v\xE0 nguy
+    hi\u1EC3m m\xE0 c\xE1c \u0111\u1ED9i vi\xEAn \u0111\u1ED9i Thi\u1EBFu Ni\xEAn
+    Ti\u1EC1n Phong H\u1ED3 Ch\xED Minh \u0111\xE3 ho\xE0n th\xE0nh xu\u1EA5t x\u1EAFc,
+    g\xF3p c\xF4ng l\u1EDBn cho c\xF4ng cu\u1ED9c C\xE1ch M\u1EA1ng \u1EDF Vi\u1EC7t
+    Nam."

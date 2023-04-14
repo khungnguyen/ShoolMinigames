@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87f11c2a2df09d34e8ca0fdaaa5b45d5, type: 3}
+  m_Name: CaiGui
+  m_EditorClassIdentifier: 
+  sprite: {fileID: 21300000, guid: ebd264e9aaced9f43ad77b94af86636b, type: 3}
+  desc: "C\xE1i g\xF9i l\xE0 m\u1ED9t v\u1EADt d\u1EE5ng b\u1EB1ng tre, m\xE2y \u0111an
+    th\u1EE7 c\xF4ng r\u1EA5t ph\u1ED5 bi\u1EBFn trong c\xE1c khu v\u1EF1c sinh s\u1ED1ng
+    c\u1EE7a c\u1ED9ng \u0111\u1ED3ng d\xE2n t\u1ED9c thi\u1EC3u s\u1ED1 \u1EDF Vi\u1EC7t
+    Nam, \u0111\u1EB7c bi\u1EC7t l\xE0 v\xF9ng cao T\xE2y nguy\xEAn. Ch\u1EE9c n\u0103ng
+    c\u1EE7a g\xF9i th\u01B0\u1EDDng l\xE0 \u0111\u1EC3 \u0111\u1EF1ng \u0111\u1ED3,
+    nh\u01B0ng \u0111\u1EB7c bi\u1EC7t c\xF3 th\xEAm hai quai \u0111\u1EC3 ti\u1EC7n
+    mang v\xE1c tr\xEAn vai nh\u1EB1m gi\u1EA3i ph\xF3ng \u0111\xF4i tay kh\xF4ng
+    v\u01B0\u1EDBng b\u1EADn khi mang v\xE1c \u0111\u1ED3 v\xE0 di chuy\u1EC3n.\r"

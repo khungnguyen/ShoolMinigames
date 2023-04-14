@@ -1285,8 +1285,8 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 30
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
-  m_VerticalAlignment: 512
+  m_HorizontalAlignment: 8
+  m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -2412,7 +2412,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &434475536
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3257,7 +3257,6 @@ MonoBehaviour:
   scriptableCards:
   - {fileID: 11400000, guid: ff26378c980378e46b0ec8073e533b0b, type: 2}
   - {fileID: 11400000, guid: a02b82535d30a174694ca7073a56a354, type: 2}
-  - {fileID: 11400000, guid: bfa20a0ae563119439088278a8fd9e10, type: 2}
   - {fileID: 11400000, guid: 364099ea6c0555e4594294cd4e29b321, type: 2}
   - {fileID: 11400000, guid: 81138793e746b0d45b92a1c34378352d, type: 2}
   - {fileID: 11400000, guid: 657a701a9c205cd48abdd1f33a1bf823, type: 2}
@@ -3268,6 +3267,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: d946c4b76c95f814cb84c6ddb1e7fef4, type: 2}
   - {fileID: 11400000, guid: 87ecc29ac32df5b47b8b866e6edcfb03, type: 2}
   - {fileID: 11400000, guid: a57ff3fea197d5e4e94334e1d7dcb8ec, type: 2}
+  - {fileID: 11400000, guid: f2844149caf606440b3cdbc9d7d72472, type: 2}
   matThuCard: {fileID: 11400000, guid: 0d7658c15e6e25a4f8d8688b2cb0929d, type: 2}
   fishingRodCard: {fileID: 11400000, guid: bfa20a0ae563119439088278a8fd9e10, type: 2}
   cardInfoTMP: {fileID: 250657105}

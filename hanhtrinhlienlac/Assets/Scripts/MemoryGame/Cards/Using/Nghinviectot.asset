@@ -13,18 +13,19 @@ MonoBehaviour:
   m_Name: Nghinviectot
   m_EditorClassIdentifier: 
   sprite: {fileID: 21300000, guid: f248af6e822a8a94fb7ff1c47c501117, type: 3}
-  desc: "C\xE1ch \u0111\xE2y 60 n\u0103m, ng\xE0y 24-3-1963, trong kh\xF4ng kh\xED
-    t\u01B0ng b\u1EEBng, n\xE1o nhi\u1EC7t c\u1EE7a cu\u1ED9c sinh ho\u1EA1t ngo\u1EA1i
-    kh\xF3a \u201CTi\u1EBFn b\u01B0\u1EDBc l\xEAn \u0111o\xE0n\u201D, Li\xEAn \u0111\u1ED9i
-    thi\u1EBFu ni\xEAn ti\u1EC1n phong tr\u01B0\u1EDDng c\u1EA5p 2 x\xE3 Tam S\u01A1n,
-    huy\u1EC7n T\u1EEB S\u01A1n, t\u1EC9nh B\u1EAFc Ninh \u0111\xE3 t\u1ED5 ch\u1EE9c
-    lao \u0111\u1ED9ng tr\u1ED3ng c\xE2y hai b\xEAn \u0111\u01B0\u1EDDng \u0111o\u1EA1n
-    \u0111i v\xE0o nh\xE0 \u0111\u1ED3ng ch\xED Ng\xF4 Gia T\u1EF1 - m\u1ED9t trong
-    nh\u1EEFng ng\u01B0\u1EDDi s\xE1ng l\u1EADp \u0110\u1EA3ng ta. Th\u1EA7y gi\xE1o
-    Nguy\u1EC5n \u0110\u1EE9c Th\xECn, T\u1ED5ng ph\u1EE5 tr\xE1ch thi\u1EBFu nhi,
-    t\u1EEBng l\xE0 c\u1EF1u \u0111\u1ED9i vi\xEAn \u0110\u1ED9i thi\u1EBFu ni\xEAn
-    Du k\xEDch \u0110\xECnh B\u1EA3ng anh h\xF9ng, \u0111\xE3 c\xF3 s\xE1ng ki\u1EBFn
-    ph\xE1t \u0111\u1ED9ng phong tr\xE0o \u201CThi \u0111ua l\xE0m ngh\xECn vi\u1EC7c
-    t\u1ED1t, th\u1EF1c hi\u1EC7n 5 \u0111i\u1EC1u B\xE1c d\u1EA1y, ph\u1EA5n \u0111\u1EA5u
-    tr\u1EDF th\xE0nh Ch\xE1u ngoan B\xE1c H\u1ED3\u201D, g\u1ECDi t\u1EAFt l\xE0
-    \u201CNgh\xECn vi\u1EC7c t\u1ED1t\u201D.\r"
+  desc: "Phong tr\xE0o \"Ngh\xECn vi\u1EC7c t\u1ED1t\". C\xE1ch \u0111\xE2y 60 n\u0103m,
+    ng\xE0y 24-3-1963, trong kh\xF4ng kh\xED t\u01B0ng b\u1EEBng, n\xE1o nhi\u1EC7t
+    c\u1EE7a cu\u1ED9c sinh ho\u1EA1t ngo\u1EA1i kh\xF3a \u201CTi\u1EBFn b\u01B0\u1EDBc
+    l\xEAn \u0111o\xE0n\u201D, Li\xEAn \u0111\u1ED9i thi\u1EBFu ni\xEAn ti\u1EC1n
+    phong tr\u01B0\u1EDDng c\u1EA5p 2 x\xE3 Tam S\u01A1n, huy\u1EC7n T\u1EEB S\u01A1n,
+    t\u1EC9nh B\u1EAFc Ninh \u0111\xE3 t\u1ED5 ch\u1EE9c lao \u0111\u1ED9ng tr\u1ED3ng
+    c\xE2y hai b\xEAn \u0111\u01B0\u1EDDng \u0111o\u1EA1n \u0111i v\xE0o nh\xE0 \u0111\u1ED3ng
+    ch\xED Ng\xF4 Gia T\u1EF1 - m\u1ED9t trong nh\u1EEFng ng\u01B0\u1EDDi s\xE1ng
+    l\u1EADp \u0110\u1EA3ng ta. Th\u1EA7y gi\xE1o Nguy\u1EC5n \u0110\u1EE9c Th\xECn,
+    T\u1ED5ng ph\u1EE5 tr\xE1ch thi\u1EBFu nhi, t\u1EEBng l\xE0 c\u1EF1u \u0111\u1ED9i
+    vi\xEAn \u0110\u1ED9i thi\u1EBFu ni\xEAn Du k\xEDch \u0110\xECnh B\u1EA3ng anh
+    h\xF9ng, \u0111\xE3 c\xF3 s\xE1ng ki\u1EBFn ph\xE1t \u0111\u1ED9ng phong tr\xE0o
+    \u201CThi \u0111ua l\xE0m ngh\xECn vi\u1EC7c t\u1ED1t, th\u1EF1c hi\u1EC7n 5
+    \u0111i\u1EC1u B\xE1c d\u1EA1y, ph\u1EA5n \u0111\u1EA5u tr\u1EDF th\xE0nh Ch\xE1u
+    ngoan B\xE1c H\u1ED3\u201D, g\u1ECDi t\u1EAFt l\xE0 \u201CNgh\xECn vi\u1EC7c
+    t\u1ED1t\u201D.\r"

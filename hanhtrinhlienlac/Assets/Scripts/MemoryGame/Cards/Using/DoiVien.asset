@@ -13,11 +13,11 @@ MonoBehaviour:
   m_Name: DoiVien
   m_EditorClassIdentifier: 
   sprite: {fileID: 21300000, guid: 0d4e65f63a79b8843b55e3bf551d8f9e, type: 3}
-  desc: "1. \u0110\u1ED9i vi\xEAn \u0110\u1ED9i TNTP H\u1ED3 Ch\xED Minh l\xE0 thi\u1EBFu
+  desc: "\u0110\u1ED9i vi\xEAn \u0110\u1ED9i TNTP H\u1ED3 Ch\xED Minh l\xE0 thi\u1EBFu
     ni\xEAn Vi\u1EC7t Nam t\u1EEB 9 \u0111\u1EBFn h\u1EBFt 15 tu\u1ED5i th\u1EF1c
     hi\u1EC7n t\u1ED1t 5 \u0111i\u1EC1u B\xE1c H\u1ED3 d\u1EA1y, ph\u1EA5n \u0111\u1EA5u
     h\u1ECDc t\u1EADp, r\xE8n luy\u1EC7n v\xE0 tu d\u01B0\u1EE1ng \u0111\u1EC3 tr\u1EDF
-    th\xE0nh \u0111o\xE0n vi\xEAn \u0110o\xE0n TNCS H\u1ED3 Ch\xED Minh.\r\n2. \u0110i\u1EC1u
+    th\xE0nh \u0111o\xE0n vi\xEAn \u0110o\xE0n TNCS H\u1ED3 Ch\xED Minh.\r\n\u0110i\u1EC1u
     ki\u1EC7n v\xE0 th\u1EE7 t\u1EE5c k\u1EBFt n\u1EA1p \u0111\u1ED9i vi\xEAn: Thi\u1EBFu
     ni\xEAn Vi\u1EC7t Nam c\xF3 \u0111\u1EA7y \u0111\u1EE7 c\xE1c ph\u1EA9m ch\u1EA5t
     tr\xEAn v\xE0 \u0111\u1EA3m b\u1EA3o nh\u1EEFng \u0111i\u1EC1u ki\u1EC7n sau

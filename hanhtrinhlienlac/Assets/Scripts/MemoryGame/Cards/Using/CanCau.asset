@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: CanCau
   m_EditorClassIdentifier: 
   sprite: {fileID: 21300000, guid: f98ad1ca403e4f04fa7be85e34657c30, type: 3}
-  desc: "C\u1EA7n nh\u1ECF v\xE0 d\xE0i c\xF3 bu\u1ED9c d\xE2y d\xF9ng \u0111\u1EC3
+  desc: "C\u1EA7n c\xE2u nh\u1ECF v\xE0 d\xE0i c\xF3 bu\u1ED9c d\xE2y d\xF9ng \u0111\u1EC3
     c\xE2u c\xE1"
