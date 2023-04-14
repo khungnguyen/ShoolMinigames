@@ -26,12 +26,12 @@ public abstract class SchoolApiRequestBase: MonoBehaviour
 
     abstract protected void onRequestCB(UnityWebRequest uwr);
 
-    protected void PostRequest(string urlPath, RequestData toJsonObject)
+    protected void PostRequest(string urlPath, RequestData toJsonObject, string accessToken = null)
     {
-        StartCoroutine(PostRequestIEnumerator(urlPath, toJsonObject));
+        StartCoroutine(PostRequestIEnumerator(urlPath, toJsonObject, accessToken));
     }
 
-    private IEnumerator PostRequestIEnumerator(string urlPath, RequestData toJsonObject)
+    private IEnumerator PostRequestIEnumerator(string urlPath, RequestData toJsonObject, string accessToken = null)
     {
         var url = ACCOUNT_SERVICE_BASE_URL + urlPath;
 
@@ -41,6 +41,10 @@ public abstract class SchoolApiRequestBase: MonoBehaviour
         var uploadHandler = new UploadHandlerRaw(bytes);
         uploadHandler.contentType = "application/json";
         uwr.uploadHandler = uploadHandler;
+        
+        if (accessToken?.Length > 0) {
+            uwr.SetRequestHeader("Authorization", "Bearer " + accessToken);
+        }
 
         yield return uwr.SendWebRequest();
 
