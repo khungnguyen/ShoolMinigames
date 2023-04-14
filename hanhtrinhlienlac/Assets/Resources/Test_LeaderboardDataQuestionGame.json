@@ -1,101 +1,101 @@
 {
     "name": "Question",
-    "list": [
+    "top100": [
         {
             "rank": 1,
-            "playerId": "aoidfjlakdsf",
-            "playerName": "Test Player Name weadfgsgfr",
-            "score": "9999"
+            "userId": "aoidfjlakdsf",
+            "username": "Test Player Name weadfgsgfr",
+            "finalScore": "9999"
         },
         {
             "rank": 2,
-            "playerId": "adsga",
-            "playerName": "Test Player Name gfhjdtr",
-            "score": "996"
+            "userId": "adsga",
+            "username": "Test Player Name gfhjdtr",
+            "finalScore": "996"
         },
         {
             "rank": 3,
-            "playerId": "fhrft",
-            "playerName": "Test Player Name qktydrtl,iyerw",
-            "score": "756"
+            "userId": "fhrft",
+            "username": "Test Player Name qktydrtl,iyerw",
+            "finalScore": "756"
         },
         {
             "rank": 4,
-            "playerId": "rtye",
-            "playerName": "Test Player Name tyuiftyj",
-            "score": "456"
+            "userId": "rtye",
+            "username": "Test Player Name tyuiftyj",
+            "finalScore": "456"
         },
         {
             "rank": 5,
-            "playerId": "3twert",
-            "playerName": "Test Player Name gh,kmfdvdz",
-            "score": "342"
+            "userId": "3twert",
+            "username": "Test Player Name gh,kmfdvdz",
+            "finalScore": "342"
         },
         {
             "rank": 6,
-            "playerId": "tuiot",
-            "playerName": "Test Player Name 1q32rqa",
-            "score": "312"
+            "userId": "tuiot",
+            "username": "Test Player Name 1q32rqa",
+            "finalScore": "312"
         },
         {
             "rank": 7,
-            "playerId": "q23rw",
-            "playerName": "Test Player Name nbxvbxd",
-            "score": "231"
+            "userId": "q23rw",
+            "username": "Test Player Name nbxvbxd",
+            "finalScore": "231"
         },
         {
             "rank": 8,
-            "playerId": "asdfg",
-            "playerName": "Test Player Name 1q32rqa",
-            "score": "156"
+            "userId": "asdfg",
+            "username": "Test Player Name 1q32rqa",
+            "finalScore": "156"
         },
         {
             "rank": 9,
-            "playerId": "cgnd",
-            "playerName": "Test Player Name jklghjsf",
-            "score": "123"
+            "userId": "cgnd",
+            "username": "Test Player Name jklghjsf",
+            "finalScore": "123"
         },
         {
             "rank": 10,
-            "playerId": "we4twe",
-            "playerName": "Test Player Name dnsd",
-            "score": "122"
+            "userId": "we4twe",
+            "username": "Test Player Name dnsd",
+            "finalScore": "122"
         },
         {
             "rank": 11,
-            "playerId": "45wwe",
-            "playerName": "Test Player Name 2334w",
-            "score": "111"
+            "userId": "45wwe",
+            "username": "Test Player Name 2334w",
+            "finalScore": "111"
         },
         {
             "rank": 12,
-            "playerId": "ir67",
-            "playerName": "Test Player Name e68oyfru",
-            "score": "110"
+            "userId": "ir67",
+            "username": "Test Player Name e68oyfru",
+            "finalScore": "110"
         },
         {
             "rank": 13,
-            "playerId": "2eqwa",
-            "playerName": "Test Player Name r8irjfdh",
-            "score": "99"
+            "userId": "2eqwa",
+            "username": "Test Player Name r8irjfdh",
+            "finalScore": "99"
         },
         {
             "rank": 14,
-            "playerId": "y87",
-            "playerName": "Test Player Name edfas",
-            "score": "88"
+            "userId": "y87",
+            "username": "Test Player Name edfas",
+            "finalScore": "88"
         },
         {
             "rank": 15,
-            "playerId": "12eq",
-            "playerName": "Test Player Name fhnmh",
-            "score": "78"
+            "userId": "12eq",
+            "username": "Test Player Name fhnmh",
+            "finalScore": "78"
         },
         {
             "rank": 16,
-            "playerId": "89o9",
-            "playerName": "Test Player Name sgfsardfa",
-            "score": "45"
+            "userId": "89o9",
+            "username": "Test Player Name sgfsardfa",
+            "finalScore": "45"
         }
     ]
 }

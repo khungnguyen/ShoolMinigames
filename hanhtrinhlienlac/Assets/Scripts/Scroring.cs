@@ -144,4 +144,9 @@ public class Scroring : SchoolApiRequestBase
             Debug.LogError("Unhandled response code!!! " + uwr.result);
         }
     }
+
+    protected override void onGetRequestCB(UnityWebRequest uwr)
+    {
+        throw new NotImplementedException();
+    }
 }

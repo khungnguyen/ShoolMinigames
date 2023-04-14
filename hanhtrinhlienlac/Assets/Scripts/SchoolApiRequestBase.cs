@@ -25,10 +25,16 @@ public abstract class SchoolApiRequestBase: MonoBehaviour
     }
 
     abstract protected void onRequestCB(UnityWebRequest uwr);
+    abstract protected void onGetRequestCB(UnityWebRequest uwr);
 
     protected void PostRequest(string urlPath, RequestData toJsonObject, string accessToken = null)
     {
         StartCoroutine(PostRequestIEnumerator(urlPath, toJsonObject, accessToken));
+    }
+
+    protected void SendGetRequest(string urlPath, string accessToken = null)
+    {
+        StartCoroutine(SendGetRequestIEnumerator(urlPath, accessToken));
     }
 
     private IEnumerator PostRequestIEnumerator(string urlPath, RequestData toJsonObject, string accessToken = null)
@@ -36,11 +42,13 @@ public abstract class SchoolApiRequestBase: MonoBehaviour
         var url = ACCOUNT_SERVICE_BASE_URL + urlPath;
 
         UnityWebRequest uwr = UnityWebRequest.Post(url, "");
-        var jsonStr = JsonUtility.ToJson(toJsonObject);
-        var bytes = System.Text.Encoding.UTF8.GetBytes(jsonStr);
-        var uploadHandler = new UploadHandlerRaw(bytes);
-        uploadHandler.contentType = "application/json";
-        uwr.uploadHandler = uploadHandler;
+        if (toJsonObject != null) {
+            var jsonStr = JsonUtility.ToJson(toJsonObject);
+            var bytes = System.Text.Encoding.UTF8.GetBytes(jsonStr);
+            var uploadHandler = new UploadHandlerRaw(bytes);
+            uploadHandler.contentType = "application/json";
+            uwr.uploadHandler = uploadHandler;
+        }
         
         if (accessToken?.Length > 0) {
             uwr.SetRequestHeader("Authorization", "Bearer " + accessToken);
@@ -49,5 +57,20 @@ public abstract class SchoolApiRequestBase: MonoBehaviour
         yield return uwr.SendWebRequest();
 
         onRequestCB(uwr);
+    }
+
+    private IEnumerator SendGetRequestIEnumerator(string urlPath, string accessToken = null)
+    {
+        var url = ACCOUNT_SERVICE_BASE_URL + urlPath;
+
+        UnityWebRequest uwr = UnityWebRequest.Get(url);
+        
+        if (accessToken?.Length > 0) {
+            uwr.SetRequestHeader("Authorization", "Bearer " + accessToken);
+        }
+
+        yield return uwr.SendWebRequest();
+
+        onGetRequestCB(uwr);
     }
 }

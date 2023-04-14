@@ -26,11 +26,13 @@ public class LeaderboardContent : MonoBehaviour
     {
         int uiDestroyedCount = 0;
         int idx = 0;
-        for (; idx < data.list.Count; idx++) {
-            var info = data.list[idx];
-            bool isLocalPlayer = info.playerId == "tuiot";
+        localPlayerItemUIFixedPos.gameObject.SetActive(false);
+        for (; idx < data.top100.Count; idx++) {
+            var info = data.top100[idx];
+            bool isLocalPlayer = info.username == UserInfo.GetInstance().Username;
 
             if (isLocalPlayer) {
+                localPlayerItemUIFixedPos.gameObject.SetActive(true);
                 localPlayerItemUIFixedPos.SetInfo(info);
             }
 

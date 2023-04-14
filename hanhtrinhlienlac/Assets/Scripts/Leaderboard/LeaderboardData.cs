@@ -6,7 +6,7 @@ using UnityEngine;
 public class LeaderboardData
 {
     public string name;
-    public List<LeaderboardItemInfo> list;
+    public List<LeaderboardItemInfo> top100;
 
     public ELeaderboardId LeaderboardId {
         get {
