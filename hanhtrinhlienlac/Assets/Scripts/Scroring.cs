@@ -16,11 +16,6 @@ public class Scroring : SchoolApiRequestBase
         public float finalScore;
     }
 
-    enum EError {
-        NONE,
-        UNKNOWN
-    }
-
     [SerializeField] private TMPro.TextMeshProUGUI scoreTMPro;
     [SerializeField] private float maxRemainingTimeScore = 120f;
     [SerializeField] private float scoreLostPerSec = 1f;
