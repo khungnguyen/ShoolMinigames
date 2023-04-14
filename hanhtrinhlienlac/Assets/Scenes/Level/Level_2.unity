@@ -3268,6 +3268,11 @@ MonoBehaviour:
   - {fileID: 11400000, guid: a57ff3fea197d5e4e94334e1d7dcb8ec, type: 2}
   - {fileID: 11400000, guid: 413f83f5b6824a9448b81ecc46c9e575, type: 2}
   - {fileID: 11400000, guid: f0ec4e569dea5ed44951bcf51b135ebd, type: 2}
+  - {fileID: 11400000, guid: 364099ea6c0555e4594294cd4e29b321, type: 2}
+  - {fileID: 11400000, guid: 5b4038c20c7c7514db638ed04f736044, type: 2}
+  - {fileID: 11400000, guid: 08d21693657a4044695a12a48d922714, type: 2}
+  - {fileID: 11400000, guid: d946c4b76c95f814cb84c6ddb1e7fef4, type: 2}
+  - {fileID: 11400000, guid: 87ecc29ac32df5b47b8b866e6edcfb03, type: 2}
   matThuCard: {fileID: 11400000, guid: 0d7658c15e6e25a4f8d8688b2cb0929d, type: 2}
   fishingRodCard: {fileID: 11400000, guid: bfa20a0ae563119439088278a8fd9e10, type: 2}
   cardInfoTMP: {fileID: 250657105}

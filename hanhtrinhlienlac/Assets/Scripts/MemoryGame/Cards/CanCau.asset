@@ -13,10 +13,5 @@ MonoBehaviour:
   m_Name: CanCau
   m_EditorClassIdentifier: 
   sprite: {fileID: 21300000, guid: f98ad1ca403e4f04fa7be85e34657c30, type: 3}
-  desc: "C\u1EA7n c\xE2u Sed accumsan neque et volutpat posuere. Proin consectetur
-    a tortor non rutrum. Vestibulum et metus eget magna hendrerit faucibus id et
-    sem. In hac habitasse platea dictumst. In hac habitasse platea dictumst. Maecenas
-    facilisis luctus sapien id sagittis. Nulla consequat posuere enim nec hendrerit.
-    Duis porttitor ultricies dolor ac fringilla. Quisque efficitur imperdiet dapibus.
-    Vivamus turpis turpis, convallis in commodo ac, venenatis quis ante. Morbi mattis
-    diam sed nunc vulputate, eget consectetur metus luctus."
+  desc: "C\u1EA7n nh\u1ECF v\xE0 d\xE0i c\xF3 bu\u1ED9c d\xE2y d\xF9ng \u0111\u1EC3
+    c\xE2u c\xE1"
