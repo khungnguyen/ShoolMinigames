@@ -1,0 +1,40 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87f11c2a2df09d34e8ca0fdaaa5b45d5, type: 3}
+  m_Name: Mucalo
+  m_EditorClassIdentifier: 
+  sprite: {fileID: 21300000, guid: 7176034fef7150b42a360cc8c6189188, type: 3}
+  desc: "L\u1EA5y \xFD t\u01B0\u1EDFng t\u1EEB nh\u1EEFng b\xFAp m\u0103ng non, m\u0169
+    ca n\xF4 c\xF3 h\xECnh d\xE1ng l\xE0 nh\u1EEFng kh\u1ED1i nh\u1ECDn x\u1EBFp
+    ch\u1ED3ng l\xEAn nhau. Khi \u0111\u1ED9i, ph\u1EA7n m\u0169i tr\u01B0\u1EDBc
+    m\u0169 s\u1EBD d\u1EF1ng nh\xF4 l\xEAn cao nh\u01B0 m\u0169i thuy\u1EC1n ch\u1EC7ch
+    l\xEAn h\u01B0\u1EDBng tr\u01B0\u1EDBc. H\xECnh \u1EA3nh n\xE0y mang nhi\u1EC1u
+    \xFD ngh\u0129a: c\xF3 th\u1EC3 l\xE0 nh\u1EEFng b\xFAp m\u0103ng gi\xE0u s\u1EE9c
+    s\u1ED1ng, \u0111ang v\u01B0\u01A1n l\xEAn m\u1EA1nh m\u1EBD hay chi\u1EBFc thuy\u1EC1n
+    s\u1EB5n s\xE0ng kh\xE1m ph\xE1 \u0111\u1EA1i d\u01B0\u01A1ng. \r\nNgo\xE0i ra,
+    \u1EDF ph\u1EA7n gi\u1EEFa s\xE1t m\xE9p m\u0169 \u0111\u01B0\u1EE3c th\xEAu
+    logo c\u1EE7a \u0110\u1ED9i thi\u1EBFu ni\xEAn Ti\u1EC1n phong H\u1ED3 Ch\xED
+    Minh. \u0110\xF3 l\xE0 k\xFD hi\u1EC7u b\xFAp m\u0103ng non \u2013 \u0111\u1EA1i
+    di\u1EC7n cho th\u1EBF h\u1EC7 tr\u1EBB, nh\u1EEFng ng\u01B0\u1EDDi s\u1EBD l\xE0m
+    n\xEAn t\u01B0\u01A1ng lai cho T\u1ED5 Qu\u1ED1c, cho d\xE2n t\u1ED9c. M\u1ED9t
+    s\u1ED1 lo\u1EA1i m\u0169 ca l\xF4 c\xF3 th\u1EC3 kh\xF4ng th\xEAu bi\u1EC3u
+    t\u01B0\u1EE3ng n\xE0y nh\u01B0ng n\xF3i chung v\u1EABn th\u1EC3 hi\u1EC7n \u0111\u01B0\u1EE3c
+    linh h\u1ED3n, t\xE2m t\u01B0 ng\u01B0\u1EDDi s\xE1ng t\u1EA1o ra n\xF3. \r\nM\u0169
+    ca l\xF4 l\xE0 m\u1ED9t trong nh\u1EEFng bi\u1EC3u t\u01B0\u1EE3ng c\u1EE7a \u0110\u1ED9i
+    Thi\u1EBFu ni\xEAn Ti\u1EC1n phong H\u1ED3 Ch\xED Minh. V\xEC th\u1EBF, trong
+    b\u1EA5t k\u1EF3 nghi th\u1EE9c \u0111\u1ED9i n\xE0o, h\u1ECDc sinh c\u0169ng
+    \u0111\u1EC1u \u0111\u01B0\u1EE3c y\xEAu c\u1EA7u ph\u1EA3i \u0111\u1ED9i m\u0169
+    c\xF9ng v\u1EDBi trang ph\u1EE5c ngay ng\u1EAFn, g\u1ECDn g\xE0ng. M\u0169 ca
+    l\xF4 l\xE0 ph\u1EE5 ki\u1EC7n kh\xF4ng th\u1EC3 thi\u1EBFu, th\u01B0\u1EDDng
+    \u0111i k\xE8m v\u1EDBi kh\u0103n qu\xE0ng \u0111\u1ECF, qu\u1EA7n \xE1o tr\u1EAFng,
+    gi\xE0y bata, tr\xEAn tay s\u1EBD l\xE0 l\xE1 c\u1EDD T\u1ED5 Qu\u1ED1c hay tr\u1ED1ng,
+    k\xE8n c\u1EE7a \u0110\u1ED9i.\r\n"

@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87f11c2a2df09d34e8ca0fdaaa5b45d5, type: 3}
+  m_Name: Kehoachnho
+  m_EditorClassIdentifier: 
+  sprite: {fileID: 21300000, guid: ebac932c9483c2f4292bea01c182a365, type: 3}
+  desc: "Phong tr\xE0o K\u1EBF ho\u1EA1ch nh\u1ECF l\xE0 phong tr\xE0o c\u1EE7a thi\u1EBFu
+    nhi Vi\u1EC7t Nam, ra \u0111\u1EDDi v\xE0o n\u0103m 1958, nh\u1EB1m th\u1EF1c
+    hi\u1EC7n l\u1EDDi d\u1EA1y c\u1EE7a B\xE1c H\u1ED3: \u201CTu\u1ED5i nh\u1ECF
+    l\xE0m vi\u1EC7c nh\u1ECF, t\xF9y theo s\u1EE9c c\u1EE7a m\xECnh\u201D, v\u1EDBi
+    m\u1EE5c \u0111\xEDch gi\xE1o d\u1EE5c \u0110\u1ED9i vi\xEAn, h\u1ECDc sinh tinh
+    th\u1EA7n \u201Ct\u01B0\u01A1ng th\xE2n t\u01B0\u01A1ng \xE1i\u201D, \xFD th\u1EE9c
+    ti\u1EBFt ki\u1EC7m, chia s\u1EBB, gi\xFAp \u0111\u1EE1 c\xE1c b\u1EA1n c\xF3
+    ho\xE0n c\u1EA3nh kh\xF3 kh\u0103n.\r\n"

@@ -1278,12 +1278,12 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
+  m_fontSize: 30
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
   m_fontSizeMin: 18
-  m_fontSizeMax: 72
+  m_fontSizeMax: 30
   m_fontStyle: 0
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 512
@@ -3255,19 +3255,19 @@ MonoBehaviour:
   - {fileID: 355480861}
   - {fileID: 1725635830}
   scriptableCards:
-  - {fileID: 11400000, guid: 5c456af80c3b592479dab92495019fa9, type: 2}
-  - {fileID: 11400000, guid: c54809fd953e4f0459ea204bc7b4a329, type: 2}
-  - {fileID: 11400000, guid: f2844149caf606440b3cdbc9d7d72472, type: 2}
+  - {fileID: 11400000, guid: ff26378c980378e46b0ec8073e533b0b, type: 2}
   - {fileID: 11400000, guid: a02b82535d30a174694ca7073a56a354, type: 2}
-  - {fileID: 11400000, guid: 8bb4208596b27a24d9a99cd080847c6b, type: 2}
+  - {fileID: 11400000, guid: bfa20a0ae563119439088278a8fd9e10, type: 2}
+  - {fileID: 11400000, guid: 364099ea6c0555e4594294cd4e29b321, type: 2}
   - {fileID: 11400000, guid: 81138793e746b0d45b92a1c34378352d, type: 2}
   - {fileID: 11400000, guid: 657a701a9c205cd48abdd1f33a1bf823, type: 2}
-  - {fileID: 11400000, guid: ebb78daa7be749f40b53d67054121a8f, type: 2}
-  - {fileID: 11400000, guid: 24527af1acead8a43ad7676047de3bb1, type: 2}
   - {fileID: 11400000, guid: 8ff529bc27442be449203b662a870bd9, type: 2}
+  - {fileID: 11400000, guid: 5b4038c20c7c7514db638ed04f736044, type: 2}
   - {fileID: 11400000, guid: a57ff3fea197d5e4e94334e1d7dcb8ec, type: 2}
-  - {fileID: 11400000, guid: 413f83f5b6824a9448b81ecc46c9e575, type: 2}
-  - {fileID: 11400000, guid: f0ec4e569dea5ed44951bcf51b135ebd, type: 2}
+  - {fileID: 11400000, guid: 08d21693657a4044695a12a48d922714, type: 2}
+  - {fileID: 11400000, guid: d946c4b76c95f814cb84c6ddb1e7fef4, type: 2}
+  - {fileID: 11400000, guid: 87ecc29ac32df5b47b8b866e6edcfb03, type: 2}
+  - {fileID: 11400000, guid: a57ff3fea197d5e4e94334e1d7dcb8ec, type: 2}
   matThuCard: {fileID: 11400000, guid: 0d7658c15e6e25a4f8d8688b2cb0929d, type: 2}
   fishingRodCard: {fileID: 11400000, guid: bfa20a0ae563119439088278a8fd9e10, type: 2}
   cardInfoTMP: {fileID: 250657105}

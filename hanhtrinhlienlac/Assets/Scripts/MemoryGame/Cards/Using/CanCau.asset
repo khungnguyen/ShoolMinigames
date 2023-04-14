@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87f11c2a2df09d34e8ca0fdaaa5b45d5, type: 3}
+  m_Name: CanCau
+  m_EditorClassIdentifier: 
+  sprite: {fileID: 21300000, guid: f98ad1ca403e4f04fa7be85e34657c30, type: 3}
+  desc: "C\u1EA7n nh\u1ECF v\xE0 d\xE0i c\xF3 bu\u1ED9c d\xE2y d\xF9ng \u0111\u1EC3
+    c\xE2u c\xE1"

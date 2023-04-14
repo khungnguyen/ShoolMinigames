@@ -13,9 +13,6 @@ MonoBehaviour:
   m_Name: MatThu
   m_EditorClassIdentifier: 
   sprite: {fileID: 21300000, guid: e2f0d78fb6a3f1b42b54c347d51b8d58, type: 3}
-  desc: "M\u1EADt th\u01B0 Nunc varius lacus at ante egestas commodo. Integer tempus,
-    diam id condimentum porta, diam nunc rutrum eros, in elementum metus erat eget
-    mauris. Duis dignissim mi sed scelerisque egestas. Sed placerat purus sed rhoncus
-    elementum. Maecenas nec dapibus sapien. Mauris porta ligula viverra, tincidunt
-    mi sit amet, laoreet enim. Pellentesque eleifend ornare fringilla. Fusce et tempor
-    odio, accumsan maximus ex."
+  desc: "M\u1EADt th\u01B0: mang th\xF4ng tin li\xEAn l\u1EA1c gi\u1EEFa s\u1EDF
+    chi huy v\xE0 c\xE1c chi\u1EBFn s\u0129. C\xF3 vai tr\xF2 r\u1EA5t quan trong
+    trong chi\u1EBFn tranh\r.\n"

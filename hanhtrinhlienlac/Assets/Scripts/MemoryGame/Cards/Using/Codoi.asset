@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87f11c2a2df09d34e8ca0fdaaa5b45d5, type: 3}
+  m_Name: Codoi
+  m_EditorClassIdentifier: 
+  sprite: {fileID: 21300000, guid: 9d65feedcc7cf954da0e2d873e8f6a54, type: 3}
+  desc: "N\u1EC1n \u0111\u1ECF, h\xECnh ch\u1EEF nh\u1EADt, chi\u1EC1u r\u1ED9ng
+    b\u1EB1ng hai ph\u1EA7n ba chi\u1EC1u d\xE0i, \u1EDF gi\u1EEFa c\xF3 h\xECnh
+    huy hi\u1EC7u \u0110\u1ED9i, \u0111\u01B0\u1EDDng k\xEDnh huy hi\u1EC7u b\u1EB1ng
+    hai ph\u1EA7n n\u0103m chi\u1EC1u r\u1ED9ng c\u1EDD. \xDD ngh\u0129a c\u1EE7a
+    c\u1EDD \u0110\u1ED9i: t\u01B0\u1EE3ng tr\u01B0ng cho truy\u1EC1n th\u1ED1ng
+    C\xE1ch m\u1EA1ng, truy\u1EC1n th\u1ED1ng \u0110\u1ED9i, t\u01B0\u1EE3ng tr\u01B0ng
+    cho l\xF2ng y\xEAu T\u1ED5 qu\u1ED1c, ni\u1EC1m vinh d\u1EF1 v\xE0 t\u1EF1 h\xE0o
+    c\u1EE7a \u0110\u1ED9i. D\u01B0\u1EDBi c\u1EDD \u0110\u1ED9i, h\xE0ng ng\u0169
+    s\u1EBD ch\u1EC9nh t\u1EC1 h\u01A1n, th\xFAc gi\u1EE5c \u0110\u1ED9i vi\xEAn
+    ti\u1EBFn l\xEAn.\r"

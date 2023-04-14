@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87f11c2a2df09d34e8ca0fdaaa5b45d5, type: 3}
+  m_Name: CoVN
+  m_EditorClassIdentifier: 
+  sprite: {fileID: 21300000, guid: f98e1d476fdc2de4cab363d187164ca8, type: 3}
+  desc: "Qu\u1ED1c k\u1EF3 n\u01B0\u1EDBc C\u1ED9ng ho\xE0 x\xE3 h\u1ED9i ch\u1EE7
+    ngh\u0129a Vi\u1EC7t Nam h\xECnh ch\u1EEF nh\u1EADt, chi\u1EC1u r\u1ED9ng b\u1EB1ng
+    hai ph\u1EA7n ba chi\u1EC1u d\xE0i, n\u1EC1n \u0111\u1ECF, \u1EDF gi\u1EEFa c\xF3
+    ng\xF4i sao v\xE0ng n\u0103m c\xE1nh.\r\nQu\u1ED1c k\u1EF3 Vi\u1EC7t Nam l\xE0
+    l\xE1 c\u1EDD \u0111\u1ECF sao v\xE0ng, l\xE0 bi\u1EC3u t\u01B0\u1EE3ng c\u1EE7a
+    \xFD \u0110\u1EA3ng, l\xF2ng d\xE2n, l\xE0 bi\u1EC3u t\u01B0\u1EE3ng thi\xEAng
+    li\xEAng nh\u1EA5t, th\u1EC3 hi\u1EC7n \xFD ch\xED quy\u1EBFt chi\u1EBFn quy\u1EBFt
+    th\u1EAFng c\u1EE7a d\xE2n t\u1ED9c Vi\u1EC7t Nam trong cu\u1ED9c kh\xE1ng chi\u1EBFn
+    \u0111\xE1nh \u0111u\u1ED5i qu\xE2n x\xE2m l\u01B0\u1EE3c v\xE0 x\xE2y d\u1EF1ng
+    \u0111\u1EA5t n\u01B0\u1EDBc h\xF2a b\xECnh, \u1EA5m no, t\u1EF1 do, h\u1EA1nh
+    ph\xFAc. L\xE1 c\u1EDD \u0111\u1ECF sao v\xE0ng l\xE0 minh ch\u1EE9ng kh\u1EB3ng
+    \u0111\u1ECBnh cho s\u1EF1 th\u1ED1ng nh\u1EA5t, \u0111\u1ED9c l\u1EADp, t\u1EF1
+    ch\u1EE7 v\xE0 h\xF2a b\xECnh c\u1EE7a d\xE2n t\u1ED9c Vi\u1EC7t Nam nh\u01B0
+    Ch\u1EE7 t\u1ECBch H\u1ED3 Ch\xED Minh \u0111\xE3 kh\u1EB3ng \u0111\u1ECBnh:
+    \u201CN\u01B0\u1EDBc Vi\u1EC7t Nam l\xE0 m\u1ED9t, d\xE2n t\u1ED9c Vi\u1EC7t
+    Nam l\xE0 m\u1ED9t. S\xF4ng c\xF3 th\u1EC3 c\u1EA1n, n\xFAi c\xF3 th\u1EC3 m\xF2n
+    nh\u01B0ng ch\xE2n l\xFD \u1EA5y kh\xF4ng bao gi\u1EDD thay \u0111\u1ED5i\u201D.
+    \r\n"

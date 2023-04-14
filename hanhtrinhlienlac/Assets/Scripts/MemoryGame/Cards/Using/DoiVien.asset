@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87f11c2a2df09d34e8ca0fdaaa5b45d5, type: 3}
+  m_Name: DoiVien
+  m_EditorClassIdentifier: 
+  sprite: {fileID: 21300000, guid: 0d4e65f63a79b8843b55e3bf551d8f9e, type: 3}
+  desc: "1. \u0110\u1ED9i vi\xEAn \u0110\u1ED9i TNTP H\u1ED3 Ch\xED Minh l\xE0 thi\u1EBFu
+    ni\xEAn Vi\u1EC7t Nam t\u1EEB 9 \u0111\u1EBFn h\u1EBFt 15 tu\u1ED5i th\u1EF1c
+    hi\u1EC7n t\u1ED1t 5 \u0111i\u1EC1u B\xE1c H\u1ED3 d\u1EA1y, ph\u1EA5n \u0111\u1EA5u
+    h\u1ECDc t\u1EADp, r\xE8n luy\u1EC7n v\xE0 tu d\u01B0\u1EE1ng \u0111\u1EC3 tr\u1EDF
+    th\xE0nh \u0111o\xE0n vi\xEAn \u0110o\xE0n TNCS H\u1ED3 Ch\xED Minh.\r\n2. \u0110i\u1EC1u
+    ki\u1EC7n v\xE0 th\u1EE7 t\u1EE5c k\u1EBFt n\u1EA1p \u0111\u1ED9i vi\xEAn: Thi\u1EBFu
+    ni\xEAn Vi\u1EC7t Nam c\xF3 \u0111\u1EA7y \u0111\u1EE7 c\xE1c ph\u1EA9m ch\u1EA5t
+    tr\xEAn v\xE0 \u0111\u1EA3m b\u1EA3o nh\u1EEFng \u0111i\u1EC1u ki\u1EC7n sau
+    \u0111\xE2y \u0111\u1EC1u \u0111\u01B0\u1EE3c k\u1EBFt n\u1EA1p v\xE0o \u0110\u1ED9i
+    Thi\u1EBFu ni\xEAn Ti\u1EC1n phong H\u1ED3 Ch\xED Minh:\r\n- Th\u1EEBa nh\u1EADn
+    \u0110i\u1EC1u l\u1EC7 \u0110\u1ED9i Thi\u1EBFu ni\xEAn Ti\u1EC1n phong H\u1ED3
+    Ch\xED Minh.\r\n- T\u1EF1 nguy\u1EC7n xin v\xE0o \u0110\u1ED9i Thi\u1EBFu ni\xEAn
+    Ti\u1EC1n phong H\u1ED3 Ch\xED Minh.\r\n- \u0110\u01B0\u1EE3c qu\xE1 n\u1EEDa
+    s\u1ED1 \u0111\u1ED9i vi\xEAn trong chi \u0111\u1ED9i \u0111\u1ED3ng \xFD. \u1EDE
+    nh\u1EEFng n\u01A1i ch\u01B0a c\xF3 t\u1ED5 ch\u1EE9c \u0110\u1ED9i Thi\u1EBFu
+    ni\xEAn Ti\u1EC1n phong H\u1ED3 Ch\xED Minh, vi\u1EC7c k\u1EBFt n\u1EA1p \u0111\u1ED9i
+    vi\xEAn th\u1EF1c hi\u1EC7n theo h\u01B0\u1EDBng d\u1EABn th\u1EF1c hi\u1EC7n
+    \u0110i\u1EC1u l\u1EC7 \u0110\u1ED9i do H\u1ED9i \u0111\u1ED3ng \u0110\u1ED9i
+    Trung \u01B0\u01A1ng ban h\xE0nh.\r"

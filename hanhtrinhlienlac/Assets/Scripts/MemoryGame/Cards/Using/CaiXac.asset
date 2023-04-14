@@ -13,9 +13,8 @@ MonoBehaviour:
   m_Name: CaiXac
   m_EditorClassIdentifier: 
   sprite: {fileID: 21300000, guid: 86c3a502ea0b6f44a981e749b94f941c, type: 3}
-  desc: "C\xE1i x\u1EAFc Nunc varius lacus at ante egestas commodo. Integer tempus,
-    diam id condimentum porta, diam nunc rutrum eros, in elementum metus erat eget
-    mauris. Duis dignissim mi sed scelerisque egestas. Sed placerat purus sed rhoncus
-    elementum. Maecenas nec dapibus sapien. Mauris porta ligula viverra, tincidunt
-    mi sit amet, laoreet enim. Pellentesque eleifend ornare fringilla. Fusce et tempor
-    odio, accumsan maximus ex."
+  desc: "T\xFAi c\u1EA7m tay ho\u1EB7c \u0111eo \u1EDF vai, th\u01B0\u1EDDng b\u1EB1ng
+    da, mi\u1EC7ng c\xF3 th\u1EC3 c\xE0i k\xEDn. L\xE0 chi\u1EBFc t\xFAi nh\u1EEFng
+    ng\u01B0\u1EDDi \u0111\u01B0a th\u01B0, \u0111\u01B0a tin li\xEAn l\u1EA1c hay
+    d\xF9ng \u0111\u1EC3 \u0111\u1EF1ng th\u01B0, \u0111\u1EF1ng th\xF4ng tin li\xEAn
+    l\u1EA1c."
