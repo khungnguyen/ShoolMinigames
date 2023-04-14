@@ -9,6 +9,6 @@ public class AdsItemHandler : MonoBehaviour, IPointerClickHandler
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        Application.OpenURL(url);
+        // Application.OpenURL(url);
     }
 }
