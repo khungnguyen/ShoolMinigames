@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Networking;
+using UnityEngine.SceneManagement;
 
 public class LoginHandler : AccountRequestBase<BasicInputFields>
 {
@@ -87,6 +88,8 @@ public class LoginHandler : AccountRequestBase<BasicInputFields>
                     var responseData = JsonUtility.FromJson<LoginResponseData>(uwr.downloadHandler.text);
                     SchoolApiSession.Inst.OnLoggedIn(responseData.accessToken);
                     UserInfo.GetInstance().OnLoggedIn(responseData.userInfo.id, responseData.userInfo.inviteCode, responseData.userInfo.username);
+
+                    SceneManager.LoadScene("Main");
                 }
                 break;
                 case 400: {
