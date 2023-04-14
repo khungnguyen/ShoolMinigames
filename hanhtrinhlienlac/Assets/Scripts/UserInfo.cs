@@ -17,7 +17,7 @@ public class UserInfo
     private bool _isPlayerCompletedRunGame = false;
     private UserInfo()
     {
-        SetUnlockLevel(CheckPointType.CHECK_POINT_1);
+        SetUnlockLevel(CheckPointType.CHECK_POINT_1,true);
     }
     public static UserInfo GetInstance()
     {
@@ -56,9 +56,9 @@ public class UserInfo
     {
         return _isPlayerCompletedRunGame;
     }
-    public void SetUnlockLevel(CheckPointType lv)
+    public void SetUnlockLevel(CheckPointType lv,bool unlock)
     {
-        SavePrefsInt(lv.ToString(),1);
+        SavePrefsInt(lv.ToString(),unlock?1:0);
     }
     public bool IsLevelUnlocked(CheckPointType lv) {
         return LoadPrefsInt(lv.ToString(),0) == 1;
