@@ -43,7 +43,7 @@ public class ObjectButton : MonoBehaviour
             //     sprRenderer.color =  new Color(1, 1, 1, 1);
         
             // }
-             textInfo?.SetActive(true);
+            // textInfo?.SetActive(true);
 
         }
     }
@@ -55,7 +55,7 @@ public class ObjectButton : MonoBehaviour
             // {
             //     sprRenderer.color = new Color(1, 1, 1, 0);
             // }
-            textInfo?.SetActive(false);
+           // textInfo?.SetActive(false);
 
         }
     }

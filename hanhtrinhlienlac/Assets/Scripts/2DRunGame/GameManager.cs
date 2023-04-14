@@ -148,6 +148,7 @@ public class GameManager : MonoBehaviour
             var score = _gameUI.GetScoring().CurRemainingTimeScore;
             _gameUI.GetRewardUI().Show(score.ToString(),() =>
             {
+                 _gameUI.GetScoring().Submit("game3");
                 BackToMainMenu();
             });
         }
