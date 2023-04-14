@@ -34,10 +34,10 @@ RectTransform:
   m_Father: {fileID: 1745381078490126143}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 1}
-  m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 324.75464, y: -199}
-  m_SizeDelta: {x: 904.816, y: 400}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 1220, y: -196.2}
+  m_SizeDelta: {x: 904.8159, y: 400}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &591965198
 CanvasRenderer:
@@ -258,10 +258,10 @@ RectTransform:
   m_Father: {fileID: 1745381078490126143}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0.5}
-  m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 398.66748, y: 3.2376}
-  m_SizeDelta: {x: 692.5531, y: 971.6147}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 398.66748, y: -536.7624}
+  m_SizeDelta: {x: 692.5531, y: 971.61475}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1745381076675700676
 CanvasRenderer:
@@ -543,6 +543,7 @@ GameObject:
   - component: {fileID: 1745381078490126129}
   - component: {fileID: 1745381078490126128}
   - component: {fileID: 1745381078490126130}
+  - component: {fileID: 2065859254}
   m_Layer: 5
   m_Name: CharSelector
   m_TagString: Untagged
@@ -597,7 +598,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 0
+  m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -693,9 +694,22 @@ MonoBehaviour:
     uiItem: {fileID: 8049424778939859700}
     url: https://tuyengiao.vn/nghien-cuu/nghiep-vu-cong-tac-tuyen-giao/chuyen-ve-doi-nhi-dong-cuu-quoc-dau-tien-31749
   _textDetailed: {fileID: 2084217290}
-  soundMgr: {fileID: 0}
+  soundMgr: {fileID: 2065859254}
   audioClips:
-    clickSFX: {fileID: 0}
+    clickSFX: {fileID: 8300000, guid: e1b258f7b7b4a874b882b08db107db49, type: 3}
+--- !u!114 &2065859254
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1745381078490126142}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6afcf4a1f5817bd4c88528505d9593b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _numberSFXChannels: 10
 --- !u!1 &1745381078552752774
 GameObject:
   m_ObjectHideFlags: 0

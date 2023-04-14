@@ -2001,7 +2001,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1745381078490126130, guid: e59cc51f51bf35f49a25d12cb138ca02, type: 3}
   m_PrefabInstance: {fileID: 973212341}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2065859251}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 862e7479e73c2494a82137c8d4cb87d3, type: 3}
@@ -2506,7 +2506,7 @@ MonoBehaviour:
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 1920, y: 1080}
   m_ScreenMatchMode: 0
-  m_MatchWidthOrHeight: 1
+  m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
@@ -2568,18 +2568,6 @@ PrefabInstance:
       propertyPath: m_SizeDelta.x
       value: 144.68
       objectReference: {fileID: 0}
-    - target: {fileID: 1745381078490126128, guid: e59cc51f51bf35f49a25d12cb138ca02, type: 3}
-      propertyPath: m_RaycastTarget
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1745381078490126130, guid: e59cc51f51bf35f49a25d12cb138ca02, type: 3}
-      propertyPath: soundMgr
-      value: 
-      objectReference: {fileID: 2065859254}
-    - target: {fileID: 1745381078490126130, guid: e59cc51f51bf35f49a25d12cb138ca02, type: 3}
-      propertyPath: audioClips.clickSFX
-      value: 
-      objectReference: {fileID: 8300000, guid: e1b258f7b7b4a874b882b08db107db49, type: 3}
     - target: {fileID: 1745381078490126142, guid: e59cc51f51bf35f49a25d12cb138ca02, type: 3}
       propertyPath: m_Name
       value: CharSelector
@@ -5609,24 +5597,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2059958113}
   m_CullTransparentMesh: 1
---- !u!1 &2065859251 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1745381078490126142, guid: e59cc51f51bf35f49a25d12cb138ca02, type: 3}
-  m_PrefabInstance: {fileID: 973212341}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &2065859254
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2065859251}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6afcf4a1f5817bd4c88528505d9593b8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _numberSFXChannels: 10
 --- !u!1 &2090596378
 GameObject:
   m_ObjectHideFlags: 0
