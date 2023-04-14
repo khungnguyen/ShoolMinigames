@@ -28,11 +28,11 @@ public class UserInfo
         return _inst;
     }
 
-    public void OnLoggedIn(string id, string inviteCode, string username)
+    public void OnLoggedIn(LoginHandler.LoginResponseData.UserInfo userInfo, LoginHandler.LoginResponseData.GameScore[] gameScores)
     {
-        _id = id;
-        _inviteCode = inviteCode;
-        _username = username;
+        _id = userInfo.id;
+        _inviteCode = userInfo.inviteCode;
+        _username = userInfo.username;
     }
 
     public void SetSkin(string s)
