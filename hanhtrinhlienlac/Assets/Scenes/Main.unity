@@ -974,7 +974,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.00000011920929, y: 0.0034866333}
+  m_Offset: {x: 0.0023385882, y: 0.45}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -985,7 +985,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.8507226, y: 0.8954029}
+  m_Size: {x: 1.8507226, y: 1.8954029}
   m_EdgeRadius: 0
 --- !u!1 &277961507
 GameObject:
@@ -2030,7 +2030,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.15, y: 1.43}
+  m_AnchoredPosition: {x: -0.12, y: 1.9}
   m_SizeDelta: {x: 6.2014, y: 1.4082}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &505447964
@@ -2053,7 +2053,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Tr\u1EA1m M\u01B0u Tr\xED"
+  m_text: "Tr\u1EA1m 1\nM\u01B0u Tr\xED"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: a63ac461950ca554dbbf127395afaf57, type: 2}
   m_sharedMaterial: {fileID: 2100000, guid: a9db27db36a92df4abf38efaab5f0990, type: 2}
@@ -2218,7 +2218,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.06, y: 1.41}
+  m_AnchoredPosition: {x: 0.06, y: 1.93}
   m_SizeDelta: {x: 6.2014, y: 1.4082}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &618989089
@@ -2241,7 +2241,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Tr\u1EA1m M\u1EADt Th\u01B0"
+  m_text: "Tr\u1EA1m 2\nT\xECm Ki\u1EBFm M\u1EADt Th\u01B0"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: a63ac461950ca554dbbf127395afaf57, type: 2}
   m_sharedMaterial: {fileID: 2100000, guid: a9db27db36a92df4abf38efaab5f0990, type: 2}
@@ -2747,7 +2747,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.1, y: 1.35}
+  m_AnchoredPosition: {x: 0.06, y: 1.64}
   m_SizeDelta: {x: 6.2014, y: 1.4082}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &871626397
@@ -2770,7 +2770,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Tr\u1EA1m Ch\u1EA1y\n"
+  m_text: "Tr\u1EA1m 3\nH\xE0nh Tr\xECnh LI\xEAn L\u1EA1c\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: a63ac461950ca554dbbf127395afaf57, type: 2}
   m_sharedMaterial: {fileID: 2100000, guid: a9db27db36a92df4abf38efaab5f0990, type: 2}
@@ -3358,7 +3358,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.0023385882, y: 0.003507942}
+  m_Offset: {x: 0.0023385882, y: 0.45}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -3369,7 +3369,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.8793381, y: 0.89943737}
+  m_Size: {x: 1.8793381, y: 1.8994374}
   m_EdgeRadius: 0
 --- !u!1 &1259447695
 GameObject:
@@ -4211,7 +4211,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1565217779
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4860,7 +4860,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.020015001, y: 0.004003048}
+  m_Offset: {x: 0.0023385882, y: 0.45}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -4871,7 +4871,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.8726592, y: 0.8799093}
+  m_Size: {x: 1.8726592, y: 1.8799093}
   m_EdgeRadius: 0
 --- !u!1 &1778763571
 GameObject:
