@@ -13,7 +13,7 @@ public class MapCheckPoint : MonoBehaviour
    // public MapIconStatus icon;
     void Start()
     {
-        bool isUnlocked =UserInfo.GetInstance().IsLevelUnlocked(checkPointType);
+        bool isUnlocked =UserInfo.GetInstance().IsLevelUnlock(checkPointType);
         if (button != null)
         {
             button.type = checkPointType;
