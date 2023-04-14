@@ -60,7 +60,7 @@ public class UserInfo
     {
         SavePrefsInt(lv.ToString(),1);
     }
-    public bool IsLevelUnlocked(CheckPointType lv) {
+    public bool IsLevelUnlock(CheckPointType lv) {
         return LoadPrefsInt(lv.ToString(),0) == 1;
     }
     public void SavePrefsInt(string key, int s)
@@ -81,9 +81,6 @@ public class UserInfo
     public string LoadPrefsString(string key, string defaultValue)
     {
         return PlayerPrefs.GetString(key, defaultValue);
-    }
-    public bool IsLastLevelUnloked() {
-       return IsLevelUnlocked(CheckPointType.CHECK_POINT_3);
     }
 
 }

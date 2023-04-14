@@ -112,6 +112,7 @@ public class CharFollower : MonoBehaviour
                 var data = pathCreator.path.CalculateClosestPointOnPathData(transform.position);
                 s_savePoint = data.previousIndex;
                 SetAnimation(idle, true);
+                Debug.Log("OnTriggerEnter2D");
                 StartCoroutine(DelayGoToGame(_checkPointType));
             }
         }
@@ -119,7 +120,7 @@ public class CharFollower : MonoBehaviour
     public void OnCheckPointSelected(object ob)
     {
         var t = (CheckPointType)ob;
-        if (!stop || avoidUserClick || (int)t < (int)_checkPointType && !UserInfo.GetInstance().IsLastLevelUnloked())
+        if (!stop || avoidUserClick)
         {
             //char is moving, do not thing
 
@@ -128,7 +129,6 @@ public class CharFollower : MonoBehaviour
         {
             avoidUserClick = true;
             Debug.Log("OnCheckPointSelected" + t);
-            Debug.Log("_checkPointType" + _checkPointType);
             if (t == _checkPointType)
             {
 
@@ -142,18 +142,17 @@ public class CharFollower : MonoBehaviour
                 {
                     _moveBack = false;
                     transform.localScale = _curScale * new Vector2(1, 1);
-                    s_saveCheckPoint = _checkPointType = t;
-                    SetAnimation(run, true);
                 }
-                else if (UserInfo.GetInstance().IsLastLevelUnloked())
+                else
                 {
                     _moveBack = true;
                     transform.localScale = _curScale * new Vector2(-1, 1);
-                    s_saveCheckPoint = _checkPointType = t;
-                    SetAnimation(run, true);
                 }
+                s_saveCheckPoint = _checkPointType = t;
+                SetAnimation(run, true);
             }
         }
+
     }
     public void ChangeSkin(string s)
     {

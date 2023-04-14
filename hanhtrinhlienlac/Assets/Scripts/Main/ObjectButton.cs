@@ -8,7 +8,7 @@ public class ObjectButton : MonoBehaviour
     public bool useClick = true;
     [System.Security.SecuritySafeCritical]
     public System.Action<object> OnClick;
-    public GameObject textInfo;
+    public SpriteRenderer sprRenderer;
 
     public object type;
 
@@ -18,7 +18,6 @@ public class ObjectButton : MonoBehaviour
         // {
         //     sprRenderer.color = new Color(1, 1, 1, 0);
         // }
-        textInfo?.SetActive(false);
     }
 
 
@@ -43,7 +42,6 @@ public class ObjectButton : MonoBehaviour
             //     sprRenderer.color =  new Color(1, 1, 1, 1);
         
             // }
-             textInfo?.SetActive(true);
 
         }
     }
@@ -55,7 +53,6 @@ public class ObjectButton : MonoBehaviour
             // {
             //     sprRenderer.color = new Color(1, 1, 1, 0);
             // }
-            textInfo?.SetActive(false);
 
         }
     }
