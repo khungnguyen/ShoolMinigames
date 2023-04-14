@@ -188,7 +188,7 @@ public class QuestionGameManager : MonoBehaviour
         }
         soundMgr.PlaySfx(audioClips.levelFinishSFX, false, 1);
         rewardUI.Show(Scroring.Inst.TotalScore.ToString(), OnButtonBackToMapClicked);
-        UserInfo.GetInstance().SetUnlockLevel(CheckPointType.CHECK_POINT_2);
+        UserInfo.GetInstance().SetUnlockLevel(CheckPointType.CHECK_POINT_2,true);
     }
 
     private bool IsFinished()
