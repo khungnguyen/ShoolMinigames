@@ -15,6 +15,7 @@ public class UserInfo
     public string Username { get => _username; }
     private string _skinName = "";
     private bool _isPlayerCompletedRunGame = false;
+    private List<LoginHandler.LoginResponseData.GameScore> _gameScores;
     private UserInfo()
     {
         SetUnlockLevel(CheckPointType.CHECK_POINT_1, true);
@@ -62,6 +63,7 @@ public class UserInfo
 
             }
         }
+      //  _gameScores = new(gameScores);
     }
 
     public void SetSkin(string s)
@@ -112,7 +114,7 @@ public class UserInfo
     {
         return PlayerPrefs.GetString(key, defaultValue);
     }
-    public bool IsLastLevelUnloked()
+    public bool IsLastLevelUnlocked()
     {
         return IsLevelUnlocked(CheckPointType.CHECK_POINT_3);
     }
