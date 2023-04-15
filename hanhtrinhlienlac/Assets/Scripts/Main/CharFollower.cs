@@ -27,7 +27,7 @@ public class CharFollower : MonoBehaviour
     static int s_savePoint = -1;
     static CheckPointType s_saveCheckPoint;
 
-
+    private bool _useTeleportToHighCheckPoint = true;
 
     void Start()
     {
@@ -63,9 +63,42 @@ public class CharFollower : MonoBehaviour
             StartAtPoint(s_savePoint);
             _checkPointType = s_saveCheckPoint;
         }
+        else
+        {
+            if (_useTeleportToHighCheckPoint)
+            {
+                if (UserInfo.GetInstance().IsLevelUnlocked(CheckPointType.CHECK_POINT_3))
+                {
+                    StartAtPoint(CalculatePoint(CheckPointType.CHECK_POINT_3));
+                    _checkPointType = CheckPointType.CHECK_POINT_3;
+                }
+                else if (UserInfo.GetInstance().IsLevelUnlocked(CheckPointType.CHECK_POINT_2))
+                {
+
+                    StartAtPoint(CalculatePoint(CheckPointType.CHECK_POINT_2));
+                    _checkPointType = CheckPointType.CHECK_POINT_2;
+                }
+                else if (UserInfo.GetInstance().IsLevelUnlocked(CheckPointType.CHECK_POINT_1))
+                {
+                    //
+                    // StartAtPoint(CalculatePoint(CheckPointType.CHECK_POINT_1));
+                    // _checkPointType = CheckPointType.CHECK_POINT_1;
+                }
+                int CalculatePoint(CheckPointType l)
+                {
+                    var point = pathCreator.path.CalculateClosestPointOnPathData(checkPoints.Find(e => e.checkPointType == l).getPosition());
+                    return point.previousIndex;
+                }
+            }
+
+
+
+        }
     }
     void StartAtPoint(int point)
     {
+        Debug.LogError("StartAtPoint" + point);
+        if (point < 0) return;
         var p = point < (pathCreator.path.length - 1) ? point + 1 : point;
         transform.position = pathCreator.path.GetPoint(p);
         distanceTravelled = pathCreator.path.GetClosestDistanceAlongPath(transform.position);//pathCreator.path.GetClosestTimeOnPath(transform.position) * pathCreator.path.length;

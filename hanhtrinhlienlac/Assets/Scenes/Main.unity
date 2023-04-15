@@ -939,7 +939,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 247666976}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.091, y: -0.059, z: -1}
+  m_LocalPosition: {x: 0, y: 0, z: -1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1323,9 +1323,9 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.0075348616, y: 0}
+  m_Offset: {x: -0.0075348616, y: 0.03976184}
   serializedVersion: 2
-  m_Radius: 0.22120845
+  m_Radius: 0.18144661
 --- !u!212 &430687210
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1386,7 +1386,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 430687206}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.161, y: -2.759, z: 0}
+  m_LocalPosition: {x: 1.067, y: -2.813, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1467,9 +1467,9 @@ MonoBehaviour:
       - {x: -2.0346005, y: -1.7241532, z: 0}
       - {x: -1.766293, y: -1.9282261, z: 0}
       - {x: -0.86491287, y: -2.6138098, z: 0}
-      - {x: 0.0006119013, y: -2.814037, z: 0}
-      - {x: 1.1241027, y: -2.6959245, z: 0}
-      - {x: 5.755595, y: -2.2090156, z: 0}
+      - {x: -0.0051831007, y: -2.8697317, z: 0}
+      - {x: 1.1183077, y: -2.751619, z: 0}
+      - {x: 5.7498, y: -2.2647102, z: 0}
       - {x: 5.9481373, y: -1.1952225, z: 0}
       - {x: 5.424496, y: -0.9186462, z: 0}
       - {x: 4.4616203, y: -0.41007543, z: 0}
@@ -3653,6 +3653,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _numberSFXChannels: 10
+  soundData: []
 --- !u!1 &1449454958
 GameObject:
   m_ObjectHideFlags: 0
@@ -4122,9 +4123,9 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.29713264}
+  m_Offset: {x: -0.07, y: 0.14}
   serializedVersion: 2
-  m_Radius: 0.20286736
+  m_Radius: 0.12907214
 --- !u!212 &1545110333
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -4185,7 +4186,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1545110329}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.396, y: -0.499, z: 0}
+  m_LocalPosition: {x: 5.396, y: -1.027, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -4825,7 +4826,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1744560788}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.008, y: -0.544, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -5899,6 +5900,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _numberSFXChannels: 10
+  soundData: []
 --- !u!1 &2090596378
 GameObject:
   m_ObjectHideFlags: 0
