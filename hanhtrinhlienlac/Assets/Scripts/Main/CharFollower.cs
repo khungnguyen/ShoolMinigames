@@ -119,7 +119,7 @@ public class CharFollower : MonoBehaviour
     public void OnCheckPointSelected(object ob)
     {
         var t = (CheckPointType)ob;
-        if (!stop || avoidUserClick 
+        if (!stop || avoidUserClick
         // | (int)t < (int)_checkPointType && !UserInfo.GetInstance().IsLastLevelUnlocked()
         )
         {
@@ -147,7 +147,7 @@ public class CharFollower : MonoBehaviour
                     s_saveCheckPoint = _checkPointType = t;
                     SetAnimation(run, true);
                 }
-                else if (UserInfo.GetInstance().IsLastLevelUnlocked())
+                else //if (UserInfo.GetInstance().IsLastLevelUnlocked())
                 {
                     _moveBack = true;
                     transform.localScale = _curScale * new Vector2(-1, 1);
