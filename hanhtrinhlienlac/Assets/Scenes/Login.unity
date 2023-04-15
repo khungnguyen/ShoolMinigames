@@ -4220,7 +4220,7 @@ GameObject:
   - component: {fileID: 895268519}
   - component: {fileID: 895268518}
   m_Layer: 5
-  m_Name: Text (TMP) (1)
+  m_Name: GameName
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7370,12 +7370,12 @@ RectTransform:
   m_Children:
   - {fileID: 447630843}
   - {fileID: 465367496}
+  - {fileID: 895268517}
+  - {fileID: 1509789881}
   - {fileID: 458470243}
   - {fileID: 1109514192}
   - {fileID: 1267318794}
   - {fileID: 903201434}
-  - {fileID: 895268517}
-  - {fileID: 1509789881}
   m_Father: {fileID: 438608127}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
