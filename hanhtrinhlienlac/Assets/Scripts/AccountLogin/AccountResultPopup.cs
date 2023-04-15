@@ -10,7 +10,7 @@ public class AccountResultPopup : MonoBehaviour
     [SerializeField] private BoundInAndOut boundInOutAnim;
 
     private Action onCloseCB;
-    
+
     public void Show(bool register, bool resetPw, Action onClose)
     {
         gameObject.SetActive(true);
@@ -26,6 +26,7 @@ public class AccountResultPopup : MonoBehaviour
 
     public void OnOkBtnClicked()
     {
+        SoundManager.inst.PlaySfx(SoundManager.inst.soundData[1]);
         Hide();
         onCloseCB?.Invoke();
     }

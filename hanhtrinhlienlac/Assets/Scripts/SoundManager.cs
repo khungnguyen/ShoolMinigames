@@ -8,10 +8,11 @@ public class SoundManager : MonoBehaviour
     private AudioSource _bgmChannel;
     private List<AudioSource> _sfxChannels;
     public static SoundManager inst;
-
+    public List<AudioClip> soundData;
     private static bool _mute = false;
     private void Awake()
     {
+        inst = this;
         for (int i = 0; i < _numberSFXChannels; i++)
         {
             var go = new GameObject();
@@ -22,7 +23,6 @@ public class SoundManager : MonoBehaviour
     }
     void Start()
     {
-        inst = this;
         _sfxChannels = new List<AudioSource>(gameObject.GetComponentsInChildren<AudioSource>());
         _bgmChannel = gameObject.AddComponent<AudioSource>();
     }
@@ -54,12 +54,14 @@ public class SoundManager : MonoBehaviour
     */
     public void PlaySfx(AudioClip c, bool loop = false, int channel = -1, int volume = 100, float secondDelay = 0f)
     {
-        if(channel != -1) {
-            PlayAudio(_sfxChannels[channel], c, loop, volume, secondDelay);  
+        if (channel != -1)
+        {
+            PlayAudio(_sfxChannels[channel], c, loop, volume, secondDelay);
         }
-        else {
-           var sfx = _sfxChannels.Find(e=>!e.isPlaying);
-            PlayAudio(sfx, c, loop, volume, secondDelay);  
+        else
+        {
+            var sfx = _sfxChannels.Find(e => !e.isPlaying);
+            PlayAudio(sfx, c, loop, volume, secondDelay);
         }
 
     }
