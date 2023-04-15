@@ -8,7 +8,9 @@ using UnityEngine.UI;
 
 public class CharSelectorUI : MonoBehaviour
 {
-    [Serializable] struct AudioClips {
+    [Serializable]
+    struct AudioClips
+    {
         public AudioClip clickSFX;
     }
 
@@ -17,7 +19,7 @@ public class CharSelectorUI : MonoBehaviour
     [SerializeField] TMP_Text _textDetailed;
 
     [SerializeField] private SoundManager soundMgr;
-    
+
     [SerializeField] private AudioClips audioClips;
     public Action<string> OnCharSelectListener;
 
@@ -47,22 +49,29 @@ public class CharSelectorUI : MonoBehaviour
         });
         _curSelectedChar = id;
         OnCharSelectListener.Invoke(id);
-        
+
         StartCoroutine(PlaySFXDelay(audioClips.clickSFX));
     }
     public void OnHide()
     {
         gameObject.SetActive(false);
     }
+    public void OnBackClicked()
+    {
+        StartCoroutine(PlaySFXDelay(audioClips.clickSFX));
+        Debug.Log("Playing soyound pleasse");
+        OnHide();
+    }
     public void OnShow()
     {
         gameObject.SetActive(true);
     }
-    public void OnHelp() {
+    public void OnHelp()
+    {
         CharInfo info = _charInfoList.Find(e => e.charId.Equals(_curSelectedChar));
         Application.OpenURL(info.url);
     }
-    
+
     private IEnumerator PlaySFXDelay(AudioClip ac)
     {
         //Thanh.To cheat delay to avoid error at first frame

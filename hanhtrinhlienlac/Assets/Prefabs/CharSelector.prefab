@@ -613,6 +613,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _numberSFXChannels: 10
+  soundData: []
 --- !u!1 &1745381078552752774
 GameObject:
   m_ObjectHideFlags: 0
@@ -736,7 +737,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1745381078490126130}
         m_TargetAssemblyTypeName: CharSelectorUI, Assembly-CSharp
-        m_MethodName: OnHide
+        m_MethodName: OnBackClicked
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

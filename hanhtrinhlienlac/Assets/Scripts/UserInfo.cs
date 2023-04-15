@@ -17,7 +17,9 @@ public class UserInfo
     private bool _isPlayerCompletedRunGame = false;
     private UserInfo()
     {
-        SetUnlockLevel(CheckPointType.CHECK_POINT_1,true);
+        SetUnlockLevel(CheckPointType.CHECK_POINT_1, true);
+        SetUnlockLevel(CheckPointType.CHECK_POINT_2, false);
+        SetUnlockLevel(CheckPointType.CHECK_POINT_3, false);
     }
     public static UserInfo GetInstance()
     {
@@ -25,6 +27,7 @@ public class UserInfo
         {
             _inst = new();
         }
+
         return _inst;
     }
 
@@ -33,6 +36,32 @@ public class UserInfo
         _id = userInfo.id;
         _inviteCode = userInfo.inviteCode;
         _username = userInfo.username;
+        foreach (var k in gameScores)
+        {
+            Debug.Log("k.gameId" + k.gameId + "----" + k.finalScore);
+            switch (k.gameId)
+            {
+                case "game1":
+                    {
+                        SetUnlockLevel(CheckPointType.CHECK_POINT_1, true);
+                        SetUnlockLevel(CheckPointType.CHECK_POINT_2, k.finalScore > 0);
+                        break;
+                    }
+
+                case "game2":
+                    {
+                        SetUnlockLevel(CheckPointType.CHECK_POINT_3, k.finalScore > 0);
+                        break;
+                    }
+
+                case "game3":
+                    {
+                        SetUnlockLevel(CheckPointType.CHECK_POINT_4, k.finalScore > 0);
+                        break;
+                    }
+
+            }
+        }
     }
 
     public void SetSkin(string s)
@@ -56,12 +85,13 @@ public class UserInfo
     {
         return _isPlayerCompletedRunGame;
     }
-    public void SetUnlockLevel(CheckPointType lv,bool unlock)
+    public void SetUnlockLevel(CheckPointType lv, bool unlock)
     {
-        SavePrefsInt(lv.ToString(),unlock?1:0);
+        SavePrefsInt(lv.ToString(), unlock ? 1 : 0);
     }
-    public bool IsLevelUnlocked(CheckPointType lv) {
-        return LoadPrefsInt(lv.ToString(),0) == 1;
+    public bool IsLevelUnlocked(CheckPointType lv)
+    {
+        return LoadPrefsInt(lv.ToString(), 0) == 1;
     }
     public void SavePrefsInt(string key, int s)
     {
@@ -69,7 +99,7 @@ public class UserInfo
         PlayerPrefs.Save();
     }
 
-    public int LoadPrefsInt(string key,int defaultValue)
+    public int LoadPrefsInt(string key, int defaultValue)
     {
         return PlayerPrefs.GetInt(key, defaultValue);
     }
@@ -82,8 +112,9 @@ public class UserInfo
     {
         return PlayerPrefs.GetString(key, defaultValue);
     }
-    public bool IsLastLevelUnloked() {
-       return IsLevelUnlocked(CheckPointType.CHECK_POINT_3);
+    public bool IsLastLevelUnloked()
+    {
+        return IsLevelUnlocked(CheckPointType.CHECK_POINT_3);
     }
 
 }
