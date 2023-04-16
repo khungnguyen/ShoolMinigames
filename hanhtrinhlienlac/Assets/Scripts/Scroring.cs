@@ -8,7 +8,7 @@ public class Scroring : SchoolApiRequestBase
 {
     private static Scroring _inst;
     public static Scroring Inst {get => _inst;}
-    private static readonly string ACCOUNT_SERVICE_SCORE_SUBMIT_PATH = "/api/v1/users/logScore";
+    private static readonly string SERVICE_SCORE_SUBMIT_PATH = "/api/v1/users/logScore";
 
     [Serializable] class ScoreSubmitData: PostData {
         public string gameId;
@@ -100,7 +100,7 @@ public class Scroring : SchoolApiRequestBase
         };
 
         Debug.LogWarning("Submiting score for gameId " + gameId + ". finalScore " + data.finalScore);
-        SendPostRequest(ACCOUNT_SERVICE_SCORE_SUBMIT_PATH, data, SchoolApiSession.Inst.AccessToken);
+        SendPostRequest(SERVICE_SCORE_SUBMIT_PATH, data, SchoolApiSession.Inst.AccessToken);
     }
 
     public void AddBonusScore(float value)

@@ -8,11 +8,11 @@ using UnityEngine.UI;
 
 public abstract class SchoolApiRequestBase: MonoBehaviour
 {
-    private static readonly string ACCOUNT_SERVICE_BASE_URL = "https://an-school-portal.securityzone.vn";
+    private static readonly string SERVICE_BASE_URL = "https://an-school-portal.securityzone.vn";
 
     [Serializable] public class PostData {
     }
-    
+
     [Serializable] public class ResponseData {
         public int status;
         public int code;
@@ -35,7 +35,7 @@ public abstract class SchoolApiRequestBase: MonoBehaviour
 
     private IEnumerator SendPostRequestIEnumerator(string urlPath, PostData toJsonObject, string accessToken = null)
     {
-        var url = ACCOUNT_SERVICE_BASE_URL + urlPath;
+        var url = SERVICE_BASE_URL + urlPath;
 
         UnityWebRequest uwr = UnityWebRequest.Post(url, "");
         if (toJsonObject != null) {
@@ -57,7 +57,7 @@ public abstract class SchoolApiRequestBase: MonoBehaviour
 
     private IEnumerator SendGetRequestIEnumerator(string urlPath, string accessToken = null)
     {
-        var url = ACCOUNT_SERVICE_BASE_URL + urlPath;
+        var url = SERVICE_BASE_URL + urlPath;
 
         UnityWebRequest uwr = UnityWebRequest.Get(url);
         

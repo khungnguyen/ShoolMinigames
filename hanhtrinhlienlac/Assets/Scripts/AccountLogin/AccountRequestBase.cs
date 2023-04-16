@@ -13,8 +13,6 @@ public class BasicInputFields {
 }
 public abstract class AccountRequestBase<T>: SchoolApiRequestBase where T: BasicInputFields
 {
-    private static readonly string ACCOUNT_SERVICE_BASE_URL = "https://an-school-portal.securityzone.vn";
-
     [Serializable] public class AccountData: PostData {
         public string username;
         public string password;
