@@ -3272,7 +3272,7 @@ MonoBehaviour:
   cardInfoTMP: {fileID: 250657105}
   resutlPopup: {fileID: 1817343940}
   rewardUI: {fileID: 322480868}
-  scorePerMatchedPair: 50
+  scorePerMatchedPair: 5
   tutorComp: {fileID: 428065569}
   soundMgr: {fileID: 727477136}
   audioClips:
