@@ -27,6 +27,6 @@ public class LeaderboardItemUI : MonoBehaviour
     {
         rankTMP.text = info.rank.ToString();
         playerNameTMP.text = info.username.ToString();
-        scoreTMP.text = info.finalScore.ToString();
+        scoreTMP.text = info.DisplayingScore.ToString();
     }
 }

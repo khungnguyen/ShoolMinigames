@@ -35,20 +35,9 @@ public class LeaderboardTab : SchoolApiRequestBase
             return;
         }
 
-        if (Id != ELeaderboardId.FINAL) {
-            string path = Id == ELeaderboardId.QUESTION_GAME ? "game1" : Id == ELeaderboardId.MEMORY_GAME ? "game2" : Id == ELeaderboardId.ACTION_GAME ? "game3" : "??";
-            Debug.Log("Fetching leaderboard for " + path);
-            SendGetRequest(ACCOUNT_SERVICE_LB_PATH + path, SchoolApiSession.Inst.AccessToken);
-        } else {
-            string path = Id == ELeaderboardId.FINAL ? "Test_LeaderboardDataFinal" : Id == ELeaderboardId.QUESTION_GAME ? "Test_LeaderboardDataQuestionGame" :
-                            Id == ELeaderboardId.MEMORY_GAME ? "Test_LeaderboardDataMemoryGame" : "Test_LeaderboardDataActionGame";
-            var json = Resources.Load<TextAsset>(path);
-            data = JsonUtility.FromJson<LeaderboardData>(json.text);
-
-            Debug.Log("Leaderboard id: " + data.LeaderboardId);
-            Debug.Log("Leaderboard name: " + data.name);
-            Debug.Log("Leaderboard list count: " + data.top100.Count);
-        }
+        string path = Id == ELeaderboardId.QUESTION_GAME ? "game1" : Id == ELeaderboardId.MEMORY_GAME ? "game2" : Id == ELeaderboardId.ACTION_GAME ? "game3" : "leaderboards";
+        Debug.Log("Fetching leaderboard data for " + path);
+        SendGetRequest(ACCOUNT_SERVICE_LB_PATH + path, SchoolApiSession.Inst.AccessToken);
         timeSinceLastLoadingData = 0f;
     }
 
@@ -75,26 +64,26 @@ public class LeaderboardTab : SchoolApiRequestBase
     {
         if (uwr.result == UnityWebRequest.Result.Success 
             || uwr.result == UnityWebRequest.Result.ProtocolError) { //Not sure why it still gets this kind of error
-            Debug.Log("[onRequestCB] responseCode: " + uwr.responseCode);
-            Debug.Log("[onRequestCB] downloadHandler.text: " + uwr.downloadHandler.text);
+            Debug.Log("[onGetRequestCB] responseCode: " + uwr.responseCode);
+            Debug.Log("[onGetRequestCB] downloadHandler.text: " + uwr.downloadHandler.text);
             switch (uwr.responseCode) {
                 case 200:
-                    Debug.Log("[onRequestCB] leaderboard fetched successfully!");
+                    Debug.Log("[onGetRequestCB] leaderboard fetched successfully! " + Id);
                     data = JsonUtility.FromJson<LeaderboardData>(uwr.downloadHandler.text);
                     LeaderboardsMgr.Inst.OnTabDataFetchingFinished(this);
                     break;
                 case 400:
-                    Debug.LogError("Json data not valid!!! " + uwr.responseCode);
+                    Debug.LogError("[onGetRequestCB] Json data not valid!!! " + uwr.responseCode);
                     break;
                 case 401:
-                    Debug.LogError("Token expired!!! " + uwr.responseCode);
+                    Debug.LogError("[onGetRequestCB] Token expired!!! " + uwr.responseCode);
                     break;
                 default:
-                    Debug.LogError("Unhandled response code!!! " + uwr.responseCode);
+                    Debug.LogError("[onGetRequestCB] Unhandled response code!!! " + uwr.responseCode);
                     break;
             }
         } else {
-            Debug.LogError("Unhandled response code!!! " + uwr.result);
+            Debug.LogError("[onGetRequestCB] Unhandled response code!!! " + uwr.result);
         }
     }
 }
