@@ -35,9 +35,15 @@ public class LeaderboardTab : SchoolApiRequestBase
             return;
         }
 
-        string path = Id == ELeaderboardId.QUESTION_GAME ? "game1" : Id == ELeaderboardId.MEMORY_GAME ? "game2" : Id == ELeaderboardId.ACTION_GAME ? "game3" : "leaderboards";
+        string path;
+        if (Id == ELeaderboardId.FINAL) {
+            path = "/api/v1/users/leaderboards";
+        } else {
+            path = ACCOUNT_SERVICE_LB_PATH;
+            path += Id == ELeaderboardId.QUESTION_GAME ? "game1" : Id == ELeaderboardId.MEMORY_GAME ? "game2" : "game3";
+        }
         Debug.Log("Fetching leaderboard data for " + path);
-        SendGetRequest(ACCOUNT_SERVICE_LB_PATH + path, SchoolApiSession.Inst.AccessToken);
+        SendGetRequest(path, SchoolApiSession.Inst.AccessToken);
         timeSinceLastLoadingData = 0f;
     }
 
