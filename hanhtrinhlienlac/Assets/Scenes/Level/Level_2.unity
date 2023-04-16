@@ -3266,6 +3266,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 08d21693657a4044695a12a48d922714, type: 2}
   - {fileID: 11400000, guid: d946c4b76c95f814cb84c6ddb1e7fef4, type: 2}
   - {fileID: 11400000, guid: 87ecc29ac32df5b47b8b866e6edcfb03, type: 2}
+  - {fileID: 11400000, guid: 24527af1acead8a43ad7676047de3bb1, type: 2}
   - {fileID: 11400000, guid: f2844149caf606440b3cdbc9d7d72472, type: 2}
   matThuCard: {fileID: 11400000, guid: 0d7658c15e6e25a4f8d8688b2cb0929d, type: 2}
   fishingRodCard: {fileID: 11400000, guid: bfa20a0ae563119439088278a8fd9e10, type: 2}
