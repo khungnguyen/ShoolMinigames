@@ -32,17 +32,17 @@ public abstract class AccountRequestBase<T>: SchoolApiRequestBase where T: Basic
 
     void Start()
     {
-        if (autoSelectThe1stNavObj) {
-            ResetTabNavSelection();
-        }
     }
 
     void Update()
     {
+        if (autoSelectThe1stNavObj && curNavObjIndex < 0) {
+            ResetTabNavSelection();
+        }
         if (Input.GetKeyDown(KeyCode.Tab)) {
             bool shift = Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift);
             curNavObjIndex += shift ? -1 : 1;
-            curNavObjIndex %= tabNavObjects.Count;
+            curNavObjIndex = (curNavObjIndex + tabNavObjects.Count) % tabNavObjects.Count;
             SelectNavObjIndex(curNavObjIndex);
         }
     }
