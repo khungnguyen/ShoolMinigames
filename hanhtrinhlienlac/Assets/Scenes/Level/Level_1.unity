@@ -3915,6 +3915,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _numberSFXChannels: 10
+  soundData: []
 --- !u!1 &1994644013
 GameObject:
   m_ObjectHideFlags: 0
