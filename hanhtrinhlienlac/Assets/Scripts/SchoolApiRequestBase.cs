@@ -10,13 +10,9 @@ public abstract class SchoolApiRequestBase: MonoBehaviour
 {
     private static readonly string ACCOUNT_SERVICE_BASE_URL = "https://an-school-portal.securityzone.vn";
 
-    [Serializable] public class RequestData {
-        public string username;
-        public string password;
-        public bool isValid() {
-            return username?.Length > 0 && password?.Length > 0;
-        }
+    [Serializable] public class PostData {
     }
+    
     [Serializable] public class ResponseData {
         public int status;
         public int code;
@@ -24,12 +20,12 @@ public abstract class SchoolApiRequestBase: MonoBehaviour
         public string err;
     }
 
-    abstract protected void onRequestCB(UnityWebRequest uwr);
+    abstract protected void onPostRequestCB(UnityWebRequest uwr);
     abstract protected void onGetRequestCB(UnityWebRequest uwr);
 
-    protected void PostRequest(string urlPath, RequestData toJsonObject, string accessToken = null)
+    protected void SendPostRequest(string urlPath, PostData toJsonObject, string accessToken = null)
     {
-        StartCoroutine(PostRequestIEnumerator(urlPath, toJsonObject, accessToken));
+        StartCoroutine(SendPostRequestIEnumerator(urlPath, toJsonObject, accessToken));
     }
 
     protected void SendGetRequest(string urlPath, string accessToken = null)
@@ -37,7 +33,7 @@ public abstract class SchoolApiRequestBase: MonoBehaviour
         StartCoroutine(SendGetRequestIEnumerator(urlPath, accessToken));
     }
 
-    private IEnumerator PostRequestIEnumerator(string urlPath, RequestData toJsonObject, string accessToken = null)
+    private IEnumerator SendPostRequestIEnumerator(string urlPath, PostData toJsonObject, string accessToken = null)
     {
         var url = ACCOUNT_SERVICE_BASE_URL + urlPath;
 
@@ -56,7 +52,7 @@ public abstract class SchoolApiRequestBase: MonoBehaviour
 
         yield return uwr.SendWebRequest();
 
-        onRequestCB(uwr);
+        onPostRequestCB(uwr);
     }
 
     private IEnumerator SendGetRequestIEnumerator(string urlPath, string accessToken = null)

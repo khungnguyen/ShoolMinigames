@@ -66,7 +66,7 @@ public class LeaderboardTab : SchoolApiRequestBase
         darkLayer.SetActive(true);
     }
 
-    protected override void onRequestCB(UnityWebRequest uwr)
+    protected override void onPostRequestCB(UnityWebRequest uwr)
     {
         throw new System.NotImplementedException();
     }

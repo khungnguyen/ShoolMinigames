@@ -16,7 +16,7 @@ public class RegisterHandler : AccountRequestBase<RegisterInputFields>
     private static readonly string ACCOUNT_SERVICE_REGISTER_PATH = "/api/v1/pub/register";
 
     [Serializable]
-    class RegisterData : RequestData
+    class RegisterData : AccountData
     {
         public string inviteCode;
     }
@@ -76,7 +76,7 @@ public class RegisterHandler : AccountRequestBase<RegisterInputFields>
             password = inputFields.password.text
         };
 
-        PostRequest(ACCOUNT_SERVICE_REGISTER_PATH, data);
+        SendPostRequest(ACCOUNT_SERVICE_REGISTER_PATH, data);
     }
 
     public void OnBackBtnClicked()
@@ -85,7 +85,7 @@ public class RegisterHandler : AccountRequestBase<RegisterInputFields>
         Hide(() => loginHandler.Show());
     }
 
-    protected override void onRequestCB(UnityWebRequest uwr)
+    protected override void onPostRequestCB(UnityWebRequest uwr)
     {
         if (uwr.result == UnityWebRequest.Result.Success
             || uwr.result == UnityWebRequest.Result.ProtocolError)

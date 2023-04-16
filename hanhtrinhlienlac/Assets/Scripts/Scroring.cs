@@ -10,7 +10,7 @@ public class Scroring : SchoolApiRequestBase
     public static Scroring Inst {get => _inst;}
     private static readonly string ACCOUNT_SERVICE_SCORE_SUBMIT_PATH = "/api/v1/users/logScore";
 
-    [Serializable] class ScoreSubmitData: RequestData {
+    [Serializable] class ScoreSubmitData: PostData {
         public string gameId;
         public int bonusScore;
         public float finalScore;
@@ -100,7 +100,7 @@ public class Scroring : SchoolApiRequestBase
         };
 
         Debug.LogWarning("Submiting score for gameId " + gameId + ". finalScore " + data.finalScore);
-        PostRequest(ACCOUNT_SERVICE_SCORE_SUBMIT_PATH, data, SchoolApiSession.Inst.AccessToken);
+        SendPostRequest(ACCOUNT_SERVICE_SCORE_SUBMIT_PATH, data, SchoolApiSession.Inst.AccessToken);
     }
 
     public void AddBonusScore(float value)
@@ -120,7 +120,7 @@ public class Scroring : SchoolApiRequestBase
         scoreTMPro.text = Mathf.RoundToInt(lastDisplayingScore).ToString();
     }
 
-    protected override void onRequestCB(UnityWebRequest uwr)
+    protected override void onPostRequestCB(UnityWebRequest uwr)
     {
         if (uwr.result == UnityWebRequest.Result.Success 
             || uwr.result == UnityWebRequest.Result.ProtocolError) { //Not sure why it still gets this kind of error

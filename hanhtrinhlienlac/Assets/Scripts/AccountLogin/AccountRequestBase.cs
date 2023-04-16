@@ -15,6 +15,14 @@ public abstract class AccountRequestBase<T>: SchoolApiRequestBase where T: Basic
 {
     private static readonly string ACCOUNT_SERVICE_BASE_URL = "https://an-school-portal.securityzone.vn";
 
+    [Serializable] public class AccountData: PostData {
+        public string username;
+        public string password;
+        public bool isValid() {
+            return username?.Length > 0 && password?.Length > 0;
+        }
+    }
+
     [SerializeField] protected T inputFields;
     [SerializeField] protected TMPro.TextMeshProUGUI errMsgTMP;
 

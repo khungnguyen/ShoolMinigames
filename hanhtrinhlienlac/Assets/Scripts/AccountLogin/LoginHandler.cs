@@ -9,7 +9,7 @@ public class LoginHandler : AccountRequestBase<BasicInputFields>
 {
     private static readonly string ACCOUNT_SERVICE_LOGIN_PATH = "/api/v1/pub/login";
 
-    [Serializable] class LoginData : RequestData { }
+    [Serializable] class LoginData : AccountData { }
     [Serializable]
     public class LoginResponseData
     {
@@ -86,7 +86,7 @@ public class LoginHandler : AccountRequestBase<BasicInputFields>
             return;
         }
 
-        PostRequest(ACCOUNT_SERVICE_LOGIN_PATH, data);
+        SendPostRequest(ACCOUNT_SERVICE_LOGIN_PATH, data);
     }
 
     public void OnRegisterBtnClicked()
@@ -101,7 +101,7 @@ public class LoginHandler : AccountRequestBase<BasicInputFields>
         Hide(() => pwResetHandler.Show());
     }
 
-    protected override void onRequestCB(UnityWebRequest uwr)
+    protected override void onPostRequestCB(UnityWebRequest uwr)
     {
         if (uwr.result == UnityWebRequest.Result.Success
             || uwr.result == UnityWebRequest.Result.ProtocolError)

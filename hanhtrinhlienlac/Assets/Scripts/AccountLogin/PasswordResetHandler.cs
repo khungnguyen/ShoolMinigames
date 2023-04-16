@@ -16,7 +16,7 @@ public class PasswordResetHandler : AccountRequestBase<PasswordResetInputFields>
     private static readonly string ACCOUNT_SERVICE_PW_RESET_PATH = "/api/v1/pub/resetPass";
 
     [Serializable]
-    class RegisterData : RequestData
+    class RegisterData : AccountData
     {
         public string inviteCode;
     }
@@ -75,7 +75,7 @@ public class PasswordResetHandler : AccountRequestBase<PasswordResetInputFields>
             password = inputFields.password.text
         };
 
-        PostRequest(ACCOUNT_SERVICE_PW_RESET_PATH, data);
+        SendPostRequest(ACCOUNT_SERVICE_PW_RESET_PATH, data);
     }
 
     public void OnBackBtnClicked()
@@ -84,7 +84,7 @@ public class PasswordResetHandler : AccountRequestBase<PasswordResetInputFields>
         Hide(() => loginHandler.Show());
     }
 
-    protected override void onRequestCB(UnityWebRequest uwr)
+    protected override void onPostRequestCB(UnityWebRequest uwr)
     {
         if (uwr.result == UnityWebRequest.Result.Success
             || uwr.result == UnityWebRequest.Result.ProtocolError)
