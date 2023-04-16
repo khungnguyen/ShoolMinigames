@@ -34,7 +34,7 @@ public class ScoreEarningAnim : MonoBehaviour
                 continue;
             }
             obj.transform.position = obj.transform.position + (speedMovingUp * Time.deltaTime * Vector3.up);
-            obj.GetComponent<CanvasGroup>().alpha = Mathf.Lerp(0, 1, remainingTime * remainingTime / minDuration);
+            obj.GetComponent<CanvasGroup>().alpha = Mathf.Lerp(0, 1, remainingTime / minDuration);
         }
     }
 

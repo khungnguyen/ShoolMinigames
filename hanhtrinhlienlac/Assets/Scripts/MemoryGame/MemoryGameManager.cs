@@ -166,6 +166,7 @@ public class MemoryGameManager : MonoBehaviour
                 curSelectedItem.OnMatched();
                 item.ShowHide(false, false, 1f);
                 curSelectedItem.ShowHide(false, false, 1f);
+                item.PlayScoreEarningAnim();
                 StartCoroutine(ShowCardInfo(null, 1f));
 
                 curSelectedItem = null;

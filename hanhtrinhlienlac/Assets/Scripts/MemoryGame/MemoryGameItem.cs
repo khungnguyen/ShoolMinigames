@@ -9,6 +9,7 @@ public class MemoryGameItem : MonoBehaviour, IPointerClickHandler
     private static bool s_interactable = true;
     [SerializeField] private MemoryGameCard cardUI;
     [SerializeField] private CanvasGroup canvasGroup;
+    [SerializeField] private ScoreEarningAnim scoreEarningAnim;
 
     private ScriptableCard cardData;
     public ScriptableCard CardData { get => cardData; }
@@ -77,6 +78,11 @@ public class MemoryGameItem : MonoBehaviour, IPointerClickHandler
         if (force) {
             canvasGroup.alpha = targetAlpha;
         }
+    }
+
+    public void PlayScoreEarningAnim()
+    {
+        scoreEarningAnim.Play();
     }
 
     private IEnumerator ShowHideWithDelay(bool show, bool force, float delay)
