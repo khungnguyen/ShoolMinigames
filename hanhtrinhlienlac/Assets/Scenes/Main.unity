@@ -2770,7 +2770,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Tr\u1EA1m 3\nH\xE0nh Tr\xECnh LI\xEAn L\u1EA1c\n"
+  m_text: "Tr\u1EA1m 3\nH\xE0nh Tr\xECnh Li\xEAn L\u1EA1c\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: a63ac461950ca554dbbf127395afaf57, type: 2}
   m_sharedMaterial: {fileID: 2100000, guid: a9db27db36a92df4abf38efaab5f0990, type: 2}
