@@ -11,6 +11,7 @@ public class TutorManager : MonoBehaviour
     public TutoriaType tutorialType = TutoriaType.MainMenu;
     [SerializeField] float _speechSpeed = 0.1f;
     [SerializeField] TMP_Text _text;
+    [SerializeField] TMP_Text _textContinues;
     [SerializeField] TutorData _data;
     [SerializeField] bool _useDash = false;
     [SerializeField] bool _startAtBegin = true;
@@ -42,6 +43,7 @@ public class TutorManager : MonoBehaviour
             SetTutType(tutorialType);
             StartTutorial();
         }
+        ShowContinuesText(false);
 
     }
     public TutorManager SetTutType(TutoriaType type)
@@ -54,6 +56,7 @@ public class TutorManager : MonoBehaviour
     }
     public void StartTutorial()
     {
+        ShowContinuesText(false);
         StopAllCoroutines();
         OnTutStart?.Invoke(tutorialType);
         ShowButtonHelp(false);
@@ -126,7 +129,12 @@ public class TutorManager : MonoBehaviour
             }
             UpdateText(t + postfix);
         }
+        if (_curTutStep == _curPart.tuts.Count - 1)
+        {
+            ShowContinuesText(true);
+        }
         _isWriting = false;
+
     }
     public void ShowTutor(bool enable)
     {
@@ -148,6 +156,10 @@ public class TutorManager : MonoBehaviour
     {
         _curTutStep = 0;
         _completed = false;
+    }
+    private void ShowContinuesText(bool show)
+    {
+        _textContinues.gameObject.SetActive(show);
     }
 }
 public enum TutoriaType
