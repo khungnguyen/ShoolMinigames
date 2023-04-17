@@ -189,6 +189,7 @@ public class GameManager : MonoBehaviour
         UserInfo.GetInstance().SetCompletedRunGame(true);
         UserInfo.GetInstance().SetUnlockLevel(CheckPointType.CHECK_POINT_4, true);
         _gameUI.getTutorManager().SetTutType(TutoriaType.Run2D_Game_End).ShowTutor(true);
+        CancelInvoke("SpawnBullet");
     }
     private void BackToMainMenu()
     {

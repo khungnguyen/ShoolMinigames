@@ -50,6 +50,7 @@ namespace MiniGames
         public string sadAnimation;
         [SpineAnimation]
         public string sitAnimation;
+
         private HeroController _player;
         private bool _playerGrounded;
         private ParticleSystem.MinMaxGradient _currentGradient;
@@ -275,7 +276,14 @@ namespace MiniGames
         }
         private void AnimateDie(bool loop)
         {
-            String anim = _player.inWater?sadAnimation:deathAnimation;
+            
+            String anim = deathAnimation;
+            if(_player.deathCause == GameEnum.ObstacleType.WATER) {
+                 anim = sadAnimation ;
+            }
+            else if(_player.deathCause == GameEnum.ObstacleType.BULLET) {
+                anim = sitAnimation ;
+            }
             TrackEntry track = SetAniamtion(anim, loop);
             track.Complete += (track) =>
             {
