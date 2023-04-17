@@ -17,6 +17,7 @@ public class HeroController : BaseController
     [SerializeField] GameObject _dustVfx;
     [SerializeField] AudioSource _sound;
     [SerializeField] List<AudioClip> __soundData;
+    [SerializeField] GameObject _explosion;
 
 
     private MarkedPoint _revivePoint;
@@ -106,6 +107,10 @@ public class HeroController : BaseController
             {
                 deathCause = obstacleType;
                 death();
+                if(deathCause == GameEnum.ObstacleType.BULLET) {
+                   var bullet = Instantiate<GameObject>(_explosion,other.transform.position,Quaternion.identity); 
+                }
+
             }
 
         }

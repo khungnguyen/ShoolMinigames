@@ -19730,7 +19730,6 @@ MonoBehaviour:
   victoryAnimation: victory
   sadAnimation: sad
   sitAnimation: fall_back_tai_cho
-  deathAtSamePlace: 
 --- !u!82 &771776640
 AudioSource:
   m_ObjectHideFlags: 0
@@ -19971,7 +19970,7 @@ Transform:
   m_Children:
   - {fileID: 5979605535021479280}
   m_Father: {fileID: 0}
-  m_RootOrder: -1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &927613137
 Rigidbody2D:
@@ -20067,6 +20066,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 4358069bc6889b04ebb9d8aab09fc804, type: 3}
   - {fileID: 8300000, guid: 5a96155caf4e6c24eb40836d61da1477, type: 3}
   - {fileID: 8300000, guid: db05d2282090eef4e9a929c19d137d12, type: 3}
+  _explosion: {fileID: 365452804513324163, guid: ab32aafa8b668044080d164604e05fc5, type: 3}
   inWater: 0
   inMud: 0
   deathCause: 0
