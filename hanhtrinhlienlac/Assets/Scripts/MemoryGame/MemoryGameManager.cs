@@ -71,6 +71,10 @@ public class MemoryGameManager : MonoBehaviour
     {
         soundMgr.PlaySfx(audioClips.clickSFX, false, 1);
         SceneManager.LoadScene("Main");
+        if (Defined.CHEAT_BACK_AS_FINISHED)
+        {
+            UserInfo.GetInstance().SetUnlockLevel(CheckPointType.CHECK_POINT_3, true);
+        }
     }
 
     public void OnButtonNextClicked()
@@ -109,9 +113,12 @@ public class MemoryGameManager : MonoBehaviour
         foreach (var pair in indexesInPairs)
         {
             ScriptableCard data = null;
-            if (pair.Defective) {
+            if (pair.Defective)
+            {
                 data = IsLastLevel() ? fishingRodCard : matThuCard;
-            } else {
+            }
+            else
+            {
                 //random card data
                 var idx = UnityEngine.Random.Range(0, cardIndexes.Count - 1);
                 var cardIdx = cardIndexes[idx];
@@ -291,9 +298,9 @@ public class MemoryGameManager : MonoBehaviour
         {
             resutlPopup.Show(IsLastLevel(), extraImage, isFinishRod);
             yield return new WaitForSeconds(3);
-            resutlPopup.Show(IsLastLevel(), extraImage, isFinishRod,true);
+            resutlPopup.Show(IsLastLevel(), extraImage, isFinishRod, true);
             StartCoroutine(ShowRewardUI(6));
-            UserInfo.GetInstance().SetUnlockLevel(CheckPointType.CHECK_POINT_3,true);
+            UserInfo.GetInstance().SetUnlockLevel(CheckPointType.CHECK_POINT_3, true);
         }
     }
     private IEnumerator ShowRewardUI(float delay)

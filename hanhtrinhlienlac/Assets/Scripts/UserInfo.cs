@@ -21,6 +21,7 @@ public class UserInfo
         SetUnlockLevel(CheckPointType.CHECK_POINT_1, true);
         SetUnlockLevel(CheckPointType.CHECK_POINT_2, false);
         SetUnlockLevel(CheckPointType.CHECK_POINT_3, false);
+        SetUnlockLevel(CheckPointType.CHECK_POINT_4, false);
     }
     public static UserInfo GetInstance()
     {
@@ -116,7 +117,7 @@ public class UserInfo
     }
     public bool IsLastLevelUnlocked()
     {
-        return IsLevelUnlocked(CheckPointType.CHECK_POINT_3);
+        return IsLevelUnlocked(CheckPointType.CHECK_POINT_4);
     }
 
 }

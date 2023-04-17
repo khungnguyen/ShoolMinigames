@@ -26,33 +26,44 @@ public class UIManager : MonoBehaviour
     }
     public void GoBackToMainMenu()
     {
+        if (Defined.CHEAT_BACK_AS_FINISHED)
+        {
+            UserInfo.GetInstance().SetCompletedRunGame(true);
+            UserInfo.GetInstance().SetUnlockLevel(CheckPointType.CHECK_POINT_4, true);
+        }
         SceneManager.LoadScene("Main");
     }
-    public void PlayTransitionEffect(bool isEnter,Action a)
+    public void PlayTransitionEffect(bool isEnter, Action a)
     {
-        _transitionEffect.PlayEffect(isEnter,a);
+        _transitionEffect.PlayEffect(isEnter, a);
         // transitionBackground["MinGameSceneTransition"].time;
     }
     public void SetScore(int s)
     {
-       _score.AddRemainingTimeScore(s);
+        _score.AddRemainingTimeScore(s);
     }
-    public TutorManager getTutorManager() {
+    public TutorManager getTutorManager()
+    {
         return _tutor;
     }
-    public void StartScoring() {
+    public void StartScoring()
+    {
         _score.StartOrResume();
     }
-    public void PauseScoring() {
+    public void PauseScoring()
+    {
         _score.Pause();
     }
-    public Vector2 GetCoinHubWorldPos() {
+    public Vector2 GetCoinHubWorldPos()
+    {
         return _coinHubTarget.position;
     }
-    public Scroring GetScoring() {
+    public Scroring GetScoring()
+    {
         return _score;
     }
-    public RewardUI GetRewardUI() {
+    public RewardUI GetRewardUI()
+    {
         return _rewardUI;
     }
 }

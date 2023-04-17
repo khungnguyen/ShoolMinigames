@@ -146,9 +146,9 @@ public class GameManager : MonoBehaviour
         if (t == TutoriaType.Run2D_Game_End)
         {
             var score = _gameUI.GetScoring().CurRemainingTimeScore;
-            _gameUI.GetRewardUI().Show(score.ToString(),() =>
+            _gameUI.GetRewardUI().Show(score.ToString(), () =>
             {
-                 _gameUI.GetScoring().Submit("game3");
+                _gameUI.GetScoring().Submit("game3");
                 BackToMainMenu();
             });
         }
@@ -157,12 +157,14 @@ public class GameManager : MonoBehaviour
             _playerController.EnableInput(true);
             _playerController.GodMode(false);
             _gameUI.StartScoring();
-           if(t == TutoriaType.Run2D_Game_4) {
+            if (t == TutoriaType.Run2D_Game_4)
+            {
                 SpawnBullet();
-           }
-           else {
+            }
+            else
+            {
                 CancelInvoke("SpawnBullet");
-           }
+            }
         }
     }
     private TutoriaType GetTutByLevel(GameEnum.LevelType l)
@@ -185,7 +187,7 @@ public class GameManager : MonoBehaviour
     private void OnEndGame()
     {
         UserInfo.GetInstance().SetCompletedRunGame(true);
-        UserInfo.GetInstance().SetUnlockLevel(CheckPointType.CHECK_POINT_4,true);
+        UserInfo.GetInstance().SetUnlockLevel(CheckPointType.CHECK_POINT_4, true);
         _gameUI.getTutorManager().SetTutType(TutoriaType.Run2D_Game_End).ShowTutor(true);
     }
     private void BackToMainMenu()
