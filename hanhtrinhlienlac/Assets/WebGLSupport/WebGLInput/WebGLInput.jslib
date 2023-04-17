@@ -8,7 +8,10 @@ var WebGLInput = {
     WebGLInputCreate: function (canvasId, x, y, width, height, fontsize, text, placeholder, isMultiLine, isPassword, isHidden, isMobile) {
 
         var container = document.getElementById(UTF8ToString(canvasId));
-        var canvas = container.getElementsByTagName('canvas')[0];
+		// Thanh.To revert commit https://github.com/kou-yeung/WebGLInput/commit/72f5db88248404e522364200660369410ab576d6
+		// to fix crash when deploy to play.unity.com
+		// https://github.com/kou-yeung/WebGLInput/issues/108
+        var canvas = document.getElementsByTagName('canvas')[0];
 
         // if container is null and have canvas
         if (!container && canvas)
