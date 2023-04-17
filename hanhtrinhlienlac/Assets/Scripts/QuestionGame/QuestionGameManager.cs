@@ -59,6 +59,10 @@ public class QuestionGameManager : MonoBehaviour
     {
         soundMgr.PlaySfx(audioClips.clickSFX, false, 1);
         SceneManager.LoadScene("Main");
+        if (Defined.CHEAT_BACK_AS_FINISHED)
+        {
+            UserInfo.GetInstance().SetUnlockLevel(CheckPointType.CHECK_POINT_2, true);
+        }
     }
 
     public void OnMoreInfoButtonClicked()

@@ -10,21 +10,25 @@ public class MapCheckPoint : ObjectBase
     public ObjectButton button;
 
     public GameObject highLight;
-   // public MapIconStatus icon;
+    // public MapIconStatus icon;
+    private void Awake()
+    {
+        if (highLight != null)
+        {
+            highLight?.SetActive(false);
+        }
+    }
     void Start()
     {
-        bool isUnlocked =UserInfo.GetInstance().IsLevelUnlocked(checkPointType);
+        bool isUnlocked = UserInfo.GetInstance().IsLevelUnlocked(checkPointType);
         if (button != null)
         {
             button.type = checkPointType;
             button.useClick = isUnlocked;
-           
-        } 
-        if(highLight != null) {
-             highLight?.SetActive(isUnlocked);
-        }
-    }
 
+        }
+
+    }
 }
 [System.Serializable]
 public enum CheckPointType

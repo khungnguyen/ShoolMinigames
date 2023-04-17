@@ -85,7 +85,7 @@ MeshRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 6
+  m_SortingOrder: 5
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!114 &1170505603
 MonoBehaviour:
@@ -19708,7 +19708,7 @@ MonoBehaviour:
   _source: {fileID: 771776640}
   _groundMask:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 8
   _jumpParticles: {fileID: 2032819622}
   _launchParticles: {fileID: 1819912370}
   _moveParticles: {fileID: 1442387709}
@@ -19728,6 +19728,9 @@ MonoBehaviour:
   sitOnTheOxAnimation: idle
   deathAnimation: fall_back
   victoryAnimation: victory
+  sadAnimation: sad
+  sitAnimation: fall_back_tai_cho
+  deathAtSamePlace: 
 --- !u!82 &771776640
 AudioSource:
   m_ObjectHideFlags: 0
@@ -20034,11 +20037,11 @@ MonoBehaviour:
   enableInput: 1
   _characterBounds:
     m_Center: {x: 0, y: 0, z: 0}
-    m_Extent: {x: 0.28, y: 0.9, z: 0}
+    m_Extent: {x: 0.2, y: 0.9, z: 0}
   _groundLayer:
     serializedVersion: 2
     m_Bits: 8
-  _detectorCount: 7
+  _detectorCount: 3
   _detectionRayLength: 0.1
   _rayBuffer: 0.1
   _acceleration: 60
@@ -20057,12 +20060,16 @@ MonoBehaviour:
   rideTheOx: 0
   godMode: 0
   finishLevel: 0
+  mudSpeed: 3
   _dustVfx: {fileID: 6467265068652234796, guid: 2f1cd8faa84a24244a9f20d203e22856, type: 3}
   _sound: {fileID: 771776640}
   __soundData:
   - {fileID: 8300000, guid: 4358069bc6889b04ebb9d8aab09fc804, type: 3}
   - {fileID: 8300000, guid: 5a96155caf4e6c24eb40836d61da1477, type: 3}
   - {fileID: 8300000, guid: db05d2282090eef4e9a929c19d137d12, type: 3}
+  inWater: 0
+  inMud: 0
+  deathCause: 0
 --- !u!1 &6432609861764478824
 GameObject:
   m_ObjectHideFlags: 0

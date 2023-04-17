@@ -30,6 +30,7 @@ public class HeroController : BaseController
     private bool _autoMove;
     public bool inWater = false;
     public bool inMud = false;
+    public GameEnum.ObstacleType deathCause;
     private float _normalSpeed;
 
     public enum SOUND
@@ -97,12 +98,13 @@ public class HeroController : BaseController
             var obstacleType = other.GetComponent<Obstacle>().objectType;
             inWater = obstacleType == GameEnum.ObstacleType.WATER;
             inMud = obstacleType == GameEnum.ObstacleType.MUD;
-            if (inMud)
+            if (deathCause == GameEnum.ObstacleType.MUD)
             {
                 InMudBehavior(true);
             }
             else
             {
+                deathCause = obstacleType;
                 death();
             }
 
@@ -116,7 +118,7 @@ public class HeroController : BaseController
                 OnCoinCollect(coin);
             }
         }
-        else if (other.CompareTag(Defined.TAG_SOILDER))
+        else if (other.CompareTag(Defined.TAG_SOLDIER))
         {
             _autoMove = false;
             EnableInput(false);
@@ -136,7 +138,7 @@ public class HeroController : BaseController
         {
             speed = _normalSpeed;
         }
-        spine.timeScale = enter?0.5f:1;
+        spine.timeScale = enter ? 0.5f : 1;
         SetMoveSpeed(speed);
     }
     private void OnTriggerExit2D(Collider2D other)
@@ -150,7 +152,7 @@ public class HeroController : BaseController
             inMud = (obstacleType == GameEnum.ObstacleType.MUD);
             if (inMud)
             {
-                 InMudBehavior(false);
+                InMudBehavior(false);
             }
 
 
