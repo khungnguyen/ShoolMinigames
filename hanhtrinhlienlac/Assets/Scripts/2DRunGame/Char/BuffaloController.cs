@@ -62,7 +62,7 @@ public class BuffaloController : BaseController
             if (!_player.Grounded
             && !_rideOx
             && _player.GetPosition().y >= transform.position.y + GetCharBounds().size.y
-            && _player.GetPosition().x <= transform.position.x
+            && _player.GetPosition().x <= transform.position.x + GetCharBounds().size.x / 2
             && _player.GetPosition().x > transform.position.x - GetCharBounds().size.x / 2
             && _player.RawMovement.y < -1f
             )
