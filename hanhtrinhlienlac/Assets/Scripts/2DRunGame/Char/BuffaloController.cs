@@ -188,7 +188,7 @@ public class BuffaloController : BaseController
             {
                 JumpDown = _buffaloMoveStraight ? UnityEngine.Input.GetButtonDown("Jump") : false,
                 JumpUp = _buffaloMoveStraight ? UnityEngine.Input.GetButtonUp("Jump") : false,
-                X = _buffaloMoveStraight ? 0f : 0f
+                X = _buffaloMoveStraight ? 1f : 0f
             };
             if (Input.JumpDown)
             {
