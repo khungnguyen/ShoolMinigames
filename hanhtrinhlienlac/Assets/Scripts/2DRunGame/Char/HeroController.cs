@@ -26,6 +26,8 @@ public class HeroController : BaseController
     public System.Action<MarkedPoint> OnPlayerRevive;
     public System.Action<Coin> OnCollect;
 
+    public SoundManager _soundManager;
+
     private int _curScore = 0;
 
     private bool _autoMove;
@@ -259,7 +261,7 @@ public class HeroController : BaseController
     }
     public void PlaySFX(SOUND index)
     {
-        SoundManager.inst.PlaySfx(__soundData[(int)index]);
+       PlaySFX(__soundData[(int)index]);
     }
     IEnumerator AutoMoveToSoilder(int time)
     {

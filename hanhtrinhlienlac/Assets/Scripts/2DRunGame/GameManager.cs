@@ -17,7 +17,7 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] UIManager _gameUI;
 
-    [SerializeField] AudioSource _sound;
+    [SerializeField] SoundManager _sound;
     [SerializeField] List<AudioClip> __soundData;
 
     public static GameManager inst;
@@ -181,8 +181,8 @@ public class GameManager : MonoBehaviour
     }
     public void PlayBGM(GameEnum.LevelType index)
     {
-        SoundManager.inst.StopBGM();
-        SoundManager.inst.PlayBGM(__soundData[(int)index], true);
+        _sound.StopBGM();
+       _sound.PlayBGM(__soundData[(int)index], true);
     }
     private void OnEndGame()
     {

@@ -19949,6 +19949,7 @@ GameObject:
   - component: {fileID: 927613137}
   - component: {fileID: 927613136}
   - component: {fileID: 927613138}
+  - component: {fileID: 1095335250522422203}
   m_Layer: 6
   m_Name: Player
   m_TagString: Player
@@ -19970,7 +19971,7 @@ Transform:
   m_Children:
   - {fileID: 5979605535021479280}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &927613137
 Rigidbody2D:
@@ -20033,6 +20034,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spine: {fileID: 1170505603}
   isDie: 0
+  soundManager: {fileID: 1095335250522422203}
   enableInput: 1
   _characterBounds:
     m_Center: {x: 0, y: 0, z: 0}
@@ -20067,9 +20069,24 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 5a96155caf4e6c24eb40836d61da1477, type: 3}
   - {fileID: 8300000, guid: db05d2282090eef4e9a929c19d137d12, type: 3}
   _explosion: {fileID: 365452804513324163, guid: ab32aafa8b668044080d164604e05fc5, type: 3}
+  _soundManager: {fileID: 0}
   inWater: 0
   inMud: 0
   deathCause: 0
+--- !u!114 &1095335250522422203
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6432609860406773169}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6afcf4a1f5817bd4c88528505d9593b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _numberSFXChannels: 10
+  soundData: []
 --- !u!1 &6432609861764478824
 GameObject:
   m_ObjectHideFlags: 0

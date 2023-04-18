@@ -7541,6 +7541,7 @@ GameObject:
   - component: {fileID: 6186900627717814290}
   - component: {fileID: 1517151136}
   - component: {fileID: 8267264850204571181}
+  - component: {fileID: 846780616}
   m_Layer: 6
   m_Name: buffalo
   m_TagString: Buffalo
@@ -7616,6 +7617,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spine: {fileID: 1549182303}
   isDie: 0
+  soundManager: {fileID: 846780616}
   enableInput: 0
   _characterBounds:
     m_Center: {x: 0, y: 0, z: 0}
@@ -7623,7 +7625,7 @@ MonoBehaviour:
   _groundLayer:
     serializedVersion: 2
     m_Bits: 8
-  _detectorCount: 2
+  _detectorCount: 3
   _detectionRayLength: 0.1
   _rayBuffer: 0.1
   _acceleration: 90
@@ -7638,7 +7640,7 @@ MonoBehaviour:
   _coyoteTimeThreshold: 0.1
   _jumpBuffer: 0.1
   _jumpEndEarlyGravityModifier: 3
-  _freeColliderIterations: 2
+  _freeColliderIterations: 10
   _skeleton: {fileID: 1549182303}
   attachSeatPoint: {fileID: 444266932}
   dustVfx: {fileID: 6514767411814758264, guid: 2f1cd8faa84a24244a9f20d203e22856, type: 3}
@@ -7653,6 +7655,7 @@ MonoBehaviour:
   _minDistanceMoveAround: 2
   _maxDistanceMoveAround: 5
   _moveParticle: {fileID: 3059696762848354987}
+  _distanceDetectHuman: 2
 --- !u!33 &1517151136
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -7757,6 +7760,20 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &846780616
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6186900627717814295}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6afcf4a1f5817bd4c88528505d9593b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _numberSFXChannels: 10
+  soundData: []
 --- !u!1 &6203077195967974130
 GameObject:
   m_ObjectHideFlags: 0

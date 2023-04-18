@@ -24,8 +24,16 @@ public class TutorManager : MonoBehaviour
     [SerializeField] GameObject _buttonShowHelp;
     [SerializeField] List<Transform> _speakers;
     private int _curTutStep = 0;
-
     private bool _isWriting = false;
+    private bool isWriting
+    {
+        set
+        {
+            _isWriting = value;
+            ShowContinuesText(!value);
+        }
+        get { return _isWriting; }
+    }
 
     private bool _completed = false;
 
@@ -56,7 +64,6 @@ public class TutorManager : MonoBehaviour
     }
     public void StartTutorial()
     {
-        ShowContinuesText(false);
         StopAllCoroutines();
         OnTutStart?.Invoke(tutorialType);
         ShowButtonHelp(false);
@@ -80,11 +87,11 @@ public class TutorManager : MonoBehaviour
     public void onClick()
     {
         if (_completed) return;
-        if (_isWriting)
+        if (isWriting)
         {
             StopAllCoroutines();
             UpdateText(_curPart.tuts[_curTutStep].text);
-            _isWriting = false;
+            isWriting = false;
         }
         else
         {
@@ -115,7 +122,7 @@ public class TutorManager : MonoBehaviour
     }
     IEnumerator DrawText(string s)
     {
-        _isWriting = true;
+        isWriting = true;
         int count = 0;
         string postfix = "";
         while (true)
@@ -129,11 +136,7 @@ public class TutorManager : MonoBehaviour
             }
             UpdateText(t + postfix);
         }
-        if (_curTutStep == _curPart.tuts.Count - 1)
-        {
-            ShowContinuesText(true);
-        }
-        _isWriting = false;
+        isWriting = false;
 
     }
     public void ShowTutor(bool enable)
@@ -159,7 +162,19 @@ public class TutorManager : MonoBehaviour
     }
     private void ShowContinuesText(bool show)
     {
+        var anim = _textContinues.GetComponent<Animator>();
         _textContinues.gameObject.SetActive(show);
+        if (show)
+        {
+            anim.Play("BlinkText",-1,0f);
+        }
+        else
+        {
+         //   anim.;
+        }
+        
+
+
     }
 }
 public enum TutoriaType

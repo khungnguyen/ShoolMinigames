@@ -17,6 +17,8 @@ public class BaseController : MonoBehaviour, IPlayerController
     public bool Grounded => _colDown;
     public bool isDie = false;
 
+    public SoundManager soundManager;
+
 
     private Vector3 _lastPosition;
     private float _currentHorizontalSpeed, _currentVerticalSpeed;
@@ -376,5 +378,12 @@ public class BaseController : MonoBehaviour, IPlayerController
         spine.Skeleton.SetSkin(s);
         spine.Skeleton.SetSlotsToSetupPose();
         spine.LateUpdate();
+    }
+    public void PlaySFX(AudioClip s,bool loop = false)
+    {
+        soundManager.PlaySfx(s,loop);
+    }
+    public void StopSFX() {
+        soundManager.StopSfx();
     }
 }

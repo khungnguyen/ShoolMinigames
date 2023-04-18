@@ -24,13 +24,17 @@ public class BuffaloController : BaseController
     public string buffaloWalk;
     [SpineAnimation]
     public string buffaloIdle;
-    
+     [SpineAnimation]
+    public string buffaloJump;
+
     [SerializeField] float _minTimeIdle = 0.5f;
     [SerializeField] float _maxTimeIdle = 1.5f;
     [SerializeField] float _minDistanceMoveAround = 2f;
     [SerializeField] float _maxDistanceMoveAround = 5f;
     [SerializeField] ParticleSystem _moveParticle;
-    private bool _buffaloMove = false;
+    [Range(0, 4)]
+    [SerializeField] float _distanceDetectHuman = 2f;
+    private bool _buffaloMoveStraight = false;
     private bool __buffaloMoveAround = true;
 
 
@@ -38,6 +42,8 @@ public class BuffaloController : BaseController
 
     private bool _rideOx = false;
     private string _previousAnim = "";
+
+    private bool _isPlayerNearOx = false;
 
 
     private void Start()
@@ -49,25 +55,34 @@ public class BuffaloController : BaseController
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag(Defined.TAG_PLAYER) && !_rideOx)
+        if (other.CompareTag(Defined.TAG_PLAYER))
         {
             _player = other.transform.GetComponent<HeroController>();
-            if (!_player.Grounded && _player.GetPosition().y >= transform.position.y + 1f)
+            if (!_player.Grounded
+            && !_rideOx
+            && _player.GetPosition().y >= transform.position.y + GetCharBounds().size.y
+            && _player.GetPosition().x <= transform.position.x
+            && _player.GetPosition().x > transform.position.x - GetCharBounds().size.x / 2
+            )
             {
                 _player.SetPosition(attachSeatPoint.position);
-                _buffaloMove = true;
+                _buffaloMoveStraight = true;
                 __buffaloMoveAround = false;
-                SoundManager.inst.PlaySfx(__soundData[1], true);
+                 PlaySFX(__soundData[1], true);
                 _player.EnableInput(false);
                 setAnimation(buffaloWalk, true);
                 _player.RideTheOx(true);
-
                 ChangeSkin(UserInfo.GetInstance().GetSkin());
                 _rideOx = true;
-                if(transform.localScale.x == -1) {
-                    transform.localScale = new Vector2(1,1);
+                if (transform.localScale.x == -1)
+                {
+                    transform.localScale = new Vector2(1, 1);
                 }
-                
+
+            }
+            else
+            {
+
             }
         }
         else if (other.CompareTag(Defined.TAG_ENDPOINT))
@@ -75,7 +90,7 @@ public class BuffaloController : BaseController
             Debug.LogError("Buffalo stop");
             _player.EnableInput(true);
             _player.RideTheOx(false);
-            _buffaloMove = false;
+            _buffaloMoveStraight = false;
             setAnimation(buffaloIdle, true);
             ChangeSkin("default");
             death();
@@ -86,7 +101,7 @@ public class BuffaloController : BaseController
                 JumpUp = false,
                 X = 0f
             };
-            SoundManager.inst.StopSfx();
+            soundManager.StopSfx();
 
         }
         else if (other.CompareTag(Defined.TAG_OBSTACLE))
@@ -99,23 +114,24 @@ public class BuffaloController : BaseController
                 var newPos = new Vector2(other.transform.position.x + w, other.transform.position.y - h / 2);
                 var par = Instantiate(dustVfx, newPos, other.transform.rotation);
                 Destroy(par.gameObject, 2f);
-                SoundManager.inst.PlaySfx(__soundData[0]);
+                PlaySFX(__soundData[0]);
             }
             Destroy(other.gameObject);
         }
         else if (other.CompareTag(Defined.TAG_COLLECTABLE))
         {
-            if(other.TryGetComponent<Coin>(out  var coin)){
+            if (other.TryGetComponent<Coin>(out var coin))
+            {
                 coin.setScore(Defined.BONUS_SCORE_BUFFALO);
                 _player.OnCoinCollect(coin);
-             }
-     
+            }
+
         }
     }
     private int _direction = 0;
     IEnumerator MoveAround()
     {
-        float  distance = UnityEngine.Random.Range(_minDistanceMoveAround, _maxDistanceMoveAround);
+        float distance = UnityEngine.Random.Range(_minDistanceMoveAround, _maxDistanceMoveAround);
         setAnimation(buffaloWalk, true);
         _direction = 1;
         transform.localScale = new Vector2(_direction, 1);
@@ -123,7 +139,7 @@ public class BuffaloController : BaseController
         int previousDir = _direction;
         while (true)
         {
-            if (_buffaloMove)
+            if (_buffaloMoveStraight)
             {
                 break;
             }
@@ -132,7 +148,7 @@ public class BuffaloController : BaseController
                 idleTime -= Time.deltaTime;
                 yield return null;
             }
-            else if ((transform.position.x > _initialPos.x + distance) && _direction ==1 || (transform.position.x < _initialPos.x - distance)&&_direction ==-1)
+            else if ((transform.position.x > _initialPos.x + distance) && _direction == 1 || (transform.position.x < _initialPos.x - distance) && _direction == -1)
             {
                 idleTime = UnityEngine.Random.Range(_minTimeIdle, _maxTimeIdle);
                 previousDir = _direction;
@@ -145,6 +161,12 @@ public class BuffaloController : BaseController
                 setAnimation(buffaloWalk, true);
                 _direction = -previousDir;
                 transform.localScale = new Vector2(_direction, 1);
+            }
+            if (idleTime > 0 && _player && Vector2.Distance(_player.GetPosition(), GetPosition()) < 2f)
+            {
+                idleTime = 0;
+                Debug.Log("ALERT! HUMAN IS NEAR BY");
+                //forcing move
             }
             yield return null;
         }
@@ -164,10 +186,14 @@ public class BuffaloController : BaseController
         {
             Input = new FrameInput
             {
-                JumpDown = false,
-                JumpUp = false,
-                X = _buffaloMove ? 1f : 0f
+                JumpDown = _buffaloMoveStraight ? UnityEngine.Input.GetButtonDown("Jump") : false,
+                JumpUp = _buffaloMoveStraight ? UnityEngine.Input.GetButtonUp("Jump") : false,
+                X = _buffaloMoveStraight ? 0f : 0f
             };
+            if (Input.JumpDown)
+            {
+                lastJumpPressed = Time.time;
+            }
         }
     }
     void Update()
@@ -176,13 +202,27 @@ public class BuffaloController : BaseController
         {
             // var x =
         }
-        else if (_player != null && _buffaloMove)
+        else if (_player != null && _buffaloMoveStraight)
         {
 
             _player.SetPosition(attachSeatPoint.position);
 
         }
         base.Update();
+         if (JumpingThisFrame) {
+            setAnimation(buffaloJump,false);
+         }
+         if (Grounded && !JumpingThisFrame && !LandingThisFrame)
+            {
+                if (Input.X != 0)
+                {
+                    setAnimation(buffaloWalk,true);
+                }
+                else
+                {
+                    setAnimation(buffaloIdle,true);
+                }
+            }
 
     }
 
@@ -191,13 +231,15 @@ public class BuffaloController : BaseController
         if (_previousAnim.Equals(name)) return;
         _previousAnim = name;
         _skeleton.AnimationState.SetAnimation(0, name, loop);
-        if(name.Equals(buffaloIdle)) {
+        if (name.Equals(buffaloIdle))
+        {
             _moveParticle.Stop();
         }
-        else if(name.Equals(buffaloWalk)) {
+        else if (name.Equals(buffaloWalk))
+        {
             _moveParticle.Play();
         }
-    
+
     }
     private void stopAniamtion(int track)
     {
