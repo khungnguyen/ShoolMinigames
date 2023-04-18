@@ -162,17 +162,18 @@ public class TutorManager : MonoBehaviour
     }
     private void ShowContinuesText(bool show)
     {
-        var anim = _textContinues.GetComponent<Animator>();
         _textContinues.gameObject.SetActive(show);
+        var anim = _textContinues.GetComponent<Animator>();
+
         if (show)
         {
-            anim.Play("BlinkText",-1,0f);
+            anim.Play("BlinkText", -1, 0f);
         }
         else
         {
-         //   anim.;
+            //   anim.;
         }
-        
+
 
 
     }
