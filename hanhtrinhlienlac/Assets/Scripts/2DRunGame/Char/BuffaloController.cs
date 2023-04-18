@@ -11,7 +11,6 @@ using Mono.Cecil.Cil;
 public class BuffaloController : BaseController
 {
     public SkeletonAnimation _skeleton;
-    private HeroController _player;
 
     public Transform attachSeatPoint;
 
@@ -32,8 +31,10 @@ public class BuffaloController : BaseController
     [SerializeField] float _minDistanceMoveAround = 2f;
     [SerializeField] float _maxDistanceMoveAround = 5f;
     [SerializeField] ParticleSystem _moveParticle;
-    [Range(0, 4)]
+    [Range(0, 8)]
     [SerializeField] float _distanceDetectHuman = 2f;
+
+    [SerializeField] private HeroController _player;
     private bool _buffaloMoveStraight = false;
     private bool __buffaloMoveAround = true;
 
@@ -63,6 +64,7 @@ public class BuffaloController : BaseController
             && _player.GetPosition().y >= transform.position.y + GetCharBounds().size.y
             && _player.GetPosition().x <= transform.position.x
             && _player.GetPosition().x > transform.position.x - GetCharBounds().size.x / 2
+            && _player.RawMovement.y < -1f
             )
             {
                 _player.SetPosition(attachSeatPoint.position);
@@ -162,7 +164,7 @@ public class BuffaloController : BaseController
                 _direction = -previousDir;
                 transform.localScale = new Vector2(_direction, 1);
             }
-            if (idleTime > 0 && _player && Vector2.Distance(_player.GetPosition(), GetPosition()) < 2f)
+            if (idleTime > 0 && _player && Vector2.Distance(_player.GetPosition(), GetPosition()) < _distanceDetectHuman)
             {
                 idleTime = 0;
                 Debug.Log("ALERT! HUMAN IS NEAR BY");
@@ -188,7 +190,7 @@ public class BuffaloController : BaseController
             {
                 JumpDown = _buffaloMoveStraight ? UnityEngine.Input.GetButtonDown("Jump") : false,
                 JumpUp = _buffaloMoveStraight ? UnityEngine.Input.GetButtonUp("Jump") : false,
-                X = _buffaloMoveStraight ? 0f : 0f
+                X = _buffaloMoveStraight ? 1f : 0f
             };
             if (Input.JumpDown)
             {
@@ -223,7 +225,7 @@ public class BuffaloController : BaseController
                     setAnimation(buffaloIdle,true);
                 }
             }
-
+       // Debug.Log();
     }
 
     private void setAnimation(String name, bool loop)
