@@ -23,8 +23,11 @@ public class BuffaloController : BaseController
     public string buffaloWalk;
     [SpineAnimation]
     public string buffaloIdle;
-     [SpineAnimation]
+    [SpineAnimation]
     public string buffaloJump;
+
+    [SpineAnimation]
+    public string humanRideBuffaloRun;
 
     [SerializeField] float _minTimeIdle = 0.5f;
     [SerializeField] float _maxTimeIdle = 1.5f;
@@ -70,9 +73,9 @@ public class BuffaloController : BaseController
                 _player.SetPosition(attachSeatPoint.position);
                 _buffaloMoveStraight = true;
                 __buffaloMoveAround = false;
-                 PlaySFX(__soundData[1], true);
+                PlaySFX(__soundData[1], true);
                 _player.EnableInput(false);
-                setAnimation(buffaloWalk, true);
+                setAnimation(humanRideBuffaloRun, true);
                 _player.RideTheOx(true);
                 ChangeSkin(UserInfo.GetInstance().GetSkin());
                 _rideOx = true;
@@ -160,9 +163,16 @@ public class BuffaloController : BaseController
             }
             else
             {
-                setAnimation(buffaloWalk, true);
-                _direction = -previousDir;
-                transform.localScale = new Vector2(_direction, 1);
+                if (_direction != previousDir)
+                {
+                    setAnimation(buffaloWalk, true);
+                    _direction = -previousDir;
+                    if (transform.localScale.x != _direction)
+                    {
+                        transform.localScale = new Vector2(_direction, 1);
+                    }
+                }
+
             }
             if (idleTime > 0 && _player && Vector2.Distance(_player.GetPosition(), GetPosition()) < _distanceDetectHuman)
             {
@@ -191,7 +201,7 @@ public class BuffaloController : BaseController
                 // JumpDown = _buffaloMoveStraight ? UnityEngine.Input.GetButtonDown("Jump") : false,
                 JumpDown = false,
                 // JumpUp = _buffaloMoveStraight ? UnityEngine.Input.GetButtonUp("Jump") : false,
-                JumpUp =  false,
+                JumpUp = false,
                 X = _buffaloMoveStraight ? 1f : 0f
             };
             if (Input.JumpDown)
@@ -210,30 +220,34 @@ public class BuffaloController : BaseController
         {
 
             _player.SetPosition(attachSeatPoint.position);
-
-        }
-        base.Update();
-         if (JumpingThisFrame) {
-            setAnimation(buffaloJump,false);
-         }
-         if (Grounded && !JumpingThisFrame && !LandingThisFrame)
+            if (Grounded && !JumpingThisFrame && !LandingThisFrame)
             {
                 if (Input.X != 0)
                 {
-                    setAnimation(buffaloWalk,true);
+                    setAnimation(humanRideBuffaloRun, true);
                 }
                 else
                 {
-                    setAnimation(buffaloIdle,true);
+                    setAnimation(buffaloIdle, true);
                 }
             }
-       // Debug.Log();
+            if (JumpingThisFrame)
+            {
+                setAnimation(buffaloJump, false);
+            }
+
+        }
+        base.Update();
+
+
+        // Debug.Log();
     }
 
     private void setAnimation(String name, bool loop)
     {
         if (_previousAnim.Equals(name)) return;
         _previousAnim = name;
+        Debug.Log("setAnimation" + name);
         _skeleton.AnimationState.SetAnimation(0, name, loop);
         if (name.Equals(buffaloIdle))
         {
