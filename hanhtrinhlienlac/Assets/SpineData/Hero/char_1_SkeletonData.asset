@@ -27,10 +27,13 @@ MonoBehaviour:
   fromAnimation:
   - trau_idle
   - fall_back
+  - trau_run
   toAnimation:
   - trau_nguoi_run
   - idle
+  - trau_nguoi_run
   duration:
+  - 0
   - 0
   - 0
   defaultMix: 0.2

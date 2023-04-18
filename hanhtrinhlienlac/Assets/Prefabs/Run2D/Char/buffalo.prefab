@@ -7579,9 +7579,9 @@ CapsuleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.18082505, y: 0.07831156}
-  m_Size: {x: 1.5883499, y: 2.084973}
-  m_Direction: 0
+  m_Offset: {x: 0.02544503, y: 0.34875417}
+  m_Size: {x: 2.587461, y: 2.0579283}
+  m_Direction: 1
 --- !u!50 &6186900627717814289
 Rigidbody2D:
   serializedVersion: 4
@@ -7621,14 +7621,14 @@ MonoBehaviour:
   enableInput: 0
   _characterBounds:
     m_Center: {x: 0, y: 0, z: 0}
-    m_Extent: {x: 1.02, y: 0.83, z: 0}
+    m_Extent: {x: 1.2, y: 0.83, z: 0}
   _groundLayer:
     serializedVersion: 2
     m_Bits: 8
   _detectorCount: 3
   _detectionRayLength: 0.1
   _rayBuffer: 0.1
-  _acceleration: 90
+  _acceleration: 120
   _moveClamp: 8
   _deAcceleration: 60
   _apexBonus: 2
@@ -7648,15 +7648,16 @@ MonoBehaviour:
   __soundData:
   - {fileID: 8300000, guid: b6d6a8cfb336da549bba2aa7c1fa2172, type: 3}
   - {fileID: 8300000, guid: 7573b4009afa3eb4da8a3c9c26980c17, type: 3}
-  buffaloWalk: trau_nguoi_run
+  buffaloWalk: trau_run
   buffaloIdle: trau_idle
   buffaloJump: trau_jump
+  humanRideBuffaloRun: trau_nguoi_run
   _minTimeIdle: 0.5
   _maxTimeIdle: 1.5
   _minDistanceMoveAround: 2
-  _maxDistanceMoveAround: 5
+  _maxDistanceMoveAround: 7
   _moveParticle: {fileID: 3059696762848354987}
-  _distanceDetectHuman: 3
+  _distanceDetectHuman: 4.38
   _player: {fileID: 0}
 --- !u!33 &1517151136
 MeshFilter:
