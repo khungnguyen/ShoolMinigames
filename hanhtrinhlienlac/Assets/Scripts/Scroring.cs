@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Networking;
+using WebGLSupport;
 
 public class Scroring : SchoolApiRequestBase
 {
@@ -20,12 +21,15 @@ public class Scroring : SchoolApiRequestBase
     [SerializeField] private float maxRemainingTimeScore = 120f;
     [SerializeField] private float scoreLostPerSec = 1f;
     [SerializeField] private bool displayTotalScore = true;
+    [SerializeField] private GamePausePopup pausePopup;
 
 
     private float curRemainingTimeScore;
     private float bonusScore;
     private bool isCounting = false;
     private float lastDisplayingScore;
+
+    private bool pauseWhileCounting = false;
 
     public int CurRemainingTimeScore {
         get => Mathf.RoundToInt(curRemainingTimeScore);
@@ -39,6 +43,8 @@ public class Scroring : SchoolApiRequestBase
     void Awake()
     {
         _inst = this;
+        WebGLWindow.OnBlurEvent += OnWindowBlur;
+        pausePopup?.RegisterOnResumeCB(OnUserResumeGame);
     }
 
     // Start is called before the first frame update
@@ -71,6 +77,7 @@ public class Scroring : SchoolApiRequestBase
     void OnDestroy()
     {
         _inst = null;
+        WebGLWindow.OnBlurEvent -= OnWindowBlur;
     }
 
     public void StartOrResume()
@@ -149,4 +156,24 @@ public class Scroring : SchoolApiRequestBase
     {
         throw new NotImplementedException();
     }
+
+    private void OnWindowBlur()
+    {
+        if (pausePopup) {
+            pausePopup.Show();
+            if (isCounting) {
+                pauseWhileCounting = true;
+                Pause();
+            }
+        }
+    }
+    
+    private void OnUserResumeGame()
+    {
+        if (pauseWhileCounting) {
+            pauseWhileCounting = false;
+            StartOrResume();
+        }
+    }
+
 }
