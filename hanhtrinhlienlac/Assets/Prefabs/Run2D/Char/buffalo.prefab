@@ -7650,12 +7650,14 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 7573b4009afa3eb4da8a3c9c26980c17, type: 3}
   buffaloWalk: trau_nguoi_run
   buffaloIdle: trau_idle
+  buffaloJump: trau_jump
   _minTimeIdle: 0.5
   _maxTimeIdle: 1.5
   _minDistanceMoveAround: 2
   _maxDistanceMoveAround: 5
   _moveParticle: {fileID: 3059696762848354987}
-  _distanceDetectHuman: 2
+  _distanceDetectHuman: 4
+  _player: {fileID: 0}
 --- !u!33 &1517151136
 MeshFilter:
   m_ObjectHideFlags: 0

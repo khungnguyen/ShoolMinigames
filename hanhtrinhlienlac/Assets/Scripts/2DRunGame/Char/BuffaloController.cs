@@ -11,7 +11,6 @@ using Mono.Cecil.Cil;
 public class BuffaloController : BaseController
 {
     public SkeletonAnimation _skeleton;
-    private HeroController _player;
 
     public Transform attachSeatPoint;
 
@@ -32,8 +31,10 @@ public class BuffaloController : BaseController
     [SerializeField] float _minDistanceMoveAround = 2f;
     [SerializeField] float _maxDistanceMoveAround = 5f;
     [SerializeField] ParticleSystem _moveParticle;
-    [Range(0, 4)]
+    [Range(0, 8)]
     [SerializeField] float _distanceDetectHuman = 2f;
+
+    [SerializeField] private HeroController _player;
     private bool _buffaloMoveStraight = false;
     private bool __buffaloMoveAround = true;
 
