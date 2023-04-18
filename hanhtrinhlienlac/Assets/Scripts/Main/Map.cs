@@ -59,7 +59,7 @@ public class Map : MonoBehaviour
                 }
             case CheckPointType.CHECK_POINT_3:
                 {
-                    level = "Run2D";
+                    level = "Level_3";
                     break;
                 }
         }
