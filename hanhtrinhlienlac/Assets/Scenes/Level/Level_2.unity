@@ -849,7 +849,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 400, y: -97.030495}
-  m_SizeDelta: {x: 579.18, y: 91.632}
+  m_SizeDelta: {x: 650, y: 91.632}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &188144435
 PrefabInstance:
@@ -1097,7 +1097,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
   m_AnchoredPosition: {x: 0, y: -111.1}
-  m_SizeDelta: {x: 428.82, y: 91.838}
+  m_SizeDelta: {x: 450, y: 91.838}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &217037017
 MonoBehaviour:
@@ -5174,14 +5174,14 @@ MonoBehaviour:
   m_text: "TH\u1EEC TH\xC1CH TI\u1EBEP THEO"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: a63ac461950ca554dbbf127395afaf57, type: 2}
-  m_sharedMaterial: {fileID: 5911009495154939706, guid: a63ac461950ca554dbbf127395afaf57, type: 2}
+  m_sharedMaterial: {fileID: 2100000, guid: e74a754dd7c410848ab5ebb534992b0a, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4281479730
-  m_fontColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
