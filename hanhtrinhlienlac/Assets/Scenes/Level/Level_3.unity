@@ -40749,6 +40749,10 @@ PrefabInstance:
       propertyPath: _player
       value: 
       objectReference: {fileID: 927613138}
+    - target: {fileID: 6186900627717814290, guid: a4c8629bff4a7f34ea6cc0bdee8ae71e, type: 3}
+      propertyPath: _distanceDetectHuman
+      value: 2.5
+      objectReference: {fileID: 0}
     - target: {fileID: 6186900627717814294, guid: a4c8629bff4a7f34ea6cc0bdee8ae71e, type: 3}
       propertyPath: m_RootOrder
       value: -1

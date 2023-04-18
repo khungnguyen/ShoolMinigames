@@ -60,7 +60,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1549182300}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.153, y: -0.728, z: 0}
+  m_LocalPosition: {x: -0.153, y: -0.786, z: 0}
   m_LocalScale: {x: 0.35, y: 0.35, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -7621,7 +7621,7 @@ MonoBehaviour:
   enableInput: 0
   _characterBounds:
     m_Center: {x: 0, y: 0, z: 0}
-    m_Extent: {x: 1.02, y: 0.71, z: 0}
+    m_Extent: {x: 1.02, y: 0.83, z: 0}
   _groundLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -7656,7 +7656,7 @@ MonoBehaviour:
   _minDistanceMoveAround: 2
   _maxDistanceMoveAround: 5
   _moveParticle: {fileID: 3059696762848354987}
-  _distanceDetectHuman: 4
+  _distanceDetectHuman: 3
   _player: {fileID: 0}
 --- !u!33 &1517151136
 MeshFilter:

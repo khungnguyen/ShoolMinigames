@@ -64,6 +64,7 @@ public class BuffaloController : BaseController
             && _player.GetPosition().y >= transform.position.y + GetCharBounds().size.y
             && _player.GetPosition().x <= transform.position.x
             && _player.GetPosition().x > transform.position.x - GetCharBounds().size.x / 2
+            && _player.RawMovement.y < -1f
             )
             {
                 _player.SetPosition(attachSeatPoint.position);
@@ -163,7 +164,7 @@ public class BuffaloController : BaseController
                 _direction = -previousDir;
                 transform.localScale = new Vector2(_direction, 1);
             }
-            if (idleTime > 0 && _player && Vector2.Distance(_player.GetPosition(), GetPosition()) < 2f)
+            if (idleTime > 0 && _player && Vector2.Distance(_player.GetPosition(), GetPosition()) < _distanceDetectHuman)
             {
                 idleTime = 0;
                 Debug.Log("ALERT! HUMAN IS NEAR BY");
@@ -224,7 +225,7 @@ public class BuffaloController : BaseController
                     setAnimation(buffaloIdle,true);
                 }
             }
-
+       // Debug.Log();
     }
 
     private void setAnimation(String name, bool loop)
