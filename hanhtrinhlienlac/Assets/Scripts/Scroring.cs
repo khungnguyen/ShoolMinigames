@@ -159,21 +159,21 @@ public class Scroring : SchoolApiRequestBase
 
     private void OnWindowBlur()
     {
-        if (pausePopup) {
-            pausePopup.Show();
-            if (isCounting) {
-                pauseWhileCounting = true;
-                Pause();
-            }
-        }
+        // if (pausePopup) {
+        //     pausePopup.Show();
+        //     if (isCounting) {
+        //         pauseWhileCounting = true;
+        //         Pause();
+        //     }
+        // }
     }
     
     private void OnUserResumeGame()
     {
-        if (pauseWhileCounting) {
-            pauseWhileCounting = false;
-            StartOrResume();
-        }
+        // if (pauseWhileCounting) {
+        //     pauseWhileCounting = false;
+        //     StartOrResume();
+        // }
     }
 
 }
