@@ -19577,7 +19577,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -45.736996, y: -132.05, z: -10}
+  m_LocalPosition: {x: -45.739998, y: -132.05, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -44044,7 +44044,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1037622318}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -45.736996, y: 0.44999695, z: -10}
+  m_LocalPosition: {x: -45.739998, y: 0.44999695, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -67361,7 +67361,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 47decd277f635cc48a48e4d3b3577cf9, type: 3}
   - {fileID: 8300000, guid: a68e9bd3289524b4ea13a22ab7757a2b, type: 3}
   - {fileID: 8300000, guid: a68e9bd3289524b4ea13a22ab7757a2b, type: 3}
-  _curLevel: 1
+  _curLevel: 0
 --- !u!82 &1563516803
 AudioSource:
   m_ObjectHideFlags: 0
@@ -95713,3 +95713,4 @@ MonoBehaviour:
   maxRemainingTimeScore: 500
   scoreLostPerSec: 1
   displayTotalScore: 0
+  pausePopup: {fileID: 0}
