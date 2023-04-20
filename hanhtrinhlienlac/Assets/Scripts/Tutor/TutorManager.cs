@@ -34,7 +34,8 @@ public class TutorManager : MonoBehaviour
         }
         get { return _isWriting; }
     }
-
+    
+    private bool _preventClick = false;
     private bool _completed = false;
 
     public Action<TutoriaType> OnTutComplete;
@@ -86,7 +87,7 @@ public class TutorManager : MonoBehaviour
 
     public void onClick()
     {
-        if (_completed) return;
+        if (_completed || _preventClick) return;
         if (isWriting)
         {
             StopAllCoroutines();
@@ -175,10 +176,21 @@ public class TutorManager : MonoBehaviour
                 //   anim.;
             }
         }
+    }
+    public IEnumerator EnableClick(bool b,float time) {
+        yield return new WaitForSeconds(time);
+        _preventClick = !b;
+    }
+     void OnApplicationPause(bool pauseStatus)
+    {
+        if(pauseStatus) {
+             _preventClick = pauseStatus;
+        }
+        else {
+            StartCoroutine(EnableClick(true,0.5f));
+        }
 
-
-
-
+         
     }
 }
 public enum TutoriaType
