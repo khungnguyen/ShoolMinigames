@@ -13,6 +13,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] Scroring _score;
     [SerializeField] Transform _coinHubTarget;
     [SerializeField] RewardUI _rewardUI;
+    [SerializeField] GameObject _pauseScreen;
     // Start is called before the first frame update
     void Start()
     {
@@ -66,4 +67,14 @@ public class UIManager : MonoBehaviour
     {
         return _rewardUI;
     }
+    //  void OnApplicationFocus(bool hasFocus)
+    // {
+    //     _pauseScreen.SetActive(!hasFocus);
+    // }
+
+    void OnApplicationPause(bool pauseStatus)
+    {
+         _pauseScreen.SetActive(pauseStatus);
+    }
+    
 }
