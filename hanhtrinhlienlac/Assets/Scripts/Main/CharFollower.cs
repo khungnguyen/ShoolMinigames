@@ -26,6 +26,8 @@ public class CharFollower : MonoBehaviour
     private bool avoidUserClick = false;
     static int s_savePoint = -1;
     static CheckPointType s_saveCheckPoint;
+    static int s_curScaleX = 1;    
+
 
     private bool _useTeleportToHigherCheckPoint = true;
 
@@ -48,7 +50,7 @@ public class CharFollower : MonoBehaviour
             }
 
         });
-        _curScale = transform.localScale;
+        transform.localScale *= new Vector2(Math.Sign(s_curScaleX),1);
         OnResume();
         ChangeSkin(UserInfo.GetInstance().GetSkin());
 
@@ -215,6 +217,10 @@ public class CharFollower : MonoBehaviour
         {
             if (other.GetComponent<MapCheckPoint>().checkPointType == _curCheckPoint && avoidUserClick)
             {
+                if(_curCheckPoint == CheckPointType.CHECK_POINT_3) {
+                   transform.localScale =  new Vector2(Math.Abs(transform.localScale.x) ,Math.Abs(transform.localScale.x));
+                   s_curScaleX = Math.Sign(transform.localScale.x);
+                }
                 stop = true;
                 var data = pathCreator.path.CalculateClosestPointOnPathData(transform.position);
                 s_savePoint = data.previousIndex;
@@ -252,8 +258,9 @@ public class CharFollower : MonoBehaviour
                 stop = false;
                 void _Move()
                 {
-                    transform.localScale = _curScale * new Vector2(_moveBack ? -1 : 1, 1);
+                    transform.localScale = new Vector2(Math.Abs(transform.localScale.x) * (_moveBack ? -1 : 1), Math.Abs(transform.localScale.y));
                     s_saveCheckPoint = _curCheckPoint = t;
+                    s_curScaleX = Math.Sign(transform.localScale.x);
                     SetAnimation(run, true);
                 };
                 if ((int)t > (int)_curCheckPoint)
