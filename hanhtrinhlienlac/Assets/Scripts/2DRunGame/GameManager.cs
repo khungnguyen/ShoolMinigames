@@ -43,6 +43,7 @@ public class GameManager : MonoBehaviour
         _gameUI.getTutorManager().OnTutStart += OnTutorStart;
         _gameUI.getTutorManager().OnTutComplete += OnTutorEnd;
         LevelInfo startLevel = _levelManager.FindLevel(_curLevel);
+        UserInfo.GetInstance().SetCompletedRunGame(false);
         ChangeLevel(startLevel, true);
 
     }

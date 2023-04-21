@@ -119,6 +119,12 @@ public class UserInfo
     {
         return IsLevelUnlocked(CheckPointType.CHECK_POINT_4);
     }
+    public void SaveCurrentScene(string s) {
+        SavePrefsString(Defined.LAST_SCENE,s);
+    }
+    public string GetPreviousScene() {
+        return LoadPrefsString(Defined.LAST_SCENE,"Main");
+    }
 
 }
 

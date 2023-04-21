@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Networking;
+using UnityEngine.SceneManagement;
 using WebGLSupport;
 
 public class Scroring : SchoolApiRequestBase
@@ -62,6 +63,8 @@ public class Scroring : SchoolApiRequestBase
             if (curRemainingTimeScore < 0) 
             {
                 curRemainingTimeScore = 0;
+                UserInfo.GetInstance().SaveCurrentScene( SceneManager.GetActiveScene().name);
+                SceneManager.LoadScene("TimeUp");
             }
         }
 
