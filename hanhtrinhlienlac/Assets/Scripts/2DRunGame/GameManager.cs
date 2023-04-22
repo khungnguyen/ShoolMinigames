@@ -146,12 +146,7 @@ public class GameManager : MonoBehaviour
     {
         if (t == TutoriaType.Run2D_Game_End)
         {
-            var score = _gameUI.GetScoring().CurRemainingTimeScore;
-            _gameUI.GetRewardUI().Show(score.ToString(), () =>
-            {
-                _gameUI.GetScoring().Submit("game3");
-                BackToMainMenu();
-            });
+            EndGame();
         }
         else
         {
@@ -168,6 +163,15 @@ public class GameManager : MonoBehaviour
             }
         }
     }
+    private void EndGame()
+    {
+        var score = _gameUI.GetScoring().CurRemainingTimeScore;
+        _gameUI.GetRewardUI().Show(score.ToString(), () =>
+        {
+            _gameUI.GetScoring().Submit("game3");
+            BackToMainMenu();
+        },true);
+    }
     private TutoriaType GetTutByLevel(GameEnum.LevelType l)
     {
         return l switch
@@ -183,7 +187,7 @@ public class GameManager : MonoBehaviour
     public void PlayBGM(GameEnum.LevelType index)
     {
         _sound.StopBGM();
-       _sound.PlayBGM(__soundData[(int)index], true);
+        _sound.PlayBGM(__soundData[(int)index], true);
     }
     private void OnEndGame()
     {
