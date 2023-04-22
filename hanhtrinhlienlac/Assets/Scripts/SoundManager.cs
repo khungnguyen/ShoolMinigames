@@ -52,7 +52,7 @@ public class SoundManager : MonoBehaviour
     * channel == -1 : Find free channel to play
     * channel !=1 : play correct channel
     */
-    public void PlaySfx(AudioClip c, bool loop = false, int channel = -1, int volume = 100, float secondDelay = 0f)
+    public void PlaySfx(AudioClip c, bool loop = false, int channel = -1, int volume = 1, float secondDelay = 0f)
     {
         if (channel != -1)
         {
@@ -68,7 +68,7 @@ public class SoundManager : MonoBehaviour
     /**
     * PlayBGM play a background music sound.
     */
-    public void PlayBGM(AudioClip c, bool loop = false, int volume = 100, float secondDelay = 0f)
+    public void PlayBGM(AudioClip c, bool loop = false, int volume = 1, float secondDelay = 0f)
     {
         PlayAudio(_bgmChannel, c, loop, volume, secondDelay);
     }

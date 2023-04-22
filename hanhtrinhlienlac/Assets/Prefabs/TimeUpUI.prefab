@@ -494,6 +494,7 @@ GameObject:
   - component: {fileID: 7799541475956365738}
   - component: {fileID: 356940137652990616}
   - component: {fileID: 1897092900115990833}
+  - component: {fileID: 431334206277562748}
   m_Layer: 5
   m_Name: TimeUpUI
   m_TagString: Untagged
@@ -592,6 +593,23 @@ MonoBehaviour:
   _score: {fileID: 0}
   objectsDisappear: []
   _animation: {fileID: 356940137652990616}
+  _soundManager: {fileID: 431334206277562748}
+--- !u!114 &431334206277562748
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7799541475956365736}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6afcf4a1f5817bd4c88528505d9593b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _numberSFXChannels: 1
+  soundData:
+  - {fileID: 8300000, guid: 689e11b24f2747244ae7aa96f7f8d9e4, type: 3}
+  - {fileID: 8300000, guid: 60796aa45e9506d4f82d6a45aa74a28c, type: 3}
 --- !u!1 &7799541476185457400
 GameObject:
   m_ObjectHideFlags: 0
