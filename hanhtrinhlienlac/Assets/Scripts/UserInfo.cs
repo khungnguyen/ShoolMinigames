@@ -82,7 +82,7 @@ public class UserInfo
     }
     public void SetCompletedRunGame(bool b = true)
     {
-        _isPlayerCompletedRunGame = true;
+        _isPlayerCompletedRunGame = b;
     }
     public bool IsPlayerCompleteRunGame()
     {
