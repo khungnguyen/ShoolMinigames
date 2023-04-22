@@ -82,7 +82,7 @@ public class UserInfo
     }
     public void SetCompletedRunGame(bool b = true)
     {
-        _isPlayerCompletedRunGame = true;
+        _isPlayerCompletedRunGame = b;
     }
     public bool IsPlayerCompleteRunGame()
     {
@@ -118,6 +118,12 @@ public class UserInfo
     public bool IsLastLevelUnlocked()
     {
         return IsLevelUnlocked(CheckPointType.CHECK_POINT_4);
+    }
+    public void SaveCurrentScene(string s) {
+        SavePrefsString(Defined.LAST_SCENE,s);
+    }
+    public string GetPreviousScene() {
+        return LoadPrefsString(Defined.LAST_SCENE,"Main");
     }
 
 }

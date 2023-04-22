@@ -10,13 +10,18 @@ public class RewardUI : MonoBehaviour
     [SerializeField] GameObject[] objectsDisappear;
     [SerializeField] BoundInAndOut _animation;
 
+     [SerializeField] GameObject _okBtGameObject;
+     [SerializeField] GameObject _continuesBtGameObject;
+
     public Action OnBackListener;
     public void SetScoreText(string s)
     {
         _score.SetText(_score.text.Replace("XXX", s));
     }
-    public void Show(string scoreNumber,Action onBackListener = null)
+    public void Show(string scoreNumber,Action onBackListener = null, bool usOKText = false)
     {
+        _okBtGameObject.SetActive(usOKText);
+        _continuesBtGameObject.SetActive(!usOKText);
         SetScoreText(scoreNumber);
         gameObject.SetActive(true);
         OnBackListener = onBackListener;

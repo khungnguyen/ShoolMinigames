@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Networking;
+using UnityEngine.SceneManagement;
 using WebGLSupport;
 
 public class Scroring : SchoolApiRequestBase
@@ -62,6 +63,8 @@ public class Scroring : SchoolApiRequestBase
             if (curRemainingTimeScore < 0) 
             {
                 curRemainingTimeScore = 0;
+                UserInfo.GetInstance().SaveCurrentScene( SceneManager.GetActiveScene().name);
+                SceneManager.LoadScene("TimeUp");
             }
         }
 
@@ -159,21 +162,21 @@ public class Scroring : SchoolApiRequestBase
 
     private void OnWindowBlur()
     {
-        if (pausePopup) {
-            pausePopup.Show();
-            if (isCounting) {
-                pauseWhileCounting = true;
-                Pause();
-            }
-        }
+        // if (pausePopup) {
+        //     pausePopup.Show();
+        //     if (isCounting) {
+        //         pauseWhileCounting = true;
+        //         Pause();
+        //     }
+        // }
     }
     
     private void OnUserResumeGame()
     {
-        if (pauseWhileCounting) {
-            pauseWhileCounting = false;
-            StartOrResume();
-        }
+        // if (pauseWhileCounting) {
+        //     pauseWhileCounting = false;
+        //     StartOrResume();
+        // }
     }
 
 }

@@ -26,6 +26,8 @@ public class CharFollower : MonoBehaviour
     private bool avoidUserClick = false;
     static int s_savePoint = -1;
     static CheckPointType s_saveCheckPoint;
+    static int s_curScaleX = 1;    
+
 
     private bool _useTeleportToHigherCheckPoint = true;
 
@@ -48,7 +50,7 @@ public class CharFollower : MonoBehaviour
             }
 
         });
-        _curScale = transform.localScale;
+        transform.localScale *= new Vector2(Math.Sign(s_curScaleX),1);
         OnResume();
         ChangeSkin(UserInfo.GetInstance().GetSkin());
 
@@ -67,7 +69,7 @@ public class CharFollower : MonoBehaviour
         {
             StartAtPoint(s_savePoint);
 
-             _curCheckPoint = s_saveCheckPoint;
+            _curCheckPoint = s_saveCheckPoint;
             if (_useAutoMove)
             {
 
@@ -80,16 +82,18 @@ public class CharFollower : MonoBehaviour
             }
             else
             {
-                if(_curCheckPoint <= CheckPointType.CHECK_POINT_3) {
-                    var useHasFinishCurGame = UserInfo.GetInstance().IsLevelUnlocked(_curCheckPoint +1);
+                if (_curCheckPoint <= CheckPointType.CHECK_POINT_3)
+                {
+                    var useHasFinishCurGame = UserInfo.GetInstance().IsLevelUnlocked(_curCheckPoint + 1);
                     // incase user is back but not complete the game
-                    if(!useHasFinishCurGame) {
+                    if (!useHasFinishCurGame)
+                    {
                         _hasTeleported = true;
                     }
                 }
-                
+
             }
-           
+
         }
         else
         {
@@ -97,8 +101,20 @@ public class CharFollower : MonoBehaviour
             {
                 int CalculatePoint(CheckPointType l)
                 {
-                    var point = pathCreator.path.CalculateClosestPointOnPathData(checkPoints.Find(e => e.checkPointType == l).getPosition());
-                    return point.previousIndex;
+                    var checkpoint = checkPoints.Find(e => e.checkPointType == l);
+                    var circleCollider = checkpoint.GetComponent<CircleCollider2D>();
+                    if (circleCollider)
+                    {
+                        var pos = new Vector2(circleCollider.transform.position.x, circleCollider.transform.position.y) + circleCollider.offset + Vector2.left * circleCollider.radius;
+                        var point = pathCreator.path.CalculateClosestPointOnPathData(pos);
+                        return point.previousIndex;
+                    }
+                    else
+                    {
+                        var point = pathCreator.path.CalculateClosestPointOnPathData(checkpoint.getPosition());
+                        return point.previousIndex;
+                    }
+
                 }
                 if (UserInfo.GetInstance().IsLastLevelUnlocked())
                 {
@@ -201,6 +217,10 @@ public class CharFollower : MonoBehaviour
         {
             if (other.GetComponent<MapCheckPoint>().checkPointType == _curCheckPoint && avoidUserClick)
             {
+                if(_curCheckPoint == CheckPointType.CHECK_POINT_3) {
+                   transform.localScale =  new Vector2(Math.Abs(transform.localScale.x) ,Math.Abs(transform.localScale.x));
+                   s_curScaleX = Math.Sign(transform.localScale.x);
+                }
                 stop = true;
                 var data = pathCreator.path.CalculateClosestPointOnPathData(transform.position);
                 s_savePoint = data.previousIndex;
@@ -238,8 +258,9 @@ public class CharFollower : MonoBehaviour
                 stop = false;
                 void _Move()
                 {
-                    transform.localScale = _curScale * new Vector2(_moveBack ? -1 : 1, 1);
+                    transform.localScale = new Vector2(Math.Abs(transform.localScale.x) * (_moveBack ? -1 : 1), Math.Abs(transform.localScale.y));
                     s_saveCheckPoint = _curCheckPoint = t;
+                    s_curScaleX = Math.Sign(transform.localScale.x);
                     SetAnimation(run, true);
                 };
                 if ((int)t > (int)_curCheckPoint)

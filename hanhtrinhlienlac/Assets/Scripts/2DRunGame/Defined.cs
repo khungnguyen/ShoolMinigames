@@ -17,6 +17,7 @@ public class Defined : MonoBehaviour
     public  static int BONUS_SCORE_BUFFALO = 1;
 
     public static string SAVE_KEY_CHAR ="SAVE_KEY_CHAR";
+    public static string LAST_SCENE ="LAST_SCENE";
 
     public static bool CHEAT_BACK_AS_FINISHED = false;
      
