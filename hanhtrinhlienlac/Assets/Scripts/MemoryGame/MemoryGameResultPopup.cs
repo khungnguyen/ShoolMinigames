@@ -15,7 +15,7 @@ public class MemoryGameResultPopup : MonoBehaviour
     [SerializeField] private GameObject btnNext;
     [SerializeField] private SkeletonGraphic spine;
     [SerializeField] private BoundInAndOut animationPopup;
-    [SerializeField] private String textFoundSecretCode ="Aha! Tìm được cách dấu Mật Thư kín đáo rồi!";
+    [SerializeField] private String textFoundSecretCode ="Aha! Tìm được cách giấu Mật Thư kín đáo rồi!";
     private string secretCode = "mat thu";
     // Start is called before the first frame update
     void Start()

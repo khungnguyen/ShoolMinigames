@@ -1584,9 +1584,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scoreTMPro: {fileID: 493537285}
-  maxRemainingTimeScore: 500
+  maxRemainingTimeScore: 90
   scoreLostPerSec: 1
   displayTotalScore: 1
+  pausePopup: {fileID: 0}
 --- !u!1001 &820025735
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3275,6 +3276,29 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 1601335075}
     m_Modifications:
+    - target: {fileID: 602567518719506837, guid: d38015f4d79a4014190bf4e9fc634064, type: 3}
+      propertyPath: tutData.Array.data[5].tuts.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 602567518719506837, guid: d38015f4d79a4014190bf4e9fc634064, type: 3}
+      propertyPath: tutData.Array.data[5].tuts.Array.data[1].text
+      value: "\u1EDE tr\u1EA1m n\xE0y, b\u1EA1n c\xF3 nhi\u1EC7m v\u1EE5 tr\u1EA3
+        l\u1EDDi 05 c\xE2u h\u1ECFi li\xEAn quan \u0111\u1EBFn \u201CChuy\u1EC7n
+        k\u1EC3 v\u1EC1 N\u0103m ng\u01B0\u1EDDi \u0110\u1ED9i vi\xEAn \u0111\u1EA7u
+        ti\xEAn\u201D trong th\u1EDDi gian 90 gi\xE2y."
+      objectReference: {fileID: 0}
+    - target: {fileID: 602567518719506837, guid: d38015f4d79a4014190bf4e9fc634064, type: 3}
+      propertyPath: tutData.Array.data[5].tuts.Array.data[2].text
+      value: "B\u1EA1n c\u1EA7n \u0111\u1ECDc s\xE1ch \u0111\u1EC3 bi\u1EBFt \u0111\u01B0\u1EE3c
+        th\xF4ng tin \u0111\xE1p \xE1n."
+      objectReference: {fileID: 0}
+    - target: {fileID: 602567518719506837, guid: d38015f4d79a4014190bf4e9fc634064, type: 3}
+      propertyPath: tutData.Array.data[5].tuts.Array.data[3].text
+      value: "M\u1ED7i c\xE2u tr\u1EA3 l\u1EDDi \u0111\xFAng b\u1EA1n s\u1EBD nh\u1EADn
+        \u0111\u01B0\u1EE3c 10 Huy hi\u1EC7u M\u0103ng non. B\u1EA1n c\u1EA7n tr\u1EA3
+        l\u1EDDi \u0111\xFAng \xEDt nh\u1EA5t 3 tr\xEAn 5 c\xE2u h\u1ECFi \u0111\u1EC3
+        v\u01B0\u1EE3t qua tr\u1EA1m n\xE0y."
+      objectReference: {fileID: 0}
     - target: {fileID: 2766928409017901218, guid: d38015f4d79a4014190bf4e9fc634064, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5

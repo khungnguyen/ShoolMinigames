@@ -6707,6 +6707,20 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 2072671099}
     m_Modifications:
+    - target: {fileID: 602567518719506837, guid: d38015f4d79a4014190bf4e9fc634064, type: 3}
+      propertyPath: tutData.Array.data[6].tuts.Array.data[1].text
+      value: "\u1EDE tr\u1EA1m n\xE0y, b\u1EA1n c\u1EA7n ph\u1EA3i t\xECm ra M\u1EADt
+        Th\u01B0 v\xE0 m\u1ED9t D\u1EE5ng C\u1EE5 \u0111\u1EC3 gi\u1EA5u M\u1EADt
+        th\u01B0 sao cho qu\xE2n gi\u1EB7c kh\xF4ng th\u1EC3 ph\xE1t hi\u1EC7n trong
+        l\xFAc b\u1EA1n \u0111i giao M\u1EADt Th\u01B0 cho anh b\u1ED9 \u0111\u1ED9i."
+      objectReference: {fileID: 0}
+    - target: {fileID: 602567518719506837, guid: d38015f4d79a4014190bf4e9fc634064, type: 3}
+      propertyPath: tutData.Array.data[6].tuts.Array.data[2].text
+      value: "B\u1EA1n s\u1EBD c\xF3 t\u1ED5ng c\u1ED9ng 180 gi\xE2y \u0111\u1EC3
+        v\u01B0\u1EE3t qua ba l\u01B0\u1EE3t th\u1EED th\xE1ch l\u1EADt h\xECnh \u0111\u1EC3
+        t\xECm \u0111\u01B0\u1EE3c M\u1EADt th\u01B0 v\xE0 D\u1EE5ng c\u1EE5 c\u1EA7n
+        thi\u1EBFt."
+      objectReference: {fileID: 0}
     - target: {fileID: 2766928409017901218, guid: d38015f4d79a4014190bf4e9fc634064, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -8624,6 +8638,10 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 1947546061}
     m_Modifications:
+    - target: {fileID: 1562576386, guid: 0d46752f310c3524e9de73d125f27ac9, type: 3}
+      propertyPath: maxRemainingTimeScore
+      value: 180
+      objectReference: {fileID: 0}
     - target: {fileID: 2296058262986904532, guid: 0d46752f310c3524e9de73d125f27ac9, type: 3}
       propertyPath: m_Name
       value: Score

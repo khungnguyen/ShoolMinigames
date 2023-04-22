@@ -131,6 +131,10 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 1367658098}
     m_Modifications:
+    - target: {fileID: 6852314798725039767, guid: fcc4066f388591546b80fa2cd93eff89, type: 3}
+      propertyPath: m_text
+      value: "TH\u1EEC L\u1EA0I"
+      objectReference: {fileID: 0}
     - target: {fileID: 7799541475956365736, guid: fcc4066f388591546b80fa2cd93eff89, type: 3}
       propertyPath: m_Name
       value: TimeUpUI
@@ -218,6 +222,22 @@ PrefabInstance:
     - target: {fileID: 7799541475956365739, guid: fcc4066f388591546b80fa2cd93eff89, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7799541476695417640, guid: fcc4066f388591546b80fa2cd93eff89, type: 3}
+      propertyPath: m_text
+      value: "Ti\u1EBFc qu\xE1, b\u1EA1n \u0111\xE3 h\u1EBFt gi\u1EDD."
+      objectReference: {fileID: 0}
+    - target: {fileID: 7799541476695417641, guid: fcc4066f388591546b80fa2cd93eff89, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 228.6453
+      objectReference: {fileID: 0}
+    - target: {fileID: 7799541476695417641, guid: fcc4066f388591546b80fa2cd93eff89, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0.000040531
+      objectReference: {fileID: 0}
+    - target: {fileID: 7799541476695417641, guid: fcc4066f388591546b80fa2cd93eff89, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -47
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
