@@ -32,6 +32,7 @@ public class QuestionGameManager : MonoBehaviour
     private int selectedAnswerIndex = -1;
 
     private int finishedCount = 0;
+    private int failedCount = 0;
 
     private Transform curAnswerContainer;
     
@@ -156,6 +157,7 @@ public class QuestionGameManager : MonoBehaviour
         }
         else
         {
+            failedCount++;
             int correctIdx = GetCorrectAnswerIndex(curQuestion);
             GetAnswerItemUI(correctIdx).HighlightCorrect(false);
             GetAnswerItemUI(selectedAnswerIndex).HighlightWrong();
@@ -168,13 +170,17 @@ public class QuestionGameManager : MonoBehaviour
 
         yield return new WaitForSeconds(resultShowingDuration);
 
-        if (IsFinished())
-        {
-            StartCoroutine(ShowRewardPopup(result, 0));
-        }
-        else
-        {
-            ShowNextQuestion();
+        if (failedCount >= 3) {
+            SceneManager.LoadScene("Level1_Failed");
+        } else {
+            if (IsFinished())
+            {
+                StartCoroutine(ShowRewardPopup(result, 0));
+            }
+            else
+            {
+                ShowNextQuestion();
+            }
         }
     }
 
