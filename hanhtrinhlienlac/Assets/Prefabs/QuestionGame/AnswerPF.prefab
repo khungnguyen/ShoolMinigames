@@ -125,7 +125,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd44976468dc91f449f922a94f0487d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  score: 5
+  score: 10
   pointPrefab: {fileID: 8898355293487503039, guid: f5ad6b16b57eaf74c9d95c40ae8b54c5, type: 3}
   maxDelay: 0.5
   minStartX: -200
