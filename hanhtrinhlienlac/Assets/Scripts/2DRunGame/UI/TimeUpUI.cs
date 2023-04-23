@@ -18,13 +18,18 @@ public class TimeUpUI : MonoBehaviour
         string pre = UserInfo.GetInstance().GetPreviousScene();
         UnityEngine.SceneManagement.SceneManager.LoadScene(pre);
 
-    }
+    }    
     void Start()
     {
-        _soundManager.PlaySfx(_soundManager.soundData[0],false,-1,1,1);
+        StartCoroutine(PlaySfxIEnumerator(_soundManager.soundData[0], false, 0));
     }
     void OnEnable()
     {
         _animation?.PlayBoundInEffect();
+    }
+    IEnumerator PlaySfxIEnumerator(AudioClip ac, bool loop, int channel) 
+    {
+        yield return new WaitForEndOfFrame();
+        _soundManager.PlaySfx(ac, loop, channel);
     }
 }
