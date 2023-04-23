@@ -11,17 +11,29 @@ public class LevelFailedUI : MonoBehaviour
 
     public void OnBtnRetryClicked()
     {
-        _soundManager.PlaySfx(_soundManager.soundData[1]);
-        UnityEngine.SceneManagement.SceneManager.LoadScene(targetScene);
+        StartCoroutine(PlaySfxIEnumerator(_soundManager.soundData[1], false, -1));
+        StartCoroutine(LoadSceneIEnumerator(targetScene, 0.2f));
 
     }
     void Start()
     {
-        _soundManager.PlaySfx(_soundManager.soundData[0],false,-1,1,1);
+        StartCoroutine(PlaySfxIEnumerator(_soundManager.soundData[0], false, 0));
     }
 
     void OnEnable()
     {
         _animation?.PlayBoundInEffect();
+    }
+
+    IEnumerator PlaySfxIEnumerator(AudioClip ac, bool loop, int channel) 
+    {
+        yield return new WaitForEndOfFrame();
+        _soundManager.PlaySfx(ac, loop, channel);
+    }
+
+    IEnumerator LoadSceneIEnumerator(string scenename, float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        UnityEngine.SceneManagement.SceneManager.LoadScene(scenename);
     }
 }
