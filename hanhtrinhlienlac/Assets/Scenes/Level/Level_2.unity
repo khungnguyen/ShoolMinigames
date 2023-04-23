@@ -3130,7 +3130,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Ch\xFAc m\u1EEBng \nb\u1EA1n \u0111\xE3 t\xECm th\u1EA5y m\u1EADt th\u01B0!"
+  m_text: "Ch\xFAc m\u1EEBng \nb\u1EA1n \u0111\xE3 t\xECm th\u1EA5y M\u1EADt th\u01B0!"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: a63ac461950ca554dbbf127395afaf57, type: 2}
   m_sharedMaterial: {fileID: 5911009495154939706, guid: a63ac461950ca554dbbf127395afaf57, type: 2}
@@ -7591,8 +7591,8 @@ MonoBehaviour:
   btnNext: {fileID: 217037015}
   spine: {fileID: 334572716}
   animationPopup: {fileID: 1817343941}
-  textFoundSecretCode: "Aha! T\xECm \u0111\u01B0\u1EE3c c\xE1ch d\u1EA5u M\u1EADt
-    Th\u01B0 k\xEDn \u0111\xE1o r\u1ED3i!"
+  textFoundSecretCode: "Aha! T\xECm \u0111\u01B0\u1EE3c c\xE1ch gi\u1EA5u M\u1EADt
+    th\u01B0 k\xEDn \u0111\xE1o r\u1ED3i!"
 --- !u!114 &1817343941
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7668,7 +7668,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Ch\xFAc m\u1EEBng \nb\u1EA1n \u0111\xE3 t\xECm th\u1EA5y c\u1EA7n c\xE2u!"
+  m_text: "Ch\xFAc m\u1EEBng \nb\u1EA1n \u0111\xE3 t\xECm th\u1EA5y C\u1EA7n c\xE2u!"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: a63ac461950ca554dbbf127395afaf57, type: 2}
   m_sharedMaterial: {fileID: 5911009495154939706, guid: a63ac461950ca554dbbf127395afaf57, type: 2}
