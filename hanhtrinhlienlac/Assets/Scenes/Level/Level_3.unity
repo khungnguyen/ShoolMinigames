@@ -19622,7 +19622,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -45.7392, y: -132.05, z: -10}
+  m_LocalPosition: {x: -46.92998, y: -132.05, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -37858,7 +37858,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Nh\u1EA5n chu\u1ED9t \u0111\u1EC3 ti\u1EBFp t\u1EE5c"
+  m_text: "Nh\u1EA5n chu\u1ED9t v\xE0o \u0111\xE2y \u0111\u1EC3 ti\u1EBFp t\u1EE5c."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: a63ac461950ca554dbbf127395afaf57, type: 2}
   m_sharedMaterial: {fileID: 2100000, guid: 0a4e557a15848dd4883da01b5f5fadd6, type: 2}
@@ -44194,7 +44194,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1037622318}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -45.7392, y: 0.44999695, z: -10}
+  m_LocalPosition: {x: -46.92998, y: 0.44999695, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
