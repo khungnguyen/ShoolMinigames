@@ -755,6 +755,10 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 1745381076675700674}
     m_Modifications:
+    - target: {fileID: 1954997784221697221, guid: bde779c2fa5bfc94eb7f105e1ee24116, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -2.6
+      objectReference: {fileID: 0}
     - target: {fileID: 8519305710824642580, guid: bde779c2fa5bfc94eb7f105e1ee24116, type: 3}
       propertyPath: m_Name
       value: AvatarHolder (2)
@@ -878,6 +882,14 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 1745381076675700674}
     m_Modifications:
+    - target: {fileID: 1954997784221697221, guid: bde779c2fa5bfc94eb7f105e1ee24116, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 106.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1954997784221697221, guid: bde779c2fa5bfc94eb7f105e1ee24116, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 130.7
+      objectReference: {fileID: 0}
     - target: {fileID: 8519305710824642580, guid: bde779c2fa5bfc94eb7f105e1ee24116, type: 3}
       propertyPath: m_Name
       value: AvatarHolder (1)
@@ -1001,6 +1013,14 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 1745381076675700674}
     m_Modifications:
+    - target: {fileID: 1954997784221697221, guid: bde779c2fa5bfc94eb7f105e1ee24116, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 106
+      objectReference: {fileID: 0}
+    - target: {fileID: 1954997784221697221, guid: bde779c2fa5bfc94eb7f105e1ee24116, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 130.5
+      objectReference: {fileID: 0}
     - target: {fileID: 8519305710824642580, guid: bde779c2fa5bfc94eb7f105e1ee24116, type: 3}
       propertyPath: m_Name
       value: AvatarHolder (3)
