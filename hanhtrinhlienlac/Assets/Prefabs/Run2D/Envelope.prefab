@@ -118,7 +118,7 @@ Transform:
   m_Children:
   - {fileID: 9208879167869854675}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!111 &3911465522069516660
 Animation:
@@ -190,7 +190,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &64201881311601227
 Transform:
   m_ObjectHideFlags: 0
