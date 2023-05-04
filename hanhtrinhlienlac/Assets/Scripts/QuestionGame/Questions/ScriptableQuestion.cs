@@ -82,7 +82,7 @@ public class ScriptableQuestion: ScriptableObject
                     text = text,
                     value = isCorrect
                 };
-                answer.SetIndex(answers.Count + i);
+                answer.SetIndex(answers.Count);
                 answers.Add(answer);
             }
 
