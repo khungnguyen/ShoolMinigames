@@ -27,6 +27,7 @@ public class QuestionGameManager : MonoBehaviour
     [SerializeField] private SoundManager soundMgr;
     [SerializeField] private AudioClips audioClips;
     [SerializeField] private List<ScriptableQuestion> questions;
+    [SerializeField] private ImgSlide imgSlide;
 
     private int curQuestionIndex = -1;
     private ScriptableQuestion curQuestion;
@@ -92,6 +93,7 @@ public class QuestionGameManager : MonoBehaviour
 
         curQuestion = questions[curQuestionIndex];
         curQuestion.Init();
+        imgSlide.SetSprites(curQuestion.extraImages);
 
         if (curQuestion.anwserByImage)
         {

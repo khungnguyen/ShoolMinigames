@@ -37,5 +37,6 @@ MonoBehaviour:
     value: 0
   numMixedAnswer: 0
   extraText: 
-  extraImages: []
+  extraImages:
+  - {fileID: 21300000, guid: e976c35ad3d6af041aabe0e9b9f08fac, type: 3}
   moreInfoURL: https://www.coolmath4kids.com/
