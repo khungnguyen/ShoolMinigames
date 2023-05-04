@@ -19,25 +19,25 @@ MonoBehaviour:
     b\u1EA3o v\u1EC7 an to\xE0n cho c\xE1n b\u1ED9 c\xE1ch m\u1EA1ng?"
   answers:
   - id: A
-    text: "B\u1EA3o Cao S\u01A1n ch\u1EA1y v\u1EC1 b\xE1o cho m\u1ECDi ng\u01B0\u1EDDi
-      bi\u1EBFt"
-    img: {fileID: 0}
-    value: 1
-  - id: B
     text: "Kim \u0110\u1ED3ng \u0111\xEDch th\xE2n b\xE1o cho m\u1ECDi ng\u01B0\u1EDDi
       bi\u1EBFt"
     img: {fileID: 0}
     value: 0
-  - id: C
-    text: "Kim \u0110\u1ED3ng ch\u1EA1y \u0111i h\u01B0\u1EDBng kh\xE1c, \u0111\xE1nh
-      l\u1EA1c h\u01B0\u1EDBng qu\xE2n \u0111\u1ECBch, ch\u1EA5p nh\u1EADn hi sinh"
-    img: {fileID: 0}
-    value: 1
-  - id: D
+  - id: B
     text: "B\u1EA3o Cao S\u01A1n ch\u1EA1y \u0111\xE1nh l\u1EA1c h\u01B0\u1EDBng
       qu\xE2n \u0111\u1ECBch"
     img: {fileID: 0}
     value: 0
+  - id: C
+    text: "B\u1EA3o Cao S\u01A1n ch\u1EA1y v\u1EC1 b\xE1o cho m\u1ECDi ng\u01B0\u1EDDi
+      bi\u1EBFt"
+    img: {fileID: 0}
+    value: 1
+  - id: D
+    text: "Kim \u0110\u1ED3ng ch\u1EA1y \u0111i h\u01B0\u1EDBng kh\xE1c, \u0111\xE1nh
+      l\u1EA1c h\u01B0\u1EDBng qu\xE2n \u0111\u1ECBch, ch\u1EA5p nh\u1EADn hi sinh"
+    img: {fileID: 0}
+    value: 1
   numMixedAnswer: 2
   extraText: 
   extraImages: []

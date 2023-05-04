@@ -91,6 +91,7 @@ public class QuestionGameManager : MonoBehaviour
         Debug.Assert(curQuestionIndex < questions.Count);
 
         curQuestion = questions[curQuestionIndex];
+        curQuestion.Init();
 
         if (curQuestion.anwserByImage)
         {

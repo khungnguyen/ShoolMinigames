@@ -36,7 +36,7 @@ public class ScriptableQuestion: ScriptableObject
     public Sprite[] extraImages;
     public string moreInfoURL;
 
-    void OnEnable()
+    public void Init()
     {
         ShuffleAnswers();
         DetermineAnswersId();
@@ -82,7 +82,7 @@ public class ScriptableQuestion: ScriptableObject
                     text = text,
                     value = isCorrect
                 };
-                answer.SetIndex(answers.Count - 1 + i);
+                answer.SetIndex(answers.Count + i);
                 answers.Add(answer);
             }
 
@@ -94,7 +94,7 @@ public class ScriptableQuestion: ScriptableObject
 
     void ShuffleAnswers()
     {
-
+        Utils.Shuffle<Answer>(answers);
     }
 
     void DetermineAnswersId()
