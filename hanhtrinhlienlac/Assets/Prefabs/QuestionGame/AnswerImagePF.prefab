@@ -277,9 +277,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 05d75e7a9db56414ab2e19a6fdb16432, type: 3}
+  m_Sprite: {fileID: 0}
   m_Type: 0
-  m_PreserveAspect: 0
+  m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
@@ -497,6 +497,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bgImage: {fileID: 7671532163474733946}
   bgFrame: {fileID: 1903710082}
+  image: {fileID: 1895574794}
   colorSelected: {r: 1, g: 0.8823912, b: 0, a: 1}
   colorCorrect: {r: 0.109803915, g: 1, b: 0, a: 1}
   colorWrong: {r: 1, g: 0, b: 0, a: 0.5882353}

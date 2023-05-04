@@ -687,7 +687,7 @@ PrefabInstance:
     - target: {fileID: 1895574794, guid: c03664759ce8fec428ed125a98cde7c3, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: ebd264e9aaced9f43ad77b94af86636b, type: 3}
+      objectReference: {fileID: 0}
     - target: {fileID: 360473794359602233, guid: c03664759ce8fec428ed125a98cde7c3, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -2176,7 +2176,7 @@ PrefabInstance:
     - target: {fileID: 1895574794, guid: c03664759ce8fec428ed125a98cde7c3, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: f98ad1ca403e4f04fa7be85e34657c30, type: 3}
+      objectReference: {fileID: 0}
     - target: {fileID: 360473794359602233, guid: c03664759ce8fec428ed125a98cde7c3, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -2581,7 +2581,7 @@ PrefabInstance:
     - target: {fileID: 1895574794, guid: c03664759ce8fec428ed125a98cde7c3, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 86c3a502ea0b6f44a981e749b94f941c, type: 3}
+      objectReference: {fileID: 0}
     - target: {fileID: 360473794359602233, guid: c03664759ce8fec428ed125a98cde7c3, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -3496,51 +3496,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6dbb07aa454278146bead99ae72bfdbd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &1597259279
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1597259281}
-  - component: {fileID: 1597259280}
-  m_Layer: 0
-  m_Name: QuestionBank
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1597259280
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1597259279}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 239ad595b084b0e4baac9377a5fb7d4e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  jsonFile: {fileID: 4900000, guid: 3a932b5e85b35ab4c9e5d567bf4a4efc, type: 3}
---- !u!4 &1597259281
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1597259279}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1601335074
 GameObject:
   m_ObjectHideFlags: 0
@@ -3987,6 +3942,12 @@ MonoBehaviour:
     scoringSFX: {fileID: 8300000, guid: 2c5b2a5e2e9818d458c9d10400c2279f, type: 3}
     wrongSFX: {fileID: 8300000, guid: 15932b38da5f143459135107b1b36e61, type: 3}
     levelFinishSFX: {fileID: 8300000, guid: db05d2282090eef4e9a929c19d137d12, type: 3}
+  questions:
+  - {fileID: 11400000, guid: 9d1ed3ac955dbb949bf210995953405c, type: 2}
+  - {fileID: 11400000, guid: 6302459441f038a41b249350af98425c, type: 2}
+  - {fileID: 11400000, guid: 0f208cf28d356684a90f8b8ff5df4317, type: 2}
+  - {fileID: 11400000, guid: c0946b2e8ca5fa541a5fae0b0c8de0c1, type: 2}
+  - {fileID: 11400000, guid: 9bf139f79a3c7d940987420d3339517e, type: 2}
 --- !u!114 &1993827567
 MonoBehaviour:
   m_ObjectHideFlags: 0

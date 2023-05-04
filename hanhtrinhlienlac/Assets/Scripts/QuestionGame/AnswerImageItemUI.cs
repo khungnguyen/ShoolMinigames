@@ -9,6 +9,7 @@ public class AnswerImageItemUI : MonoBehaviour, IPointerClickHandler, IAnswerIte
 {
     [SerializeField] private Image bgImage;
     [SerializeField] private Image bgFrame;
+    [SerializeField] private Image image;
     [SerializeField] private Color colorSelected;
     [SerializeField] private Color colorCorrect;
     [SerializeField] private Color colorWrong;
@@ -45,8 +46,10 @@ public class AnswerImageItemUI : MonoBehaviour, IPointerClickHandler, IAnswerIte
         interactable = v;
     }
 
-    public void SetData(int index, string text, Action<int> onSelectedCB) {
+    public void SetData(int index, ScriptableQuestion.Answer answer, Action<int> onSelectedCB) {
         this.index = index;
+        image.sprite = answer.img;
+        image.preserveAspect = true;
         this.onSelectedCB = onSelectedCB;
         ResetSelection();
     }

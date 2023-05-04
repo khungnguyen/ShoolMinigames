@@ -8,7 +8,6 @@ using System;
 
 public class AnswerItemUI : MonoBehaviour, IPointerClickHandler, IAnswerItemUI
 {
-    private static string[] ids = new[] {"A", "B", "C", "D", "E", "G", "H", "I", "K"};
     [SerializeField] private TextMeshProUGUI idTMPro;
     [SerializeField] private TextMeshProUGUI textTMPro;
     [SerializeField] private Image bgImage;
@@ -33,10 +32,10 @@ public class AnswerItemUI : MonoBehaviour, IPointerClickHandler, IAnswerItemUI
     {
     }
 
-    public void SetData(int index, string text, Action<int> onSelectedCB) {
+    public void SetData(int index, ScriptableQuestion.Answer answer, Action<int> onSelectedCB) {
         this.index = index;
-        idTMPro.text = ids[index];
-        textTMPro.text = text;
+        idTMPro.text = answer.id;
+        textTMPro.text = answer.text;
         this.onSelectedCB = onSelectedCB;
         ResetSelection();
     }

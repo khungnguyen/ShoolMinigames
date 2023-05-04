@@ -26,9 +26,10 @@ public class QuestionGameManager : MonoBehaviour
     [SerializeField] private TutorManager tutorComp;
     [SerializeField] private SoundManager soundMgr;
     [SerializeField] private AudioClips audioClips;
+    [SerializeField] private List<ScriptableQuestion> questions;
 
     private int curQuestionIndex = -1;
-    private Question curQuestion;
+    private ScriptableQuestion curQuestion;
     private int selectedAnswerIndex = -1;
 
     private int finishedCount = 0;
@@ -87,9 +88,9 @@ public class QuestionGameManager : MonoBehaviour
         soundMgr.PlaySfx(audioClips.nextQuestionSFX, false, 1);
 
         curQuestionIndex++;
-        Debug.Assert(curQuestionIndex < QuestionBank.Inst.questions.Length);
+        Debug.Assert(curQuestionIndex < questions.Count);
 
-        curQuestion = QuestionBank.Inst.questions[curQuestionIndex];
+        curQuestion = questions[curQuestionIndex];
 
         if (curQuestion.anwserByImage)
         {
@@ -107,11 +108,11 @@ public class QuestionGameManager : MonoBehaviour
 
         int idx = 0;
         // Set answers' data
-        for (; idx < curQuestion.answers.Length; idx++)
+        for (; idx < curQuestion.answers.Count; idx++)
         {
             curAnswerContainer.GetChild(idx).gameObject.SetActive(true);
             var answerItemUI = GetAnswerItemUI(idx);
-            answerItemUI.SetData(idx, curQuestion.answers[idx].text, OnAnswerSelected);
+            answerItemUI.SetData(idx, curQuestion.answers[idx], OnAnswerSelected);
             answerItemUI.ResetSelection();
             answerItemUI.SetInteractable(true);
         }
@@ -125,7 +126,7 @@ public class QuestionGameManager : MonoBehaviour
     public void OnAnswerSelected(int answerIndex)
     {
         selectedAnswerIndex = answerIndex;
-        for (int i = 0; i < curQuestion.answers.Length; i++)
+        for (int i = 0; i < curQuestion.answers.Count; i++)
         {
             var itemUI = GetAnswerItemUI(i);
             if (i != selectedAnswerIndex)
@@ -168,7 +169,9 @@ public class QuestionGameManager : MonoBehaviour
             Scroring.Inst.Submit("game1");
         }
 
-        yield return new WaitForSeconds(resultShowingDuration);
+        float delay = failedCount >= 3 ? 1f : resultShowingDuration;
+
+        yield return new WaitForSeconds(delay);
 
         if (failedCount >= 3) {
             SceneManager.LoadScene("Level1_Failed");
@@ -203,7 +206,7 @@ public class QuestionGameManager : MonoBehaviour
 
     private bool IsFinished()
     {
-        return finishedCount >= QuestionBank.Inst.questions.Length;
+        return finishedCount >= questions.Count;
     }
 
     private IAnswerItemUI GetAnswerItemUI(int idx)
@@ -211,9 +214,9 @@ public class QuestionGameManager : MonoBehaviour
         return curAnswerContainer.GetChild(idx).GetComponent<IAnswerItemUI>();
     }
 
-    private int GetCorrectAnswerIndex(Question question)
+    private int GetCorrectAnswerIndex(ScriptableQuestion question)
     {
-        for (int i = 0; i < question.answers.Length; i++)
+        for (int i = 0; i < question.answers.Count; i++)
         {
             if (question.answers[i].value)
             {

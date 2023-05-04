@@ -1,0 +1,40 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f7bded839bdaf642a66df8c0bd840e3, type: 3}
+  m_Name: Question02
+  m_EditorClassIdentifier: 
+  allowShuffle: 1
+  anwserByImage: 0
+  score: 10
+  text: "Ngo\xE0i anh Kim \u0110\u1ED3ng, b\u1ED1n th\xE0nh vi\xEAn c\xF2n l\u1EA1i
+    c\u1EE7a H\u1ED9i Nhi \u0111\u1ED3ng C\u1EE9u qu\u1ED1c l\xE0 nh\u1EEFng ai?"
+  answers:
+  - id: 
+    text: "Cao S\u01A1n, Th\u1EE7y Ti\xEAn, Thu Th\u1EE7y, Thanh Minh"
+    img: {fileID: 0}
+    value: 0
+  - id: 
+    text: "Cao S\u01A1n, Th\xF9y Ti\xEAn, Thanh Th\xFAy, Thanh Minh"
+    img: {fileID: 0}
+    value: 0
+  - id: 
+    text: "Cao Minh, Th\u1EE7y Ti\xEAn, Thanh Th\u1EE7y, Thanh S\u01A1n"
+    img: {fileID: 0}
+    value: 0
+  - id: 
+    text: "Cao S\u01A1n, Th\u1EE7y Ti\xEAn, Thanh Th\u1EE7y, Thanh Minh"
+    img: {fileID: 0}
+    value: 1
+  numMixedAnswer: 0
+  extraText: 
+  extraImages: []
+  moreInfoURL: https://pbskids.org/

@@ -3,7 +3,7 @@ using UnityEngine;
 [System.Serializable]
 public class QuestionBank {
     private static QuestionBank _inst;
-    public static QuestionBank Inst {
+    private static QuestionBank Inst {
         get {
             return _inst;
         }
