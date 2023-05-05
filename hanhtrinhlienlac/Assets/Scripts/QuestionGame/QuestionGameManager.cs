@@ -27,7 +27,7 @@ public class QuestionGameManager : MonoBehaviour
     [SerializeField] private SoundManager soundMgr;
     [SerializeField] private AudioClips audioClips;
     [SerializeField] private List<ScriptableQuestion> questions;
-    [SerializeField] private ImgSlide imgSlide;
+    [SerializeField] private ImgSlideXHCN imgSlide;
 
     private int curQuestionIndex = -1;
     private ScriptableQuestion curQuestion;

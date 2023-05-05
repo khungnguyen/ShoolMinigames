@@ -37,5 +37,7 @@ MonoBehaviour:
   numMixedAnswer: 0
   extraText: 
   extraImages:
-  - {fileID: 21300000, guid: 51766875ad6a0854d82aba1a22d8fd4d, type: 3}
+  - {fileID: 21300000, guid: 91428a7199615ab4c820d54972abd515, type: 3}
+  - {fileID: 21300000, guid: f34bedd411d358142ac31d31c4e572c9, type: 3}
+  - {fileID: 21300000, guid: 8e0ac85155448384786ba1601df5980f, type: 3}
   moreInfoURL: https://pbskids.org/

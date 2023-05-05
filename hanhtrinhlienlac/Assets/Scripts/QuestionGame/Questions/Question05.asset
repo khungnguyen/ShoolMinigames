@@ -41,6 +41,5 @@ MonoBehaviour:
   numMixedAnswer: 2
   extraText: 
   extraImages:
-  - {fileID: 21300000, guid: 88718ef23e784db429571edb581ac070, type: 3}
-  - {fileID: 21300000, guid: b9dc1cf2a9bd64140b27302ea7c90381, type: 3}
+  - {fileID: 21300000, guid: df98112cadf142c40a9bc547d42d35df, type: 3}
   moreInfoURL: https://kids.scholastic.com/kid/home/

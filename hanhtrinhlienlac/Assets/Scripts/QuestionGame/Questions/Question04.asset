@@ -38,5 +38,6 @@ MonoBehaviour:
   numMixedAnswer: 0
   extraText: 
   extraImages:
-  - {fileID: 21300000, guid: e976c35ad3d6af041aabe0e9b9f08fac, type: 3}
+  - {fileID: 21300000, guid: 5945b28a6d9ccc74699a97f478d52673, type: 3}
+  - {fileID: 21300000, guid: bc4bd9871518211449c37423675dcb3f, type: 3}
   moreInfoURL: https://www.coolmath4kids.com/

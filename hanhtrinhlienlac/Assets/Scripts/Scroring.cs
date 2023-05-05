@@ -32,6 +32,9 @@ public class Scroring : SchoolApiRequestBase
 
     private bool pauseWhileCounting = false;
 
+    public delegate bool IsCountableCheck();
+    private IsCountableCheck isCountable = null;
+
     public int CurRemainingTimeScore {
         get => Mathf.RoundToInt(curRemainingTimeScore);
     }
@@ -57,7 +60,7 @@ public class Scroring : SchoolApiRequestBase
     // Update is called once per frame
     void Update()
     {
-        if (isCounting && curRemainingTimeScore > 0)
+        if (isCounting && CheckCountable() && curRemainingTimeScore > 0)
         {
             curRemainingTimeScore -= scoreLostPerSec * Time.deltaTime;
             if (curRemainingTimeScore < 0) 
@@ -81,6 +84,24 @@ public class Scroring : SchoolApiRequestBase
     {
         _inst = null;
         WebGLWindow.OnBlurEvent -= OnWindowBlur;
+    }
+
+    public void AddCountableCB(IsCountableCheck func)
+    {
+        isCountable += func;
+    }
+
+    private bool CheckCountable()
+    {
+        if (isCountable == null) {
+            return true;
+        }
+        foreach (IsCountableCheck f in isCountable.GetInvocationList()) {
+            if (!f()) {
+                return false;
+            }
+        }
+        return true;
     }
 
     public void StartOrResume()
