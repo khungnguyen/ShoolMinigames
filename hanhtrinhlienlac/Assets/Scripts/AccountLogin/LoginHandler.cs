@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Networking;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class LoginHandler : AccountRequestBase<BasicInputFields>
 {
@@ -47,6 +48,7 @@ public class LoginHandler : AccountRequestBase<BasicInputFields>
 
     [SerializeField] private RegisterHandler registerHandler;
     [SerializeField] private PasswordResetHandler pwResetHandler;
+    [SerializeField] private Button btnPlay;
     public static LoginHandler inst;
     void Awake()
     {
@@ -78,6 +80,51 @@ public class LoginHandler : AccountRequestBase<BasicInputFields>
         {
             username = inputFields.username.text,
             password = inputFields.password.text
+        };
+
+        if (!data.isValid())
+        {
+            SetErrorMsg(EError.NOT_ENOUGH_INFO);
+            return;
+        }
+
+        SendPostRequest(ACCOUNT_SERVICE_LOGIN_PATH, data);
+    }
+    
+
+    public void OnPlayBtnClicked()
+    {
+        SoundManager.inst.StopAllSound();
+        SceneManager.LoadScene("Main");
+    }
+
+    private string username;
+    private string password;
+    public void SetUserName(string name)
+    {
+        username = name;
+    }
+    public void SetPassword(string pass)
+    {
+        password = pass;
+    }
+
+    public void SetUserInfo(string userInfo)
+    {
+        Debug.Log("SetUserInfo:");
+        var responseData = JsonUtility.FromJson<LoginResponseData>(userInfo);
+        SchoolApiSession.Inst.OnLoggedIn(responseData.accessToken);
+        UserInfo.GetInstance().OnLoggedIn(responseData.userInfo, responseData.games);
+        btnPlay.gameObject.SetActive(true);
+    }
+
+    public void Login()
+    {
+        SoundManager.inst.PlaySfx(SoundManager.inst.soundData[1]);
+        var data = new LoginData()
+        {
+            username = username,
+            password = password
         };
 
         if (!data.isValid())
