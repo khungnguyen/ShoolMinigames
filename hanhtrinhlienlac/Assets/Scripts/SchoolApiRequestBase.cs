@@ -8,7 +8,7 @@ using UnityEngine.UI;
 
 public abstract class SchoolApiRequestBase: MonoBehaviour
 {
-    private static readonly string SERVICE_BASE_URL = "https://an-school-portal.securityzone.vn";
+    private static readonly string SERVICE_BASE_URL = "https://anschool.vn";
 
     [Serializable] public class PostData {
     }

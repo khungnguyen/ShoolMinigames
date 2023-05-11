@@ -3310,7 +3310,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9cd895934c4157429c7363f280ec05c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interval: 5
+  interval: 10
   image: {fileID: 1905880271}
   imageLarge: {fileID: 458778209}
   maximize: {fileID: 1450085929}

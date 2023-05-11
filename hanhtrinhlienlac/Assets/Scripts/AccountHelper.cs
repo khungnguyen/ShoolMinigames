@@ -33,7 +33,7 @@ public class AccountHelper : MonoBehaviour
         public int status;
         public string err;
     }
-    private static readonly string ACCOUNT_SERVICE_BASE_URL = "https://an-school-portal.securityzone.vn";
+    private static readonly string ACCOUNT_SERVICE_BASE_URL = "https://anschool.vn";
     [SerializeField] private TMPro.TMP_InputField invitationCodeTMP;
     [SerializeField] private TMPro.TMP_InputField usernameTMP;
     [SerializeField] private TMPro.TMP_InputField passwordTMP;
