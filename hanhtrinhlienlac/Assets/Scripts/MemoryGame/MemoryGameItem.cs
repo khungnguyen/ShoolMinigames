@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class MemoryGameItem : MonoBehaviour, IPointerClickHandler
+public class MemoryGameItem : MousePointerHandler, IPointerClickHandler
 {
     private static bool s_interactable = true;
     [SerializeField] private MemoryGameCard cardUI;
