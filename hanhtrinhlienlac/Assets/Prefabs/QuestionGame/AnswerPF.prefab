@@ -583,6 +583,7 @@ MonoBehaviour:
   correctMark: {fileID: 865294669}
   incorrectMark: {fileID: 361294120}
   scoreEarningAnim: {fileID: 640923001}
+  cursor: {fileID: 2800000, guid: f00b2c916d257ea4183438a70c9c8259, type: 3}
 --- !u!1 &8202215867640344279
 GameObject:
   m_ObjectHideFlags: 0

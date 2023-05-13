@@ -15,6 +15,7 @@ public class AnswerItemUI : MonoBehaviour, IPointerClickHandler, IAnswerItemUI
     [SerializeField] private GameObject correctMark;
     [SerializeField] private GameObject incorrectMark;
     [SerializeField] private ScoreEarningAnim scoreEarningAnim;
+    [SerializeField] private Texture2D cursor;
 
     private Sprite bgSpriteDefault;
     private Color textColorDefault;
@@ -85,4 +86,14 @@ public class AnswerItemUI : MonoBehaviour, IPointerClickHandler, IAnswerItemUI
         textTMPro.color = Color.yellow;
         onSelectedCB(index);
     }
+     
+    //  public void OnPointerEnter(PointerEventData data)
+    //  {
+    //      Cursor.SetCursor (cursor, Vector2.zero, CursorMode.Auto);
+    //  }
+     
+    //  public void OnPointerExit(PointerEventData data)
+    //  {
+    //      Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
+    //  }
 }

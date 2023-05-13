@@ -28,6 +28,7 @@ public class QuestionGameManager : MonoBehaviour
     [SerializeField] private AudioClips audioClips;
     [SerializeField] private List<ScriptableQuestion> questions;
     [SerializeField] private ImgSlideXHCN imgSlide;
+    [SerializeField] GameObject _pauseScreen;
 
     private int curQuestionIndex = -1;
     private ScriptableQuestion curQuestion;
@@ -227,5 +228,10 @@ public class QuestionGameManager : MonoBehaviour
             }
         }
         return -1;
+    }
+    
+    void OnApplicationPause(bool pauseStatus)
+    {
+         _pauseScreen.SetActive(pauseStatus);
     }
 }

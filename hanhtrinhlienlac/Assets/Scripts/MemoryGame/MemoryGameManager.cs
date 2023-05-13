@@ -31,6 +31,7 @@ public class MemoryGameManager : MonoBehaviour
     [SerializeField] private AudioClips audioClips;
 
     [SerializeField] private List<Sprite> secretItemSprs;
+    [SerializeField] GameObject _pauseScreen;
 
     private int curLevelIdx = -1;
     private Transform curLevelContainer;
@@ -184,7 +185,10 @@ public class MemoryGameManager : MonoBehaviour
                 {
                     // Grid was solved
                     Scroring.Inst.Pause();
-                    Scroring.Inst.Submit("game2");
+                    if (IsLastLevel())
+                    {
+                        Scroring.Inst.Submit("game2");
+                    }                    
                     if (remainingItems.Count == 0)
                     {
                         StartCoroutine(ShowResultPopup(0.5f, null));
@@ -303,10 +307,16 @@ public class MemoryGameManager : MonoBehaviour
             UserInfo.GetInstance().SetUnlockLevel(CheckPointType.CHECK_POINT_3, true);
         }
     }
+    
     private IEnumerator ShowRewardUI(float delay)
     {
         yield return new WaitForSeconds(delay);
         soundMgr.PlaySfx(audioClips.levelFinishedSFX);
         rewardUI.Show(Scroring.Inst.TotalScore.ToString(), OnButtonBackToMapClicked);
+    }
+    
+    void OnApplicationPause(bool pauseStatus)
+    {
+         _pauseScreen.SetActive(pauseStatus);
     }
 }

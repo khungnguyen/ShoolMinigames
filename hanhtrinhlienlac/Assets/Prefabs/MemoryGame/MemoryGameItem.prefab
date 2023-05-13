@@ -300,6 +300,7 @@ GameObject:
   - component: {fileID: 7796122300300147202}
   - component: {fileID: 1539012936}
   - component: {fileID: 7456231273895120294}
+  - component: {fileID: 7864236154937015990}
   m_Layer: 5
   m_Name: MemoryGameItem
   m_TagString: Untagged
@@ -364,6 +365,19 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
+--- !u!114 &7864236154937015990
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7796122300300147201}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b6047f5c57cda54880e635771083750, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cursor: {fileID: 2800000, guid: f00b2c916d257ea4183438a70c9c8259, type: 3}
 --- !u!1 &7796122300581153749
 GameObject:
   m_ObjectHideFlags: 0
