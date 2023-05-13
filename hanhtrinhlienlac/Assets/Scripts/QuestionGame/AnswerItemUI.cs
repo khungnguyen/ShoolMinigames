@@ -6,7 +6,7 @@ using UnityEngine.EventSystems;
 using UnityEngine.UI;
 using System;
 
-public class AnswerItemUI : MonoBehaviour, IPointerClickHandler, IAnswerItemUI
+public class AnswerItemUI : MousePointerHandler, IPointerClickHandler, IAnswerItemUI
 {
     [SerializeField] private TextMeshProUGUI idTMPro;
     [SerializeField] private TextMeshProUGUI textTMPro;
@@ -77,6 +77,7 @@ public class AnswerItemUI : MonoBehaviour, IPointerClickHandler, IAnswerItemUI
     public void SetInteractable(bool v)
     {
         interactable = v;
+        CursorChangable = v;
     }
 
     private void OnSelected()
@@ -85,4 +86,5 @@ public class AnswerItemUI : MonoBehaviour, IPointerClickHandler, IAnswerItemUI
         textTMPro.color = Color.yellow;
         onSelectedCB(index);
     }
+
 }

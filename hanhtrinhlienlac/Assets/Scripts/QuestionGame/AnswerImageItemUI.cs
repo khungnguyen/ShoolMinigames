@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class AnswerImageItemUI : MonoBehaviour, IPointerClickHandler, IAnswerItemUI
+public class AnswerImageItemUI : MousePointerHandler, IPointerClickHandler, IAnswerItemUI
 {
     [SerializeField] private Image bgImage;
     [SerializeField] private Image bgFrame;
@@ -44,6 +44,7 @@ public class AnswerImageItemUI : MonoBehaviour, IPointerClickHandler, IAnswerIte
     public void SetInteractable(bool v)
     {
         interactable = v;
+        CursorChangable = v;
     }
 
     public void SetData(int index, ScriptableQuestion.Answer answer, Action<int> onSelectedCB) {
